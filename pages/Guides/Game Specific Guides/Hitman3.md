@@ -70,7 +70,7 @@ sidebar: false
 	- <details><summary>If the ReShade UI is too small, go into the ReShade settings tab, and then look for the **Global font** setting: </summary><img src="https://github.com/CreepySasquatch/HDRMods/blob/main/images/Guide-Generic-Images/ReShade-Settings.jpg?raw=true" title="ReShade Font Settings" style="width:669px;height:964px;"/>
 1. **With Lilium's HDR Analysis enabled, adjust the Gamma Correction. Whatever value is listed as the Max nits while inside the options menu is your WHITE POINT.**
 	- Typical white point value is around 200-300 nits.  If you're not sure just leave the Gamma Correction at 1.00 which is about 200 nits.
-	- <details><summary>White point adjustment: </summary></summary><img src="https://github.com/CreepySasquatch/HDRMods/blob/main/images/Hitman3/Hitman3-GammaCorrection.jpg?raw=true" title="White Point" style="width:669px;height:964px;"/>
+	- <details><summary>White point adjustment: </summary></summary><img src="https://github.com/CreepySasquatch/HDRMods/blob/main/images/Hitman3/Hitman3-GammaCorrection.jpg?raw=true" title="White Point" style="width:960px;height:540px;"/>
 
 ## Configuring Peak brightness
 
