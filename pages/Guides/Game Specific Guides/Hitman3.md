@@ -72,7 +72,7 @@ sidebar: false
 	- Typical white point value is around 200-300 nits.  If you're not sure just leave the Gamma Correction at 1.00 which is about 200 nits.
 	- <details><summary>White point adjustment: </summary></summary><img src="https://github.com/CreepySasquatch/HDRMods/blob/main/images/Hitman3/Hitman3-GammaCorrection.jpg?raw=true" title="White Point" style="width:960px;height:540px;"/>
 
-## Configuring Peak brightness
+## Configuring Peak Brightness
 
 1. **Peak Brightness is configured via the Max Intensity slider within the game's HDR options.**
 1. **Peak Brightness = Max Intensity multiplied by the Paper White value (in Nits) divided by 2.**
