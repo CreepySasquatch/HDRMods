@@ -69,15 +69,16 @@ sidebar: false
 	- If HDR isn't enabled then this shader will show as Lilium's SDR Analysis.
 	- <details><summary>If the ReShade UI is too small, go into the ReShade settings tab, and then look for the <b>Global font</b> setting: </summary><img src="https://github.com/CreepySasquatch/HDRMods/blob/main/images/Guide-Generic-Images/ReShade-Settings.jpg?raw=true" title="ReShade Font Settings" style="width:669px;height:964px;"/>
 1. **With Lilium's HDR Analysis enabled, adjust the Gamma Correction. Whatever value is listed as the Max nits while inside the options menu is your WHITE POINT.**
-	- Typical white point value is around 200-300 nits.  If you're not sure just leave the Gamma Correction at 1.00 which is about 200 nits.
+	- Typical white point value is around 200-300 nits.  If you're not sure just leave the Gamma Correction at 1.00 which is exactly 200 nits.
+	- The minimum Gamma Correction value of 0.80 = 100 nits white point. 
 	- <details><summary>White point adjustment: </summary><img src="https://github.com/CreepySasquatch/HDRMods/blob/main/images/Hitman3/Hitman3-GammaCorrection.jpg?raw=true" title="White Point" style="width:960px;height:540px;"/>
 
 ## Configuring Peak Brightness
 
 1. **Peak Brightness is configured via the Max Intensity slider within the game's HDR options.**
 1. **Peak Brightness = Max Intensity multiplied by the Paper White value (in Nits) divided by 2.**
-	- This is only a rough calculation and you'll want to use the HDR Analysis Tool while loaded into a destination to verify this value.  The maximum nits will obviously vary as you move the camera around so check it every so often and adjust the Max Intensity value as needed.
-	- This calculation is ONLY for this specific Hitman 3 RenoDX mod (specifically the version released on June 28th, 2025).  This may change in a future update to this mod so pay attention to any updated notes in the mod description.
+
+	
 
 	
 	
