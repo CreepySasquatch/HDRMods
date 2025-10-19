@@ -6,6 +6,11 @@ description: Hitman 3 / World of Assassination HDR guide
 sidebar: false
 ---
 
+{% include callout.html type="important" content="<b>As of ReShade 6.6.0 and 6.6.1 this guide no longer works!  This is due to a compatibility issue with ReShade and Special K that prevents some games from working at all when both are used together.  Rolling back to ReShade version 6.5.1 breaks the RenoDX mod for Hitman 3 so that's not a valid option either.  
+
+However, you can use Pmnox's Display Commander ReShade addon to force Borderless Fullscreen mode like we were going to use Special K for.  Link: <https://github.com/pmnoxx/reshade-display-commander> </b>" %}
+
+
 {% include callout.html type="note" content="<b>In 2023 Hitman 3 was renamed to Hitman: World of Assassination, and all three recent Hitman games (Hitman 1 in 2016, Hitman 2 in 2018, and Hitman 3 in 2021) are now part of this single game.</b>" %}
 
 ## What you'll need:

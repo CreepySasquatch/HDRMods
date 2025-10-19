@@ -6,11 +6,6 @@ description: Introduction to using HDR with ReShade
 sidebar: false
 ---
 
-{% include callout.html type="note" content="This guide is more of a general overview. It won't give you all the
-answers but will at least get you pointed in the right direction. For a
-more thorough explanation of covered topics feel free to ask us in the
-[HDR Wasteland Discord server](https://discord.com/invite/yRYASQrg8r)." %}
-
 ## What is HDR?
 
 HDR stands for **H**igh **D**ynamic **R**ange. It allows for a wider
@@ -125,9 +120,18 @@ addon). RenoDX mods should be treated as native HDR, and as far as the
 graphics rendering pipeline is concerned RenoDX **IS** native HDR.
 RenoDX is the best way to experience HDR if you're not using any other
 shaders. As mentioned earlier, you'll need to use Soop's HDR converters
-if you want to use non-HDR shaders with RenoDX. List of all the
-currently available RenoDX mods can be found here:
+if you want to use non-HDR shaders with RenoDX. 
+
+List of all the currently available RenoDX mods can be found here:
 <https://github.com/clshortfuse/renodx/wiki/Mods>
+
+
+### Luma 
+
+Similar to RenoDX, but is generally more of an overhaul and often adds other features such as ultrawide support.  
+
+List of the current Luma mods can be found here: <https://github.com/Filoppi/Luma-Framework/wiki/Mods-List>
+
 
 ## Taking and Sharing HDR Screenshots
 

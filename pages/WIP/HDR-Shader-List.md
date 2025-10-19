@@ -1,5 +1,5 @@
 ---
-title: [ReShade Shader Directory]
+title: [HDR Shaders for ReShade]
 type:
 summary:
 description: List of available shaders by category
