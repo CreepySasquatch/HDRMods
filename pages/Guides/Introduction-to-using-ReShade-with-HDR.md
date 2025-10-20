@@ -203,7 +203,7 @@ washed-out image in the before shot." %}
   If you're interested in the non-HDR aspects of Special K such as the
   various texture mod packs then this is the place to ask.
 
-- **RenoDX Discord:** <https://discord.gg/F6AUTeWJHM>.  This is the new home of the popular RenoDX mods. 
+- **RenoDX Discord:** <https://discord.gg/renodx>.  This is the new home of the popular RenoDX mods. 
   
 - **ReShade Discord:** <https://discord.com/invite/PrwndfH>.  The official ReShade server.  
   If you have a question about ReShade that doesn't necessarily revolve around HDR then this is the place to go.  This is also the server to join if you're interested in making your own addons or shaders.
