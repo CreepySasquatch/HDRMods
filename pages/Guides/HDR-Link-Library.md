@@ -123,7 +123,7 @@ with Native HDR or the popular RenoDX / Luma mods. There's also a radial blur sh
  Includes a color temperature and filmgrain shader. 
 **PotatoFury's PotatoFX:** *<https://github.com/GimleLarpes/potatoFX>*.  Includes a few different colorgrading shaders. 
 
-## HDR Guides:
+## HDR Guides
 
 **Dio Brando's YouTube channel:** *<https://www.youtube.com/@diobrando7314>*. High quality how-to video guides. 
 
