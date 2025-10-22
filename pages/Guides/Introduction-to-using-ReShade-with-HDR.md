@@ -6,6 +6,8 @@ description: Introduction to using HDR with ReShade
 sidebar: false
 ---
 
+{% include callout.html type="warning" content="Page under construction.  Links to helpful resources is now hosted on it's own page, HDR Link Library: <https://www.hdrmods.com/HDR-Link-Library>"%}
+
 ## What is HDR?
 
 HDR stands for **H**igh **D**ynamic **R**ange. It allows for a wider

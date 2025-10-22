@@ -7,8 +7,6 @@ affiliations:
 sidebar: false
 ---
 
-{% include callout.html type="tip" content="Please excuse the mess.  This website is still a work in progress." %}
-
 - [**HDR Link Library**](HDR-Link-Library)
 
 - [**Introduction to using ReShade with HDR**](Introduction-to-using-ReShade-with-HDR)
