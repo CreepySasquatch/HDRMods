@@ -8,9 +8,9 @@ sidebar: false
 
 ## Available HDR Mods
 
-### RenoDX: *<https://github.com/clshortfuse/renodx/wiki/Mods>*
+**RenoDX:** *<https://github.com/clshortfuse/renodx/wiki/Mods>*
 
-### Luma: *<https://github.com/Filoppi/Luma-Framework/wiki/Mods-List>*
+**Luma:** *<https://github.com/Filoppi/Luma-Framework/wiki/Mods-List>*
 
 ## Discord Servers
 
