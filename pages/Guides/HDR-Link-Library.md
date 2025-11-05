@@ -23,7 +23,7 @@ Lilium's HDR ReShade shaders. This is a good place for asking about
 the technical details of HDR and for inquiring about what kind of HDR
 display you should get. Also has a dedicated section about using HDR with Linux.
 
-**RenoDX:** *<https://discord.gg/renodx>*.  This is the new home of the popular RenoDX mods. 
+**RenoDX:** *<https://discord.gg/jz6ujVpgFB>*.  This is the new home of the popular RenoDX mods. 
 
 **Special K:** *<https://discord.com/invite/specialk>*. You can
 find the latest Special K updates here and support is also provided.
