@@ -13,6 +13,8 @@ sidebar: false
 
 - [**HDR Shader Order**](HDR-Shader-Order)
 
+- [**ReShade Preset Guide**](ReShade-Preset-Guide)
+
 - [**FAQ**](FAQ)
 
 - [**Game Specific Guides**](Game-Specific-Guides-Index)
