@@ -15,6 +15,6 @@ sidebar: false
 
 - [**ReShade Preset Guide**](ReShade-Preset-Guide)
 
-- [**FAQ**](FAQ)
+<!-- - --[**FAQ**](FAQ) -->
 
 - [**Game Specific Guides**](Game-Specific-Guides-Index)
