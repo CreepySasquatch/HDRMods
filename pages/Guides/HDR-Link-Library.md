@@ -91,7 +91,7 @@ If you have a question about ReShade that doesn't necessarily revolve around HDR
 	<ul>
     <li><b>HDR Analysis Tool:</b> Something you should always download if playing a game in HDR; it can provide essential information to help troubleshoot HDR issues.</li>
 
-    <li><b>Inverse Tone Mapping:</b> Crucical when using one of the AutoHDR methods.</li>
+    <li><b>Inverse Tone Mapping:</b> Crucial when using one of the AutoHDR methods.</li>
 
     <li><b>SDR TRC Fix:</b> Used when playing a game in SDR with the display in HDR</li>
 
