@@ -9,11 +9,13 @@ sidebar: false
 
 - [**HDR Link Library**](HDR-Link-Library)
 
-- [**Introduction to using ReShade with HDR**](Introduction-to-using-ReShade-with-HDR)
+<!-- - [**Introduction to using ReShade with HDR**](Introduction-to-using-ReShade-with-HDR) -->
 
 - [**HDR Shader Order**](HDR-Shader-Order)
 
 - [**ReShade Preset Guide**](ReShade-Preset-Guide)
+
+<!-- - [**HDR Screenshot Guide**](HDR-Screenshot-Guide) -->
 
 <!-- - --[**FAQ**](FAQ) -->
 

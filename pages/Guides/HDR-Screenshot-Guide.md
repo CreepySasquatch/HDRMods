@@ -9,7 +9,7 @@ sidebar: false
 ## HDR Screenshot Method:
 
 - **ReShade:** as of version 6.4, ReShade is capable of taking HDR
-  screenshots in the HDR PNG format, which are compatible with Discord.
+  screenshots in the HDR PNG format, which are compatible with Discord.  Version 6.7 introduced the lossless JXL HDR screenshot format but this isn't compatible with Discord.  
 
 {% include callout.html type="important" content="ReShade's **save before and after images** screenshot feature will not work
 when using one of the inverse tonemapping shaders because it will
