@@ -1,5 +1,5 @@
 ---
-title: [ReShade Install Template]
+title: [ReShade Manual Install Template]
 type: 
 summary: How to create a template installation that can copied into any game.
 description: How to create a template installation that can be copied into any game.
