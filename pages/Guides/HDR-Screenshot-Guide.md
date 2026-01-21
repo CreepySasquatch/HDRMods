@@ -6,10 +6,10 @@ description: Detailed guide on how to take HDR screenshots
 sidebar: false
 ---
 
-## HDR Screenshot Method:
+## HDR Screenshot Methods
 
 - **ReShade:** as of version 6.4, ReShade is capable of taking HDR
-  screenshots in the HDR PNG format, which are compatible with Discord.  Version 6.7 introduced the lossless JXL HDR screenshot format but this isn't compatible with Discord.  
+  screenshots in the HDR PNG format, and as of version 6.7 is able to take lossless JXL screenshots.  ReShade is the preferred method of taking HDR screenshots in-game when using RenoDX and Luma mods.
 
 {% include callout.html type="important" content="ReShade's **save before and after images** screenshot feature will not work
 when using one of the inverse tonemapping shaders because it will
@@ -47,13 +47,28 @@ washed-out image in the before shot." %}
 	</ol>
 	</details>
 
-- **Windows Game Bar** can take HDR screenshots in the JXR file format and can also record HDR video.
+- **Windows Game Bar** can take HDR screenshots in the JXR file format and can also record HDR video. Only recommended when not using ReShade or Special K.
 
 - **Nvidia Overlay** can take HDR screenshots in the JXR file format and can
-  also record HDR video.
+  also record HDR video.  Only recommended when using RTXHDR.
+
+- **Steam** Can take HDR AVIFs. Unsure of quality or compatibility with ReShade etc.  DO MORE TESTING
 
 - **OBS** can capture HDR screenshots in the JXR file format and record HDR
-  video.
+  video.  Recommended method for capturing accurate HDR video.
 
   - OBS HDR setup guide:
     <https://www.reddit.com/r/IntelligentGaming2020/comments/x4s8h4/how_to_capture_record_hdr_high_dynamic_range/>
+
+- **Windows Snipping Tool** CANNOT take HDR screenshots!!!  If you go into the Snipping Tool settings there is an option to enable "HDR screenshot color corrector."  This allows the snipping tool to take SDR shots that are properly tonemapped from HDR.  Otherwise the colors will look washed out.  SKIV is the closest thing to an HDR version of the snipping tool.
+
+## Discord
+
+**Discord supports the following HDR screenshot formats:**
+
+1) **HDR PNG (just use this):** This is the recommended format for Discord.  ReShade and Special K can take these without any additional conversion needed.  However, due to the large file size these often are, it mainly benefits those with Discord nitro subscription OR you'll only be able to upload them in larger servers that have unlocked larger file size limits.
+
+2) **HDR AVIF (maybe):** So AVIF is kind of broken on Discord but also kind of works.  Only 8-bit AVIFs load correctly and even then if you're over a certain file size they might not still show the image preview properly.  10-bit / 12-bit AVIFs previews are broken no matter what.  The only solution is to fully open the images in a Chromium browser / zoom in on the screenshot to make them fully load. The upside to AVIF is that you get a smaller file size.  So if you don't have Nitro AND the server also doesn't support larger file sizes, then this may be a viable option.  You can use SKIV or PictureFlect Photo Viewer to convert images to AVIF.
+
+3) **UltraHDR JPEG (it's complicated):** Also known as JPEG with Gain Map.  The plus side, it works with Discord Desktop without issue and you get a smaller file size.  Downside is that it's 8-bit only and it's a lossy format so it's not going to look exactly like the original image but it'll be close enough for the average Discord viewer.  The other real big downside is that it's broken on Android phones, but it'll look good on iOS devices at least.  You can use PictureFlect Photo Viewer (free) to convert images to UltraHDR JPEG.
+
