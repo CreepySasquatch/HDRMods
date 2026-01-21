@@ -66,11 +66,26 @@ washed-out image in the before shot." %}
 
 ## Discord
 
+**How to view HDR screenshots in Discord (even if you don't have an HDR display):**
+
+**1)** If on the Desktop version of Discord, make sure hardware acceleration is enabled. 
+
+  * This setting can be found by going to User Settings > Advanced > Hardware Acceleration 
+ <br>
+ <br>
+ <a href="https://slow.pics/Rw2jqnX8/"><img src="https://i.slow.pics/Rw2jqnX8.jpg" style="width:50%;height:50%;"/></a>
+ <br>
+ <br>
+
+**2)** Alternatively, you can fully open the image in a Chromium based web browser. FireFox does not currently support HDR images on Windows (however it is planned on being added in the future).
+
+**3)** For mobile users you'll need to fully open the image to be able to see it properly because HDR image previews don't currently work on the mobile app.
+
 **Discord supports the following HDR screenshot formats:**
 
-1) **HDR PNG (just use this):** This is the recommended format for Discord.  ReShade and Special K can take these without any additional conversion needed.  However, due to the large file size these often are, it mainly benefits those with Discord nitro subscription OR you'll only be able to upload them in larger servers that have unlocked larger file size limits.
+**1) HDR PNG (just use this):** This is the recommended format for Discord.  ReShade and Special K can take these without any additional conversion needed.  However, due to the large file size these often are, it mainly benefits those with Discord nitro subscription OR you'll only be able to upload them in larger servers that have unlocked larger file size limits.
 
-2) **HDR AVIF (maybe):** So AVIF is kind of broken on Discord but also kind of works.  Only 8-bit AVIFs load correctly and even then if you're over a certain file size they might not still show the image preview properly.  10-bit / 12-bit AVIFs previews are broken no matter what.  The only solution is to fully open the images in a Chromium browser / zoom in on the screenshot to make them fully load. The upside to AVIF is that you get a smaller file size.  So if you don't have Nitro AND the server also doesn't support larger file sizes, then this may be a viable option.  You can use SKIV or PictureFlect Photo Viewer to convert images to AVIF.
+**2) HDR AVIF (maybe):** So AVIF is kind of broken on Discord but also kind of works.  Only 8-bit AVIFs load correctly and even then if you're over a certain file size they might not still show the image preview properly.  10-bit / 12-bit AVIFs previews are broken no matter what.  The only solution is to fully open the images in a Chromium browser / zoom in on the screenshot to make them fully load. The upside to AVIF is that you get a smaller file size.  So if you don't have Nitro AND the server also doesn't support larger file sizes, then this may be a viable option.  You can use SKIV or PictureFlect Photo Viewer to convert images to AVIF.
 
-3) **UltraHDR JPEG (it's complicated):** Also known as JPEG with Gain Map.  The plus side, it works with Discord Desktop without issue and you get a smaller file size.  Downside is that it's 8-bit only and it's a lossy format so it's not going to look exactly like the original image but it'll be close enough for the average Discord viewer.  The other real big downside is that it's broken on Android phones, but it'll look good on iOS devices at least.  You can use PictureFlect Photo Viewer (free) to convert images to UltraHDR JPEG.
+**3) UltraHDR JPEG (it's complicated):** Also known as JPEG with Gain Map.  The plus side, it works with Discord Desktop without issue and you get a smaller file size.  Downside is that it's 8-bit only and it's a lossy format so it's not going to look exactly like the original image but it'll be close enough for the average Discord viewer.  The other real big downside is that it's broken on Android phones, but it'll look good on iOS devices at least.  You can use PictureFlect Photo Viewer (free) to convert images to UltraHDR JPEG.
 
