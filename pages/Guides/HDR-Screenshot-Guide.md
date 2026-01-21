@@ -6,6 +6,8 @@ description: Detailed guide on how to take HDR screenshots
 sidebar: false
 ---
 
+{% include callout.html type="note" content="This guide is still a WIP." %}
+
 ## HDR Screenshot Methods
 
 - **ReShade:** as of version 6.4, ReShade is capable of taking HDR
