@@ -33,18 +33,21 @@ However, you can also use Pmnox's Display Commander ReShade addon to force Borde
 
 1. **Download everything mentioned in the links above (RenoDX mod, ReShade, and Special K).**
 1. **Install ReShade version 6.5.1 (or newer) with Addon support:**
-	1. <details><summary>Pick DirectX 10/11/12 when prompted for the Rendering API version: </summary> 
+
+	1) Pick DirectX 10/11/12 when prompted for the Rendering API version: 
+	- <details><summary>Click for image</summary> 
 	<img src="https://github.com/CreepySasquatch/HDRMods/blob/main/images/Hitman3/ReShade%20DirectX.jpg?raw=true" title="Hitman3 DirectX" style="width:360px;height:466px;"/>
 	
-	1. In the shader selection screen make sure to select Lilium's HDR Analysis tool.  This will come in handy when configuring the in-game HDR settings.
-		- <details><summary>This is listed under <b>ReShade HDR shaders by Lilium</b> and the shader is called <b>lilium_hdrand_sdr_analysis.fx</b>. You can click <b>Sort by:</b> and change the option to <b>A to Z</b> to make finding Lilium's shaders easier: </summary>		
+	2) In the shader selection screen make sure to select Lilium's HDR Analysis tool.  This will come in handy when configuring the in-game HDR settings. 
+	- <details><summary>This is listed under "ReShade HDR shaders by Lilium" and the shader is called "lilium_hdr_and_sdr_analysis.fx". You can click "Sort by:" and change the option to "A to Z" to make finding Lilium's shaders easier: </summary>		
 	<img src="https://github.com/CreepySasquatch/HDRMods/blob/main/images/Guide-Generic-Images/ReShade-Lilium-Shaders.jpg?raw=true" title="Lilium Shaders" style="width:359px;height:470px;"/>
 	
-	1. When you get to the select addons screen DO NOT PICK ANY ADDONS...*unless you know what the addons are for and are actually going to use them*.  Unneeded addons will hurt your game performance and selecting them all is likely to make your game crash or not boot at all.
-		- <details><summary>This is listed under <b>ReShade HDR shaders by Lilium</b> and the shader is called <b>lilium_hdrand_sdr_analysis.fx</b>. You can click <b>Sort by:</b> and change the option to <b>A to Z</b> to make finding Lilium's shaders easier. </summary>		
+	3) When you get to the select addons screen DO NOT PICK ANY ADDONS...*unless you know what the addons are for and are actually going to use them*.  
+	- <details><summary>Unneeded addons will hurt your game performance and selecting them all is likely to make your game crash or not boot at all: </summary>		
 	<img src="https://github.com/CreepySasquatch/HDRMods/blob/main/images/Guide-Generic-Images/ReShade%20Skip%20Addons.jpg?raw=true" title="ReShade Addons" style="width:363px;height:468px;"/>
+
 1. **Extract the *renodx-hitmanwoa.addon64* mod file into your *Hitman3/Retail* folder.** This folder will also have the Hitman3.exe file in it, but NOT the Launcher.exe file.
-	- <details><summary><b>Pro Tip:</b> If you saw <i>renodx-hitmanwoa</i> instead of <i>renodx-hitmanwoa.addon64</i> then make sure you have <b>File name extensions</b> turned on in Windows Explorer: </summary><img src="https://github.com/CreepySasquatch/HDRMods/blob/main/images/Guide-Generic-Images/View-File-Name-Extensions.jpg?raw=true" title="View File Extensions" style="width:472px;height:443px;"/>
+	- <details><summary>Pro Tip: If you saw "renodx-hitmanwoa" instead of "renodx-hitmanwoa.addon64" then make sure you have "File name extensions" turned on in Windows Explorer: </summary><img src="https://github.com/CreepySasquatch/HDRMods/blob/main/images/Guide-Generic-Images/View-File-Name-Extensions.jpg?raw=true" title="View File Extensions" style="width:472px;height:443px;"/>
 1. **Install Special K:**
 	- Install location doesn't matter. 
 	- Without this installed the RenoDX mod won't work.
@@ -72,7 +75,7 @@ However, you can also use Pmnox's Display Commander ReShade addon to force Borde
 1. **Go back to the Graphics options, and select Gamma Correction.**
 1. **Open up the ReShade menu, and enable Lilium's HDR Analysis:**
 	- If HDR isn't enabled then this shader will show as Lilium's SDR Analysis.
-	- <details><summary>If the ReShade UI is too small, go into the ReShade settings tab, and then look for the <b>Global font</b> setting: </summary><img src="https://github.com/CreepySasquatch/HDRMods/blob/main/images/Guide-Generic-Images/ReShade-Settings.jpg?raw=true" title="ReShade Font Settings" style="width:669px;height:964px;"/>
+	- <details><summary>If the ReShade UI is too small, go into the ReShade settings tab, and then look for the "Global font" setting: </summary><img src="https://github.com/CreepySasquatch/HDRMods/blob/main/images/Guide-Generic-Images/ReShade-Settings.jpg?raw=true" title="ReShade Font Settings" style="width:669px;height:964px;"/>
 1. **With Lilium's HDR Analysis enabled, adjust the Gamma Correction. Whatever value is listed as the Max nits while inside the options menu is your WHITE POINT.**
 	- Typical white point value is around 200-300 nits.  If you're not sure just leave the Gamma Correction at 1.00 which is exactly 200 nits.
 	- The minimum Gamma Correction value of 0.80 = 100 nits white point. 
