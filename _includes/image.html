@@ -1,0 +1,6 @@
+<figure class="image-figure" {% if include.max-width %}style="max-width: {{ include.max-width }};"{% endif %}>
+  <img src="{{ include.file | relative_url }}" alt="{{ include.alt | default: '' }}" loading="lazy">
+  {% if include.caption %}
+  <figcaption>{{ include.caption }}</figcaption>
+  {% endif %}
+</figure>

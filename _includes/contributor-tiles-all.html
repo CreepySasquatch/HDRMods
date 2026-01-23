@@ -1,0 +1,25 @@
+<div class="contributor-tiles">
+  {% if site.data.CONTRIBUTORS %}
+    {% for contributor in site.data.CONTRIBUTORS %}
+      <div class="contributor-tile">
+        <div class="contributor-name">{{ contributor[0] }}</div>
+        {% if contributor[1].role %}
+        <div class="contributor-role">{{ contributor[1].role }}</div>
+        {% endif %}
+        {% if contributor[1].affiliation %}
+        <div class="contributor-affiliation">{{ contributor[1].affiliation }}</div>
+        {% endif %}
+        <div class="contributor-links">
+          {% if contributor[1].git %}
+          <a href="https://github.com/{{ contributor[1].git }}" target="_blank" rel="noopener">GitHub</a>
+          {% endif %}
+          {% if contributor[1].orcid %}
+          <a href="https://orcid.org/{{ contributor[1].orcid }}" target="_blank" rel="noopener">ORCID</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p class="no-contributors">No contributors listed yet.</p>
+  {% endif %}
+</div>

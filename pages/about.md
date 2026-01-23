@@ -8,6 +8,10 @@ sidebar: false
 toc: true
 ---
 
+## Image Comparison Slider Demo
+
+{% include comparison-slider.html before="/images/test-images/1.png" after="/images/test-images/2.png" before_label="Before" after_label="After" %}
+
 ## Website Purpose
 
 The heart and soul of the site, and the guides contained within, is to help blend the worlds of the **HDR Purist:** *who mainly uses ReShade as a tool to fix a game's HDR or to add HDR if the game doesn't natively support it*, and the **ReShader:** *who uses ReShade to fix, enhance, or otherwise
@@ -26,11 +30,3 @@ The website and Discord server were created primarily by **Creepy (CreepySasquat
 
 **Soop (smolbbsoop)** helped with the creation of the HDR Wasteland Discord server and is the creator of the HDR converter that is essential to getting non-HDR shaders working with native HDR and mods like RenoDX.
 - Soop's shaders can be found within the ReShade installer or at their Github page: <https://github.com/smolbbsoop/smolbbsoopshaders>
-
-
-## Acknowledgements
-
-
-This guide makes use of the [ELIXIR toolkit theme](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme)
-
-{% include image.html file="elixir-toolkit-theme_logo.svg" alt="Elixir Toolkit Theme logo" max-width="15em" %}

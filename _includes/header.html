@@ -1,0 +1,29 @@
+<header class="site-header">
+  <div class="header-container">
+    <a href="{{ '/' | relative_url }}" class="site-logo">
+      {% if site.brand_logo %}
+      <img src="{{ site.brand_logo | relative_url }}" alt="{{ site.title }}">
+      {% endif %}
+      <span class="site-title">{{ site.title }}</span>
+    </a>
+    
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+        <span class="hamburger"></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      
+      <ul class="nav-menu" id="nav-menu">
+        {% for item in site.data.topnav.subitems %}
+          <li class="nav-item {% if page.url == item.url %}active{% endif %}">
+            {% if item.external_url %}
+            <a href="{{ item.external_url }}" target="_blank" rel="noopener">{{ item.title }}</a>
+            {% else %}
+            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

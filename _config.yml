@@ -1,36 +1,23 @@
 title: Creepy's HDR Guides
-# This appears in the html browser tab for the site title (seen mostly by search engines, not users)
-
-#topnav_title: Website title
-# Optional: this appears on the top navigation bar next to the main_logo.svg icon
-
 description: "How-to guide focused on using ReShade with HDR"
-# Metadata description of the website
 
-remote_theme: ELIXIR-Belgium/elixir-toolkit-theme@2.5.0
+# Theme settings (custom local theme)
+theme_color: "#0a0f1a"
+accent_color: "#4a9eff"
+brand_logo: images/main_logo_cropped.png
 
-theme_variables:
-  theme_color: 050c17
-  topnav:
-    theme: dark
-    brand_logo: images/main_logo_cropped.png
-  github_buttons:
-    edit_me: false
-    open_issue: false
-    history: false
 exclude:
   - README.md
   - vendor
+  - Gemfile.lock
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "pages"
     values:
       permalink: /:basename
       layout: "page"
-      sidebar: main
 
 plugins:
   - jemoji

@@ -1,0 +1,16 @@
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      {% if site.data.footer.links %}
+        <nav class="footer-nav" aria-label="Footer navigation">
+          {% for link in site.data.footer.links %}
+            <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
+          {% endfor %}
+        </nav>
+      {% endif %}
+      <p class="footer-copyright">
+        &copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>

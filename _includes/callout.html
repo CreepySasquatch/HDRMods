@@ -1,0 +1,12 @@
+{% assign icon = "ℹ️" %}
+{% if include.type == "tip" %}{% assign icon = "💡" %}
+{% elsif include.type == "warning" %}{% assign icon = "⚠️" %}
+{% elsif include.type == "important" %}{% assign icon = "❗" %}
+{% endif %}
+
+<div class="callout callout-{{ include.type | default: 'note' }}" role="alert">
+  <div class="callout-icon">{{ icon }}</div>
+  <div class="callout-content">
+    {{ include.content | markdownify }}
+  </div>
+</div>
