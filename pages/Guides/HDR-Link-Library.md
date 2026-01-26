@@ -59,7 +59,7 @@ If you have a question about ReShade that doesn't necessarily revolve around HDR
     recommended for first-time users of Special K because of the
     additional steps it takes to get it configured.</li>
 
-      <li>Special K gets updated often so I recommend changing update frequency to "Discord: (updates regularly)"
+    <li>Special K gets updated often so I recommend changing update frequency to "Discord: (updates regularly)"
     updates. You can also grab updates from their Discord's
     nightly-builds channel.</li>
 

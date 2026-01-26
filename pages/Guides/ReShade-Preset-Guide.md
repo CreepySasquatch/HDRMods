@@ -18,6 +18,6 @@ sidebar: false
 1. **Sharpening / Local Contrast shaders, AA shaders, and DoF shaders would all go here.** Most are obviously named as such but would include shaders like Clarity and IGCS.
 1. **Image correcting shaders such as Deband or Denoise, as well as any lens / dirt shaders like Film Grain or Lens Flare, should be placed toward the bottom.** This would also apply to shaders that apply borders or cropping guides.
 
-{% include callout.html type="warning" content="Most shaders to not work with HDR.  Quite a few non-HDR shaders will work with HDR10 without too much issue but if you try using them with scRGB you'll definitely run into issues.  A work around is using Soop's HDR Converter shaders.  More information can be found here: <https://www.hdrmods.com/HDR-Shader-Order>" %}
+{% include callout.html type="warning" content="Most shaders do not work with HDR.  Quite a few non-HDR shaders will work with HDR10 without too much issue but if you try using them with scRGB you'll definitely run into issues.  A work around is using Soop's HDR Converter shaders.  More information can be found here: <https://www.hdrmods.com/HDR-Shader-Order>" %}
 
 <a href="https://imgflip.com/i/a59obk"><img src="https://i.imgflip.com/a59obk.jpg" title="made at imgflip.com"/></a>

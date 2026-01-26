@@ -7,3 +7,5 @@ sidebar: false
 ---
 
 [**Hitman 3 / World of Assassination**](Hitman3)
+
+[**Cyberpunk 2077**](Cyberpunk)
