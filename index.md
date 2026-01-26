@@ -17,4 +17,6 @@ sidebar: false
 
 [**ReShade Manual Install Template**](ReShade-Install-Template)
 
-[**GAME SPECIFIC GUIDES**](Game-Specific-Guides-Index)
+[**<<GAME SPECIFIC GUIDES>>**](Game-Specific-Guides-Index)
+
+[**<<RESHADE SPECIFIC GUIDES>>**](ReShade-Guides-Index)

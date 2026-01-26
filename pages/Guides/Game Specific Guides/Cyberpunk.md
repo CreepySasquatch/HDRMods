@@ -26,7 +26,11 @@ It would be impossible to cover every combination of LUT and visual mods that ar
     
 - Note about mod managers: I do not recommend installing ReShade as a mod within Vortex or MO2 (Mod Organizer 2) unless you know what you're doing. Same applies to using Special K with ReShade.  This guide will cover a normal ReShade install.  
 
+- For more detailed instructions on how to install ReShade with RenoDX, please refer to this guide: [**How to Install ReShade for RenoDX**](ReShade-Install-RenoDX)
+
 **3)** Grab the WIP (Work in progress) version of RenoDX from the RenoDX Discord server. Look for the pinned comment in the Cyberpunk channel.
+
+<a href="https://slow.pics/A4UyiLo0/"><img src="https://i.slow.pics/A4UyiLo0.jpg" style="width:75%;height:75%;"/></a>
 
 <details>
 <summary>Click for more RenoDX Info</summary>
@@ -45,9 +49,9 @@ It would be impossible to cover every combination of LUT and visual mods that ar
 
 **4)** Place the RenoDX addon in the Cyberpunk 2077/bin/x64 folder next to the ReShade install.
 
-**5)** Start the game.  **Make sure Cyberpunk's HDR is turned ON (set to HDR10 PQ**
+**5)** Start the game. Open the Settings menu.
 
-**6)** Within Cyberpunk's HDR settings, set Tone-Mapping Midpoint to 1 and Paper White to 200.
+**6)** Go to Video > HDR settings. **Make sure Cyberpunk's HDR is turned ON (set to HDR10 PQ)**, set Tone-Mapping Midpoint to 1 and Paper White to 200.
 
 - This is also good advice with the native HDR as well.
 
@@ -55,25 +59,60 @@ It would be impossible to cover every combination of LUT and visual mods that ar
 
 - HDR10 PQ saturation leave at 0. You can use RenoDX's sliders to change saturation among other things.
 
-**7)** Open the ReShade interface, default button is the Home key.  
+<details><summary>HDR settings</summary>
+<a href="https://slow.pics/zFyyInhD/"><img src="https://i.slow.pics/zFyyInhD.png" style="width:100%;height:100%;"/></a>
+</details>
+
+**7)** Within Cyberpunk's Graphics settings, make sure Color Precision is set to High or it will result in a washed out / gray image.
+
+<details><summary>Color precision setting</summary>
+<a href="https://slow.pics/Uinn4FKy/"><img src="https://i.slow.pics/Uinn4FKy.png" style="width:100%;height:100%;"/></a>
+</details>
+
+**8)** Open the ReShade interface, default button is the Home key.  
 
 - If you don't have a Home key please refer to this guide that goes over how to change it to a different key: <https://www.youtube.com/watch?v=xoCdpOIRKus>
 
-**8)** Click on the RenoDX tab along the top of the ReShade GUI.  Set the Peak Brightness to match your display's capabilities.  
+**9)** Click on the RenoDX tab along the top of the ReShade GUI.  Set the Peak Brightness to match your display's capabilities.  
 
 - If you don't know what that value is, refer to the spec sheet for your display or look it up on <https://www.rtings.com/> which has reviews for a wide range of displays that includes detailed spec lists.
 
 - Technically all the other RenoDX settings are user preference but I'll go over a few more important ones.
 
-**9)** Game Brightness is the paper white value.  Set this between 150-300 nits (I personally have it set to 200 nits) but this is ultimately user preference and may need to change depending on which LUT you're using.
+**10)** Game Brightness is the paper white value.  Set this between 150-300 nits (I personally have it set to 200 nits) but this is ultimately user preference and may need to change depending on which LUT you're using.
 
-**10)** Set SDR EOTF Emulation to UI/Menu only.  If you like how the older version of RenoDX looked, slide this to the right so it applies to everything.
+**11)** Set SDR EOTF Emulation to UI/Menu only.  If you like how the older version of RenoDX looked, slide this to the right so it applies to everything.
 
-**11)** Filmgrain I personally have set to around 20.  This is the same filmgrain from ShortFuse's ReShade shader repository: <https://github.com/clshortfuse/reshade-shaders/tree/main/Shaders>
+**12)** Filmgrain I personally have set to around 20.  This is the same filmgrain from ShortFuse's ReShade shader repository: <https://github.com/clshortfuse/reshade-shaders/tree/main/Shaders>
 
 - If using other ReShade shaders such as Lilium's RCAS (which is commonly recommended), then I would set the filmgrain within RenoDX to 0 and then use the ShortFuse's filmgrain shader and place it at the very end (you never want to sharpen filmgrain, and RCAS is a sharpening shader).
 
-**12)** Adjust the rest of the sliders however you'd like!
+**13)** Double check to make sure Debug Graph is turned off (found at the very bottom of RenoDX under Debug).  Otherwise you'll see a colored square on the upper right corner behind the minimap.
+
+<details><summary>Debug Graph On</summary>
+<a href="https://slow.pics/xY8QcYui/"><img src="https://i.slow.pics/xY8QcYui.png" style="width:100%;height:100%;"/></a>
+</details>
+
+<details><summary>Debug Graph Off</summary>
+<a href="https://slow.pics/R1nHEgpd/"><img src="https://i.slow.pics/R1nHEgpd.png" style="width:100%;height:100%;"/></a>
+</details>
+
+**14)** Adjust the rest of the sliders however you'd like!
+
+## Troubleshooting
+
+**Washed out / gray image**
+- Make sure RTXHDR is turned off globally (or at least for Cyberpunk 2077)
+- Verify HDR is turn on in Windows and in Cyberpunk 2077.
+- Make sure Color Precision is set to High within the graphics settings. RenoDX will not work with this set to medium.
+- Make sure you're using the latest add-on version of ReShade.
+
+**Colored Square Behind Minimap / Upper Right Corner**
+- This is the debug graph from the WIP RenoDX. Look at the very bottom of the RenoDX settings, under Debug turn off Debug Graph
+
+<details><summary>Debug Graph Off</summary>
+<a href="https://slow.pics/R1nHEgpd/"><img src="https://i.slow.pics/R1nHEgpd.png" style="width:100%;height:100%;"/></a>
+</details>
 
 
 ## Recommended LUTs
