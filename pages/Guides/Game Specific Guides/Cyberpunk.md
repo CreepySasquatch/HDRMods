@@ -177,24 +177,40 @@ It would be impossible to cover every combination of LUT and visual mods that ar
 - Red4Ext - `\red4ext\logs` and `\red4ext\plugins` for specific mod logs
 - Ultra Plus - `\bin\x64\plugins\cyber_engine_tweaks\mods\UltraPlus`
 
+{% include callout.html type="tip" content="Highly recommend that you use RenoDX alongside the Ultra Plus mod!  Provides some performance tweaks and also adds new visual modes for both lower end and higher end hardware configurations. 
+
+Link to Ultra Plus mod page: <https://www.nexusmods.com/cyberpunk2077/mods/10490>" %}
+
+
+<!--
+{% include callout.html type="note" content=" <b>Disclaimer:</b> Consider this the end of the actual proper guide.  Everything after this point was included for fun and as a way to endorse some of my favorite mods." %}
+
+-->
+
+<!--
 
 ## Recommended LUTs
 All LUTs mentioned can be found in the main LUT switcher 2 mod: <https://www.nexusmods.com/cyberpunk2077/mods/16310>
 
 - **Preem LUT 3:** my personal favorite
 
+
 <details><summary>RenoDX with Preem LUT 3 settings that I personally use</summary>
 <a href="https://slow.pics/8aHFqCZ4/"><img src="https://i.slow.pics/8aHFqCZ4.png" style="width:75%;height:75%;"/></a>
 </details>
 
-- **Nova LUT 3:** The other predominant LUT that many people use with HDR
+- **Nova LUT 3:** The other predominant LUT that many people use with HDR. 
 
 <details><summary>RenoDX with Nova LUT 3 settings provided by Roybreaker</summary>
 <a href="https://slow.pics/QDnxkz0d/"><img src="https://i.slow.pics/QDnxkz0d.png" style="width:75%;height:75%;"/></a>
 </details>
 
+-->
+
+<!--
+
 ## Recommended Mods
-RenoDX settings listed had these mods in mind but any listed are completely optional. Make sure to check the mod descriptions for other required mods needed to make them work.
+Make sure to check the mod descriptions for other required mods needed to make them work.
 
 - **Ultra Plus:**  Fixes performance issues and improves the overall look of the game by adding new ray tracing and path tracing modes in addition to other visual improvements.  Nexus Mods link: <https://www.nexusmods.com/cyberpunk2077/mods/10490>
 
@@ -207,4 +223,14 @@ RenoDX settings listed had these mods in mind but any listed are completely opti
 - **For more recommended mods check out the 3077 Collection (now a full-fledged Wabbajack list):** <https://www.nexusmods.com/games/cyberpunk2077/collections/lv4wpp>.  Even if you don't want to download the entire modlist, the other visual mods are still worth checking out.
 
 
+
+{% include callout.html type="tip" content=" <b>What about LUT Mods?</b>
+
+I originally included some recommended LUTs and associated RenoDX configurations in this guide; however, I ended up removing that section because everyone is going to have their own opinions about which LUTs and RenoDX settings look good to them.  Also, to be completely honest I don't want to get pinged over a preset that doesn't work with someone's specific setup.  That really isn't the focus of this guide anyways.
+
+Thus my own recommendation is to install the LUT Switcher 2 mod and try the various LUTs out for yourself.
+
+LUT Switcher 2 link: <https://www.nexusmods.com/cyberpunk2077/mods/16310>" %}
+
+-->
 

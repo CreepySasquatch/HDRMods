@@ -124,6 +124,7 @@ with Native HDR or the popular RenoDX / Luma mods. There's also a radial blur sh
 
 **ShortFuse's Shaders:** *<https://github.com/clshortfuse/reshade-shaders/tree/main/Shaders>*. 
  Includes a color temperature and filmgrain shader. 
+ 
 **PotatoFury's PotatoFX:** *<https://github.com/GimleLarpes/potatoFX>*.  Includes a few different colorgrading shaders. 
 
 ## HDR Guides
