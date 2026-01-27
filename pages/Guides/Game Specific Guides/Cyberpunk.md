@@ -5,6 +5,7 @@ summary:
 description: How to Setup RenoDX in Cyberpunk 2077
 sidebar: false
 ---
+{% include callout.html type="tip" content="Make sure your display actually supports HDR before installing RenoDX. Your monitor should be rated for HDR400 or higher, meaning it should have at least 400 nits peak brightness. If you're unsure whether your display actually supports HDR, a good resource is <https://www.rtings.com> which has reviews for a wide range of displays and will include a list of detailed technical specifications for anything they cover." %}
 
 {% include callout.html type="important" content="<b>Grab the WIP version of the RenoDX mod from the RenoDX server. Look for the pinned post in the Cyberpunk channel.  The GitHub and Nexus versions are both outdated; disregard the snapshot date on the GitHub page, it's not accurate.</b>  
 
