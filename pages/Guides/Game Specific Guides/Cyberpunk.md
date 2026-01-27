@@ -2,7 +2,7 @@
 title: [Cyberpunk 2077]
 type: 
 summary:
-description: Cyberpunk 2077 HDR Guide
+description: How to Setup RenoDX in Cyberpunk 2077
 sidebar: false
 ---
 
