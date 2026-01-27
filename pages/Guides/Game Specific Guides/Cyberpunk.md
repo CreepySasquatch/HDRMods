@@ -18,11 +18,31 @@ Direct link to the RenoDX Cyberpunk channel: <https://discord.com/channels/14080
 
 It would be impossible to cover every combination of LUT and visual mods that are available for the game.  Manual adjustment of the various RenoDX sliders will most likely to be necessary to achieve the best possible result." %}
 
-## How to Fix Cyberpunk's HDR
+## What is Wrong with Cyberpunk's HDR?
+<details><summary><b>This is the answer provided directly from ShortFuse, the creator of RenoDX:</b></summary>
+<ol>
+<ul>
+    <li>SDR uses LUTs that clip, they don't properly roll off.  But they're all baked with ACES. So they're graded, with ACES per channel coloring, and their color tuning.</li>
+
+    <li>For HDR, they took the SDR LUT, and as they were stretched them to 1900 nits. If the SDR LUT went to 100 nits, then it stretched them to 1900. If the SDR LUTs went to 325 nits (clipping over 100 nits), they were also stretched to 1900 nits. So they have inconsistent stretching.</li>
+
+    <li> Then, after taking their ACES-baked SDR LUTs stretched to 1900 nits, they apply their custom ACES HDR to apply a second round of ACES to try to tonemap it down to user selected peak. Except they didn't.</li>
+    
+    <li>First of all, a LUT that only goes to 1900 nits would never hit peak, because that's not how you're supposed to use ACES. It's supposed to be the render. They're supposed to do Render => ACES-HDR. They did Render => ACESSDR-LUT-Stretched-to-1900-nits => CustomStretchedACESHDR.</li>
+    
+    <li>And they still overshot user peak by about 10%. And their custom ACES would scale and stretch based on what you put. The more peak nits your put, the more it did per channel stretching, meaning overcoloring things.</li>
+
+    <li>It's basically nonsense and had no metric of sanity. The original RenoDX fix I did was to at least fix the stretching from their custom ACES HDR.  I redid the CP2077 mod, and the one that's in the Discord targets the SDR look, fully knowing their HDR LUT is just cooked, ITM ACES-SDR.</li>
+</ul>
+</ol>
+</details>
+
+
+## How to Fix Cyberpunk's HDR using RenoDX
 
 **1)** Download the latest addon version of ReShade from <https://reshade.me/#download>
 
-**2)** Install ReShade to the Cyberpunk 2077/bin/x64 folder (which the installer should default to once you pick Cyberpunk 2077)
+**2)** Install ReShade to the `\bin\x64 folder` (which the installer should default to once you pick Cyberpunk 2077)
     
 - Note about mod managers: I do not recommend installing ReShade as a mod within Vortex or MO2 (Mod Organizer 2) unless you know what you're doing. Same applies to using Special K with ReShade.  This guide will cover a normal ReShade install.  
 
@@ -47,7 +67,7 @@ It would be impossible to cover every combination of LUT and visual mods that ar
 </ol>
 </details>
 
-**4)** Place the RenoDX addon in the Cyberpunk 2077/bin/x64 folder next to the ReShade install.
+**4)** Place the RenoDX addon in the `\bin\x64` folder next to the ReShade install.
 
 **5)** Start the game. Open the Settings menu.
 
@@ -113,6 +133,48 @@ It would be impossible to cover every combination of LUT and visual mods that ar
 <details><summary>Debug Graph Off</summary>
 <a href="https://slow.pics/R1nHEgpd/"><img src="https://i.slow.pics/R1nHEgpd.png" style="width:100%;height:100%;"/></a>
 </details>
+
+## How to Provide More Info for Troubleshooting
+
+**1) Make sure view file name extensions is enabled within Windows File Viewer.**  This will allow you to see the commonly used file types such as .ini, .txt, .log, and .exe.  
+
+  <details>
+  <summary>How to view file name extensions in Windows 11:</summary>
+	<ol>
+	<ul>
+    <li>1) Open File Explorer.</li>
+
+      <li>2) Along the top bar of File Explorer, left click View.</li>
+
+    <li>3) Hover over Show, then make sure File name extensions is checked.</li>
+	</ul>
+	</ol>
+	</details> 
+
+**2) Take screenshots of the issue with ReShade.** This will take HDR PNGs that can be uploaded to Discord.
+- Please do not take pictures of your monitor/TV with your phone unless we're troubleshooting an issue with the display itself. Phones are horrible at taking pictures of what is onscreen.
+
+**3) Common troubleshooting questions:**
+- What version of ReShade are you using?
+<details><summary>Can be found at the very top of the ReShade About tab:</summary>
+<a href="https://slow.pics/3Zj4JfF9/"><img src="https://i.slow.pics/3Zj4JfF9.jpg" style="width:100%;height:100%;"/></a>
+</details>
+
+- Are you using any other ReShade shaders? (checkmarks enabled in the ReShade Home tab)?
+- Is HDR turned on within Windows and in Cyberpunk 2077?
+- What RenoDX settings are you using? (just take a screenshot to show this)
+
+**4) Log file locations:**
+*Unless otherwise noted, all file paths are assumed to start within the Cyberpunk 2077 game folder*
+- ReShade.log - `\bin\x64` 
+    - By far the most important log for RenoDX issues
+
+====OTHER MOD LOGS====
+
+- Cyber Engine Tweaks - `\bin\x64\plugins\cyber_engine_tweaks`
+- Redscript - `\r6\logs`
+- Red4Ext - `\red4ext\logs` and `\red4ext\plugins` for specific mod logs
+- Ultra Plus - `\bin\x64\plugins\cyber_engine_tweaks\mods\UltraPlus`
 
 
 ## Recommended LUTs
