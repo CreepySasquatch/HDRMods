@@ -11,11 +11,7 @@ sidebar: false
 
 [**HDR Shader Order**](HDR-Shader-Order)
 
-[**ReShade Preset Guide**](ReShade-Preset-Guide)
-
 [**HDR Screenshot Guide**](HDR-Screenshot-Guide)
-
-[**ReShade Manual Install Template**](ReShade-Install-Template)
 
 [**<<GAME SPECIFIC GUIDES>>**](Game-Specific-Guides-Index)
 
