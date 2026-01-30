@@ -1,0 +1,266 @@
+// Responsive table of contents
+// Desktop: Right sidebar | Mobile: Collapsible menu
+// Place this file in _sass/ directory
+
+// TOC Variables
+$toc-sidebar-width: 300px;
+$toc-sidebar-padding: 1.5rem;
+$toc-sidebar-top: 120px;
+
+// Desktop colors
+$toc-link-color: #94a3b8;
+$toc-link-hover-color: #e2e8f0;
+$toc-link-active-color: #60a5fa;
+$toc-link-active-border-color: #60a5fa;
+
+// Mobile colors
+$toc-mobile-bg: #1e293b;
+$toc-mobile-border: #334155;
+$toc-button-bg: #334155;
+$toc-button-hover-bg: #475569;
+
+$toc-font-size: 1rem;
+$toc-line-height: 1.5;
+
+$breakpoint-desktop: 1400px; // Change this to adjust when mobile/desktop switch happens
+
+// ============================================================================
+// MOBILE STYLES (Default - Mobile First)
+// ============================================================================
+
+.toc-sidebar {
+  position: relative;
+  width: 100%;
+  margin: 1.5rem 0;
+  background: $toc-mobile-bg;
+  border: 1px solid $toc-mobile-border;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+// Mobile toggle button
+.toc-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: $toc-button-bg;
+  border: none;
+  color: #e2e8f0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  
+  &:hover {
+    background: $toc-button-hover-bg;
+  }
+  
+  &:focus {
+    outline: 2px solid $toc-link-active-color;
+    outline-offset: -2px;
+  }
+  
+  // Arrow icon
+  &::after {
+    content: "▼";
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+    color: #94a3b8;
+  }
+  
+  &.active::after {
+    transform: rotate(-180deg);
+  }
+}
+
+// Mobile TOC heading (inside button)
+.toc-sidebar-heading {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+// Mobile navigation container
+.toc-sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  
+  &.active {
+    max-height: 500px; // Adjust based on your content
+    padding: 1rem 0;
+  }
+  
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    display: block;
+    padding: 0.625rem 1.25rem;
+    color: $toc-link-color;
+    text-decoration: none;
+    font-size: $toc-font-size;
+    line-height: $toc-line-height;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      color: $toc-link-hover-color;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    
+    &.active {
+      color: $toc-link-active-color;
+      border-left-color: $toc-link-active-border-color;
+      background: rgba(96, 165, 250, 0.1);
+      font-weight: 500;
+    }
+  }
+  
+  // Nested items (H3)
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    
+    a {
+      padding-left: 2rem;
+      font-size: 0.8125rem;
+    }
+    
+    // Third level (H4)
+    ul {
+      a {
+        padding-left: 2.75rem;
+        font-size: 0.75rem;
+      }
+    }
+  }
+}
+
+// ============================================================================
+// DESKTOP STYLES (Large Screens)
+// ============================================================================
+
+@media (min-width: $breakpoint-desktop) {
+  .toc-sidebar {
+    position: fixed;
+    top: $toc-sidebar-top;
+    right: 0;
+    width: $toc-sidebar-width;
+    max-height: calc(100vh - #{$toc-sidebar-top} - 40px);
+    overflow-y: auto;
+    padding: $toc-sidebar-padding;
+    padding-right: 2rem;
+    margin: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    z-index: 100;
+    
+    // Subtle scrollbar styling
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 3px;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+  
+  // Hide mobile toggle button on desktop
+  .toc-toggle {
+    display: none;
+  }
+  
+  // Desktop heading style
+  .toc-sidebar-heading {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  // Desktop navigation - always visible
+  .toc-sidebar-nav {
+    max-height: none !important;
+    overflow: visible;
+    padding: 0;
+    
+    a {
+      padding: 0.5rem 0;
+      padding-left: 1rem;
+      border-left: 2px solid transparent;
+      background: transparent;
+      
+      &:hover {
+        background: transparent;
+        border-left-color: rgba(255, 255, 255, 0.2);
+      }
+      
+      &.active {
+        background: transparent;
+        border-left-color: $toc-link-active-border-color;
+      }
+    }
+    
+    // Desktop nested items
+    ul {
+      a {
+        padding-left: 1.5rem;
+      }
+      
+      ul {
+        a {
+          padding-left: 2rem;
+        }
+      }
+    }
+  }
+  
+  // Fade-in animation for desktop
+  .toc-sidebar {
+    animation: fadeInFromRight 0.3s ease-in;
+  }
+}
+
+@keyframes fadeInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Smooth scrolling for anchor links
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}

@@ -6,9 +6,11 @@
 <body>
   {% include header.html %}
   <main class="main-content">
+  {% include toc-sidebar-responsive.html html=content h_min=2 h_max=4 %}
     {{ content }}
   </main>
   {% include footer.html %}
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/toc-responsive.js' | relative_url }}"></script>
 </body>
 </html>
