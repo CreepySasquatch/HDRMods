@@ -33,6 +33,8 @@ various texture mod packs then this is the place to ask.
 **ReShade:** *<https://discord.com/invite/PrwndfH>*.  The official ReShade server.  
 If you have a question about ReShade that doesn't necessarily revolve around HDR then this is the place to go.  This is also the server to join if you're interested in making your own addons or shaders.
 
+**The Ultra Place:** *<https://discord.com/invite/ultraplace>*.  The home of the Ultra Plus family of mods.  What RenoDX and Luma does for HDR, Ultra Plus does for improving game visuals, bug fixes, and performance tweaks. 
+
 ## HDR Addons or Related Tools
 
 **AutoHDR addon:** *[https://github.com/EndlesslyFlowering/AutoHDR-ReShade](https://github.com/EndlesslyFlowering/AutoHDR-ReShade)*. To be used with an Inverse Tone Mapping shader to convert an SDR game into HDR. 
@@ -135,7 +137,7 @@ with Native HDR or the popular RenoDX / Luma mods. There's also a radial blur sh
 
 **How to use RenoDX with Special K:** *<https://github.com/clshortfuse/renodx/wiki/Guide:-Using-Special-K-with-RenoDX>*
 
-**Special K Wiki**: *<https://wiki.special-k.info/>*. If you want to
+**Special K Wiki:** *<https://wiki.special-k.info/>*. If you want to
   learn more about the various features Special K has to offer.
 
 ## Other Useful Resources
@@ -148,12 +150,14 @@ with Native HDR or the popular RenoDX / Luma mods. There's also a radial blur sh
   Nice collection of general ReShade guides, but nothing specifically
   for HDR.
 
-**FRAMED Screenshot Guides**: *<https://framedsc.com/basics.htm>*. If
+**FRAMED Screenshot Guides:** *<https://framedsc.com/basics.htm>*. If
   you're interested in learning how to take better screenshots this is a
   good place to start. Nothing specifically for HDR but still a good
   resource nonetheless.
 
-## Recommended HDR Youtube channels:
+**The Ultra Place:** *<https://theultraplace.com/>*. Ultra+ is a series of mods designed for all PCs, fixing bugs and performance, with the best possible visuals.  
+
+## Recommended HDR Youtube Channels
 
 **Dio Brando:** *<https://www.youtube.com/@diobrando7314>*.  How-to guides, HDR comparisons, and gameplay. 
 
