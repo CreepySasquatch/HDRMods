@@ -122,18 +122,27 @@ It would be impossible to cover every combination of LUT and visual mods that ar
 
 ## Troubleshooting
 
-**Washed out / gray image**
+### Washed out / gray image
 - Make sure RTXHDR is turned off globally (or at least for Cyberpunk 2077)
 - Verify HDR is turn on in Windows and in Cyberpunk 2077.
 - Make sure Color Precision is set to High within the graphics settings. RenoDX will not work with this set to medium.
 - Make sure you're using the latest add-on version of ReShade.
 
-**Colored Square Behind Minimap / Upper Right Corner**
+### Colored Square Behind Minimap / Upper Right Corner
 - This is the debug graph from the WIP RenoDX. Look at the very bottom of the RenoDX settings, under Debug turn off Debug Graph
 
 <details><summary>Debug Graph Off</summary>
 <a href="https://slow.pics/R1nHEgpd/"><img src="https://i.slow.pics/R1nHEgpd.png" style="width:100%;height:100%;"/></a>
 </details>
+
+### Banding / Grid Pattern in the Sky
+- Switch to Ray Reconstruction preset D, which seems to be a little bit better for HDR.  Easiest way is to use DLSS Swapper: <https://github.com/beeradmoore/dlss-swapper/releases>
+- Preset E is typically recommended over D because it has less issues with boiling and has less artifacts overall.  So don't switch to D unless you're having the banding / grid pattern issue.
+- When using Ray Reconstruction it overrides the SR model completely, meaning presets K, L, M, etc. won't get applied when using RR.
+
+**Ray Reconstruction Preset D vs E:**
+{% include comparison-slider.html before="images/Cyberpunk/RayReconstruction/PresetD.png" after="images/Cyberpunk/RayReconstruction/PresetE.png" before_label="Preset D" after_label="Preset E" %}
+- Credit to **squarto** and **Gn3xus** for figuring this out and taking these comparison images.
 
 ## How to Provide More Info for Troubleshooting
 
@@ -172,6 +181,7 @@ It would be impossible to cover every combination of LUT and visual mods that ar
 
 ====OTHER MOD LOGS====
 
+- Cyberpunk 2077 Crash Dump - `%LocalAppData%\REDEngine\ReportQueue` for the main game crash log
 - Cyber Engine Tweaks - `\bin\x64\plugins\cyber_engine_tweaks`
 - Redscript - `\r6\logs`
 - Red4Ext - `\red4ext\logs` and `\red4ext\plugins` for specific mod logs
@@ -180,6 +190,40 @@ It would be impossible to cover every combination of LUT and visual mods that ar
 {% include callout.html type="tip" content="Highly recommend that you use RenoDX alongside the Ultra Plus mod!  Provides some performance tweaks and also adds new visual modes for both lower end and higher end hardware configurations. 
 
 Link to Ultra Plus mod page: <https://www.nexusmods.com/cyberpunk2077/mods/10490>" %}
+
+<!--
+
+## LUTs: Everything you need to know
+
+**What is a LUT?**
+- **L**ook-**U**p **T**able: Think of it like a table of contents that change colors from one value to another.
+
+**Do I need to use a LUT mod?** No, the vanilla LUT is fine and it'll look even better when using RenoDX.  However, many people choose to use a LUT to further customize the look of the game.
+
+**RenoDX was designed around the vanilla LUT.**  Thus picking any other LUT will most likely require you to adjust the various sliders within RenoDX to get it to look decent.  
+- To emulate the look of Vanilla HDR:
+    - Contrast: 60
+    - Saturation: 60
+- To emulate the look of Vanilla SDR:
+    - Highlights: 75
+    - LUT Scaling: 95
+
+### But should I use a LUT??? If so, which one should I pick???
+
+**How can I figure out which LUT to use?**
+
+LUT Switcher 2 has a feature that allows you to compare different LUTs to each other, blindly.  Meaning you don't know which LUT you are currently looking at.
+
+**My personally recommended LUT to use *with* RenoDX:** PREEM LUT 3.
+- With RenoDX it seems to require the least amount of slider adjustment to look decent.  In fact, I pretty much keep RenoDX at the default settings when using it.
+
+-->
+
+<!--
+{% include callout.html type="warning" content=" The LUT you pick has a large impact on how the game looks.   There is no perfect answer for which LUT you should use, because everyone has their own preference based on the rest of the mods their using, the type of display they have, and personal taste." %}
+
+<a href="https://imgflip.com/i/aj6m9b"><img src="https://i.imgflip.com/aj6m9b.jpg"/></a>
+-->
 
 
 <!--
