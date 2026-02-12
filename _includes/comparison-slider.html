@@ -3,12 +3,12 @@
   <div class="comparison-container">
     <div class="comparison-image comparison-before">
       <img src="{{ include.before | relative_url }}" alt="{{ include.before_label | default: 'Before' }}">
-      <span class="comparison-label comparison-label-before">{{ include.before_label | default: 'Before' }}</span>
     </div>
     <div class="comparison-image comparison-after">
       <img src="{{ include.after | relative_url }}" alt="{{ include.after_label | default: 'After' }}">
-      <span class="comparison-label comparison-label-after">{{ include.after_label | default: 'After' }}</span>
     </div>
+    <span class="comparison-label comparison-label-before">{{ include.before_label | default: 'Before' }}</span>
+    <span class="comparison-label comparison-label-after">{{ include.after_label | default: 'After' }}</span>
     <div class="comparison-handle" role="slider" aria-label="Comparison slider" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" tabindex="0">
       <div class="handle-line"></div>
       <div class="handle-circle">

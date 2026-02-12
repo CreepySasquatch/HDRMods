@@ -199,6 +199,9 @@ details > *:not(summary) {
   }
 }
 
+// FIXED: Labels positioned relative to .comparison-container for consistent alignment
+// The labels should be moved in the HTML to be direct children of .comparison-container
+// But if they remain inside .comparison-image, this ensures they're positioned correctly
 .comparison-label {
   position: absolute;
   bottom: var(--spacing-md);
@@ -209,6 +212,7 @@ details > *:not(summary) {
   font-weight: 600;
   border-radius: 4px;
   pointer-events: none;
+  z-index: 5; // Ensure labels appear above both images
 }
 
 .comparison-label-before {

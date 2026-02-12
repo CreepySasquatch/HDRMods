@@ -72,13 +72,21 @@ It would be impossible to cover every combination of LUT and visual mods that ar
 
 **5)** Start the game. Open the Settings menu.
 
-**6)** Go to Video > HDR settings. **Make sure Cyberpunk's HDR is turned ON (set to HDR10 PQ)**, set Tone-Mapping Midpoint to 1 and Paper White to 200.
+**6)** Go to Video > HDR settings. **Make sure Cyberpunk's HDR is turned ON (set to HDR10 PQ)** 
 
-- This is also good advice with the native HDR as well.
+- **Maximum Brightness: Leave at the default value.**  You'll change this in the RenoDX addon under *Peak Brightness*.
 
-- Maximum Brightness just leave at the default.  This is now overridden with the Peak Brightness setting within RenoDX.
+- **Paper White: 200.** You'll change this in the RenoDX addon as the *Game Brightness*.
 
-- HDR10 PQ saturation leave at 0. You can use RenoDX's sliders to change saturation among other things.
+- **Set Tone-Mapping Midpoint to 1.** Tone-Mapping Midpoint is critical for the overall brightness of the game.  If the game is too bright then doublecheck this setting.
+
+- **Make sure HDR10 PQ saturation is 0!!!** This will cause issues with Frame Generation if changed.  Just use the Saturation slider within RenoDX instead.
+
+{% include callout.html type="important" content="<b>HDR10 PQ Saturation absolutely, 100% without a doubt, needs to be 0!</b>  
+
+<b>DO NOT CHANGE THIS SETTING!!!</b> 
+
+<i>Non zero values will cause issues with frame generation when moving.  If you want to increase the game saturation, use the saturation slider within RenoDX.</i>" %}
 
 <details><summary>HDR settings</summary>
 <a href="https://slow.pics/zFyyInhD/"><img src="https://i.slow.pics/zFyyInhD.png" style="width:100%;height:100%;"/></a>
@@ -143,6 +151,19 @@ It would be impossible to cover every combination of LUT and visual mods that ar
 **Ray Reconstruction Preset D vs E:**
 {% include comparison-slider.html before="images/Cyberpunk/RayReconstruction/PresetD.png" after="images/Cyberpunk/RayReconstruction/PresetE.png" before_label="Preset D" after_label="Preset E" %}
 - Credit to **squarto** and **Gn3xus** for figuring this out and taking these comparison images.
+
+### Frame Generation artifacts when moving
+*Especially in light sources*
+
+<details><summary>Make sure HDR10 PQ Saturation is set to 0 in the base game / vanilla HDR settings.</summary>
+<a href="https://slow.pics/zFyyInhD/"><img src="https://i.slow.pics/zFyyInhD.png" style="width:100%;height:100%;"/></a>
+</details>
+
+
+**Before and After Changing HDR10 PQ Saturation:**
+
+<video src="https://raw.githubusercontent.com/CreepySasquatch/HDRMods/main/images/Cyberpunk/Cyberpunk-Frame-Generation-Bug.mp4" controls width="100%"></video>
+*Credit to **Invictus** for figuring out this issue and supplying the video showing the fix!*
 
 ## How to Provide More Info for Troubleshooting
 
