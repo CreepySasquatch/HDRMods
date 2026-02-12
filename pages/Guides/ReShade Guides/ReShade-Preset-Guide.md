@@ -6,6 +6,8 @@ description: Introduction to using HDR with ReShade
 sidebar: false
 ---
 
+{% include callout.html type="tip" content="Martys Mods has a Load Order guide that I recommend checking out as well: <https://guides.martysmods.com/reshade/loadorder>.  It goes into a bit more detail but if you want a simple version mine can still be useful.  Check out Marty's other guides as well for general ReShade tips as I won't be covering most of them in the guides on my site." %}
+
 ## Shader Order (applies to both SDR and HDR)
 
 {% include callout.html type="important" content="Remember that shaders are rendered from TOP to BOTTOM.  Whatever shader is on top will be affected by every other shader below it and vice-versa." %}
