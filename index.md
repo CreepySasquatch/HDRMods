@@ -10,6 +10,12 @@ sidebar: false
 
 [**HDR Link Library**](HDR-Link-Library)
 
+<!--
+
+[**HDR FAQ**](HDR-FAQ)
+
+-->
+
 [**HDR Shader Order**](HDR-Shader-Order)
 
 [**HDR Screenshot Guide**](HDR-Screenshot-Guide)

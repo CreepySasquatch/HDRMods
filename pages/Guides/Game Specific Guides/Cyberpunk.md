@@ -5,19 +5,25 @@ summary:
 description: How to Setup RenoDX in Cyberpunk 2077
 ---
 
-{% include callout.html type="tip" content="Make sure your display actually supports HDR before installing RenoDX. Your monitor should be rated for HDR400 or higher, meaning it should have at least 400 nits peak brightness. If you're unsure whether your display actually supports HDR, a good resource is <https://www.rtings.com> which has reviews for a wide range of displays and will include a list of detailed technical specifications for anything they cover." %}
+{% include callout.html type="tip" content="<b>Make sure your display actually supports HDR before installing RenoDX. Your monitor should be rated for HDR400 or higher, meaning it should have at least 400 nits peak brightness.</b>  
 
-{% include callout.html type="important" content="<b>Grab the WIP version of the RenoDX mod from the RenoDX server. Look for the pinned post in the Cyberpunk channel.  The GitHub and Nexus versions are both outdated; disregard the snapshot date on the GitHub page, it's not accurate.</b>  
+<b>This is not to be confused with TB400 or higher.</b>  
 
-<i>This is still valid as of January 25th, 2026.</i>
+TB stands for True Black.  True Black rated monitors will have a separate True Black mode with a more limited peak brightness, but it <i>should</i> result in better looking black levels and shadows. The downside to using True Black mode is a lower peak brightness, thus the highlights won't be as bright.  When setting the peak brightness within RenoDX, make sure it matches the peak brightness of the mode you are in.  Both True Black and the normal modes should look fine, so try both and see which you like better.  
 
-RenoDX server invite: <https://discord.gg/jz6ujVpgFB>
+<b>Try checking your display manufacturer's website for the peak brightness, or you can check the AVS forums:</b> <https://www.avsforum.com/> When in doubt try searching for the model number in your favorite search engine.  <i>ChatGPT or similar AI is not a search engine.</i>
 
-Direct link to the RenoDX Cyberpunk channel: <https://discord.com/channels/1408098019194310818/1410855640112566375/threads/1434377434022809610/1434377434022809610>" %}
+<b>Update 3/2/2026: RTINGs is now paywalled and a subscription is required to see most of the technical details about a display.</b> Thus I can no longer recommend them for finding out the technical specs for your display." %}
 
-{% include callout.html type="note" content="This guide is focused mainly on providing the recommended tools and settings to get Cyberpunk's HDR in the correct place.  
+{% include callout.html type="important" content="<b>Grab the WIP version of the RenoDX mod from the RenoDX server. Look for the pinned post in the Cyberpunk channel.  The GitHub and Nexus versions are both outdated; disregard the snapshot date on the GitHub page, it's not accurate.</b> <i>This is still accurate as of March 2nd, 2026.</i>  
 
-It would be impossible to cover every combination of LUT and visual mods that are available for the game.  Manual adjustment of the various RenoDX sliders will most likely to be necessary to achieve the best possible result." %}
+<b>RenoDX server invite:</b> <https://discord.gg/jz6ujVpgFB>
+
+<b>Direct link to the RenoDX Cyberpunk 2077 thread:</b> <https://discord.com/channels/1408098019194310818/1410855640112566375/threads/1434377434022809610/1434377434022809610>
+
+<b>How to manually find the Cyberpunk channel:</b> 
+<img src='https://i.slow.pics/TfUSXS2q.png' alt='Cyberpunk channel location' style='max-width:100%;'>" %}
+
 
 ## What is Wrong with Cyberpunk's HDR?
 <details><summary><b>This is the answer provided directly from ShortFuse, the creator of RenoDX:</b></summary>
@@ -40,39 +46,100 @@ It would be impossible to cover every combination of LUT and visual mods that ar
 
 
 ## How to Fix Cyberpunk's HDR using RenoDX
+### PART 1 - Steps 0-7: Installing ReShade and RenoDX
 
-**1)** Download the latest addon version of ReShade from <https://reshade.me/#download>
+**0)** Install Cyberpunk 2077.  Make sure you're using the latest version of the game, **2.31**.
 
-**2)** Install ReShade to the `\bin\x64 folder` (which the installer should default to once you pick Cyberpunk 2077)
+**1)** Download the **LATEST** addon version of ReShade from <https://reshade.me/#download>
+- When running the ReShade installer, make sure to not run it directly from the Windows Downloads folder or the Cyberpunk 2077 install folder, because both options can cause issues.  At the very least make a new folder in Downloads or the Desktop and place the ReShade installer there.
+
+<details><summary>The latest ReShade version as of writing this guide is <b>6.7.3</b></summary>
+<a href="https://slow.pics/KbN1KUCW/"><img src="https://i.slow.pics/KbN1KUCW.jpg" style="width:100%;height:100%;"/></a>
+</details>
+
+**2)** Install ReShade to Cyberpunk2077.exe that is located in `\bin\x64 folder` (which the installer should default to once you pick Cyberpunk 2077). Click `Next`
     
-- Note about mod managers: I do not recommend installing ReShade as a mod within Vortex or MO2 (Mod Organizer 2) unless you know what you're doing. Same applies to using Special K with ReShade.  This guide will cover a normal ReShade install.  
+- Note about mod managers: I do not recommend installing ReShade as a mod within Vortex or MO2 (Mod Organizer 2) unless you know what you're doing. 
+- This guide also does not cover using Special K with ReShade, Display Commander, or using Optiscaler.
 
-- For more detailed instructions on how to install ReShade with RenoDX, please refer to this guide: [**How to Install ReShade for RenoDX**](ReShade-Install-RenoDX)
+<details><summary>ReShade: Select Game or Application</summary>
+<a href="https://slow.pics/uhUhohcS/"><img src="https://i.slow.pics/uhUhohcS.jpg" style="width:75%;height:75%;"/></a>
+</details>
 
-**3)** Grab the WIP (Work in progress) version of RenoDX from the RenoDX Discord server. Look for the pinned comment in the Cyberpunk channel.
+**3)** For the rendering API pick `DirectX 10/11/12`, as the game is DirectX 12. Click `Next`
+<details><summary>ReShade: Choose the Rendering API</summary>
+<a href="https://slow.pics/m1tqUrg4/"><img src="https://i.slow.pics/m1tqUrg4.jpg" style="width:75%;height:75%;"/></a>
+</details>
 
-<a href="https://slow.pics/A4UyiLo0/"><img src="https://i.slow.pics/A4UyiLo0.jpg" style="width:75%;height:75%;"/></a>
+**4)** This step will look different depending on if you already installed ReShade to Cyberpunk 2077.
+- Go to step 4A if ReShade is already installed and you see a screen asking if you want to update ReShade.
+- Go to step 4B if ReShade wasn't previously installed and you see the "Select effects to install" screen.
 
-<details>
-<summary>Click for more RenoDX Info</summary>
+**4A)** ReShade already installed: pick `Update ReShade only`. Click `Next`, then click `Finish`.  **Skip to step 6.**
+- Alternatively uninstall ReShade and Effects, click `Next` then `Finish`.  Then reinstall ReShade from Step 2 onwards. This is the recommended option if you picked a ton of addons the first time you installed ReShade, as having a ton of extra addons you don't need will just cause issues.  If you're unsure what you picked last time, then just uninstall and reinstall ReShade.  It'll save you a headache later on and it only takes an extra few seconds to do.
+<details><summary>ReShade: Update Options:</summary>
+<a href="https://slow.pics/dMPn4wT9/"><img src="https://i.slow.pics/dMPn4wT9.jpg" style="width:75%;height:75%;"/></a>
+</details>
+
+**4B)** ReShade new installation: You should see the Effect / Shader selection screen.  You do not need any shaders for RenoDX; however, it's often recommended to grab Lilium's HDR shaders, especially for RCAS and the HDR Analysis Tool.  Whether you do this is entirely up to you.  Click `Next`.
+<details><summary>Feel free to uncheck the box next to SweetFX though, as those are selected by default.</summary>
+<a href="https://slow.pics/Ku9OHLUk/"><img src="https://i.slow.pics/Ku9OHLUk.jpg" style="width:75%;height:75%;"/></a>
+</details>
+<details><summary>You can change the Effect sorting from Default to A to Z to make it easier to find the various shader packs.</summary>
+<a href="https://slow.pics/ATvCVf33/"><img src="https://i.slow.pics/ATvCVf33.jpg" style="width:100%;height:100%;"/></a>
+</details>
+<details><summary>Picking Lilium's HDR Shaders (optional)</summary>
+<a href="https://slow.pics/xwMDil4f/"><img src="https://i.slow.pics/xwMDil4f.jpg" style="width:75%;height:75%;"/></a>
+</details>    
+
+**5)** If you just updated ReShade, skip to Step 6, otherwise you should be seeing the addon selection screen.  **DO NOT PICK ANY ADDONS!!!** Click `Next`, then Click `Finish`. 
+- Addons are not similar to shaders at all.  Unlike shaders which are post processing only (aka they basically act like a photoshop filter), addons can operate at the game engine level and can easily cause issues if you don't know what you're doing.  
+- Some addons are not compatible with each other, yes seriously.  Just one more reason to not download them randomly.  
+- **So rule of thumb, if you don't know what it is then don't touch it.  If you do touch it after reading this step, and shit breaks, then uninstall ReShade and start the ReShade installation process over again.  Seriously, you've been warned!!!**
+<details><summary>DO NOT PICK ANY ADDONS!!!</summary>
+<a href="https://slow.pics/f2EQMwqO/"><img src="https://i.slow.pics/f2EQMwqO.jpg" style="width:100%;height:100%;"/></a>
+</details>    
+
+**6)** Grab the WIP (Work in progress) version of RenoDX from the RenoDX Discord server. Look for the pinned comment in the Cyberpunk channel.
+
+<details><summary>Click for RenoDX server info and screenshots of the Cyberpunk 2077 WIP addon location.</summary>
 <ol>
 <ul>
     <li>The GitHub and Nexus Mods versions of Cyberpunk's RenoDX are outdated as mentioned in the bubble at the top of this guide.  The WIP verison fixes the contrast issue that is present in the other two versions.</li>
 
     <li>RenoDX server invite: <a href="https://discord.gg/jz6ujVpgFB">https://discord.gg/jz6ujVpgFB</a></li>
 
-    <li>Direct link to the RenoDX Cyberpunk channel: <a href="https://discord.com/channels/1408098019194310818/1410855640112566375/threads/1434377434022809610/1434377434022809610">Cyberpunk 2077 Thread</a></li>
+    <li>Direct link to the RenoDX Cyberpunk 2077 thread: <a href="https://discord.com/channels/1408098019194310818/1410855640112566375/threads/1434377434022809610/1434377434022809610">Cyberpunk 2077 Thread</a></li>
 
     <li>Note that the WIP version only applies to Cyberpunk 2077.  For all other games it's best to use the GitHub version (marked as a Snapshot button)</li>
 </ul>
 </ol>
-</details>
+<b>Cyberpunk 2077 thread location in the RenoDX server:</b>
+<a href="https://slow.pics/TfUSXS2q/"><img src="https://i.slow.pics/TfUSXS2q.png" style="width:100%;height:100%;"/></a>
+<b>Cyberpunk 2077 WIP addon pin in the Cyberpunk 2077 thread:</b>
+<a href="https://slow.pics/A4UyiLo0/"><img src="https://i.slow.pics/A4UyiLo0.jpg" style="width:50%;height:50%;"/></a>
+</details>    
 
-**4)** Place the RenoDX addon in the `\bin\x64` folder next to the ReShade install.
+**7)** Place the RenoDX addon in the `\bin\x64` folder where Cyberpunk 2077 is installed.
+<a href="https://slow.pics/xuB4Etdm/"><img src="https://i.slow.pics/xuB4Etdm.jpg" style="width:100%;height:100%;"/></a>
 
-**5)** Start the game. Open the Settings menu.
+### PART 2 - Steps 8-17: Configuring the in-game settings and RenoDX.
 
-**6)** Go to Video > HDR settings. **Make sure Cyberpunk's HDR is turned ON (set to HDR10 PQ)** 
+**8)** Start the game. Open the Settings menu.
+
+**9)** Go to Video > HDR settings. **Make sure Cyberpunk's HDR is turned ON (set to HDR10 PQ)**
+
+<!--
+{% include callout.html type="warning" content="Technically the HDR10 scRGB mode will work fine with RenoDX; however, if you have any desire to use a ReShade preset with Cyberpunk 2077, then pick HDR10 PQ. If you don't know which one to pick, then pick HDR10 PQ. 
+
+Pros of using scRGB mode: it's technically a little bit better.  Will the average person notice the difference? Probably not. Unless you just happen to have a keen eye for color, you would need to be a super HDR nerd, like one of the RenoDX developers, or a colorist to be able to appreciate the difference.
+
+HDR10 scRGB does not like ReShade shaders that weren't specifically designed to work with HDR, and most shaders are not designed to work with HDR. The fact that most shaders will work with HDR10 PQ is just a coincidence with how HDR10 PQ is coded. The shaders themselves most likely have no HDR code in them, thus they can't really take advantage of the HDR color space.  Even with HDR10 PQ you're better off using non HDR shaders within Soop's HDR converters, to allow those shaders to work in an SDR colorspace. 
+
+Soop's HDR converters can be found within the ReShade installer (smolbbsoop) or on their GitHub: <https://github.com/smolbbsoop/smolbbsoopshaders>
+
+List of HDR compatible shader packs which will work with both HDR10 and scRGB without needing the HDR converters: <https://www.hdrmods.com/HDR-Link-Library#hdr-compatible-shaders>." %} 
+-->
 
 - **Maximum Brightness: Leave at the default value.**  You'll change this in the RenoDX addon under *Peak Brightness*.
 
@@ -89,34 +156,35 @@ It would be impossible to cover every combination of LUT and visual mods that ar
 <i>Non zero values will cause issues with frame generation when moving.  If you want to increase the game saturation, use the saturation slider within RenoDX.</i>" %}
 
 <details><summary>HDR settings</summary>
+<i>Ignore the Maximum Brightness setting.</i>
 <a href="https://slow.pics/zFyyInhD/"><img src="https://i.slow.pics/zFyyInhD.png" style="width:100%;height:100%;"/></a>
 </details>
 
-**7)** Within Cyberpunk's Graphics settings, make sure Color Precision is set to High or it will result in a washed out / gray image.
+**10)** Within Cyberpunk's Graphics settings, make sure Color Precision is set to High or it will result in a washed out / gray image.
 
 <details><summary>Color precision setting</summary>
 <a href="https://slow.pics/Uinn4FKy/"><img src="https://i.slow.pics/Uinn4FKy.png" style="width:100%;height:100%;"/></a>
 </details>
 
-**8)** Open the ReShade interface, default button is the Home key.  
+**11)** Open the ReShade interface, default button is the Home key.  
 
 - If you don't have a Home key please refer to this guide that goes over how to change it to a different key: <https://www.youtube.com/watch?v=xoCdpOIRKus>
 
-**9)** Click on the RenoDX tab along the top of the ReShade GUI.  Set the Peak Brightness to match your display's capabilities.  
+**12)** Click on the RenoDX tab along the top of the ReShade GUI.  Set the Peak Brightness to match your display's capabilities.  
 
 - If you don't know what that value is, refer to the spec sheet for your display or look it up on <https://www.rtings.com/> which has reviews for a wide range of displays that includes detailed spec lists.
 
 - Technically all the other RenoDX settings are user preference but I'll go over a few more important ones.
 
-**10)** Game Brightness is the paper white value.  Set this between 150-300 nits (I personally have it set to 200 nits) but this is ultimately user preference and may need to change depending on which LUT you're using.
+**13)** Game Brightness is the paper white value.  Set this between 150-300 nits (I personally have it set to 200 nits) but this is ultimately user preference and may need to change depending on which LUT you're using.
 
-**11)** Set SDR EOTF Emulation to UI/Menu only.  If you like how the older version of RenoDX looked, slide this to the right so it applies to everything.
+**14)** Set SDR EOTF Emulation to UI/Menu only.  If you like how the older version of RenoDX looked, slide this to the right so it applies to everything.
 
-**12)** Filmgrain I personally have set to around 20.  This is the same filmgrain from ShortFuse's ReShade shader repository: <https://github.com/clshortfuse/reshade-shaders/tree/main/Shaders>
+**15)** Filmgrain I personally have set to around 20.  This is the same filmgrain from ShortFuse's ReShade shader repository: <https://github.com/clshortfuse/reshade-shaders/tree/main/Shaders>
 
 - If using other ReShade shaders such as Lilium's RCAS (which is commonly recommended), then I would set the filmgrain within RenoDX to 0 and then use the ShortFuse's filmgrain shader and place it at the very end (you never want to sharpen filmgrain, and RCAS is a sharpening shader).
 
-**13)** Double check to make sure Debug Graph is turned off (found at the very bottom of RenoDX under Debug).  Otherwise you'll see a colored square on the upper right corner behind the minimap.
+**16) Double check to make sure Debug Graph is turned off** (found at the very bottom of RenoDX under Debug).  Otherwise you'll see a colored square on the upper right corner behind the minimap.
 
 <details><summary>Debug Graph On</summary>
 <a href="https://slow.pics/xY8QcYui/"><img src="https://i.slow.pics/xY8QcYui.png" style="width:100%;height:100%;"/></a>
@@ -126,7 +194,7 @@ It would be impossible to cover every combination of LUT and visual mods that ar
 <a href="https://slow.pics/R1nHEgpd/"><img src="https://i.slow.pics/R1nHEgpd.png" style="width:100%;height:100%;"/></a>
 </details>
 
-**14)** Adjust the rest of the sliders however you'd like!
+**17)** Adjust the rest of the sliders however you'd like!
 
 ## Troubleshooting
 
@@ -135,6 +203,16 @@ It would be impossible to cover every combination of LUT and visual mods that ar
 - Verify HDR is turn on in Windows and in Cyberpunk 2077.
 - Make sure Color Precision is set to High within the graphics settings. RenoDX will not work with this set to medium.
 - Make sure you're using the latest add-on version of ReShade.
+
+### Crushed Black Levels / Shadows Appear Darker Than They Should
+- Disable HDR10+ Gaming within the in-game video settings.  This will only appear if your computer detects that you are using an HDR10+ capable display.
+<details><summary>HDR10+ Setting Location</summary>
+<a href="https://slow.pics/eE2HLqSI/"><img src="https://i.slow.pics/eE2HLqSI.png" style="width:100%;height:100%;"/></a>
+</details>
+- Is the Tone-Mapping Midpoint, within the in-game HDR settings, set at something lower than 1.0?
+- Some LUTs can cause this issue, especially if the RenoDX settings are not configured to compensate for it.  See if the problem goes away by selecting the vanilla LUT with RenoDX at the default settings (but leave Peak Brightness the same). 
+- Disable any ReShade shaders if you're using them, especially if in HDR10 scRGB mode.
+- Are you using Nova City 2?  This can cause the game to appear darker in some areas, especially in interior spaces and at night.  This is expected behavior of the mod as it recommends using flashlight and night vision mods with it.
 
 ### Colored Square Behind Minimap / Upper Right Corner
 - This is the debug graph from the WIP RenoDX. Look at the very bottom of the RenoDX settings, under Debug turn off Debug Graph
@@ -165,6 +243,12 @@ It would be impossible to cover every combination of LUT and visual mods that ar
 <video src="https://raw.githubusercontent.com/CreepySasquatch/HDRMods/main/images/Cyberpunk/Cyberpunk-Frame-Generation-Bug.mp4" controls width="100%"></video>
 *Credit to **Invictus** for figuring out this issue and supplying the video showing the fix!*
 
+### Map is washed out
+<details><summary>Washed Out Map Bug</summary>
+<a href="https://slow.pics/FScCfiyT/"><img src="https://i.slow.pics/FScCfiyT.png" style="width:100%;height:100%;"/></a>
+</details>
+- Known issue with RenoDX WIP that affects both the vanilla map and the Preem Map mod from CyanideX.  Use the Realistic Map Mod instead (8K version or higher): <https://www.nexusmods.com/cyberpunk2077/mods/17811>
+
 ## How to Provide More Info for Troubleshooting
 
 **1) Make sure view file name extensions is enabled within Windows File Viewer.**  This will allow you to see the commonly used file types such as .ini, .txt, .log, and .exe.  
@@ -182,8 +266,13 @@ It would be impossible to cover every combination of LUT and visual mods that ar
 	</ol>
 	</details> 
 
-**2) Take screenshots of the issue with ReShade.** This will take HDR PNGs that can be uploaded to Discord.
-- Please do not take pictures of your monitor/TV with your phone unless we're troubleshooting an issue with the display itself. Phones are horrible at taking pictures of what is onscreen.
+**2) Take screenshots of the issue with ReShade!** This will take HDR PNGs that can be uploaded to Discord. You're also using ReShade to inject RenoDX anyways so there's little to no reason to use another option.
+- The only other accurate alternative is SKIV.
+- Special K can technically work as well, but like I said in the beginning of this guide, this option isn't supported due to issues Special K can have with RenoDX.  If you need to use Special K, just use the Display Commander addon instead.  It has most of the same features as Special K but is more compatible with RenoDX because it loads as a ReShade addon.
+- Nvidia overlay isn't always accurate, and it takes JXR screenshots which need to be converted to HDR PNG with another program such as SKIV.
+- Windows Gamebar can suffer from accuracy issues as well.
+- The Windows snipping tool, and similar apps such as ShareX, are not capable of taking HDR screenshots at all.  The most they can do is tonemap an HDR image to SDR, which is equally as useless for troubleshooting.  
+- **Please do not take pictures of your monitor/TV with your phone unless we're troubleshooting an issue with the display itself. This prevents us from separating the issues that are present in the game, and which are just artifacts from the phone's camera sensor.**
 
 **3) Common troubleshooting questions:**
 - What version of ReShade are you using?
@@ -202,6 +291,8 @@ It would be impossible to cover every combination of LUT and visual mods that ar
 
 ====OTHER MOD LOGS====
 
+{% include callout.html type="note" content="If you're using MO2, you will find mose of these logs within the overwrite folder." %}
+
 - Cyberpunk 2077 Crash Dump - `%LocalAppData%\REDEngine\ReportQueue` for the main game crash log
 - Cyber Engine Tweaks - `\bin\x64\plugins\cyber_engine_tweaks`
 - Redscript - `\r6\logs`
@@ -212,90 +303,109 @@ It would be impossible to cover every combination of LUT and visual mods that ar
 
 Link to Ultra Plus mod page: <https://www.nexusmods.com/cyberpunk2077/mods/10490>" %}
 
-<!--
-
 ## LUTs: Everything you need to know
 
+{% include callout.html type="note" content="This section on LUTs is included because one of the most often asked questions when it comes to RenoDX and Cyberpunk 2077 is <b><i>which LUT should I use???</i></b>
+
+To be absolutely clear on this, there is no officially recommended LUT to use with RenoDX, other than the vanilla LUT, nor was RenoDX designed to work with any other mods in particular.  So from this point forward, consider this to be a courtesy on my part to help you figure out which LUT is right for you.  However, you can consider the <i>official</i> part of the guide to have ended." %}
+
 **What is a LUT?**
-- **L**ook-**U**p **T**able: Think of it like a table of contents that change colors from one value to another.
+- **L**ook-**U**p **T**able: Think of it like a table of contents that changes colors from one value to another.
 
-**Do I need to use a LUT mod?** No, the vanilla LUT is fine and it'll look even better when using RenoDX.  However, many people choose to use a LUT to further customize the look of the game.
+**Do I need to use a LUT mod?** No, the vanilla LUT is fine, especially when using the latest version of RenoDX.  However, many people choose to use a LUT to further customize the look of the game.
 
-**RenoDX was designed around the vanilla LUT.**  Thus picking any other LUT will most likely require you to adjust the various sliders within RenoDX to get it to look decent.  
-- To emulate the look of Vanilla HDR:
-    - Contrast: 60
-    - Saturation: 60
-- To emulate the look of Vanilla SDR:
-    - Highlights: 75
-    - LUT Scaling: 95
+**RenoDX was designed around the vanilla LUT.**  Thus picking any other LUT will most likely require you to adjust the various sliders within RenoDX to get it to look decent.
 
 ### But should I use a LUT??? If so, which one should I pick???
 
 **How can I figure out which LUT to use?**
+- Use LUT Switcher 2's Comparison Mode Feature: 
+    - LUT Switcher 2 download link: <https://www.nexusmods.com/cyberpunk2077/mods/16310>
+    - Allows you to rank the LUTs you like the best in an unbiased fashion, also known as a blind test.  You can pick which LUT packs you want to be included in the test, then you go through a bunch of "A or B" tests with random LUTs on either side of the screen, but you won't know which LUT is which.  Then after the test is done, it'll rank the 10 top LUTs that you picked the most often.
+  {% include callout.html type="important" content="When download LUTs for LUT Switcher 2, make sure you're downloading LUT Switcher packs, not individual LUTs, because those just replace the vanilla LUT.
+  
+  Some LUTs such as Nova LUT 3 have HDR and SDR versions.  Make sure you're grabbing the HDR versions!!!" %}
 
-LUT Switcher 2 has a feature that allows you to compare different LUTs to each other, blindly.  Meaning you don't know which LUT you are currently looking at.
+**My *personally* recommended LUT to use with RenoDX: PREEM LUT 3.**
+- With RenoDX it seems to require the least amount of slider adjustment to look decent.  In fact, I pretty much keep RenoDX at the default settings when using it.  The main thing I change is LUT strength to 50 within RenoDX.
+- Please do not take this LUT recommendation as gospel.  It's mentioned solely because everyone asks, "Which LUT should I use?"  If you want a proper answer, then read the LUT Switcher 2 guide in the next section.
 
-**My personally recommended LUT to use *with* RenoDX:** PREEM LUT 3.
-- With RenoDX it seems to require the least amount of slider adjustment to look decent.  In fact, I pretty much keep RenoDX at the default settings when using it.
-
--->
-
-<!--
-{% include callout.html type="warning" content=" The LUT you pick has a large impact on how the game looks.   There is no perfect answer for which LUT you should use, because everyone has their own preference based on the rest of the mods their using, the type of display they have, and personal taste." %}
-
-<a href="https://imgflip.com/i/aj6m9b"><img src="https://i.imgflip.com/aj6m9b.jpg"/></a>
--->
-
-
-<!--
-{% include callout.html type="note" content=" <b>Disclaimer:</b> Consider this the end of the actual proper guide.  Everything after this point was included for fun and as a way to endorse some of my favorite mods." %}
-
--->
-
-<!--
-
-## Recommended LUTs
-All LUTs mentioned can be found in the main LUT switcher 2 mod: <https://www.nexusmods.com/cyberpunk2077/mods/16310>
-
-- **Preem LUT 3:** my personal favorite
-
-
-<details><summary>RenoDX with Preem LUT 3 settings that I personally use</summary>
-<a href="https://slow.pics/8aHFqCZ4/"><img src="https://i.slow.pics/8aHFqCZ4.png" style="width:75%;height:75%;"/></a>
+**What about Nova LUT 3?**
+- This is the other LUT that is often recommended, for both HDR and SDR.
+- Please note that there are specific SDR and HDR versions.  Make sure you using the HDR versions with RenoDX!!!
+- It's recommended to use the ENV Tuner (Simple version) and enabling Highlight Reduction, and setting it to 1.
+- Nova LUT 3 HDR has many variants, 72 to be exact!  There are two numbers you need to be aware of: Exposure Multiplier (the smaller number listed as a decimal **X.X**) and Color Temperature (the larger number with a **K** on the end).
+    - The 72 LUTs are split into 8 packs within LUT Switcher, with each pack representing a specific color temperature using the Kelvin scale (K). Lower K numbers will be warmer, aka more yellow, whereas higher K numbers will be cooler, aka more blue.
+    - Each color temperature LUT pack contains 9 LUTs, each with a different exposure multiplier (2.0 to 6.0). Higher numbers will appear to be brighter compared to lower ones.
+<details><summary>Nova LUT 3 HDR - Comparison Chart</summary>
+<i>Yeah, I took 72 screenshots and combined them into one massive chart.  You're welcome!</i>
+<a href="https://slow.pics/6isWQBlY/"><img src="https://i.slow.pics/6isWQBlY.png" style="width:100%;height:100%;"/></a>
 </details>
 
-- **Nova LUT 3:** The other predominant LUT that many people use with HDR. 
+### LUT Switcher 2 Comparison Mode Guide
 
-<details><summary>RenoDX with Nova LUT 3 settings provided by Roybreaker</summary>
-<a href="https://slow.pics/QDnxkz0d/"><img src="https://i.slow.pics/QDnxkz0d.png" style="width:75%;height:75%;"/></a>
-</details>
+**1) Install the LUT Switcher 2 mod, along with its requirements, as well as any LUT Switcher packs you want to try.**
 
--->
+**2) Launch the game.  Open up the Cyber Engine Tweaks overlay and click on Bindings.** 
+  - **Set these bindings to your preferred hotkeys:**
+    - Start/Stop Comparison
+    - Toggle Comparison Effect
+    - Select Favorite Effect A
+    - Select Favorite Effect B
+    <details><summary>LUT Switcher Bindings</summary>
+    <b>You can use whatever keybindings you want.  These are just what I picked.</b>
+    <a href="https://slow.pics/5aoK63pi/"><img src="https://i.slow.pics/5aoK63pi.png" style="width:100%;height:100%;"/></a>
+    </details>
+  - **Click Save Changes to save your bindings**
+    - Keybindings will turn from a light yellow to white once they're saved.
 
-<!--
+**3) Open LUT Switcher window within Cyber Engine Tweaks. In the control panel at the bottom of the window, click on the little square / check-list icon to go to the LUT Packs page.**
+- The LUT packs icon is the 2nd from the right at the very bottom of the LUT Switcher window.
+<a href="https://slow.pics/qqsP7ZEQ/"><img src="https://i.slow.pics/qqsP7ZEQ.png" style="width:100%;height:100%;"/></a>
+- <details><summary>Click on any LUT packs you want to include in the comparison.</summary>
+<i>Note how the LUT Packs icon changes to a triangle</i>
+	<a href="https://slow.pics/i6AT8E2P/"><img src="https://i.slow.pics/i6AT8E2P.png" style="width:100%;height:100%;"/></a>
+    </details>
+    - Don't pick the Fun or Utility LUT packs as these are not meant to be used for gameplay.
+    - If you have any interest in the Nova 3 HDR LUTs, consider not picking ALL of the LUT packs for testing, especially if you're intested in any of the other LUT packs such as Preem LUT 3. 
+    - Each Nova 3 HDR pack contains 9 LUTs, so if you were to pick all 8 Nova 3 HDR packs you would be adding an additional 72 LUTs to compare. Rankings are based on individual LUTs picked, not the LUT pack picked.  So you would have to cycle through a lot more LUT comparisons to get an accurate list.
+    - If picking one Nova 3 HDR pack, a good recommendation would be 6500K, because of it being a standard color temperature used in color grading.  If picking two packs, maybe go with a slightly warmer one such as 4500K along with a cooler option like 7500K.  You can then make a better judgement call about which of the other Nova LUTs you might like based on how high your test LUTs are ranked.
 
-## Recommended Mods
-Make sure to check the mod descriptions for other required mods needed to make them work.
+- Click on the LUT packs icon to go back to the main LUT Switcher menu.
+- Close the Cyber Engine Tweaks overlay.
 
-- **Ultra Plus:**  Fixes performance issues and improves the overall look of the game by adding new ray tracing and path tracing modes in addition to other visual improvements.  Nexus Mods link: <https://www.nexusmods.com/cyberpunk2077/mods/10490>
+**4) Configure RenoDX for the LUT comparison.**
+- For the LUT comparison test I recommend changing all the colorgrading sliders within RenoDX back to their default settings, or pick a different preset in RenoDX for the test if you don't want to screw up the settings you already have.
+- Keep the important settings such as Peak Brightness and Game Brightness the same as the your original setup.
+    - If you adjusted the game brightness for a specific LUT, change it back to a comfortable setting that works with the vanilla LUT, generally between 150-300 nits.
+- **Set LUT Strength to 50.**  This is very important, because a lot of the LUTs probably won't look right at full strength. So setting this to 50 (aka half strength) will balance out the intensity and will give more LUTs a fair chance at being selected.  It also negates the need to have to adjust all the other RenoDX sliders for each LUT during the test.
+- Once the test is over with, you can adjust the various RenoDX color grading sliders as desired to perfect the look of your chosen LUT.
 
-    - Check the Ultra Plus Discord server's Cyberpunk channel for newer beta builds that haven't been released to the Nexus yet.  Invite link: <https://discord.com/invite/ultraplace>
+**4A) Where should I do my LUT comparisons?**
+- Ideally you'd want to do the LUT comparison multiple times, to test different locations, weathers, time of day, interior vs exterior, etc.
+- However a good place to start would be the El Coyote Cojo bar. It has a nice variety of colors, multiple neon signs, and is a darker interior space.
+- Another good location is around Jig Jig street.
 
-- **Nova City 2:** Weather and lighting mod. Will make the shadows and nights a bit darker so a night vision and/or flashlight mod is recommended (read the mod description for details).  Nexus Mods link:  <https://www.nexusmods.com/cyberpunk2077/mods/12490>
+**5) Start the LUT comparison using the Start/Stop Comparison binding.**
+- You should see a message pop up, "Comparison started. Use hotkeys to pick your favorite."
+- You should also see a comparison mode bar on the bottom of your screen that is keeping track of how my tests were done.
+- You'll see either an A on the left side of your screen, or a B on the right side of your screen. This is telling you which LUT is currently active between the two random LUTs.  
+- Toggle between both LUTs with the Toggle Comparison Effect binding.
+- Once you're decided which LUT you like more, pick the binding for A or B depending on which one you liked.
+<details><summary>Comparison Started Message with LUT A on the Left</summary>
+    <a href="https://slow.pics/CdCwdoR9/"><img src="https://i.slow.pics/CdCwdoR9.png" style="width:100%;height:100%;"/></a>
+    </details>
 
-- **ReLUX and ReImagined:** Pair of mods meant to work with each other.  Removes fake lights designed to further enhance the look of the various path tracing modes. ReLUX: <https://www.nexusmods.com/cyberpunk2077/mods/20808> ReImagined: <https://www.nexusmods.com/cyberpunk2077/mods/25845>
+**6) You'll need to progress through the tests until at least one LUT reaches rank 10.  For more accurate results, do the comparison tests until 100% completion.**
+- When you decide to stop the comparison, press the Start/Stop Comparison keybind.
+- <details><summary>Should see a message saying Comparison Mode Disabled</summary>
+    <a href="https://slow.pics/KaylcTDr/"><img src="https://i.slow.pics/KaylcTDr.png" style="width:100%;height:100%;"/></a>
+    </details>
 
-- **For more recommended mods check out the 3077 Collection (now a full-fledged Wabbajack list):** <https://www.nexusmods.com/games/cyberpunk2077/collections/lv4wpp>.  Even if you don't want to download the entire modlist, the other visual mods are still worth checking out.
-
-
-
-{% include callout.html type="tip" content=" <b>What about LUT Mods?</b>
-
-I originally included some recommended LUTs and associated RenoDX configurations in this guide; however, I ended up removing that section because everyone is going to have their own opinions about which LUTs and RenoDX settings look good to them.  Also, to be completely honest I don't want to get pinged over a preset that doesn't work with someone's specific setup.  That really isn't the focus of this guide anyways.
-
-Thus my own recommendation is to install the LUT Switcher 2 mod and try the various LUTs out for yourself.
-
-LUT Switcher 2 link: <https://www.nexusmods.com/cyberpunk2077/mods/16310>" %}
-
--->
-
+**7) Open the LUT Switcher window in CET.  As long as one LUT reached rank 10, then you should see the LUT rankings in the main screen.**
+<details><summary>Example of LUT Rankings</summary>
+<br>
+<b>Please do not rely on the LUT rankings in this screenshot to figure out which LUT to use!</b>  
+<br>
+    <a href="https://slow.pics/W0NnAtTJ/"><img src="https://i.slow.pics/W0NnAtTJ.png" style="width:100%;height:100%;"/></a>
+    </details>

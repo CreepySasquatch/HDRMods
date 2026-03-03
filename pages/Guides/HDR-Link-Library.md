@@ -14,7 +14,6 @@ sidebar: false
 
 {% include callout.html type="tip" content="There may be additional mods that can only be found in the HDR Den and RenoDX servers that aren't listed on the wiki pages.  These are typically ones that are still in development but if you are playing a game on release day, then it might be worth a look."%}
 
-
 ## Discord Servers
 
 **HDR Den:** *<https://discord.gg/R2Bt3uptw6>*. This server is
@@ -36,6 +35,10 @@ If you have a question about ReShade that doesn't necessarily revolve around HDR
 **The Ultra Place:** *<https://discord.com/invite/ultraplace>*.  The home of the Ultra Plus family of mods.  What RenoDX and Luma does for HDR, Ultra Plus does for improving game visuals, bug fixes, and performance tweaks. 
 
 ## HDR Addons or Related Tools
+
+**RenoDX / Luma Installer:** *<https://github.com/RankFTW/RenoDXChecker>*.  Can also install ReShade and the Display Commander addon.  Support is provided in both the RenoDX and Ultra Plus Discord servers.
+
+**ReShade:** *<https://reshade.me/#download>*.  The program that is used to inject the Luma and RenoDX addons.  Also used by many people to further modify the look of their game with the various shaders that are offered.
 
 **AutoHDR addon:** *[https://github.com/EndlesslyFlowering/AutoHDR-ReShade](https://github.com/EndlesslyFlowering/AutoHDR-ReShade)*. To be used with an Inverse Tone Mapping shader to convert an SDR game into HDR. 
 
@@ -76,7 +79,9 @@ If you have a question about ReShade that doesn't necessarily revolve around HDR
 
 <br>
 
-**SKIV:** (Special K Image Viewer).  Separate program that comes with Special K (you can find it within the Special K installer folder) or you can download it from the Special K Discord server.  Useful for converting HDR images to other formats and seeing details about an HDR image similar to Lilium's HDR Analysis shader. Can also act as an HDR image capture tool, though images are placed into the Windows clipboard and otherwise have to be manually saved to a specific folder; so in practice you can only take one screenshot at a time, similar to the Windows snipping tool.    
+**SKIV:** (Special K Image Viewer).  Separate program that comes with Special K (you can find it within the Special K installer folder) or you can download it from the Special K Discord server.  Useful for converting HDR images to other formats and seeing details about an HDR image similar to Lilium's HDR Analysis shader. Can also act as an HDR image capture tool, though images are placed into the Windows clipboard and otherwise have to be manually saved to a specific folder; so in practice you can only take one screenshot at a time, similar to the Windows snipping tool.
+
+**Display Commander:** *<https://github.com/pmnoxx/display-commander>*.  Similar to Special K, except that it loads as a ReShade addon instead of being a separate app. Currently supported in the RenoDX server.
 
 **dgVooDoo2:** *<https://dege.freeweb.hu/dgVoodoo2/dgVoodoo2/>*. Used to convert older games into DX11 or DX12. 
 

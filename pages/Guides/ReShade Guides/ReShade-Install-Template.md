@@ -73,7 +73,8 @@ It will create a full ReShade setup that can be copied into any new game you pla
 
 **4)** For rendering API just pick DirectX 10/11/12, click *Next*.
 
-**5)** Select any shaders you want, click *Next*.  If you click *Skip* the reshade-shaders folder won't be created for you.
+**5)** Select any shaders you want, click *Next*.  **DO NOT CLICK *SKIP*!!!** 
+- If skipped the reshade-shaders folder won't be created and you'll also be missing out on important helper shaders that most other shader utilize. If you don't want any additional shaders, then don't select any other checkboxes.  You'll still get the needed helper shaders, and important ones such as Display Depth, which is used to help setup the depth buffer.
 
 **6)** With addons I recommend not picking any, unless there's some that you use in almost every game, such as the IGCS Connector for people using Otis' camera tools. Click *Next* or *Skip*.
 

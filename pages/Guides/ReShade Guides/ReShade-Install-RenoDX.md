@@ -6,13 +6,19 @@ description: Reference this guide for all RenoDX installs
 sidebar: false
 ---
 
+{% include callout.html type="tip" content="There is now a dedicated installer for RenoDX mods, made by RankFTW, called RenoDXChecker.  It can install ReShade and RenoDX for you, assuming the RenoDX addon is available directly from the GitHub page.  Versions of RenoDX that can only be found on the RenoDX Discord will still need to be manually installed.  You can find the app here: <https://github.com/RankFTW/RenoDXChecker>" %}
+
+
 ## Install Process
 
 **1) Install latest version of ReShade with full add-on support:**
-- Download ReShade from <https://reshade.me/#download>**
+- Download ReShade from **<https://reshade.me/#download>**
 <a href="https://slow.pics/BLUMrJiN/"><img src="https://i.slow.pics/BLUMrJiN.jpg" style="width:75%;height:75%;"/></a>
+- Do not run the ReShade installer directly from the Windows Downloads folder or the folder the game is installed in, as both options can cause installation issues. Easy option is to make a new folder on your Desktop and just run it from there.
 
-**2) Pick the rendering API that the game uses:**
+**2) Pick the game you want to install ReShade to.  For Unreal Engine games pick the exe that ends in `Win64-Shipping`.**
+
+**3) Pick the rendering API that the game uses:**
 - <details><summary>Click to see what this step looks like</summary>
 <a href="https://slow.pics/V4scY4i0/"><img src="https://i.slow.pics/V4scY4i0.jpg" style="width:75%;height:75%;"/></a>
     
@@ -20,12 +26,12 @@ sidebar: false
 
 - You can also find a list of rendering APIs for each game on PC Gaming Wiki: <https://www.pcgamingwiki.com/wiki/Home>
 	
-**3) In the shader selection screen make sure to select Lilium's HDR Analysis tool.**  This will come in handy when configuring the in-game HDR settings. Click here for full list of HDR compatible shader repositories: <https://www.hdrmods.com/HDR-Link-Library>
+**4) In the shader selection screen make sure to select Lilium's HDR Analysis tool.**  This will come in handy when configuring the in-game HDR settings. Click here for full list of HDR compatible shader repositories: <https://www.hdrmods.com/HDR-Link-Library>
 
 - <details><summary>This is listed under "ReShade HDR shaders by Lilium" and the shader is called "lilium_hdr_and_sdr_analysis.fx". You can click "Sort by:" and change the option to "A to Z" to make finding Lilium's shaders easier: </summary>		
 <img src="https://github.com/CreepySasquatch/HDRMods/blob/main/images/Guide-Generic-Images/ReShade-Lilium-Shaders.jpg?raw=true" title="Lilium Shaders" style="width:359px;height:470px;"/>
 	
-**4) When you get to the select addons screen DO NOT PICK ANY ADDONS...***unless you know what the addons are for and are actually going to use them*.  
+**5) When you get to the select addons screen DO NOT PICK ANY ADDONS...***unless you know what the addons are for and are actually going to use them*.  
 - <details><summary>Unneeded addons will hurt your game performance and selecting them all is likely to make your game crash or not boot at all: </summary>		
 <img src="https://github.com/CreepySasquatch/HDRMods/blob/main/images/Guide-Generic-Images/ReShade%20Skip%20Addons.jpg?raw=true" title="ReShade Addons" style="width:363px;height:468px;"/>
 

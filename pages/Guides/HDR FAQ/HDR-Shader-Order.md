@@ -2,7 +2,7 @@
 title: [HDR Shader Order]
 type:
 summary:
-description: HDR Shader Order
+description: How to use ReShade shaders with HDR
 sidebar: false
 ---
 
