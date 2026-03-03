@@ -123,7 +123,7 @@ TB stands for True Black.  True Black rated monitors will have a separate True B
 **7)** Place the RenoDX addon in the `\bin\x64` folder where Cyberpunk 2077 is installed.
 <a href="https://slow.pics/xuB4Etdm/"><img src="https://i.slow.pics/xuB4Etdm.jpg" style="width:100%;height:100%;"/></a>
 
-### PART 2 - Steps 8-17: Configuring the in-game settings and RenoDX.
+### PART 2 - Steps 8-18: Configuring the in-game settings and RenoDX.
 
 **8)** Start the game. Open the Settings menu.
 
@@ -170,21 +170,27 @@ List of HDR compatible shader packs which will work with both HDR10 and scRGB wi
 
 - If you don't have a Home key please refer to this guide that goes over how to change it to a different key: <https://www.youtube.com/watch?v=xoCdpOIRKus>
 
-**12)** Click on the RenoDX tab along the top of the ReShade GUI.  Set the Peak Brightness to match your display's capabilities.  
+**12)** Click the Addons tab.  Disable the Generic Depth and Effect Runtime Sync addons, and restart the game. This should help with performance issues that occur when using ReShade in DirectX 12 games.
+- The Generic Depth addon is used by some types of ReShade shaders that need access to the game's depth buffer.  These include RT, GI, AO, Fog, and Depth of Field shaders.  If you're just using RenoDX and have no interest in those types of shaders, then you'll be fine.  
+- Popular sharpening shaders such as Lilium's RCAS do not need the Generic Depth addon to function.
+- The Effect Runtime Sync addon is mainly used for VR shaders.  Even if you're a screenshot junkie who likes messing with all the various shaders, you still don't need this enabled.
+<a href="https://slow.pics/wz8PzqUA/"><img src="https://i.slow.pics/wz8PzqUA.png" style="width:100%;height:100%;"/></a>
+
+**13)** Click on the RenoDX tab along the top of the ReShade GUI.  Set the Peak Brightness to match your display's capabilities.  
 
 - If you don't know what that value is, refer to the spec sheet for your display or look it up on <https://www.rtings.com/> which has reviews for a wide range of displays that includes detailed spec lists.
 
 - Technically all the other RenoDX settings are user preference but I'll go over a few more important ones.
 
-**13)** Game Brightness is the paper white value.  Set this between 150-300 nits (I personally have it set to 200 nits) but this is ultimately user preference and may need to change depending on which LUT you're using.
+**14)** Game Brightness is the paper white value.  Set this between 150-300 nits (I personally have it set to 200 nits) but this is ultimately user preference and may need to change depending on which LUT you're using.
 
-**14)** Set SDR EOTF Emulation to UI/Menu only.  If you like how the older version of RenoDX looked, slide this to the right so it applies to everything.
+**15)** Set SDR EOTF Emulation to UI/Menu only.  If you like how the older version of RenoDX looked, slide this to the right so it applies to everything.
 
-**15)** Filmgrain I personally have set to around 20.  This is the same filmgrain from ShortFuse's ReShade shader repository: <https://github.com/clshortfuse/reshade-shaders/tree/main/Shaders>
+**16)** Filmgrain I personally have set to around 20.  This is the same filmgrain from ShortFuse's ReShade shader repository: <https://github.com/clshortfuse/reshade-shaders/tree/main/Shaders>
 
 - If using other ReShade shaders such as Lilium's RCAS (which is commonly recommended), then I would set the filmgrain within RenoDX to 0 and then use the ShortFuse's filmgrain shader and place it at the very end (you never want to sharpen filmgrain, and RCAS is a sharpening shader).
 
-**16) Double check to make sure Debug Graph is turned off** (found at the very bottom of RenoDX under Debug).  Otherwise you'll see a colored square on the upper right corner behind the minimap.
+**17) Double check to make sure Debug Graph is turned off** (found at the very bottom of RenoDX under Debug).  Otherwise you'll see a colored square on the upper right corner behind the minimap.
 
 <details><summary>Debug Graph On</summary>
 <a href="https://slow.pics/xY8QcYui/"><img src="https://i.slow.pics/xY8QcYui.png" style="width:100%;height:100%;"/></a>
@@ -194,7 +200,7 @@ List of HDR compatible shader packs which will work with both HDR10 and scRGB wi
 <a href="https://slow.pics/R1nHEgpd/"><img src="https://i.slow.pics/R1nHEgpd.png" style="width:100%;height:100%;"/></a>
 </details>
 
-**17)** Adjust the rest of the sliders however you'd like!
+**18)** Adjust the rest of the sliders however you'd like!
 
 ## Troubleshooting
 
