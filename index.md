@@ -25,3 +25,5 @@ sidebar: false
 [**<<GAME SPECIFIC GUIDES>>**](Game-Specific-Guides-Index)
 
 [**<<RESHADE SPECIFIC GUIDES>>**](ReShade-Guides-Index)
+
+[**HDR Memes**](HDR-Memes)
