@@ -76,12 +76,23 @@ TB stands for True Black.  True Black rated monitors will have a separate True B
 - Go to step 4B if ReShade wasn't previously installed and you see the "Select effects to install" screen.
 
 **4A)** ReShade already installed: pick `Update ReShade only`. Click `Next`, then click `Finish`.  **Skip to step 6.**
-- Alternatively uninstall ReShade and Effects, click `Next` then `Finish`.  Then reinstall ReShade from Step 2 onwards. This is the recommended option if you picked a ton of addons the first time you installed ReShade, as having a ton of extra addons you don't need will just cause issues.  If you're unsure what you picked last time, then just uninstall and reinstall ReShade.  It'll save you a headache later on and it only takes an extra few seconds to do.
-<details><summary>ReShade: Update Options:</summary>
+- Alternatively uninstall ReShade and Effects, click `Next` then `Finish`.  Then reinstall ReShade from Step 2 onwards. This is the recommended option if you picked a ton of addons the first time you installed ReShade, as having a ton of extra addons you don't need will just cause issues.  If you're unsure what you picked last time, then just uninstall and reinstall ReShade. 
+- To uninstall ReShade pick `Uninstall ReShade and effects` seen in the `Select the operation to perform` screen, then run the ReShade installer again, following the same steps seen in **Step 2** of this guide onwards.  It'll save you a headache later on and it only takes an extra few seconds to do.
+- Uninstalling ReShade via the installer removes everything ReShade added except for any ReShade presets, those will remain. 
+- You can also manually uninstall ReShade by deleting the following files from the /bin/x64 folder.  
+    - **If you don't see the file extensions such as `.ini` or `.dll` then you need to enable file extensions within Windows file viewer.  Here's a guide on how to do that: <https://guides.martysmods.com/additionalguides/fileextensions>**
+    - `dxgi.dll` - Other mods may also use dxgi.dll and as such you may have renamed this to something different, such as d3d12.dll.  Either hover your mouse over the .dll file or right click on it and click on the details tab.  You should see `crosire's ReShade post-processing injector`
+    - `ReShade.ini` - You may also see `ReShade2.ini`, `ReShade3.ini` and so on.  Delete those as well.  This is where any changes made in the Settings tab are saved. RenoDX preset settings are saved here.
+    - `reshade-shaders` folder
+    - `ReShade.log`
+    - `ReShadePreset.ini` - this is the default preset that any Home tab shader configurations are saved to.  ReShade presets can be renamed to anything you want, so long as the file type is `.ini`.
+
+<details><summary>ReShade: Update / Uninstall Options:</summary>
 <a href="https://slow.pics/dMPn4wT9/"><img src="https://i.slow.pics/dMPn4wT9.jpg" style="width:75%;height:75%;"/></a>
 </details>
 
-**4B)** ReShade new installation: You should see the Effect / Shader selection screen.  You do not need any shaders for RenoDX; however, it's often recommended to grab Lilium's HDR shaders, especially for RCAS and the HDR Analysis Tool.  Whether you do this is entirely up to you.  Click `Next`.
+**4B)** ReShade new installation: You should see the Effect / Shader selection screen.  You do not need any shaders for RenoDX; however, it's often recommended to grab Lilium's HDR shaders, especially for RCAS and the HDR Analysis Tool.  Whether you do this is entirely up to you. Click `Next`.
+- It's completely ok to have shaders listed in the Home tab within ReShade that you are not using.  Shaders not being used will not use up resources when playing the game.  The only downside to picking shaders that you're not going to use, is a slight increase in time it will take for ReShade to compile all of these when starting up the game. Just be aware that you won't be able to open the ReShade UI until shader compilation is complete.  This is why picking all of the shaders is not recommended.
 <details><summary>Feel free to uncheck the box next to SweetFX though, as those are selected by default.</summary>
 <a href="https://slow.pics/Ku9OHLUk/"><img src="https://i.slow.pics/Ku9OHLUk.jpg" style="width:75%;height:75%;"/></a>
 </details>
