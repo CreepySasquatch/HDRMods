@@ -154,7 +154,9 @@ List of HDR compatible shader packs which will work with both HDR10 and scRGB wi
 
 - **Maximum Brightness: Leave at the default value.**  You'll change this in the RenoDX addon under *Peak Brightness*.
 
-- **Paper White: 200.** You'll change this in the RenoDX addon as the *Game Brightness*.
+- **Paper White: 200.** This determines the brightness of the UI in the game, this has no other purpose when RenoDX is installed.
+
+While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  However, the actual paper white setting, in terms of what you're probably used to with HDR settings (aka the average brightness), is called  `Game Brightness` in the RenoDX addon.
 
 - **Set Tone-Mapping Midpoint to 1.** Tone-Mapping Midpoint is critical for the overall brightness of the game.  If the game is too bright then doublecheck this setting.
 
@@ -265,6 +267,9 @@ List of HDR compatible shader packs which will work with both HDR10 and scRGB wi
 <a href="https://slow.pics/FScCfiyT/"><img src="https://i.slow.pics/FScCfiyT.png" style="width:100%;height:100%;"/></a>
 </details>
 - Known issue with RenoDX WIP that affects both the vanilla map and the Preem Map mod from CyanideX.  Use the Realistic Map Mod instead (8K version or higher): <https://www.nexusmods.com/cyberpunk2077/mods/17811>
+
+### How do I adjust the UI brightness?
+**You can change the UI brightness by adjusting the `paper white` value in the game's HDR settings.**  This value has no other effect when RenoDX is installed.
 
 ## How to Provide More Info for Troubleshooting
 
