@@ -184,7 +184,8 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 - If you don't have a Home key please refer to this guide that goes over how to change it to a different key: <https://www.youtube.com/watch?v=xoCdpOIRKus>
 
 **12)** Click the Addons tab.  Disable the Generic Depth and Effect Runtime Sync addons, and restart the game. This should help with performance issues that occur when using ReShade in DirectX 12 games.
-- The Generic Depth addon is used by some types of ReShade shaders that need access to the game's depth buffer.  These include RT, GI, AO, Fog, and Depth of Field shaders.  If you're just using RenoDX and have no interest in those types of shaders, then you'll be fine.  
+- The Generic Depth addon is used by some types of ReShade shaders that need access to the game's depth buffer.  These include RT, GI, AO, Fog, and Depth of Field shaders.  If you're just using RenoDX and have no interest in those types of shaders, then you'll be fine.
+- The Deband shader, which is sometimes recommended to fix banding issues (usually in the sky / clouds) DOES make use of the Depth Buffer.  So if someone told you to use this shader, you'll also want to make sure the Generic Depth addon is enabled (restart the game to re-enable it if needed).  
 - Popular sharpening shaders such as Lilium's RCAS do not need the Generic Depth addon to function.
 - The Effect Runtime Sync addon is mainly used for VR shaders.  Even if you're a screenshot junkie who likes messing with all the various shaders, you still don't need this enabled.
 <a href="https://slow.pics/wz8PzqUA/"><img src="https://i.slow.pics/wz8PzqUA.png" style="width:100%;height:100%;"/></a>
