@@ -131,7 +131,7 @@ TB stands for True Black.  True Black rated monitors will have a separate True B
 <a href="https://slow.pics/A4UyiLo0/"><img src="https://i.slow.pics/A4UyiLo0.jpg" style="width:50%;height:50%;"/></a>
 </details>    
 
-**7)** Place the RenoDX addon in the `\bin\x64` folder where Cyberpunk 2077 is installed.
+**7)** Place the RenoDX addon, `renodx-cp2077-wip.addon64` in the `\bin\x64` folder where Cyberpunk 2077 is installed.  If you previously installed RenoDX, then make sure the old version is deleted. This will be named `renodx-cp2077.addon64`.  If you have both versions installed it will cause issues.
 <a href="https://slow.pics/xuB4Etdm/"><img src="https://i.slow.pics/xuB4Etdm.jpg" style="width:100%;height:100%;"/></a>
 
 ### PART 2 - Steps 8-18: Configuring the in-game settings and RenoDX.
