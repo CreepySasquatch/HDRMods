@@ -456,11 +456,88 @@ title: Nexus Mods Monitor
       gap: 0.4rem;
     }
 
+    /* ── MOD ROWS ── */
+    .mod-rows { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.75rem; }
+
+    .mod-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .mod-rows-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 0.6rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .mod-rows-header span {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .btn-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px; height: 36px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-med);
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.12s, color 0.12s, border-color 0.12s;
+      flex-shrink: 0;
+    }
+
+    .btn-icon:hover {
+      background: rgba(239,68,68,0.08);
+      border-color: rgba(239,68,68,0.3);
+      color: var(--red);
+    }
+
+    .btn-add {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: var(--radius-sm);
+      border: 1px dashed var(--border-med);
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-bottom: 1.25rem;
+      transition: background 0.12s, border-color 0.12s, color 0.12s;
+    }
+
+    .btn-add:hover {
+      background: var(--surface-2);
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    .config-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
     @media (max-width: 640px) {
-      .nm-grid { grid-template-columns: 1fr; }
-      .nm-grid .full { grid-column: 1; }
       .nm-wrap { padding: 1.5rem 1rem 3rem; }
       .nm-header { flex-direction: column; }
+      .config-bottom { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -491,19 +568,24 @@ title: Nexus Mods Monitor
   <!-- CONFIG -->
   <div class="nm-card" id="config-panel">
     <div class="nm-card-title">Configuration</div>
-    <div class="nm-grid">
-      <div>
-        <label class="nm-label" for="api-key">Nexus API Key</label>
-        <input class="nm-input" type="password" id="api-key" placeholder="Paste your API key…" autocomplete="off" />
-      </div>
-      <div>
-        <label class="nm-label" for="game-id">Game ID</label>
-        <input class="nm-input" type="text" id="game-id" value="cyberpunk2077" />
-      </div>
-      <div class="full">
-        <label class="nm-label" for="mod-ids">Mod IDs (comma-separated)</label>
-        <input class="nm-input" type="text" id="mod-ids" value="28171, 28191" placeholder="e.g. 28171, 28191" />
-      </div>
+
+    <!-- API Key -->
+    <div style="margin-bottom:1.25rem">
+      <label class="nm-label" for="api-key">Nexus API Key</label>
+      <input class="nm-input" type="password" id="api-key" placeholder="Paste your API key…" autocomplete="off" />
+    </div>
+
+    <!-- Per-mod rows -->
+    <div class="mod-rows-header">
+      <span>Game ID</span>
+      <span>Mod ID</span>
+      <span></span>
+    </div>
+    <div class="mod-rows" id="mod-rows"></div>
+    <button class="btn-add" onclick="addModRow()">+ Add mod</button>
+
+    <!-- Poll settings -->
+    <div class="config-bottom">
       <div>
         <label class="nm-label" for="poll-interval">Poll interval (minutes)</label>
         <input class="nm-input" type="number" id="poll-interval" value="10" min="1" max="60" />
@@ -513,6 +595,7 @@ title: Nexus Mods Monitor
         <input class="nm-input" type="number" id="window-minutes" value="60" min="10" max="720" />
       </div>
     </div>
+
     <button class="btn-primary" onclick="startPolling()">&#9654;&nbsp; Start Monitoring</button>
   </div>
 
@@ -563,31 +646,66 @@ title: Nexus Mods Monitor
   let pollIntervalSec = 600;
   let windowMinutes = 60;
   let remainingSec = 0;
+  let rowCount = 0;
 
+  // ── MOD ROW MANAGEMENT ──
+  function addModRow(gameVal = 'cyberpunk2077', modVal = '') {
+    const id = rowCount++;
+    const container = document.getElementById('mod-rows');
+    const row = document.createElement('div');
+    row.className = 'mod-row';
+    row.dataset.id = id;
+    row.innerHTML = `
+      <input class="nm-input" type="text"   placeholder="e.g. cyberpunk2077"  value="${gameVal}" data-role="game" />
+      <input class="nm-input" type="number" placeholder="Mod ID"               value="${modVal}"  data-role="mod"  />
+      <button class="btn-icon" onclick="removeModRow(${id})" title="Remove">✕</button>
+    `;
+    container.appendChild(row);
+  }
+
+  function removeModRow(id) {
+    const row = document.querySelector(`.mod-row[data-id="${id}"]`);
+    if (row) row.remove();
+  }
+
+  function getModEntries() {
+    return Array.from(document.querySelectorAll('.mod-row')).map(row => ({
+      game:  row.querySelector('[data-role="game"]').value.trim(),
+      modId: parseInt(row.querySelector('[data-role="mod"]').value.trim()),
+    })).filter(e => e.game && !isNaN(e.modId));
+  }
+
+  // Seed with default rows on load
+  addModRow('cyberpunk2077', '28171');
+  addModRow('cyberpunk2077', '28191');
+
+  // ── CLOCK ──
   setInterval(() => {
     document.getElementById('footer-time').textContent =
       new Date().toLocaleString('en-US', { hour12: true });
   }, 1000);
 
+  // ── CONFIG ──
   function getConfig() {
     return {
-      apiKey: document.getElementById('api-key').value.trim(),
-      game:   document.getElementById('game-id').value.trim() || 'cyberpunk2077',
-      modIds: document.getElementById('mod-ids').value.split(',').map(s=>s.trim()).filter(Boolean).map(Number),
-      poll:   parseInt(document.getElementById('poll-interval').value) || 10,
-      win:    parseInt(document.getElementById('window-minutes').value) || 60,
+      apiKey:  document.getElementById('api-key').value.trim(),
+      entries: getModEntries(),
+      poll:    parseInt(document.getElementById('poll-interval').value) || 10,
+      win:     parseInt(document.getElementById('window-minutes').value) || 60,
     };
   }
 
+  // ── API ──
   async function fetchMod(apiKey, game, modId) {
     const resp = await fetch(`https://api.nexusmods.com/v1/games/${game}/mods/${modId}.json`, {
       headers: { 'apikey': apiKey, 'Accept': 'application/json' }
     });
-    if (!resp.ok) throw new Error(`API error ${resp.status} for mod ${modId}`);
+    if (!resp.ok) throw new Error(`API error ${resp.status} for mod ${modId} (${game})`);
     const d = await resp.json();
     return {
-      id:               String(modId),
+      id:               `${game}:${modId}`,
       name:             d.name,
+      game:             game,
       endorsements:     parseInt(d.endorsement_count),
       downloads:        parseInt(d.mod_downloads),
       unique_downloads: parseInt(d.mod_unique_downloads),
@@ -595,14 +713,16 @@ title: Nexus Mods Monitor
     };
   }
 
+  // ── SCORE ──
   function computeScore(r) {
     const ageH = (Date.now() - new Date(r.created_time).getTime()) / 3600000;
     if (ageH <= 0) return 0;
     return (r.endorsements * 10 + r.unique_downloads * 5 + r.downloads) / ageH;
   }
 
+  // ── HISTORY ──
   function updateHistory(results, win) {
-    const now = new Date().toISOString();
+    const now    = new Date().toISOString();
     const cutoff = Date.now() - win * 60000;
     for (const r of results) {
       if (!history[r.id]) history[r.id] = [];
@@ -611,11 +731,12 @@ title: Nexus Mods Monitor
     }
   }
 
-  function rollingDelta(modId, key, current) {
-    const entries = history[modId] || [];
+  function rollingDelta(id, key, current) {
+    const entries = history[id] || [];
     return entries.length ? current - entries[0][key] : null;
   }
 
+  // ── FORMAT ──
   function fmt(n) { return Number(n).toLocaleString(); }
 
   function deltaCell(val) {
@@ -625,15 +746,22 @@ title: Nexus Mods Monitor
     return `<td class="delta-col num ${cls}">${sign}${fmt(val)}</td>`;
   }
 
+  // ── RENDER ──
   function renderTable(results) {
     const scores   = results.map(computeScore);
     const maxScore = Math.max(...scores);
     const label    = `Δ ${windowMinutes}m`;
     ['dh-u','dh-d','dh-e'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = label; });
 
+    // check if any results span multiple games
+    const multiGame = new Set(results.map(r => r.game)).size > 1;
+
     document.getElementById('table-body').innerHTML = results.map((r, i) => {
       const isTop = scores[i] === maxScore && maxScore > 0;
       const badge = isTop ? `<span class="top-badge">TOP</span>` : '';
+      const gamePill = multiGame
+        ? `<span style="font-size:10px;font-weight:600;color:var(--text-muted);background:var(--surface-3);padding:0.1rem 0.4rem;border-radius:4px;flex-shrink:0;">${r.game}</span>`
+        : '';
       const du = rollingDelta(r.id, 'unique',       r.unique_downloads);
       const dd = rollingDelta(r.id, 'downloads',    r.downloads);
       const de = rollingDelta(r.id, 'endorsements', r.endorsements);
@@ -643,6 +771,7 @@ title: Nexus Mods Monitor
             <div class="mod-name-cell">
               <span class="mod-rank">#${i+1}</span>
               ${badge}
+              ${gamePill}
               <span class="mod-name-text">${r.name}</span>
             </div>
           </td>
@@ -657,6 +786,7 @@ title: Nexus Mods Monitor
     }).join('');
   }
 
+  // ── STATUS ──
   function setStatus(type, text) {
     const el = document.getElementById('status-conn');
     el.className = 'pill' + (type === 'ok' ? ' connected' : type === 'err' ? ' error' : '');
@@ -677,6 +807,7 @@ title: Nexus Mods Monitor
 
   function clearError() { document.getElementById('error-box').style.display = 'none'; }
 
+  // ── TIMER ──
   function startCountdown(sec) {
     clearInterval(countdownTimer);
     remainingSec = sec;
@@ -693,11 +824,14 @@ title: Nexus Mods Monitor
     }, 1000);
   }
 
+  // ── POLL ──
   async function doPoll(config) {
     document.getElementById('loading-box').style.display = 'block';
     clearError();
     try {
-      const results = await Promise.all(config.modIds.map(id => fetchMod(config.apiKey, config.game, id)));
+      const results = await Promise.all(
+        config.entries.map(e => fetchMod(config.apiKey, e.game, e.modId))
+      );
       updateHistory(results, config.win);
       renderTable(results);
       document.getElementById('table-wrap').style.display = 'block';
@@ -712,10 +846,11 @@ title: Nexus Mods Monitor
     }
   }
 
+  // ── START / STOP ──
   async function startPolling() {
     const config = getConfig();
-    if (!config.apiKey)    { showError('API key required. Get yours at nexusmods.com → Settings → API Keys.'); return; }
-    if (!config.modIds.length) { showError('Enter at least one valid mod ID.'); return; }
+    if (!config.apiKey)        { showError('API key required. Get yours at nexusmods.com → Settings → API Keys.'); return; }
+    if (!config.entries.length){ showError('Add at least one valid game ID + mod ID pair.'); return; }
     pollIntervalSec = config.poll * 60;
     windowMinutes   = config.win;
     document.getElementById('config-panel').style.display = 'none';
