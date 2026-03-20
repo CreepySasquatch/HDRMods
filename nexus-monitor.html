@@ -8,18 +8,13 @@ title: Nexus Mods Monitor
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NEXUS // MOD MONITOR</title>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet" />
+  <title>Nexus Mod Monitor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    /* ── THEME OVERRIDE: bust out of Jekyll content wrapper ── */
-    /* Targets common wrapper class names used by Jekyll themes */
-    .page-content,
-    .main-content,
-    .content,
-    .wrapper,
-    .post-content,
-    article,
-    main {
+
+    /* ── THEME OVERRIDES ── */
+    .page-content, .main-content, .content, .wrapper,
+    .post-content, article, main {
       max-width: none !important;
       width: 100% !important;
       padding-left: 0 !important;
@@ -28,651 +23,564 @@ title: Nexus Mods Monitor
       margin-right: 0 !important;
     }
 
-    :root {
-      --cyan:    #5ebad1;
-      --magenta: #fbf201;
-      --yellow:  #fbf201;
-      --green:   #39ff14;
-      --red:     #ff2a2a;
-      --bg:      #05080f;
-      --bg2:     #090e18;
-      --bg3:     #0e1520;
-      --border:  #0e1e2e;
-      --text:    #9bbfcc;
-      --dim:     #2a3d4d;
-    }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --yellow:      #fbf201;
+      --yellow-dim:  rgba(251, 242, 1, 0.08);
+      --yellow-glow: rgba(251, 242, 1, 0.2);
+      --blue:        #5ebad1;
+      --blue-dim:    rgba(94, 186, 209, 0.1);
+
+      --bg:          #0b0e14;
+      --surface:     #131720;
+      --surface-2:   #1a1f2e;
+      --surface-3:   #20263a;
+      --border:      rgba(255,255,255,0.07);
+      --border-med:  rgba(255,255,255,0.11);
+
+      --text-primary:   #eef0f4;
+      --text-secondary: #7e8fa3;
+      --text-muted:     #3f4f62;
+
+      --green: #22c55e;
+      --red:   #ef4444;
+
+      --radius:    10px;
+      --radius-sm: 6px;
+    }
 
     body {
       background: var(--bg);
-      color: var(--text);
-      font-family: 'Share Tech Mono', monospace;
+      color: var(--text-primary);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
       min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Scanline overlay */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(94,186,209,0.015) 2px,
-        rgba(94,186,209,0.015) 4px
-      );
-      pointer-events: none;
-      z-index: 1000;
-    }
-
-    /* Grid background */
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(94,186,209,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(94,186,209,0.04) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .container {
-      position: relative;
-      z-index: 1;
-      max-width: 1100px;
+    /* ── LAYOUT ── */
+    .nm-wrap {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
+      padding: 2.5rem 2rem 5rem;
     }
 
     /* ── HEADER ── */
-    header {
-      margin-bottom: 2.5rem;
-      position: relative;
+    .nm-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
     }
 
-    .header-tag {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--cyan);
-      letter-spacing: 0.3em;
-      opacity: 0.7;
+    .nm-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
       margin-bottom: 0.4rem;
     }
 
-    h1 {
-      font-family: 'Orbitron', monospace;
-      font-weight: 900;
-      font-size: clamp(1.8rem, 5vw, 3.2rem);
-      color: var(--cyan);
-      text-shadow:
-        0 0 10px var(--cyan),
-        0 0 30px rgba(94,186,209,0.4),
-        0 0 60px rgba(94,186,209,0.15);
-      letter-spacing: 0.08em;
-      line-height: 1;
-      position: relative;
+    .nm-title {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--text-primary);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
     }
 
-    h1 .slash {
-      color: var(--magenta);
-      text-shadow:
-        0 0 10px var(--magenta),
-        0 0 30px rgba(251,242,1,0.4);
+    .nm-title span { color: var(--yellow); }
+
+    .nm-subtitle {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-top: 0.45rem;
     }
 
-    .subtitle {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 0.9rem;
-      color: var(--dim);
-      letter-spacing: 0.25em;
-      margin-top: 0.5rem;
-      text-transform: uppercase;
-    }
-
-    .header-line {
-      height: 1px;
-      background: linear-gradient(90deg, var(--cyan), var(--yellow), transparent);
-      margin-top: 1.2rem;
-      box-shadow: 0 0 8px var(--cyan);
-    }
-
-    /* ── STATUS BAR ── */
-    .status-bar {
+    /* ── STATUS PILLS ── */
+    .nm-status-row {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 1.5rem;
-      font-size: 0.88rem;
+      gap: 0.5rem;
       flex-wrap: wrap;
+      padding-top: 0.25rem;
     }
 
-    .status-item {
-      display: flex;
+    .pill {
+      display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      color: var(--dim);
-      letter-spacing: 0.1em;
-    }
-
-    .status-item.active { color: var(--yellow); }
-    .status-item.error  { color: var(--red); }
-
-    .dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: currentColor;
-      box-shadow: 0 0 6px currentColor;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%,100% { opacity: 1; }
-      50%      { opacity: 0.3; }
-    }
-
-    /* ── API KEY PANEL ── */
-    .panel {
-      background: var(--bg2);
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
       border: 1px solid var(--border);
-      border-left: 3px solid var(--cyan);
-      padding: 1.6rem 1.8rem;
-      margin-bottom: 1.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .panel::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, var(--cyan), transparent);
-      opacity: 0.6;
-    }
-
-    .panel-label {
-      font-size: 0.82rem;
-      letter-spacing: 0.3em;
-      color: var(--cyan);
-      opacity: 0.9;
-      margin-bottom: 1.2rem;
-      text-transform: uppercase;
-    }
-
-    .input-row {
-      display: flex;
-      gap: 0.7rem;
-      flex-wrap: wrap;
-    }
-
-    input[type="text"], input[type="password"], input[type="number"] {
-      background: var(--bg3);
-      border: 1px solid var(--dim);
-      color: var(--cyan);
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 1rem;
-      padding: 0.65rem 1rem;
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      flex: 1;
-      min-width: 0;
-      width: 100%;
-    }
-
-    input[type="text"]:focus,
-    input[type="password"]:focus,
-    input[type="number"]:focus {
-      border-color: var(--cyan);
-      box-shadow: 0 0 10px rgba(94,186,209,0.2);
-    }
-
-    input::placeholder { color: var(--dim); opacity: 0.8; }
-
-    .config-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-      margin-bottom: 1.4rem;
-    }
-
-    .config-field label {
-      display: block;
-      font-size: 0.78rem;
-      letter-spacing: 0.2em;
-      color: var(--text);
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-    }
-
-    .mod-ids-field {
-      grid-column: 1 / -1;
-    }
-
-    /* ── BUTTONS ── */
-    .btn {
-      font-family: 'Orbitron', monospace;
-      font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 0.15em;
-      padding: 0.7rem 1.6rem;
-      border: 1px solid;
-      cursor: pointer;
-      text-transform: uppercase;
-      transition: all 0.15s;
-      background: transparent;
-      position: relative;
-      overflow: hidden;
+      background: var(--surface);
+      color: var(--text-secondary);
       white-space: nowrap;
     }
 
-    .btn-cyan {
-      border-color: var(--cyan);
-      color: var(--cyan);
+    .pill.connected {
+      border-color: rgba(34,197,94,0.25);
+      background: rgba(34,197,94,0.07);
+      color: var(--green);
     }
 
-    .btn-cyan:hover {
-      background: rgba(94,186,209,0.1);
-      box-shadow: 0 0 20px rgba(94,186,209,0.3), inset 0 0 20px rgba(94,186,209,0.05);
+    .pill.error {
+      border-color: rgba(239,68,68,0.25);
+      background: rgba(239,68,68,0.07);
+      color: var(--red);
     }
 
-    .btn-cyan:active { transform: scale(0.97); }
-
-    .btn-magenta {
-      border-color: var(--magenta);
-      color: var(--magenta);
+    .pill-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: currentColor;
     }
 
-    .btn-magenta:hover {
-      background: rgba(251,242,1,0.08);
-      box-shadow: 0 0 20px rgba(251,242,1,0.3);
+    .pill.connected .pill-dot { animation: blink 2s ease-in-out infinite; }
+
+    @keyframes blink {
+      0%,100% { opacity: 1; }
+      50%      { opacity: 0.25; }
     }
 
-    .btn-sm {
-      font-size: 0.75rem;
-      padding: 0.5rem 0.9rem;
+    /* ── DIVIDER ── */
+    .nm-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0 0 1.5rem;
     }
 
-    /* ── TIMER ── */
-    .timer-bar-wrap {
-      margin-bottom: 1.5rem;
-      display: none;
-    }
-
-    .timer-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.4rem;
-      font-size: 0.85rem;
-      color: var(--dim);
-      letter-spacing: 0.1em;
-    }
-
-    .timer-header span:last-child {
-      color: var(--yellow);
-      font-size: 1.05rem;
-      font-family: 'Orbitron', monospace;
-    }
-
-    .timer-track {
-      height: 3px;
-      background: var(--bg3);
+    /* ── CARD ── */
+    .nm-card {
+      background: var(--surface);
       border: 1px solid var(--border);
-      position: relative;
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
     }
 
-    .timer-fill {
+    .nm-card-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── FORM ── */
+    .nm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .nm-grid .full { grid-column: 1 / -1; }
+
+    .nm-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 0.4rem;
+    }
+
+    .nm-input {
+      width: 100%;
+      background: var(--surface-2);
+      border: 1px solid var(--border-med);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      padding: 0.6rem 0.85rem;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .nm-input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px var(--blue-dim);
+    }
+
+    .nm-input::placeholder { color: var(--text-muted); }
+
+    /* ── BUTTONS ── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: var(--radius-sm);
+      border: none;
+      background: var(--yellow);
+      color: #0b0e14;
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+
+    .btn-primary:hover  { opacity: 0.88; }
+    .btn-primary:active { transform: scale(0.98); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.85rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-med);
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.12s, color 0.12s;
+    }
+
+    .btn-ghost:hover {
+      background: var(--surface-2);
+      color: var(--text-primary);
+    }
+
+    /* ── SCAN BAR ── */
+    .nm-scan-bar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.9rem 1.25rem;
+      margin-bottom: 1.25rem;
+      display: none;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nm-scan-bar.visible { display: flex; }
+
+    .scan-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .scan-track {
+      flex: 1;
+      height: 3px;
+      background: var(--surface-3);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .scan-fill {
       height: 100%;
-      background: linear-gradient(90deg, var(--cyan), var(--yellow));
-      box-shadow: 0 0 8px var(--cyan);
+      background: var(--yellow);
+      border-radius: 999px;
       transition: width 1s linear;
       width: 100%;
     }
 
-    /* ── TABLE ── */
-    .table-wrap {
-      display: none;
-      overflow-x: auto;
+    .scan-timer {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--yellow);
+      white-space: nowrap;
+      min-width: 3rem;
+      text-align: right;
     }
 
-    .table-label {
-      font-size: 0.78rem;
-      letter-spacing: 0.3em;
-      color: var(--magenta);
-      opacity: 0.7;
+    /* ── TABLE ── */
+    .nm-table-wrap { display: none; }
+
+    .nm-table-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       margin-bottom: 0.6rem;
+    }
+
+    .nm-section-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .nm-updated {
+      font-size: 12px;
+      color: var(--text-muted);
     }
 
     table {
       width: 100%;
-      border-collapse: collapse;
-      font-size: 1.1rem;
-      font-weight: 600;
-      min-width: 0;
+      border-collapse: separate;
+      border-spacing: 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
     }
 
     thead th {
-      font-family: 'Rajdhani', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--cyan);
-      opacity: 0.85;
-      padding: 0.7rem 1rem;
+      padding: 0.8rem 1.1rem;
       text-align: right;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      background: var(--surface-2);
       border-bottom: 1px solid var(--border);
       white-space: nowrap;
     }
 
     thead th:first-child { text-align: left; }
 
-    tbody tr {
-      border-bottom: 1px solid rgba(10,42,58,0.5);
-      transition: background 0.15s;
-      position: relative;
-    }
+    tbody tr { transition: background 0.1s; }
+    tbody tr:hover { background: var(--surface-2); }
+    tbody tr:not(:last-child) td { border-bottom: 1px solid var(--border); }
 
-    tbody tr:hover { background: rgba(0,245,255,0.03); }
-
-    tbody tr.top-mod {
-      background: rgba(94,186,209,0.04);
-      border-left: 2px solid var(--cyan);
-    }
-
-    tbody tr.top-mod td:first-child { color: var(--cyan); }
+    tbody tr.top-mod             { background: var(--yellow-dim); }
+    tbody tr.top-mod:hover       { background: rgba(251,242,1,0.13); }
 
     td {
-      padding: 1rem 1rem;
+      padding: 1rem 1.1rem;
       text-align: right;
+      font-size: 15px;
+      color: var(--text-primary);
       vertical-align: middle;
     }
 
-    td:first-child {
-      text-align: left;
-      color: var(--text);
-      font-size: 1.1rem;
-      font-weight: 600;
-      white-space: normal;
-      min-width: 180px;
-    }
+    td:first-child { text-align: left; }
 
-    .mod-name {
+    .mod-name-cell {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
     }
 
     .mod-rank {
-      font-family: 'Orbitron', monospace;
-      font-size: 0.78rem;
-      color: var(--dim);
-      width: 1.6rem;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      min-width: 1.6rem;
       text-align: right;
       flex-shrink: 0;
     }
 
-    .top-tag {
-      font-family: 'Orbitron', monospace;
-      font-size: 0.65rem;
-      color: var(--bg);
-      background: var(--cyan);
+    .top-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #0b0e14;
+      background: var(--yellow);
       padding: 0.15rem 0.4rem;
-      letter-spacing: 0.1em;
-      box-shadow: 0 0 8px var(--cyan);
+      border-radius: 4px;
       flex-shrink: 0;
+    }
+
+    .mod-name-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
     }
 
     .num { font-variant-numeric: tabular-nums; }
 
-    .delta-pos {
-      color: var(--yellow);
-      text-shadow: 0 0 8px rgba(251,242,1,0.5);
+    td.delta-col {
+      font-size: 13px;
+      color: var(--text-muted);
     }
 
-    .delta-neg { color: var(--red); }
-    .delta-zero { color: var(--dim); }
+    .delta-pos { color: var(--green); font-weight: 600; }
+    .delta-neg { color: var(--red);   font-weight: 600; }
+    .delta-zero { color: var(--text-muted); }
 
     .score-cell {
-      font-family: 'Orbitron', monospace;
-      font-size: 1.05rem;
+      font-family: 'Barlow', sans-serif;
+      font-size: 15px;
       font-weight: 700;
-      color: var(--yellow);
+      color: var(--blue);
     }
 
-    .score-cell.top-score {
-      color: var(--cyan);
-      text-shadow: 0 0 10px var(--cyan);
-    }
+    .score-cell.top-score { color: var(--yellow); }
 
-    /* ── ERROR / LOADING ── */
-    .message-box {
-      padding: 1.5rem;
-      border: 1px solid;
-      font-size: 0.8rem;
-      letter-spacing: 0.05em;
-      line-height: 1.6;
+    /* ── MESSAGES ── */
+    .nm-message {
+      padding: 0.85rem 1.1rem;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
       display: none;
+      margin-bottom: 1.25rem;
     }
 
-    .message-box.error {
-      border-color: var(--red);
-      color: var(--red);
-      background: rgba(255,42,42,0.05);
+    .nm-message.error {
+      background: rgba(239,68,68,0.07);
+      border: 1px solid rgba(239,68,68,0.2);
+      color: #fca5a5;
     }
 
-    .message-box.info {
-      border-color: var(--dim);
-      color: var(--dim);
-    }
-
-    .loading-dots::after {
-      content: '...';
-      animation: dots 1.2s steps(4, end) infinite;
-    }
-
-    @keyframes dots {
-      0%  { content: ''; }
-      25% { content: '.'; }
-      50% { content: '..'; }
-      75% { content: '...'; }
-    }
-
-    /* ── GLITCH ── */
-    @keyframes glitch {
-      0%,100% { clip-path: none; transform: none; }
-      92%  { clip-path: polygon(0 10%, 100% 10%, 100% 30%, 0 30%); transform: translateX(-3px); }
-      94%  { clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%); transform: translateX(3px); }
-      96%  { clip-path: none; transform: translateX(-1px); }
-    }
-
-    h1::after {
-      content: attr(data-text);
-      position: absolute;
-      left: 0; top: 0;
-      color: var(--yellow);
-      text-shadow: none;
-      animation: glitch 6s infinite;
-      opacity: 0.5;
-      pointer-events: none;
+    .nm-message.info {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
     }
 
     /* ── FOOTER ── */
-    footer {
-      margin-top: 3rem;
+    .nm-footer {
+      margin-top: 2.5rem;
       padding-top: 1rem;
       border-top: 1px solid var(--border);
-      font-size: 0.65rem;
-      color: var(--dim);
-      letter-spacing: 0.15em;
       display: flex;
       justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-muted);
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
 
-    .corner-deco {
-      position: absolute;
-      width: 12px; height: 12px;
-      border-color: var(--cyan);
-      border-style: solid;
-      opacity: 0.5;
-    }
-    .corner-deco.tl { top:0; left:0; border-width: 2px 0 0 2px; }
-    .corner-deco.tr { top:0; right:0; border-width: 2px 2px 0 0; }
-    .corner-deco.bl { bottom:0; left:0; border-width: 0 0 2px 2px; }
-    .corner-deco.br { bottom:0; right:0; border-width: 0 2px 2px 0; }
-
-    @media (max-width: 600px) {
-      .config-grid { grid-template-columns: 1fr; }
+    @media (max-width: 640px) {
+      .nm-grid { grid-template-columns: 1fr; }
+      .nm-grid .full { grid-column: 1; }
+      .nm-wrap { padding: 1.5rem 1rem 3rem; }
+      .nm-header { flex-direction: column; }
     }
   </style>
 </head>
 <body>
-
-<div class="container">
+<div class="nm-wrap">
 
   <!-- HEADER -->
-  <header>
-    <div class="header-tag">&gt; VANSTORM_SYSTEMS // v2.0</div>
-    <h1 data-text="NEXUS // MOD MONITOR">NEXUS <span class="slash">//</span> MOD MONITOR</h1>
-    <div class="subtitle">Cyberpunk 2077 &nbsp;·&nbsp; Live Stats Dashboard</div>
-    <div class="header-line"></div>
-  </header>
-
-  <!-- STATUS BAR -->
-  <div class="status-bar">
-    <div class="status-item" id="status-conn">
-      <div class="dot"></div>
-      <span>AWAITING KEY</span>
+  <div class="nm-header">
+    <div>
+      <div class="nm-eyebrow">Nexus Mods · Live Dashboard</div>
+      <div class="nm-title">Mod <span>Monitor</span></div>
+      <div class="nm-subtitle">Cyberpunk 2077 · Real-time stats tracker</div>
     </div>
-    <div class="status-item" id="status-last">
-      <span>LAST POLL: —</span>
-    </div>
-    <div class="status-item" id="status-window">
-      <span>WINDOW: 60m</span>
-    </div>
-    <div style="margin-left:auto; display:flex; gap:0.6rem;">
-      <button class="btn btn-magenta btn-sm" id="btn-stop" style="display:none" onclick="stopPolling()">■ STOP</button>
+    <div class="nm-status-row">
+      <div class="pill" id="status-conn">
+        <div class="pill-dot"></div>
+        <span>Awaiting key</span>
+      </div>
+      <div class="pill" id="status-last">Last poll: —</div>
+      <button class="btn-ghost" id="btn-stop" style="display:none" onclick="stopPolling()">
+        &#9632;&nbsp;Stop
+      </button>
     </div>
   </div>
 
-  <!-- CONFIG PANEL -->
-  <div class="panel" id="config-panel">
-    <div class="corner-deco tl"></div><div class="corner-deco tr"></div>
-    <div class="corner-deco bl"></div><div class="corner-deco br"></div>
-    <div class="panel-label">// CONFIGURATION</div>
+  <div class="nm-divider"></div>
 
-    <div class="config-grid">
-      <div class="config-field">
-        <label>Nexus API Key</label>
-        <input type="password" id="api-key" placeholder="Paste your API key..." autocomplete="off" />
+  <!-- CONFIG -->
+  <div class="nm-card" id="config-panel">
+    <div class="nm-card-title">Configuration</div>
+    <div class="nm-grid">
+      <div>
+        <label class="nm-label" for="api-key">Nexus API Key</label>
+        <input class="nm-input" type="password" id="api-key" placeholder="Paste your API key…" autocomplete="off" />
       </div>
-      <div class="config-field">
-        <label>Game ID</label>
-        <input type="text" id="game-id" value="cyberpunk2077" placeholder="e.g. skyrimspecialedition" />
+      <div>
+        <label class="nm-label" for="game-id">Game ID</label>
+        <input class="nm-input" type="text" id="game-id" value="cyberpunk2077" />
       </div>
-      <div class="config-field mod-ids-field">
-        <label>Mod IDs (comma-separated)</label>
-        <input type="text" id="mod-ids" placeholder="e.g. 28171, 28191, 107534" value="28171, 28191" />
+      <div class="full">
+        <label class="nm-label" for="mod-ids">Mod IDs (comma-separated)</label>
+        <input class="nm-input" type="text" id="mod-ids" value="28171, 28191" placeholder="e.g. 28171, 28191" />
       </div>
-      <div class="config-field">
-        <label>Poll Interval (minutes)</label>
-        <input type="number" id="poll-interval" value="10" min="1" max="60" />
+      <div>
+        <label class="nm-label" for="poll-interval">Poll interval (minutes)</label>
+        <input class="nm-input" type="number" id="poll-interval" value="10" min="1" max="60" />
       </div>
-      <div class="config-field">
-        <label>Rolling Window (minutes)</label>
-        <input type="number" id="window-minutes" value="60" min="10" max="720" />
+      <div>
+        <label class="nm-label" for="window-minutes">Rolling window (minutes)</label>
+        <input class="nm-input" type="number" id="window-minutes" value="60" min="10" max="720" />
       </div>
     </div>
-
-    <div class="input-row">
-      <button class="btn btn-cyan" onclick="startPolling()">▶ INITIALIZE SCAN</button>
-    </div>
+    <button class="btn-primary" onclick="startPolling()">&#9654;&nbsp; Start Monitoring</button>
   </div>
 
-  <!-- TIMER -->
-  <div class="timer-bar-wrap" id="timer-wrap">
-    <div class="timer-header">
-      <span>NEXT SCAN</span>
-      <span id="timer-text">10:00</span>
-    </div>
-    <div class="timer-track">
-      <div class="timer-fill" id="timer-fill"></div>
-    </div>
+  <!-- SCAN BAR -->
+  <div class="nm-scan-bar" id="timer-wrap">
+    <span class="scan-label">Next scan</span>
+    <div class="scan-track"><div class="scan-fill" id="timer-fill"></div></div>
+    <span class="scan-timer" id="timer-text">—</span>
   </div>
 
-  <!-- ERROR/LOADING -->
-  <div class="message-box error" id="error-box"></div>
-  <div class="message-box info" id="loading-box">
-    <span class="loading-dots">FETCHING MOD DATA</span>
-  </div>
+  <!-- MESSAGES -->
+  <div class="nm-message error" id="error-box"></div>
+  <div class="nm-message info"  id="loading-box">Fetching mod data…</div>
 
   <!-- TABLE -->
-  <div class="table-wrap" id="table-wrap">
-    <div class="table-label">// LIVE MOD STATS</div>
+  <div class="nm-table-wrap" id="table-wrap">
+    <div class="nm-table-header">
+      <span class="nm-section-title">Live Mod Stats</span>
+      <span class="nm-updated" id="updated-label"></span>
+    </div>
     <table>
       <thead>
         <tr>
-          <th>MOD</th>
-          <th>UNIQUE DLs</th>
-          <th>Δ60m</th>
-          <th>TOTAL DLs</th>
-          <th>Δ60m</th>
-          <th>ENDORSEMENTS</th>
-          <th>Δ60m</th>
-          <th>SCORE/H</th>
+          <th style="text-align:left">Mod</th>
+          <th>Unique DLs</th>
+          <th id="dh-u">Δ 60m</th>
+          <th>Total DLs</th>
+          <th id="dh-d">Δ 60m</th>
+          <th>Endorsements</th>
+          <th id="dh-e">Δ 60m</th>
+          <th>Score / h</th>
         </tr>
       </thead>
       <tbody id="table-body"></tbody>
     </table>
   </div>
 
-  <footer>
-    <span>NEXUS MOD MONITOR // VANSTORM_SYSTEMS</span>
+  <div class="nm-footer">
+    <span>Nexus Mod Monitor · Creepy's HDR Guides</span>
     <span id="footer-time"></span>
-  </footer>
+  </div>
 
 </div>
-
 <script>
-  // ── STATE ──
   let history = {};
   let pollingTimer = null;
   let countdownTimer = null;
   let pollIntervalSec = 600;
   let windowMinutes = 60;
   let remainingSec = 0;
-  let isPolling = false;
 
-  // Update footer clock
   setInterval(() => {
     document.getElementById('footer-time').textContent =
-      new Date().toLocaleString('en-US', { hour12: false });
+      new Date().toLocaleString('en-US', { hour12: true });
   }, 1000);
 
-  // ── CONFIG ──
   function getConfig() {
-    const apiKey = document.getElementById('api-key').value.trim();
-    const game   = document.getElementById('game-id').value.trim() || 'cyberpunk2077';
-    const modIds = document.getElementById('mod-ids').value
-      .split(',').map(s => s.trim()).filter(Boolean).map(Number);
-    const poll   = parseInt(document.getElementById('poll-interval').value) || 10;
-    const win    = parseInt(document.getElementById('window-minutes').value) || 60;
-    return { apiKey, game, modIds, poll, win };
+    return {
+      apiKey: document.getElementById('api-key').value.trim(),
+      game:   document.getElementById('game-id').value.trim() || 'cyberpunk2077',
+      modIds: document.getElementById('mod-ids').value.split(',').map(s=>s.trim()).filter(Boolean).map(Number),
+      poll:   parseInt(document.getElementById('poll-interval').value) || 10,
+      win:    parseInt(document.getElementById('window-minutes').value) || 60,
+    };
   }
 
-  // ── API ──
   async function fetchMod(apiKey, game, modId) {
-    const url = `https://api.nexusmods.com/v1/games/${game}/mods/${modId}.json`;
-    const resp = await fetch(url, {
+    const resp = await fetch(`https://api.nexusmods.com/v1/games/${game}/mods/${modId}.json`, {
       headers: { 'apikey': apiKey, 'Accept': 'application/json' }
     });
     if (!resp.ok) throw new Error(`API error ${resp.status} for mod ${modId}`);
@@ -687,73 +595,55 @@ title: Nexus Mods Monitor
     };
   }
 
-  // ── SCORE ──
   function computeScore(r) {
-    const now     = Date.now();
-    const created = new Date(r.created_time).getTime();
-    const ageH    = (now - created) / 3600000;
+    const ageH = (Date.now() - new Date(r.created_time).getTime()) / 3600000;
     if (ageH <= 0) return 0;
     return (r.endorsements * 10 + r.unique_downloads * 5 + r.downloads) / ageH;
   }
 
-  // ── HISTORY ──
   function updateHistory(results, win) {
-    const now    = new Date().toISOString();
+    const now = new Date().toISOString();
     const cutoff = Date.now() - win * 60000;
-
     for (const r of results) {
       if (!history[r.id]) history[r.id] = [];
-      history[r.id].push({
-        time:         now,
-        unique:       r.unique_downloads,
-        downloads:    r.downloads,
-        endorsements: r.endorsements,
-      });
-      history[r.id] = history[r.id].filter(
-        x => new Date(x.time).getTime() >= cutoff
-      );
+      history[r.id].push({ time: now, unique: r.unique_downloads, downloads: r.downloads, endorsements: r.endorsements });
+      history[r.id] = history[r.id].filter(x => new Date(x.time).getTime() >= cutoff);
     }
   }
 
   function rollingDelta(modId, key, current) {
     const entries = history[modId] || [];
-    if (entries.length === 0) return null;
-    return current - entries[0][key];
+    return entries.length ? current - entries[0][key] : null;
   }
 
-  // ── FORMAT ──
-  function fmt(n)  { return Number(n).toLocaleString(); }
+  function fmt(n) { return Number(n).toLocaleString(); }
 
   function deltaCell(val) {
-    if (val === null) return `<td class="delta-zero num">—</td>`;
+    if (val === null) return `<td class="delta-col delta-zero num">—</td>`;
     const cls  = val > 0 ? 'delta-pos' : val < 0 ? 'delta-neg' : 'delta-zero';
     const sign = val > 0 ? '+' : '';
-    return `<td class="num ${cls}">${sign}${fmt(val)}</td>`;
+    return `<td class="delta-col num ${cls}">${sign}${fmt(val)}</td>`;
   }
 
-  // ── RENDER ──
   function renderTable(results) {
-    const scores  = results.map(computeScore);
+    const scores   = results.map(computeScore);
     const maxScore = Math.max(...scores);
-    const tbody    = document.getElementById('table-body');
+    const label    = `Δ ${windowMinutes}m`;
+    ['dh-u','dh-d','dh-e'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = label; });
 
-    tbody.innerHTML = results.map((r, i) => {
-      const isTop   = scores[i] === maxScore && maxScore > 0;
-      const rowCls  = isTop ? 'top-mod' : '';
-      const scoreCls = isTop ? 'top-score' : '';
-      const tag     = isTop ? `<span class="top-tag">TOP</span>` : '';
-
+    document.getElementById('table-body').innerHTML = results.map((r, i) => {
+      const isTop = scores[i] === maxScore && maxScore > 0;
+      const badge = isTop ? `<span class="top-badge">TOP</span>` : '';
       const du = rollingDelta(r.id, 'unique',       r.unique_downloads);
       const dd = rollingDelta(r.id, 'downloads',    r.downloads);
       const de = rollingDelta(r.id, 'endorsements', r.endorsements);
-
       return `
-        <tr class="${rowCls}">
+        <tr class="${isTop ? 'top-mod' : ''}">
           <td>
-            <div class="mod-name">
+            <div class="mod-name-cell">
               <span class="mod-rank">#${i+1}</span>
-              ${tag}
-              <span>${r.name}</span>
+              ${badge}
+              <span class="mod-name-text">${r.name}</span>
             </div>
           </td>
           <td class="num">${fmt(r.unique_downloads)}</td>
@@ -762,41 +652,37 @@ title: Nexus Mods Monitor
           ${deltaCell(dd)}
           <td class="num">${fmt(r.endorsements)}</td>
           ${deltaCell(de)}
-          <td class="score-cell ${scoreCls}">${scores[i].toFixed(2)}</td>
+          <td class="score-cell ${isTop ? 'top-score' : ''} num">${scores[i].toFixed(2)}</td>
         </tr>`;
     }).join('');
-
-    // Update delta column headers to reflect actual window
-    const headers = document.querySelectorAll('thead th');
-    const label   = `Δ${windowMinutes}m`;
-    [2,4,6].forEach(i => { if (headers[i]) headers[i].textContent = label; });
   }
 
-  // ── STATUS ──
-  function setStatus(state, msg) {
-    const el  = document.getElementById('status-conn');
-    el.className = 'status-item ' + (state === 'ok' ? 'active' : state === 'err' ? 'error' : '');
-    el.innerHTML = `<div class="dot"></div><span>${msg}</span>`;
+  function setStatus(type, text) {
+    const el = document.getElementById('status-conn');
+    el.className = 'pill' + (type === 'ok' ? ' connected' : type === 'err' ? ' error' : '');
+    el.innerHTML = `<div class="pill-dot"></div><span>${text}</span>`;
+  }
+
+  function setLastPoll(time) {
+    document.getElementById('status-last').textContent = `Last poll: ${time}`;
+    const u = document.getElementById('updated-label');
+    if (u) u.textContent = `Updated ${time}`;
   }
 
   function showError(msg) {
     const el = document.getElementById('error-box');
     el.style.display = 'block';
-    el.textContent   = '⚠ ' + msg;
+    el.textContent = '⚠ ' + msg;
   }
 
-  function clearError() {
-    document.getElementById('error-box').style.display = 'none';
-  }
+  function clearError() { document.getElementById('error-box').style.display = 'none'; }
 
-  // ── TIMER ──
   function startCountdown(sec) {
     clearInterval(countdownTimer);
     remainingSec = sec;
-    const fill   = document.getElementById('timer-fill');
-    const label  = document.getElementById('timer-text');
-    document.getElementById('timer-wrap').style.display = 'block';
-
+    const fill  = document.getElementById('timer-fill');
+    const label = document.getElementById('timer-text');
+    document.getElementById('timer-wrap').classList.add('visible');
     countdownTimer = setInterval(() => {
       remainingSec--;
       const m = Math.floor(remainingSec / 60).toString().padStart(2,'0');
@@ -807,73 +693,47 @@ title: Nexus Mods Monitor
     }, 1000);
   }
 
-  // ── POLL ──
   async function doPoll(config) {
     document.getElementById('loading-box').style.display = 'block';
     clearError();
-
     try {
-      const results = await Promise.all(
-        config.modIds.map(id => fetchMod(config.apiKey, config.game, id))
-      );
-
+      const results = await Promise.all(config.modIds.map(id => fetchMod(config.apiKey, config.game, id)));
       updateHistory(results, config.win);
       renderTable(results);
-
       document.getElementById('table-wrap').style.display = 'block';
       document.getElementById('loading-box').style.display = 'none';
-
-      const now = new Date().toLocaleTimeString('en-US', { hour12: false });
-      document.getElementById('status-last').innerHTML = `<span>LAST POLL: ${now}</span>`;
-      setStatus('ok', 'CONNECTED');
-
-    } catch (e) {
+      const now = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+      setLastPoll(now);
+      setStatus('ok', 'Connected');
+    } catch(e) {
       document.getElementById('loading-box').style.display = 'none';
-      setStatus('err', 'API ERROR');
+      setStatus('err', 'API Error');
       showError(e.message);
     }
   }
 
-  // ── START / STOP ──
   async function startPolling() {
     const config = getConfig();
-
-    if (!config.apiKey) {
-      showError('API key is required. Get yours at nexusmods.com → Settings → API Keys.');
-      return;
-    }
-    if (config.modIds.length === 0) {
-      showError('Enter at least one valid mod ID.');
-      return;
-    }
-
-    isPolling        = true;
-    pollIntervalSec  = config.poll * 60;
-    windowMinutes    = config.win;
-
+    if (!config.apiKey)    { showError('API key required. Get yours at nexusmods.com → Settings → API Keys.'); return; }
+    if (!config.modIds.length) { showError('Enter at least one valid mod ID.'); return; }
+    pollIntervalSec = config.poll * 60;
+    windowMinutes   = config.win;
     document.getElementById('config-panel').style.display = 'none';
-    document.getElementById('btn-stop').style.display     = 'inline-block';
-    setStatus('', 'SCANNING...');
-
+    document.getElementById('btn-stop').style.display     = 'inline-flex';
+    setStatus('', 'Scanning…');
     await doPoll(config);
     startCountdown(pollIntervalSec);
-
-    pollingTimer = setInterval(async () => {
-      await doPoll(config);
-      startCountdown(pollIntervalSec);
-    }, pollIntervalSec * 1000);
+    pollingTimer = setInterval(async () => { await doPoll(config); startCountdown(pollIntervalSec); }, pollIntervalSec * 1000);
   }
 
   function stopPolling() {
     clearInterval(pollingTimer);
     clearInterval(countdownTimer);
-    isPolling = false;
     document.getElementById('config-panel').style.display = 'block';
     document.getElementById('btn-stop').style.display     = 'none';
-    document.getElementById('timer-wrap').style.display   = 'none';
-    setStatus('', 'AWAITING KEY');
+    document.getElementById('timer-wrap').classList.remove('visible');
+    setStatus('', 'Awaiting key');
   }
 </script>
-
 </body>
 </html>
