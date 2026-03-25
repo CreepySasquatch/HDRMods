@@ -17,7 +17,7 @@ description: How to Setup RenoDX in Cyberpunk 2077
  
 1. The LUT section has been moved to a new page called, <a href='https://www.hdrmods.com/Cyberpunk-2077-LUTs'><b>Cyberpunk 2077 LUTs</b></a>
 
-1. A mod recommendation page has also been created, <a href='https://www.hdrmods.com/Cyberpunk-2077-Mods'><b>Cyberpunk Recommended Mods</b></a>" %}
+1. A mod recommendation page has also been created (WIP), <a href='https://www.hdrmods.com/Cyberpunk-2077-Mods'><b>Cyberpunk Recommended Mods</b></a>" %}
 
 {% include callout.html type="tip" content="<b>Make sure your display actually supports HDR before installing RenoDX. Your monitor should be rated for HDR400 or higher, meaning it should have at least 400 nits peak brightness.</b>  
 
