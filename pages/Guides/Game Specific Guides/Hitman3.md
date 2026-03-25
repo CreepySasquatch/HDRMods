@@ -5,7 +5,6 @@ summary:
 description: Hitman 3 / World of Assassination HDR guide
 sidebar: false
 ---
-
 {% include callout.html type="important" content="<b>As of ReShade version 6.6.0, you'll need to disable DLSS and Reflex in the game options before you use Special K with it. After you start the game with Special K and ReShade, you can re-enable DLSS but leave Reflex off.  Fix was posted by Nexus user Trademark. 
 
 However, you can also use Pmnox's Display Commander ReShade addon to force Borderless Fullscreen mode like we were going to use Special K for.  Link: <https://github.com/pmnoxx/reshade-display-commander> </b>" %}

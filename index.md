@@ -22,8 +22,9 @@ sidebar: false
 
 [**HDR Screenshots in Discord**](Discord-HDR-Screenshots)
 
-[**<<GAME SPECIFIC GUIDES>>**](Game-Specific-Guides-Index)
+[**Windows HDR Calibration**](Windows-HDR-Calibration)
 
-[**<<RESHADE SPECIFIC GUIDES>>**](ReShade-Guides-Index)
+[**CYBERPUNK 2077 GUIDES**](Cyberpunk-2077-Index)
 
-[**HDR Memes**](HDR-Memes)
+[**RESHADE SPECIFIC GUIDES**](ReShade-Guides-Index)
+

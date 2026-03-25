@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyberpunk 2077 — HDR Fix Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cyan: #00f5ff;
+    --magenta: #ff00a0;
+    --yellow: #ffe600;
+    --dark: #080c10;
+    --dark2: #0d1319;
+    --dark3: #111820;
+    --panel: #0e1822;
+    --border: rgba(0,245,255,0.18);
+    --text: #c8d8e8;
+    --text-dim: #6a8090;
+    --warning: #ffe600;
+    --tip: #00f5ff;
+    --important: #ff00a0;
+    --note: #a855f7;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* Scanline overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.07) 2px,
+      rgba(0,0,0,0.07) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* HEADER */
+  .hero {
+    position: relative;
+    background: var(--dark2);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    padding: 60px 40px 50px;
+    text-align: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,245,255,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 40% at 80% 100%, rgba(255,0,160,0.06) 0%, transparent 60%);
+  }
+
+  .hero-eyebrow {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    opacity: 0.8;
+  }
+
+  .hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: clamp(28px, 5vw, 52px);
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    color: #fff;
+    text-shadow: 0 0 40px rgba(0,245,255,0.3), 0 0 80px rgba(0,245,255,0.15);
+    margin-bottom: 10px;
+  }
+
+  .hero h1 span {
+    color: var(--cyan);
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    color: var(--text-dim);
+    font-family: 'Share Tech Mono', monospace;
+    letter-spacing: 0.08em;
+    margin-top: 8px;
+  }
+
+  /* UPDATE BANNER */
+  .update-banner {
+    background: linear-gradient(135deg, rgba(255,230,0,0.08) 0%, rgba(255,230,0,0.03) 100%);
+    border: 1px solid rgba(255,230,0,0.35);
+    border-left: 3px solid var(--yellow);
+    border-radius: 4px;
+    padding: 18px 22px;
+    margin: 0 0 10px;
+  }
+  .update-banner .banner-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--yellow);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .update-banner .banner-title::before {
+    content: '⚡';
+  }
+  .update-banner ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .update-banner li {
+    font-size: 13px;
+    color: #d4c870;
+    padding-left: 16px;
+    position: relative;
+  }
+  .update-banner li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--yellow);
+  }
+  .update-banner a { color: var(--yellow); }
+
+  /* LAYOUT */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* CALLOUT BOXES */
+  .callout {
+    border-radius: 4px;
+    padding: 18px 22px;
+    margin: 20px 0;
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+  .callout-header {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .callout.warning {
+    background: rgba(255,230,0,0.06);
+    border: 1px solid rgba(255,230,0,0.3);
+    border-left: 3px solid var(--yellow);
+  }
+  .callout.warning .callout-header { color: var(--yellow); }
+  .callout.tip {
+    background: rgba(0,245,255,0.05);
+    border: 1px solid rgba(0,245,255,0.2);
+    border-left: 3px solid var(--cyan);
+  }
+  .callout.tip .callout-header { color: var(--cyan); }
+  .callout.important {
+    background: rgba(255,0,160,0.06);
+    border: 1px solid rgba(255,0,160,0.3);
+    border-left: 3px solid var(--magenta);
+  }
+  .callout.important .callout-header { color: var(--magenta); }
+  .callout.note {
+    background: rgba(168,85,247,0.06);
+    border: 1px solid rgba(168,85,247,0.25);
+    border-left: 3px solid var(--note);
+  }
+  .callout.note .callout-header { color: var(--note); }
+
+  /* SECTION HEADERS */
+  h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.06em;
+    margin: 50px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  h2::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 20px;
+    background: var(--cyan);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--cyan);
+    letter-spacing: 0.12em;
+    margin: 32px 0 14px;
+    text-transform: uppercase;
+  }
+
+  /* STEPS */
+  .step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .step {
+    display: flex;
+    gap: 0;
+    position: relative;
+  }
+
+  .step-number-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 48px;
+  }
+
+  .step-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--dark3);
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+    box-shadow: 0 0 10px rgba(0,245,255,0.15);
+  }
+
+  .step-line {
+    width: 1px;
+    flex: 1;
+    background: linear-gradient(to bottom, rgba(0,245,255,0.3), rgba(0,245,255,0.05));
+    margin-top: 6px;
+    min-height: 20px;
+  }
+
+  .step:last-child .step-line {
+    display: none;
+  }
+
+  .step-body {
+    flex: 1;
+    padding: 2px 0 28px 16px;
+  }
+
+  .step-body p {
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .step-body strong, .step-body b {
+    color: #e8f4ff;
+  }
+
+  /* CODE / PATHS */
+  code {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12.5px;
+    background: rgba(0,245,255,0.07);
+    border: 1px solid rgba(0,245,255,0.15);
+    border-radius: 3px;
+    padding: 1px 6px;
+    color: var(--cyan);
+  }
+
+  /* INLINE NOTE */
+  .inline-note {
+    font-size: 12.5px;
+    color: var(--text-dim);
+    font-style: italic;
+    margin-top: 4px;
+  }
+
+  /* LINKS */
+  a {
+    color: var(--cyan);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,245,255,0.3);
+    transition: color 0.15s, border-color 0.15s;
+  }
+  a:hover {
+    color: #fff;
+    border-color: var(--cyan);
+  }
+
+  /* BRANCH DECISION */
+  .branch-box {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px;
+    margin: 12px 0;
+  }
+  .branch-box .branch-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .branch-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 600px) { .branch-options { grid-template-columns: 1fr; } }
+  .branch-option {
+    background: var(--dark3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 14px 16px;
+    cursor: pointer;
+  }
+  .branch-option .option-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .branch-option .option-title {
+    font-size: 13px;
+    color: #e0eaf4;
+    font-weight: 600;
+  }
+  .branch-option .option-steps {
+    margin-top: 10px;
+    font-size: 12.5px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    display: none;
+  }
+  .branch-option.open .option-steps { display: block; }
+  .branch-option.open {
+    border-color: rgba(0,245,255,0.4);
+  }
+  .branch-option .option-steps ol {
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  /* TOGGLE / DETAILS */
+  details {
+    margin: 10px 0;
+  }
+  details summary {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12.5px;
+    color: var(--cyan);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(0,245,255,0.04);
+    border: 1px solid rgba(0,245,255,0.15);
+    border-radius: 4px;
+    transition: background 0.15s;
+  }
+  details summary:hover { background: rgba(0,245,255,0.08); }
+  details summary::before {
+    content: '▶';
+    font-size: 9px;
+    transition: transform 0.2s;
+  }
+  details[open] summary::before { transform: rotate(90deg); }
+  details .detail-inner {
+    padding: 14px 14px 4px;
+    border: 1px solid rgba(0,245,255,0.1);
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    font-size: 13px;
+    color: var(--text);
+  }
+  details .detail-inner img {
+    max-width: 100%;
+    border-radius: 3px;
+    margin-top: 8px;
+    border: 1px solid var(--border);
+  }
+
+  /* TROUBLESHOOT SECTION */
+  .trouble-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .trouble-item {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .trouble-header {
+    padding: 14px 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    user-select: none;
+  }
+  .trouble-header:hover { background: rgba(255,255,255,0.02); }
+  .trouble-title {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    color: #e0eaf4;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .trouble-title .icon {
+    font-size: 14px;
+    color: var(--magenta);
+  }
+  .trouble-arrow {
+    color: var(--text-dim);
+    font-size: 10px;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  .trouble-item.open .trouble-arrow { transform: rotate(180deg); color: var(--cyan); }
+  .trouble-body {
+    display: none;
+    padding: 0 18px 16px;
+    font-size: 13px;
+    color: var(--text);
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+  }
+  .trouble-item.open .trouble-body { display: block; }
+  .trouble-body ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .trouble-body li {
+    padding-left: 14px;
+    position: relative;
+  }
+  .trouble-body li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--magenta);
+  }
+
+  /* TECH EXPLANATION */
+  .tech-panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 16px 0;
+  }
+  .tech-panel-header {
+    padding: 14px 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,245,255,0.03);
+  }
+  .tech-panel-header:hover { background: rgba(0,245,255,0.06); }
+  .tech-panel-title {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    color: var(--cyan);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tech-panel-body {
+    display: none;
+    padding: 16px 20px;
+    font-size: 13px;
+    color: var(--text);
+    border-top: 1px solid var(--border);
+  }
+  .tech-panel.open .tech-panel-body { display: block; }
+  .tech-panel-body ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tech-panel-body li {
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.65;
+  }
+  .tech-panel-body li::before {
+    content: '//';
+    position: absolute;
+    left: 0;
+    color: var(--text-dim);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    top: 3px;
+  }
+
+  /* SETTINGS TABLE */
+  .settings-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 14px 0;
+  }
+  .setting-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 12px;
+    align-items: start;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+  @media (max-width: 550px) { .setting-row { grid-template-columns: 1fr; } }
+  .setting-name {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--cyan);
+  }
+  .setting-value {
+    color: var(--text);
+  }
+  .setting-value .val-tag {
+    display: inline-block;
+    background: rgba(0,245,255,0.1);
+    border: 1px solid rgba(0,245,255,0.25);
+    border-radius: 3px;
+    padding: 1px 7px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--cyan);
+    margin-right: 6px;
+  }
+  .setting-value .val-tag.danger {
+    background: rgba(255,0,160,0.1);
+    border-color: rgba(255,0,160,0.3);
+    color: var(--magenta);
+  }
+
+  /* LOG PATHS */
+  .log-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 12px 0;
+  }
+  .log-item {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 11px 14px;
+    font-size: 12.5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .log-item .log-name {
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--cyan);
+    flex-shrink: 0;
+    min-width: 160px;
+  }
+  .log-item .log-path {
+    color: var(--text-dim);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11.5px;
+  }
+
+  /* FOOTER LINKS */
+  .footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  @media (max-width: 500px) { .footer-links { grid-template-columns: 1fr; } }
+  .footer-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-bottom: none;
+    display: block;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .footer-card:hover {
+    border-color: rgba(0,245,255,0.5);
+    background: rgba(0,245,255,0.04);
+    color: inherit;
+  }
+  .footer-card .fc-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .footer-card .fc-title {
+    font-size: 14px;
+    color: var(--cyan);
+    font-weight: 600;
+  }
+
+  /* PART DIVIDER */
+  .part-divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 44px 0 24px;
+  }
+  .part-divider .part-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--text-dim);
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+  .part-divider .part-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+  }
+  .part-divider .part-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  p { margin-bottom: 10px; }
+  ul.plain-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 8px 0;
+    padding-left: 14px;
+  }
+  ul.plain-list li { position: relative; }
+  ul.plain-list li::before {
+    content: '›';
+    position: absolute;
+    left: -14px;
+    color: var(--text-dim);
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">HDR Modding Guide · Night City Edition</div>
+  <h1>Cyberpunk 2077<br><span>HDR Fix</span> with RenoDX</h1>
+  <div class="hero-sub">ReShade · RenoDX · PsychoV Tone Mapper · Windows HDR Calibration</div>
+</div>
+
+<div class="container">
+
+  <!-- UPDATE BANNER -->
+  <div class="update-banner">
+    <div class="banner-title">Update — March 23, 2026</div>
+    <ul>
+      <li>New RenoDX version released. Addon renamed back to <code>renodx-cp2077.addon64</code>. Now includes the new <strong>PsychoV</strong> tone mapper — massively improved color accuracy and neon lighting.</li>
+      <li>New section added: <strong>Windows HDR Calibration</strong> — find your display's exact peak brightness/clipping point.</li>
+      <li>ReShade installation section has been rewritten for clarity.</li>
+      <li>Optional: Install the new <a href="https://www.nexusmods.com/cyberpunk2077/mods/28191"><strong>Creepy Ultra HDR</strong></a> ReShade preset.</li>
+      <li>LUT section moved to a dedicated <strong>Cyberpunk 2077 LUTs</strong> page.</li>
+      <li>New <strong>Cyberpunk Recommended Mods</strong> page added.</li>
+    </ul>
+  </div>
+
+  <!-- PREREQUISITES -->
+  <div class="callout tip">
+    <div class="callout-header">💡 Tip — Display Requirements</div>
+    <p><strong>Make sure your display actually supports HDR before installing RenoDX.</strong> Your monitor should be rated HDR400 or higher — at least 400 nits peak brightness.</p>
+    <p><strong>Don't confuse this with TB400 or higher.</strong> TB stands for True Black. True Black monitors offer a separate True Black mode with lower peak brightness but better blacks. Set RenoDX's peak brightness to match whichever mode you're in.</p>
+    <p>Check your display manufacturer's site, <a href="https://www.avsforum.com/">AVS Forums</a>, or search the model number.</p>
+    <p><strong>Run the Windows HDR Calibration app first</strong> to find your display's clipping point — use that value as your peak brightness in RenoDX.</p>
+  </div>
+
+  <div class="callout important">
+    <div class="callout-header">⚠ Important — Get the Right RenoDX Build</div>
+    <p><strong>Always grab the most recent PINNED version from the RenoDX Discord server</strong> — look for the pinned post in the Cyberpunk 2077 channel. The GitHub and Nexus Mods versions are outdated. <em>(Confirmed accurate as of March 20, 2026.)</em></p>
+    <ul class="plain-list" style="margin-top:10px;">
+      <li><a href="https://discord.gg/jz6ujVpgFB">RenoDX Discord Server Invite</a></li>
+      <li><a href="https://discord.com/channels/1408098019194310818/1410855640112566375/threads/1434377434022809610/1434377434022809610">Direct Link — Cyberpunk 2077 Thread</a></li>
+    </ul>
+    <details style="margin-top:12px;">
+      <summary>How to find the Cyberpunk channel manually</summary>
+      <div class="detail-inner">
+        <img src="https://i.slow.pics/TfUSXS2q.png" alt="Cyberpunk channel location">
+      </div>
+    </details>
+  </div>
+
+  <!-- WHY IS HDR BROKEN -->
+  <h2>Why Is Cyberpunk's HDR Broken?</h2>
+
+  <div class="tech-panel" id="techPanel">
+    <div class="tech-panel-header" onclick="togglePanel('techPanel')">
+      <div class="tech-panel-title">// Technical explanation from ShortFuse (RenoDX creator) ▾</div>
+      <span style="color:var(--text-dim); font-size:11px;">CLICK TO EXPAND</span>
+    </div>
+    <div class="tech-panel-body">
+      <ul>
+        <li>SDR uses LUTs that clip instead of rolling off properly — they're all baked with ACES per-channel coloring and color tuning.</li>
+        <li>For HDR, CDPR took their SDR LUTs and stretched them to 1900 nits. But the SDR LUTs weren't all the same — some clipped at 100 nits, others at 325 nits, so the stretching is inconsistent.</li>
+        <li>After that they applied a second round of custom ACES HDR on top of those already-stretched LUTs. The correct approach would have been: <code>Render → ACES-HDR</code>. What they did was: <code>Render → ACES-SDR-LUT-stretched-to-1900nits → CustomStretchedACESHDR</code>.</li>
+        <li>On top of all that, their ACES would overshoot the user-selected peak by ~10%, and the more nits you set, the more per-channel color stretching occurred — meaning oversaturated, overcolored highlights.</li>
+        <li>The original RenoDX fix addressed the stretching from their custom ACES. The current Discord version targets the SDR look, knowing the HDR LUT is essentially broken ITM ACES-SDR.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PART 1 -->
+  <div class="part-divider">
+    <span class="part-label">Part 01</span>
+    <div class="part-line"></div>
+    <span class="part-title">Installing ReShade &amp; RenoDX</span>
+    <div class="part-line"></div>
+  </div>
+
+  <div class="callout tip" style="margin-bottom:24px;">
+    <div class="callout-header">💡 Before You Start</div>
+    <p>Complete the <a href="Windows-HDR-Calibration"><strong>Windows HDR Calibration</strong></a> before continuing. You'll need your display's clipping point (peak brightness) for RenoDX configuration.</p>
+  </div>
+
+  <div class="step-list">
+
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">0</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p>Install Cyberpunk 2077. Make sure you're on the latest version: <strong>2.31</strong>.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">1</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p>Download the <strong>latest ReShade WITH FULL ADD-ON SUPPORT</strong> from <a href="https://reshade.me/#download">reshade.me</a>.</p>
+        <p class="inline-note">⚠ Do not run the installer from your Windows Downloads folder or the Cyberpunk install folder — both can cause issues. Create a new folder on the Desktop or in Downloads and place the installer there.</p>
+        <details>
+          <summary>Latest version as of writing: 6.7.3</summary>
+          <div class="detail-inner">
+            <a href="https://slow.pics/KbN1KUCW/"><img src="https://i.slow.pics/KbN1KUCW.jpg" alt="ReShade version"></a>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">2</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p>Install ReShade to <code>Cyberpunk2077.exe</code> located in the <code>\bin\x64</code> folder (the installer should default to this once you pick Cyberpunk 2077). Click <strong>Next</strong>.</p>
+        <p class="inline-note">Note: This guide does not cover Vortex/MO2 ReShade installs, Special K + ReShade, Display Commander, or Optiscaler.</p>
+        <details>
+          <summary>Screenshot: Select Game or Application</summary>
+          <div class="detail-inner">
+            <a href="https://slow.pics/uhUhohcS/"><img src="https://i.slow.pics/uhUhohcS.jpg" alt="Select game"></a>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">3</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p>For the rendering API, pick <strong>DirectX 10/11/12</strong> (the game uses DX12). Click <strong>Next</strong>.</p>
+        <details>
+          <summary>Screenshot: Choose Rendering API</summary>
+          <div class="detail-inner">
+            <a href="https://slow.pics/m1tqUrg4/"><img src="https://i.slow.pics/m1tqUrg4.jpg" alt="Rendering API"></a>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">4</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p><strong>This step differs depending on whether ReShade is already installed.</strong></p>
+        <div class="branch-box">
+          <div class="branch-title">// Select your situation</div>
+          <div class="branch-options">
+            <div class="branch-option" onclick="toggleBranch(this)">
+              <div class="option-label">Situation A</div>
+              <div class="option-title">ReShade already installed</div>
+              <div class="option-steps">
+                <p style="margin-bottom:8px;color:var(--text-dim);">You'll see an update/uninstall screen.</p>
+                <p style="font-weight:600;color:#e0eaf4;margin-bottom:6px;">No interest in shaders:</p>
+                <ol><li>Select <strong>Update ReShade only</strong></li><li>Click <strong>Next</strong>, then <strong>Finish</strong></li><li>Skip to Step 6</li></ol>
+                <p style="font-weight:600;color:#e0eaf4;margin:10px 0 6px;">Want shaders (e.g. Lilium's RCAS):</p>
+                <ol><li>Select <strong>Update ReShade and effects</strong></li><li>Change effect sorting to <strong>A to Z</strong></li><li>Check <strong>ReShade_HDR_shaders by Lilium</strong></li><li>Do <em>not</em> click Check All — only install what you need</li><li>Proceed to Step 5</li></ol>
+              </div>
+            </div>
+            <div class="branch-option" onclick="toggleBranch(this)">
+              <div class="option-label">Situation B</div>
+              <div class="option-title">Fresh ReShade install</div>
+              <div class="option-steps">
+                <p style="margin-bottom:8px;color:var(--text-dim);">You'll see the "Select effects to install" screen.</p>
+                <p style="font-weight:600;color:#e0eaf4;margin-bottom:6px;">No interest in shaders:</p>
+                <ol><li>Click <strong>Skip</strong> on effects screen</li><li>Click <strong>Skip</strong> on add-on screen</li><li>Click <strong>Finish</strong>, skip to Step 6</li></ol>
+                <p style="font-weight:600;color:#e0eaf4;margin:10px 0 6px;">Want shaders (e.g. Lilium's RCAS):</p>
+                <ol><li>Change sorting to <strong>A to Z</strong></li><li>Check <strong>ReShade_HDR_shaders by Lilium</strong></li><li>Don't click Check All</li><li>Proceed to Step 5</li></ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="callout tip" style="margin-top:12px;">
+          <div class="callout-header">💡 Shader Note</div>
+          Having unused shaders in the Home tab is fine — they won't use resources during gameplay. The only downside is slightly longer compile times at startup. See the <a href="https://www.hdrmods.com/HDR-Link-Library#hdr-compatible-shaders">HDR Compatible Shaders list</a> for what's worth installing.
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">5</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <div class="callout important">
+          <div class="callout-header">⛔ DO NOT PICK ANY ADDONS</div>
+          Addons are not like shaders — they operate at the engine level and can easily break things. Some addons are incompatible with each other. If you don't know what it does, don't touch it. Click <strong>Next</strong>, then <strong>Finish</strong>.
+        </div>
+        <details>
+          <summary>Screenshot: Add-on selection screen</summary>
+          <div class="detail-inner">
+            <img src="https://i.slow.pics/f2EQMwqO.jpg" alt="Do not pick addons">
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">6</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p>Grab the RenoDX addon from the <a href="https://discord.gg/jz6ujVpgFB">RenoDX Discord server</a>. Look for the pinned post in the Cyberpunk 2077 channel/thread.</p>
+        <details>
+          <summary>Screenshots: Finding the addon in Discord</summary>
+          <div class="detail-inner">
+            <p style="margin-bottom:8px;"><strong>Thread location:</strong></p>
+            <img src="https://i.slow.pics/TfUSXS2q.png" alt="Cyberpunk thread location">
+            <p style="margin:12px 0 8px;"><strong>Pinned addon post:</strong></p>
+            <img src="https://i.slow.pics/KahWu7Xf.png" alt="Addon pinned post">
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">7</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p>Place <code>renodx-cp2077.addon64</code> in the <code>\bin\x64</code> folder where Cyberpunk 2077 is installed.</p>
+        <p class="inline-note">If you had the old WIP version (<code>renodx-cp2077-wip.addon64</code>), delete it first.</p>
+        <details>
+          <summary>Screenshot: Addon file location</summary>
+          <div class="detail-inner">
+            <img src="https://i.slow.pics/rW4SsThY.png" alt="Addon file location">
+          </div>
+        </details>
+      </div>
+    </div>
+
+  </div><!-- /step-list -->
+
+  <!-- PART 2 -->
+  <div class="part-divider">
+    <span class="part-label">Part 02</span>
+    <div class="part-line"></div>
+    <span class="part-title">Configuring In-Game Settings &amp; RenoDX</span>
+    <div class="part-line"></div>
+  </div>
+
+  <div class="callout warning" style="margin-bottom:24px;">
+    <div class="callout-header">⚡ Windows HDR Calibration Required</div>
+    Complete the <a href="Windows-HDR-Calibration"><strong>Windows HDR Calibration</strong></a> before continuing. You need your display's clipping point.
+    <div style="margin-top:10px;padding:10px 14px;background:rgba(0,0,0,0.3);border-radius:4px;font-size:12.5px;">
+      <strong style="color:#e0eaf4;">Clipping Point vs. Peak Brightness:</strong><br>
+      <span style="color:var(--text-dim);">• <strong style="color:var(--text);">Peak Brightness</strong> — max brightness your display can output in current mode<br>
+      • <strong style="color:var(--text);">Clipping Point</strong> — where highlight detail starts being lost<br>
+      • These should be the same value, but sometimes the clipping point is lower. Use the clipping point.<br>
+      • <strong style="color:var(--yellow);">True Black monitor owners:</strong> run calibration separately for each display mode.</span>
+    </div>
+  </div>
+
+  <div class="callout tip" style="margin-bottom:24px;">
+    <div class="callout-header">💡 HDR10 PQ vs HDR10 scRGB</div>
+    <p><strong>TLDR: No visual difference. Use HDR10 PQ for better ReShade compatibility.</strong></p>
+    <p>If you want to use a ReShade preset like <a href="https://www.nexusmods.com/cyberpunk2077/mods/28191">Creepy Ultra HDR</a>, pick HDR10 PQ. scRGB is technically superior but you likely won't notice. Read <a href="https://discourse.differentk.fyi/t/topic-free-mega-thread-v-1-11-2020/79/3746">Kaldaien's post</a> for the technical breakdown.</p>
+  </div>
+
+  <div class="step-list">
+
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">8</div><div class="step-line"></div></div>
+      <div class="step-body"><p>Start the game and open the <strong>Settings</strong> menu.</p></div>
+    </div>
+
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">9</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p>Go to <strong>Video → HDR Settings</strong>. Make sure Cyberpunk's HDR is turned <strong>ON</strong> (recommend HDR10 PQ).</p>
+        <div class="settings-grid" style="margin-top:12px;">
+          <div class="setting-row">
+            <div class="setting-name">Maximum Brightness</div>
+            <div class="setting-value">Leave at default. Ignored by RenoDX — replaced by Peak Brightness in the addon.</div>
+          </div>
+          <div class="setting-row">
+            <div class="setting-name">Paper White (UI Brightness)</div>
+            <div class="setting-value"><span class="val-tag">200</span> or adjust as desired. Controls UI brightness only when RenoDX is installed.</div>
+          </div>
+          <div class="setting-row">
+            <div class="setting-name">Tone-Mapping Midpoint</div>
+            <div class="setting-value"><span class="val-tag">1.0</span> Critical for overall brightness. If the game looks too bright, double-check this value.</div>
+          </div>
+          <div class="setting-row">
+            <div class="setting-name">HDR10 PQ Saturation</div>
+            <div class="setting-value"><span class="val-tag danger">MUST BE 0</span> Any non-zero value causes frame generation artifacts. Use RenoDX's saturation slider instead.</div>
+          </div>
+        </div>
+        <details style="margin-top:10px;">
+          <summary>Screenshot: HDR Settings</summary>
+          <div class="detail-inner">
+            <img src="https://i.slow.pics/zFyyInhD.png" alt="HDR settings">
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">10</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p>In <strong>Graphics Settings</strong>, set <strong>Color Precision</strong> to <strong>High</strong>. Medium will result in a washed-out or gray image.</p>
+        <details>
+          <summary>Screenshot: Color Precision setting</summary>
+          <div class="detail-inner">
+            <img src="https://i.slow.pics/Uinn4FKy.png" alt="Color Precision">
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">11</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p>Open the ReShade interface with the <strong>Home</strong> key.</p>
+        <p class="inline-note">Don't have a Home key? <a href="https://www.youtube.com/watch?v=xoCdpOIRKus">Here's how to remap it.</a></p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">12</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p>Click the <strong>RenoDX tab</strong> at the top of the ReShade GUI. Set <strong>Peak Brightness</strong> to match your display's clipping point from the Windows HDR Calibration.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">13</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p><strong>Game Brightness</strong> (paper white value) — set between <strong>150–300 nits</strong>. Default recommendation is 200. May need to be adjusted depending on which LUT you're using.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">14</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p>Set <strong>SDR EOTF Emulation</strong> to <code>UI/Menu only</code> first. If everything still appears too bright, you can fully enable the setting.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">15</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p><strong>Filmgrain</strong> — around <strong>20</strong> is a good starting point. This is from <a href="https://github.com/clshortfuse/reshade-shaders/tree/main/Shaders">ShortFuse's ReShade shader repo</a>.</p>
+        <p class="inline-note">If you're using Lilium's RCAS (a sharpening shader), set RenoDX filmgrain to 0 and add ShortFuse's filmgrain shader at the very end of your shader stack — you never want to sharpen filmgrain.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">16</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p>Double-check that <strong>Debug Graph is OFF</strong> (found at the very bottom of RenoDX under Debug). If it's on, you'll see a colored square behind the minimap in the upper right corner.</p>
+        <details>
+          <summary>Screenshots: Debug Graph On vs Off</summary>
+          <div class="detail-inner">
+            <p style="margin-bottom:6px;">Debug Graph ON:</p>
+            <img src="https://i.slow.pics/xY8QcYui.png" alt="Debug Graph On">
+            <p style="margin:12px 0 6px;">Debug Graph OFF:</p>
+            <img src="https://i.slow.pics/R1nHEgpd.png" alt="Debug Graph Off">
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">17</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p>Adjust the remaining sliders to your preference. You're done! 🎉</p>
+        <div class="callout tip" style="margin-top:12px;">
+          <div class="callout-header">💡 Recommended: Ultra Plus Mod</div>
+          Pair RenoDX with the <a href="https://www.nexusmods.com/cyberpunk2077/mods/10490">Ultra Plus mod</a> for performance tweaks and additional visual modes for both lower-end and higher-end hardware.
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /step-list -->
+
+  <!-- TROUBLESHOOTING -->
+  <h2>Troubleshooting</h2>
+
+  <div class="trouble-grid">
+
+    <div class="trouble-item" onclick="toggleTrouble(this)">
+      <div class="trouble-header">
+        <div class="trouble-title"><span class="icon">◌</span> Washed out / gray image</div>
+        <div class="trouble-arrow">▼</div>
+      </div>
+      <div class="trouble-body">
+        <ul>
+          <li>Make sure RTXHDR is turned off globally (or at least for Cyberpunk 2077)</li>
+          <li>Verify HDR is on in both Windows and Cyberpunk 2077</li>
+          <li>Set Color Precision to <strong>High</strong> in graphics settings — RenoDX won't work on Medium</li>
+          <li>Make sure you're using the latest add-on version of ReShade</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="trouble-item" onclick="toggleTrouble(this)">
+      <div class="trouble-header">
+        <div class="trouble-title"><span class="icon">◌</span> Crushed black levels / shadows too dark</div>
+        <div class="trouble-arrow">▼</div>
+      </div>
+      <div class="trouble-body">
+        <ul>
+          <li>Disable <strong>HDR10+ Gaming</strong> in the in-game video settings (only appears on HDR10+ capable displays)</li>
+          <li>Check that Tone-Mapping Midpoint is below 1.0 in the HDR settings</li>
+          <li>Some LUTs can cause this — try the vanilla LUT with RenoDX at default settings (keep Peak Brightness the same)</li>
+          <li>Disable any ReShade shaders, especially in HDR10 scRGB mode</li>
+          <li>Using Nova City 2? Darker interiors are expected behavior — the mod recommends flashlight/night vision mods</li>
+        </ul>
+        <details style="margin-top:10px;">
+          <summary>Screenshot: HDR10+ setting location</summary>
+          <div class="detail-inner"><img src="https://i.slow.pics/eE2HLqSI.png" alt="HDR10+ setting"></div>
+        </details>
+      </div>
+    </div>
+
+    <div class="trouble-item" onclick="toggleTrouble(this)">
+      <div class="trouble-header">
+        <div class="trouble-title"><span class="icon">◌</span> Colored square behind minimap (upper right)</div>
+        <div class="trouble-arrow">▼</div>
+      </div>
+      <div class="trouble-body">
+        <p>This is the Debug Graph from RenoDX. Scroll to the very bottom of the RenoDX settings, find <strong>Debug</strong>, and turn off <strong>Debug Graph</strong>.</p>
+        <details style="margin-top:10px;">
+          <summary>Screenshot: Debug Graph Off</summary>
+          <div class="detail-inner"><img src="https://i.slow.pics/R1nHEgpd.png" alt="Debug Graph Off"></div>
+        </details>
+      </div>
+    </div>
+
+    <div class="trouble-item" onclick="toggleTrouble(this)">
+      <div class="trouble-header">
+        <div class="trouble-title"><span class="icon">◌</span> Banding / grid pattern in the sky</div>
+        <div class="trouble-arrow">▼</div>
+      </div>
+      <div class="trouble-body">
+        <ul>
+          <li>Switch to <strong>Ray Reconstruction Preset D</strong> — slightly better for HDR in this specific case. Use <a href="https://github.com/beeradmoore/dlss-swapper/releases">DLSS Swapper</a> for easy preset switching.</li>
+          <li>Note: Preset E is generally recommended over D (fewer artifacts, less boiling). Only switch to D if you're experiencing this specific banding/grid pattern issue.</li>
+          <li>When using Ray Reconstruction, it fully overrides the SR model — presets K, L, M, etc. will not apply.</li>
+        </ul>
+        <p style="font-size:12.5px;color:var(--text-dim);margin-top:8px;"><em>Credit: squarto and Gn3xus for figuring this out.</em></p>
+      </div>
+    </div>
+
+    <div class="trouble-item" onclick="toggleTrouble(this)">
+      <div class="trouble-header">
+        <div class="trouble-title"><span class="icon">◌</span> Frame generation artifacts when moving (especially around light sources)</div>
+        <div class="trouble-arrow">▼</div>
+      </div>
+      <div class="trouble-body">
+        <p>Set <strong>HDR10 PQ Saturation to 0</strong> in the base game HDR settings. This is a confirmed fix.</p>
+        <details style="margin-top:10px;">
+          <summary>Screenshot + Video: Before and after fix</summary>
+          <div class="detail-inner">
+            <img src="https://i.slow.pics/zFyyInhD.png" alt="HDR10 PQ Saturation">
+            <video src="https://raw.githubusercontent.com/CreepySasquatch/HDRMods/main/images/Cyberpunk/Cyberpunk-Frame-Generation-Bug.mp4" controls style="width:100%;margin-top:10px;border-radius:3px;"></video>
+            <p style="font-size:12px;color:var(--text-dim);margin-top:6px;"><em>Credit: Invictus for figuring this out and providing the video.</em></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="trouble-item" onclick="toggleTrouble(this)">
+      <div class="trouble-header">
+        <div class="trouble-title"><span class="icon">◌</span> Map is hard to read / washed out</div>
+        <div class="trouble-arrow">▼</div>
+      </div>
+      <div class="trouble-body">
+        <p>Known issue with this version of RenoDX. Affects the vanilla map and all map mods.</p>
+        <ul>
+          <li>Partial fix: <strong>MapBegone mod</strong> by Cyanide disables the map ENV. Find it in the <a href="https://discord.gg/Epkq79kd96">Cyberpunk 2077 Modding Server</a> (search the pinned post in the linked channel).</li>
+          <li>Many people find the <a href="https://www.nexusmods.com/cyberpunk2077/mods/17811">Realistic Map Mod (8K+)</a> looks better with RenoDX — can be used with or without MapBegone.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="trouble-item" onclick="toggleTrouble(this)">
+      <div class="trouble-header">
+        <div class="trouble-title"><span class="icon">◌</span> How do I adjust UI brightness?</div>
+        <div class="trouble-arrow">▼</div>
+      </div>
+      <div class="trouble-body">
+        <p>Adjust the <strong>Paper White</strong> value in the game's HDR settings. When RenoDX is installed, this setting only controls UI brightness and has no other effect.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TROUBLESHOOTING: HOW TO REPORT -->
+  <h3 style="margin-top:36px;">Providing Info for Troubleshooting</h3>
+
+  <div class="step-list" style="margin-top:14px;">
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">1</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p><strong>Enable file name extensions in Windows File Explorer.</strong> This lets you see <code>.ini</code>, <code>.txt</code>, <code>.log</code>, and <code>.exe</code> extensions.</p>
+        <details>
+          <summary>How to enable extensions in Windows 11</summary>
+          <div class="detail-inner">
+            <ol style="padding-left:16px;display:flex;flex-direction:column;gap:4px;font-size:13px;">
+              <li>Open File Explorer</li>
+              <li>Click <strong>View</strong> in the top bar</li>
+              <li>Hover over <strong>Show</strong>, then check <strong>File name extensions</strong></li>
+            </ol>
+          </div>
+        </details>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">2</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p><strong>Take screenshots using ReShade</strong> — these will produce HDR PNGs that can be uploaded to Discord.</p>
+        <ul class="plain-list" style="margin-top:8px;">
+          <li>SKIV is the only other accurate alternative</li>
+          <li>Nvidia overlay isn't always accurate; takes JXR screenshots that need conversion</li>
+          <li>Windows Snipping Tool and ShareX cannot capture HDR — they only tonemap to SDR</li>
+          <li><strong>Do not photograph your screen with a phone</strong> unless the issue is display-specific</li>
+        </ul>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">3</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p><strong>Common questions you'll be asked:</strong></p>
+        <ul class="plain-list" style="margin-top:8px;">
+          <li>Which ReShade version? (Check the About tab)</li>
+          <li>Any other ReShade shaders enabled?</li>
+          <li>Is HDR on in Windows and in-game?</li>
+          <li>What are your RenoDX settings? (screenshot is fine)</li>
+        </ul>
+        <details style="margin-top:10px;">
+          <summary>Screenshot: Where to find ReShade version</summary>
+          <div class="detail-inner"><img src="https://i.slow.pics/3Zj4JfF9.jpg" alt="ReShade version"></div>
+        </details>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number-col"><div class="step-num">4</div><div class="step-line"></div></div>
+      <div class="step-body">
+        <p><strong>Log file locations</strong> (all paths relative to the Cyberpunk 2077 game folder unless noted):</p>
+        <div class="log-list" style="margin-top:10px;">
+          <div class="log-item"><span class="log-name">ReShade.log</span><span class="log-path">\bin\x64 — most important for RenoDX issues</span></div>
+          <div class="log-item"><span class="log-name">Crash Dump</span><span class="log-path">%LocalAppData%\REDEngine\ReportQueue</span></div>
+          <div class="log-item"><span class="log-name">Cyber Engine Tweaks</span><span class="log-path">\bin\x64\plugins\cyber_engine_tweaks</span></div>
+          <div class="log-item"><span class="log-name">Redscript</span><span class="log-path">\r6\logs</span></div>
+          <div class="log-item"><span class="log-name">Red4Ext</span><span class="log-path">\red4ext\logs and \red4ext\plugins</span></div>
+          <div class="log-item"><span class="log-name">Ultra Plus</span><span class="log-path">\bin\x64\plugins\cyber_engine_tweaks\mods\UltraPlus</span></div>
+        </div>
+        <div class="callout note" style="margin-top:12px;">
+          <div class="callout-header">📝 Note</div>
+          If using MO2, most of these logs will be in the overwrite folder.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER LINKS -->
+  <h2>LUTs &amp; Recommended Mods</h2>
+  <div class="footer-links">
+    <a class="footer-card" href="Cyberpunk-2077-LUTs">
+      <div class="fc-label">Next Step</div>
+      <div class="fc-title">Cyberpunk 2077 LUTs →</div>
+    </a>
+    <a class="footer-card" href="Cyberpunk-2077-Mods">
+      <div class="fc-label">Also See</div>
+      <div class="fc-title">Recommended Mods →</div>
+    </a>
+  </div>
+
+</div><!-- /container -->
+
+<script>
+  function toggleTrouble(el) {
+    el.classList.toggle('open');
+  }
+  function togglePanel(id) {
+    document.getElementById(id).classList.toggle('open');
+  }
+  function toggleBranch(el) {
+    const siblings = el.parentElement.querySelectorAll('.branch-option');
+    siblings.forEach(s => { if (s !== el) s.classList.remove('open'); });
+    el.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
