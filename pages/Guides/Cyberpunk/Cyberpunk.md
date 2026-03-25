@@ -9,7 +9,7 @@ description: How to Setup RenoDX in Cyberpunk 2077
 
 1. A new version of RenoDX has been released for Cyberpunk.  The addon has been renamed back from <i>renodx-cp2077-wip.addon64</i> to <i>renodx-cp2077.addon64</i>, but this is still hosted in the RenoDX server's Cyberpunk 2077 channel.  This RenoDX update includes a new tone mapper called PsychoV, which is a game changer in terms of how the game looks.  Colors will be more accurate, and neon lights will appear as they should.
 
-1. A new guide has been added that goes over how to use the Windows HDR Calibration app to figure out that peak brightness to use with RenoDX.
+1. A new guide has been added on how to use the Windows HDR Calibration app to figure out the peak brightness for RenoDX.
 
 1. The ReShade portion of the guide has been rewritten to make it easier to read and understand.  
 
