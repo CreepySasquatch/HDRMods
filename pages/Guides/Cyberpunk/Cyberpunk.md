@@ -5,7 +5,7 @@ summary:
 description: How to Setup RenoDX in Cyberpunk 2077
 ---
 
-{% include callout.html type="warning" content="  <b>Update March 23rd, 2026: This guide has undergone a major revision.  Please note the following updates: </b>
+{% include callout.html type="warning" content="  <b>Update March 25th, 2026: This guide has undergone a major revision.  Please note the following updates: </b>
 
 1. A new version of RenoDX has been released for Cyberpunk.  The addon has been renamed back from <i>renodx-cp2077-wip.addon64</i> to <i>renodx-cp2077.addon64</i>, but this is still hosted in the RenoDX server's Cyberpunk 2077 channel.  This RenoDX update includes a new tone mapper called PsychoV, which is a game changer in terms of how the game looks.  Colors will be more accurate, and neon lights will appear as they should.
 
@@ -29,7 +29,7 @@ TB stands for True Black.  True Black rated monitors will have a separate True B
 
 <b>Run the Windows HDR Calibration app to figure out your display's clipping point.  In theory this should be the same as the peak brightness of your display, but it's sometimes lower.  The clipping point will act as our peak brightness within RenoDX.</b>" %}
 
-{% include callout.html type="important" content="<b>Grab the most recent PINNED version of the RenoDX mod from the RenoDX server. Look for the pinned post in the Cyberpunk channel.  The GitHub and Nexus versions are both outdated; disregard the snapshot date on the GitHub page, it's not accurate.</b> <i>This is still accurate as of March 20th, 2026.</i>  
+{% include callout.html type="important" content="<b>Grab the most recent PINNED version of the RenoDX mod from the RenoDX server. Look for the pinned post in the Cyberpunk channel.  The GitHub and Nexus versions are both outdated; disregard the snapshot date on the GitHub page, it's not accurate.</b> <i>This is still accurate as of March 25th, 2026.</i>  
 
 <b>RenoDX server invite:</b> <https://discord.gg/jz6ujVpgFB>
 
