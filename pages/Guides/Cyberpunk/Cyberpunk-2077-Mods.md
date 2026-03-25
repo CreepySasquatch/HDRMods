@@ -2,7 +2,7 @@
 title: [Cyberpunk 2077 Mod Recommendations]
 type: 
 summary: 
-description: Recommended Mods to use in Cyberpunk 2077
+description:
 sidebar: false
 ---
 

@@ -62,12 +62,17 @@ TB stands for True Black.  True Black rated monitors will have a separate True B
 - [**How to find the perfect LUT to use with RenoDX**](Cyberpunk-2077-LUTs)
 - [**Recommended Cyberpunk Mods**](Cyberpunk-2077-Mods)
 
+**A TROUBLESHOOTING SECTION IS PROVIDED TOWARD THE OF THE GUIDE.**
+- This lists commonly asked questions and issues with possible solutions.
+- A list of crash log locations is also provided.
+
+
 ## How to Fix Cyberpunk's HDR using RenoDX
 
 If you haven't done the Windows HDR Calibration, please do so now before continuing with the guide.
 Full instructions can be found here: [**Windows HDR Calibration**](Windows-HDR-Calibration).
 
-### PART 1 - Steps 0-6: Installing ReShade and RenoDX
+### PART 1 - Steps 0-10: Installing ReShade and RenoDX
 
 **0)** Install Cyberpunk 2077.  Make sure you're using the latest version of the game, **2.31**.
 
@@ -211,7 +216,9 @@ More information about the preset, including preview screenshots, can be found h
 **6)** Place the RenoDX addon `renodx-cp2077.addon64` in the `\bin\x64` folder where Cyberpunk 2077 is installed.  If you previously installed the WIP version of RenoDX, `renodx-cp2077-wip.addon64`, then delete it.
 <a href="https://slow.pics/rW4SsThY/"><img src="https://i.slow.pics/rW4SsThY.png" style="width:100%;height:100%;"/></a>
 
-### PART 2 - Steps 7-15: Configuring the in-game settings and RenoDX.
+<!--
+### PART Steps 7-10: Configuring the in-game settings and installing RenoDX.
+-->
 
 **IF YOU HAVEN'T DONE THE WINDOWS HDR CALIBRATION, PLEASE DO SO NOW BEFORE CONTINUING WITH THE GUIDE!**
 - Full instructions can be found here: [**Windows HDR Calibration**](Windows-HDR-Calibration).
@@ -285,19 +292,43 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 
 - If you don't have a Home key please refer to this guide that goes over how to change it to a different key: <https://www.youtube.com/watch?v=xoCdpOIRKus>
 
-**11)** Click on the RenoDX tab along the top of the ReShade GUI.  Set the Peak Brightness to match your display's capabilities.  
+### PART 2: RENODX SETTINGS
+*Click on the RenoDX tab along the top of the ReShade UI.*
 
-- Technically all the other RenoDX settings are user preference but I'll go over a few more important ones.
+**Tone Mapper: `PsychoV-11`**
+- This is probably the most important tweak you can make now.  I do not recommend using any other tone mapper.  The game's color grading as a whole just feels more natural with it.  Neon lights look amazing!
 
-**12)** Game Brightness is the paper white value.  Set this between 150-300 nits (I personally have it set to 200 nits) but this is ultimately user preference and may need to change depending on which LUT you're using.
+**Peak Brightness:**  Set the Peak Brightness to match the results from the Windows HDR Calibration test you did earlier.  
 
-**13)** Set SDR EOTF Emulation to `UI/Menu only` first. If everything appears to be too bright in this mode, then you can fully enable the setting. 
+**Game Brightness:** The paper white value, also known as average brightnes.  You typically want to set this between 150-300 nits.  
+- Below 1500 nits or so, having this set to 1/4 to 1/5 of your Peak Brightness is usually good enough.
+- The higher the ratio between game brightness and peak brightness, the more room you have for highlights to standout.
 
-**14)** Filmgrain I personally have set to around 20.  This is the same filmgrain from ShortFuse's ReShade shader repository: <https://github.com/clshortfuse/reshade-shaders/tree/main/Shaders>
+**SDR EOTF Emulation:** Recommend setting this to `UI/Menu only`.  The `On` setting will probably be too dark for most people when using the PsychoV-11 tone mapper.
+
+**Hue Correction:** None
+
+**Contrast:** 50-60, but set as desired.  This is mainly user preference.  I tend to change this depending on the weather type and time of day. 
+
+**Saturation:** 50-60, but set as desired. 
+
+**Blowout:** Set to 0.
+
+**LUT Strength:** 50-60.  This will depend on the LUT, but this seems to work in most cases.  Vanilla LUT is way too intense at 100.
+
+**Film Grain Type:** Perceptual
+
+**Film Grain Strength:** I personally have set to around 20, but set as desired.
+
+- If you're seeing lots of banding, increase the film grain intensity.
+
+- This is the same filmgrain from ShortFuse's ReShade shader repository: <https://github.com/clshortfuse/reshade-shaders/tree/main/Shaders>
 
 - If using other ReShade shaders such as Lilium's RCAS (which is commonly recommended), then I would set the filmgrain within RenoDX to 0 and then use ShortFuse's filmgrain shader and place it at the very end (you never want to sharpen filmgrain, and RCAS is a sharpening shader).
 
-**15) Double check to make sure Debug Graph is turned off** (found at the very bottom of RenoDX under Debug).  Otherwise you'll see a colored square on the upper right corner behind the minimap.  
+**DEBUG GRAPH: SET TO OFF!!!** 
+- *Found at the very bottom of RenoDX under Debug.*  
+- Otherwise you'll see a colored square on the upper right corner behind the minimap.
 
 **If you do not see a Debug Graph slider, you did not *correctly* install a version hosted in the Discord server!**
 
@@ -312,9 +343,13 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 **RenoDX Installation Completed!**  
 - Please continue reading if you're installing the Creepy Ultra HDR preset.
 
-### (Optional) Finishing the Creepy Ultra HDR preset setup
+<details><summary>RenoDX Settings Preview</summary>
+<a href="https://slow.pics/5A2qVoFc/"><img src="https://i.slow.pics/5A2qVoFc.png" style="width:100%;height:100%;"/></a>
+</details>
 
-**16) Open ReShade, and click the Settings tab**
+### PART 3: (Optional) Finishing the Creepy Ultra HDR preset setup
+
+**1) Open ReShade, and click the Settings tab**
 - Under the Overlay & Styling section, I recommend enabling `Group effect files with tabs instead of a tree`.  When enable it will place each active shader, *that has available settings to configure*, into it's own separate tab under the Home screen.  If left disabled, all shaders will be listed one after the other.
 <details><summary>Click for more ReShade Settings Tab Notes</summary>
 <a href="https://CejgZu0m/"><img src="https://i.slow.pics/CejgZu0m.png" style="width:100%;height:100%;"/></a>
@@ -322,7 +357,7 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 
 **This is your last chance to grab the remaining shaders from GitHub if you forgot to earlier.**  Otherwise you'll have some troubleshooting to do.  Check Step 4 of this guide for more details.
 
-**17) Click the ReShade Home tab**
+**2) Click the ReShade Home tab**
 - Pick one of the Ultra HDR presets.
 - Click the tab for smolbbsoop_HDR_Converter.fx
     - This tab won't show up if in scRGB mode, as this setting is only needed when using HDR10.
@@ -446,7 +481,7 @@ If for some reason the preset settings are goofed up, or some shaders aren't sho
 
 ====OTHER MOD LOGS====
 
-{% include callout.html type="note" content="If you're using MO2, you will find mose of these logs within the overwrite folder." %}
+{% include callout.html type="note" content="If you're using MO2, you will find most of these logs within the overwrite folder." %}
 
 - Cyberpunk 2077 Crash Dump - `%LocalAppData%\REDEngine\ReportQueue` for the main game crash log
 - Cyber Engine Tweaks - `\bin\x64\plugins\cyber_engine_tweaks`
