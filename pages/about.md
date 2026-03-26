@@ -41,8 +41,6 @@ This is a controversial subject and everyone has their own opinion on what it sh
 
 This website was originally modified from a Jekyll template by [Australian BioCommons](https://github.com/AustralianBioCommons/guide-template) which itself was based off of the [ELIXIR template](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme-example).  The site has since been overhauled with the help of Lazorr from the Ultra Plus community, of which I am also a team member, and no longer relies on another Jekyll template; however, some remnants of that old site remains and thus credit is given where its due.
 
-The website redesign was partially done with the use of Claude, but only touched the cosmetic formatting of the site, not the guide content itself.  Claude has since been used to make some adjustments to the cosmetic portions of the site.
-
 I will never use AI of any sort to write any of my guides, nor to produce screenshots or infographics for the site.  AI is only used for the web design portion, and only when I cannot figure it out on my own.  My background is in IT support, not web design, so I ask for some leeway in this aspect of the site.
 
 All of my guide content relies on my own personal knowledge, or knowledge gained from the various HDR servers and related sub reddits / blogs. LLMs do not have a good understanding of HDR or ReShade, so asking them for this kind of knowledge will not produce accurate results.
