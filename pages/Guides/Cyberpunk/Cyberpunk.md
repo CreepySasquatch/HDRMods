@@ -253,6 +253,7 @@ More information about the preset, including preview screenshots, can be found h
 <ul>
   <li>If you have any interest in using a ReShade preset, such as my <a href='https://www.nexusmods.com/cyberpunk2077/mods/28191'><b>Creepy Ultra HDR preset</b></a>, then pick HDR10 PQ.</li>
   <li>While HDR10 scRGB is <i>technically better</i>, whether you'll actually notice the difference is highly unlikely.</li>
+  <li>Note: Some users have reported that scRGB mode is incompatible with frame generation.</li>
 </ul>
 <a href='https://discourse.differentk.fyi/t/topic-free-mega-thread-v-1-11-2020/79/3746?u=kaldaien'><b>Click here to read Kaldaien's post, if you want the technical details into the differences between HDR10 PQ and HDR10 scRGB.</b></a>
 " %}
@@ -294,6 +295,13 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 
 ### PART 2: RENODX SETTINGS
 *Click on the RenoDX tab along the top of the ReShade UI.*
+*I did not list every setting here, only the commonly changed ones.  Feel free to come up with your own RenoDX presets.*
+
+{% include callout.html type="tip" content="Recommend adjusting color grading sliders when using Lilium's HDR Analyis tool shader.  
+
+It's normal for the peak brightness to slightly exceed what you set it too and going over by like 50 nits isn't usually a big deal, especially if using film grain.
+
+Be very careful with the exposure, contrast, and highlights sliders.  If you notice that your peak brightness is really high, check these first." %}
 
 **Tone Mapper: `PsychoV-11`**
 - This is probably the most important tweak you can make now.  I do not recommend using any other tone mapper.  The game's color grading as a whole just feels more natural with it.  Neon lights look amazing!
@@ -308,11 +316,23 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 
 **Hue Correction:** None
 
-**Contrast:** 50-60, but set as desired.  This is mainly user preference.  I tend to change this depending on the weather type and time of day. 
+**Exposure:** Recommend leaving at 1.00, or very minor adjustments.  Can easily mess up the look of your game if changed too much.
+
+**Highlights:** 50, but set as desired.  **Can easily exceed peak brightness if increased too much.**  If you can't see highlight details anymore then this may be too high.
+
+**Shadows:** 50, but set as desired.  If you can't see details in the shadows then this may be too high.  If you want darker interiors / nights, recommend using the Nova City 2 mod instead.
+
+**Contrast:** 50-60, but set as desired.  **This setting is particularly sensitive in this game and can easily make you exceed your peak nits if pushed to an extreme setting.**
 
 **Saturation:** 50-60, but set as desired. 
 
+**Highlight Saturation:** Grayed out when using PsychoV-11 tone mapper.
+
 **Blowout:** Set to 0.
+
+**Flare:** Grayed out when using PsychoV-11 tone mapper.
+
+**White Point:** I personally leave this at Vanilla, but you can set this to whatever you want.
 
 **LUT Strength:** 50-60.  This will depend on the LUT, but this seems to work in most cases.  Vanilla LUT is way too intense at 100.
 
@@ -326,6 +346,10 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 
 - If using other ReShade shaders such as Lilium's RCAS (which is commonly recommended), then I would set the filmgrain within RenoDX to 0 and then use ShortFuse's filmgrain shader and place it at the very end (you never want to sharpen filmgrain, and RCAS is a sharpening shader).
 
+**LUT Scaling:** Some people have reported this looks better at 75, but I personally keep it at 100.
+
+**LUT Order:** Only need to change this if using a LUT mod / LUT Switcher pack that doesn't look right. Can adjust as needed.  But otherwise leave this on Vanilla.
+
 **DEBUG GRAPH: SET TO OFF!!!** 
 - *Found at the very bottom of RenoDX under Debug.*  
 - Otherwise you'll see a colored square on the upper right corner behind the minimap.
@@ -333,19 +357,21 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 **If you do not see a Debug Graph slider, you did not *correctly* install a version hosted in the Discord server!**
 
 <details><summary>Debug Graph On</summary>
+<i>Screenshot was taken using older version of RenoDX</i>
 <a href="https://slow.pics/xY8QcYui/"><img src="https://i.slow.pics/xY8QcYui.png" style="width:100%;height:100%;"/></a>
 </details>
 
 <details><summary>Debug Graph Off</summary>
+<i>Screenshot was taken using older version of RenoDX</i>
 <a href="https://slow.pics/R1nHEgpd/"><img src="https://i.slow.pics/R1nHEgpd.png" style="width:100%;height:100%;"/></a>
+</details>
+
+<details><summary><b>Click to see RenoDX settings</b></summary>
+<a href="https://slow.pics/5A2qVoFc/"><img src="https://i.slow.pics/5A2qVoFc.png" style="width:100%;height:100%;"/></a>
 </details>
 
 **RenoDX Installation Completed!**  
 - Please continue reading if you're installing the Creepy Ultra HDR preset.
-
-<details><summary>RenoDX Settings Preview</summary>
-<a href="https://slow.pics/5A2qVoFc/"><img src="https://i.slow.pics/5A2qVoFc.png" style="width:100%;height:100%;"/></a>
-</details>
 
 ### PART 3: (Optional) Finishing the Creepy Ultra HDR preset setup
 
@@ -428,13 +454,23 @@ If for some reason the preset settings are goofed up, or some shaders aren't sho
 <a href="https://slow.pics/FScCfiyT/"><img src="https://i.slow.pics/FScCfiyT.png" style="width:100%;height:100%;"/></a>
 </details>
 
-**Known issue with this version of RenoDX (and the WIP version before it).  This bug affects the vanilla map and every map mod.**  
-- If you want a partial solution, Cyanide has posted a MapBegone mod in the Cyberpunk Modding server the disables the map ENV.
-    - Invite link for the Cyberpunk 2077 Modding Server: <https://discord.gg/Epkq79kd96>  
-    - Link to the MapBegone mod post: <https://discord.com/channels/717692382849663036/1198976262765564018/1479210647550955711>
+**Known issue with this version of RenoDX (and the WIP version before it).  This bug affects the vanilla map and every map mod.**
+- HUD Painter can change the contrast, saturation, and colors of the World Map: <https://www.nexusmods.com/cyberpunk2077/mods/14935>
+    - Color options do not work on the realistic map mod
+    - HUD Painter does require most of the core mods such as redscript and codeware, but if you have a full modlist then you'll probably have these anyways. Make sure to install the mod settings optional mod so you can see the World Map options.
+    - Can be used in combination with the MapLUTBegone fix or on its own.
+<details><summary>MOD Settings HUD Painter</summary>
+Settings listed only for reference, please adjust to your liking.
+<a href="https://slow.pics/l8t0m7js/"><img src="https://i.slow.pics/l8t0m7js.png" style="width:100%;height:100%;"/></a>
+</details>
+- Another partial solution, Cyanide has posted a MapLUTBegone mod in the Cyberpunk Modding and Ultra Place servers the disables the map ENV.
     - It's not a perfect solution, but it will at least make it so the map isn't washed out; however, the map may still appear to be too dark. 
+    - Invite link for the Cyberpunk 2077 Modding Server: <https://discord.gg/Epkq79kd96>  
+        - Link to the MapLUTBegone mod post: <https://discord.com/channels/717692382849663036/1198976262765564018/1479210647550955711>
+    - Invite link for the Ultra Place server: <https://discord.com/invite/UltraPlace>
+        - Link to the MapLUTBegone mod post: <https://discord.com/channels/1296187754979528747/1296190077717971004/1486441333181911124>
 - Some people also find that the Realistic Map Mod looks better, and is what I personally use (8K version or higher): <https://www.nexusmods.com/cyberpunk2077/mods/17811>
-    - You can use this mod in combination with the MapBegone fix or on its own.
+
 
 ### How do I adjust the UI brightness?
 **You can change the UI brightness by adjusting the `paper white` value in the game's HDR settings.**  This value has no other effect when RenoDX is installed.
