@@ -249,11 +249,10 @@ More information about the preset, including preview screenshots, can be found h
 
 {% include callout.html type="tip" content="
 <b>HDR10 PQ vs HDR10 scRGB</b>
-<p><b>TLDR, the mode doesn't matter. There is basically no visual difference between them. HDR10 PQ is more compatible with ReShade shaders, which is why I usually recommend it.</b></p>
+<p><b>There is basically no visual difference between them. HDR10 PQ is more compatible with ReShade shaders and it supports Frame Generation. SCRGB DOES NOT SUPPPORT FRAME GENERATION!</b></p>
 <ul>
   <li>If you have any interest in using a ReShade preset, such as my <a href='https://www.nexusmods.com/cyberpunk2077/mods/28191'><b>Creepy Ultra HDR preset</b></a>, then pick HDR10 PQ.</li>
-  <li>While HDR10 scRGB is <i>technically better</i>, whether you'll actually notice the difference is highly unlikely.</li>
-  <li>Note: Some users have reported that scRGB mode is incompatible with frame generation.</li>
+  <li>I only recommend picking scRGB mode if you're curious to see what it looks like.  Otherwise just stick with HDR10 PQ.</li>
 </ul>
 <a href='https://discourse.differentk.fyi/t/topic-free-mega-thread-v-1-11-2020/79/3746?u=kaldaien'><b>Click here to read Kaldaien's post, if you want the technical details into the differences between HDR10 PQ and HDR10 scRGB.</b></a>
 " %}
