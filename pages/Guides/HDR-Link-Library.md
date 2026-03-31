@@ -36,7 +36,7 @@ If you have a question about ReShade that doesn't necessarily revolve around HDR
 
 ## HDR Addons or Related Tools
 
-**RenoDX / Luma Installer:** *<https://github.com/RankFTW/RenoDXChecker>*.  Can also install ReShade and the Display Commander addon.  Support is provided in both the RenoDX and Ultra Plus Discord servers.
+**ReShade HDR Installer:** *<https://github.com/RankFTW/RHI>*.  Can install RenoDX, Luma, ReShade and the ReLimiter addon.  Support is provided in both the RenoDX and Ultra Plus Discord servers.
 
 **ReShade:** *<https://reshade.me/#download>*.  The program that is used to inject the Luma and RenoDX addons.  Also used by many people to further modify the look of their game with the various shaders that are offered.
 
@@ -79,9 +79,14 @@ If you have a question about ReShade that doesn't necessarily revolve around HDR
 
 <br>
 
+**HDRFrame:** *<https://apps.microsoft.com/detail/9P4NGN61CR4T?hl=en-us&gl=US&ocid=pdpshare>*. Can capture Desktop, focused Window, or custom region with keyboard or controller shortcuts, then save in JXR,  HDR PNG, and SDR PNG.  CANNOT convert HDR images to SDR.
+
+
 **SKIV:** (Special K Image Viewer).  Separate program that comes with Special K (you can find it within the Special K installer folder) or you can download it from the Special K Discord server.  Useful for converting HDR images to other formats and seeing details about an HDR image similar to Lilium's HDR Analysis shader. Can also act as an HDR image capture tool, though images are placed into the Windows clipboard and otherwise have to be manually saved to a specific folder; so in practice you can only take one screenshot at a time, similar to the Windows snipping tool.
 
 **Display Commander:** *<https://github.com/pmnoxx/display-commander>*.  Similar to Special K, except that it loads as a ReShade addon instead of being a separate app. Currently supported in the RenoDX server.
+
+**ReLimiter:** *<https://github.com/RankFTW/Ultra-Limiter>*. A ReShade addon for GPU-aware frame rate limiting with NVIDIA Reflex integration, frame generation awareness, and adaptive pacing. Can also convert force Fake Fullscreen (borderless) mode in games that require fullscreen for HDR. 
 
 **dgVooDoo2:** *<https://dege.freeweb.hu/dgVoodoo2/dgVoodoo2/>*. Used to convert older games into DX11 or DX12. 
 

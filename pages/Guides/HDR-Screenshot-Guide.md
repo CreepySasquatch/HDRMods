@@ -19,7 +19,7 @@ disable the inverse tonemapper as well which will produce a
 washed-out image in the before shot." %}
 
 - **Special K** is able to take HDR screenshots in multiple HDR image
-  formats including HDR AVIF, JXR, and HDR PNG.
+  formats including HDR AVIF, HDR PNG, JPEG-XL, and JXR.
 
 - **SKIV (Special K Image Viewer)** is a handy tool can be used to
   properly view HDR images and see detailed information about the image.
