@@ -6,6 +6,10 @@ description: How to find your display's peak brightness value for HDR mods such 
 sidebar: false
 ---
 
+{% include callout.html type="warning" content="This guide is meant as a general reference. Some displays have features or quirks that may require special attention.  Ask in the HDR Den and RenoDX servers if you need help finding the peak brightness for your specific display.
+
+<b>Setting changes made on the display may interfere with the final result.</b>" %} 
+
 {% include callout.html type="tip" content="<b>Clipping Point vs Peak Brightness</b>
 
 <li><b>Peak Brightness:</b> The maximum brightness your display can output in its current mode.</li>
@@ -73,3 +77,6 @@ Under the Display Calibration you should see the peak brightness that was determ
 <a href="https://slow.pics/RVhb9nFM/"><img src="https://i.slow.pics/RVhb9nFM.png" style="width:75%;height:75%;"/></a>
 
 
+{% include callout.html type="important" content="<b>If the result is way off from what you were expecting it to be, then consult the peak brightness located on the display manufacturer's website and use that value instead.</b> 
+
+If you're not able to locate it, and don't have an RTINGs subscription, you can also try looking in the AVS forums: <https://www.avsforum.com/>" %} 
