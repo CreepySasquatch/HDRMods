@@ -4,6 +4,7 @@ type:
 summary:
 description: How to Setup RenoDX in Cyberpunk 2077
 ---
+{% include callout.html type="important" content="  <b>Update April 6th, 2026:</b> A new version of RenoDX has released in the RenoDX Discord server featuring the PsychoV-17 tone mapper.  You will need to adjust your RenoDX color grading settings for this update.  I will update this guide with recommended settings once I've had more time to experiment with it.  I intend on leaving the PsychoV-11 settings in the guide in case people prefer that version, with notes for PsychoV-17 where applicable." %}
 
 {% include callout.html type="warning" content="  <b>Update March 25th, 2026: This guide has undergone a major revision.  Please note the following updates: </b>
 
