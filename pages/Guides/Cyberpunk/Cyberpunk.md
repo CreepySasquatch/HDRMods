@@ -4,7 +4,9 @@ type:
 summary:
 description: How to Setup RenoDX in Cyberpunk 2077
 ---
-{% include callout.html type="important" content="  <b>Update April 6th, 2026:</b> A new version of RenoDX has released in the RenoDX Discord server featuring the PsychoV-17 tone mapper.  You will need to adjust your RenoDX color grading settings for this update.  I will update this guide with recommended settings once I've had more time to experiment with it.  I intend on leaving the PsychoV-11 settings in the guide in case people prefer that version, with notes for PsychoV-17 where applicable." %}
+{% include callout.html type="important" content="  <b>Update April 6th, 2026:</b> A new version of RenoDX has released in the RenoDX Discord server featuring the PsychoV-17 tone mapper.  You will need to adjust your RenoDX color grading settings for this update.</b>
+
+CURRENTLY ONLY THE RENODX SETTINGS SECTION HAS BEEN UPDATED FOR PSYCHOV-17. I will update the rest when I have time." %}
 
 {% include callout.html type="warning" content="  <b>Update March 25th, 2026: This guide has undergone a major revision.  Please note the following updates: </b>
 
@@ -104,7 +106,9 @@ Full instructions can be found here: [**Windows HDR Calibration**](Windows-HDR-C
 
 This preset is not necessary to use RenoDX, and is not endorsed by any RenoDX mod creator. The instructions are included in this guide to make it  easier on people using both RenoDX and the Creepy Ultra HDR ReShade preset.
 
-More information about the preset, including preview screenshots, can be found here: <a href='https://www.nexusmods.com/cyberpunk2077/mods/28191'>https://www.nexusmods.com/cyberpunk2077/mods/28191</a>" %}
+More information about the preset, including preview screenshots, can be found here: <a href='https://www.nexusmods.com/cyberpunk2077/mods/28191'>https://www.nexusmods.com/cyberpunk2077/mods/28191</a>
+
+<b>PLEASE READ the entire mod page description and stickied comments on the Nexus Mods page for updated information in regards to how to configure the preset.  Those will supercede anything mentioned here in regards to how the preset should be configured.</b>" %}
 
 **4) Choose from the following options:**
 
@@ -296,15 +300,16 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 ### PART 2: RENODX SETTINGS
 *Click on the RenoDX tab along the top of the ReShade UI.*
 *I did not list every setting here, only the commonly changed ones.  Feel free to come up with your own RenoDX presets.*
+Recommended setttings are for PsychoV-11 and PsychoV-17 tone mappers. These will be noted separately for each tone mapper when applicable.
 
 {% include callout.html type="tip" content="Recommend adjusting color grading sliders when using Lilium's HDR Analyis tool shader.  
 
 It's normal for the peak brightness to slightly exceed what you set it too and going over by like 50 nits isn't usually a big deal, especially if using film grain.
 
-Be very careful with the exposure, contrast, and highlights sliders.  If you notice that your peak brightness is really high, check these first." %}
+Be very careful with the exposure, contrast, and highlights sliders. If you notice that your peak brightness is really high, check these first.  This also applies to the cone response slider introduced with PsychoV-17." %}
 
-**Tone Mapper: `PsychoV-11`**
-- This is probably the most important tweak you can make now.  I do not recommend using any other tone mapper.  The game's color grading as a whole just feels more natural with it.  Neon lights look amazing!
+**Tone Mapper: `PsychoV-11`** *March 19th post* or **`PsychoV-17`** *April 6th post*.  
+- You will not see both.  RenoDRT is the older tone mapper and is outdated at this point.
 
 **Peak Brightness:**  Set the Peak Brightness to match the results from the Windows HDR Calibration test you did earlier.  
 
@@ -318,23 +323,25 @@ Be very careful with the exposure, contrast, and highlights sliders.  If you not
 
 **Exposure:** Recommend leaving at 1.00, or very minor adjustments.  Can easily mess up the look of your game if changed too much.
 
-**Highlights:** 50, but set as desired.  **Can easily exceed peak brightness if increased too much.**  If you can't see highlight details anymore then this may be too high.
+**Highlights:** 50 for PsychoV-11 / 55 for PsychoV-17 but set as desired.  **Can easily exceed peak brightness if increased too much.**  If you can't see highlight details anymore then this may be too high.
 
 **Shadows:** 50, but set as desired.  If you can't see details in the shadows then this may be too high.  If you want darker interiors / nights, recommend using the Nova City 2 mod instead.
 
-**Contrast:** 50-60, but set as desired.  **This setting is particularly sensitive in this game and can easily make you exceed your peak nits if pushed to an extreme setting.**
+**Contrast:** 50-60 for PsychoV-11 / 50 for PsychoV-17 but set as desired.  **This setting is particularly sensitive in this game and can easily make you exceed your peak nits if pushed to an extreme setting.** 
 
-**Saturation:** 50-60, but set as desired. 
+**Saturation:** 50-60 for PsychoV-11 / 50 for PsychoV-17 but set as desired.
 
-**Highlight Saturation:** Grayed out when using PsychoV-11 tone mapper.
+**Cone Response:** *Only available when using PsychoV-17.* Defaults to 60, set as desired.  Controls both Saturation and Contrast.  **This should be the first slider you adjust with PsychoV-17**.  
+
+**Highlight Saturation:** Grayed out when using PsychoV-11 or PsychoV-17 tone mapper.
 
 **Blowout:** Set to 0.
 
-**Flare:** Grayed out when using PsychoV-11 tone mapper.
+**Flare:** Grayed out when using PsychoV-11 & PsychoV-17 tone mapper.
 
 **White Point:** I personally leave this at Vanilla, but you can set this to whatever you want.
 
-**LUT Strength:** 50-60.  This will depend on the LUT, but this seems to work in most cases.  Vanilla LUT is way too intense at 100.
+**LUT Strength:** 50-60.  This will depend on the LUT, but this seems to work in most cases.  Most LUTs are way too intense at 100.
 
 **Film Grain Type:** Perceptual
 
