@@ -6,7 +6,7 @@ description: How to Setup RenoDX in Cyberpunk 2077
 ---
 {% include callout.html type="important" content="  <b>Update April 6th, 2026:</b> A new version of RenoDX has released in the RenoDX Discord server featuring the PsychoV-17 tone mapper.  You will need to adjust your RenoDX color grading settings for this update.</b>
 
-CURRENTLY ONLY THE RENODX SETTINGS SECTION HAS BEEN UPDATED FOR PSYCHOV-17. I will update the rest when I have time." %}
+Guide has been updated for PsychoV-17 but screenshots still show the PsychoV-11 version." %}
 
 {% include callout.html type="warning" content="  <b>Update March 25th, 2026: This guide has undergone a major revision.  Please note the following updates: </b>
 
@@ -205,7 +205,9 @@ More information about the preset, including preview screenshots, can be found h
 <details><summary>Click for RenoDX server info and screenshots of the Cyberpunk 2077 addon location.</summary>
 <ol>
 <ul>
-    <li>The GitHub and Nexus Mods versions of Cyberpunk's RenoDX are outdated as mentioned in the bubble at the top of this guide.  The version pinned in the comments has the new fancy PsychoV-11 tone mapper, which makes colors look a lot more accurate and neon lights should look a lot better.</li>
+    <li>The GitHub and Nexus Mods versions of Cyberpunk's RenoDX are outdated as mentioned in the bubble at the top of this guide.  The version pinned in the comments has the new fancy PsychoV tone mapper, which makes colors look a lot more accurate and neon lights should look a lot better.</li>
+
+    <li>The version of the PsychoV tone mapper will vary depending on which post you download it from.  The most recent pinned post from April 6th, 2026 contains the PsychoV-17 version which has more accurate colors compared to the PsychoV-11 version available in the Martch 19th, 2026 post.</li>
 
     <li>RenoDX server invite: <a href="https://discord.gg/jz6ujVpgFB">https://discord.gg/jz6ujVpgFB</a></li>
 
@@ -298,9 +300,10 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 - If you don't have a Home key please refer to this guide that goes over how to change it to a different key: <https://www.youtube.com/watch?v=xoCdpOIRKus>
 
 ### PART 2: RENODX SETTINGS
-*Click on the RenoDX tab along the top of the ReShade UI.*
-*I did not list every setting here, only the commonly changed ones.  Feel free to come up with your own RenoDX presets.*
-Recommended setttings are for PsychoV-11 and PsychoV-17 tone mappers. These will be noted separately for each tone mapper when applicable.
+- *Click on the RenoDX tab along the top of the ReShade UI.*
+- *I did not list every setting here, only the commonly changed ones.  Feel free to come up with your own RenoDX presets.*
+- Recommended setttings are for PsychoV-11 and PsychoV-17 tone mappers. These will be noted separately for each tone mapper when applicable.
+- **Disclaimer: These are my personal recommendations and do not reflect the opinions held by ShortFuse or any other mod author. All sliders you can adjust to your own personal preference. My goal was to just help people get something that looks decent as a starting point.** 
 
 {% include callout.html type="tip" content="Recommend adjusting color grading sliders when using Lilium's HDR Analyis tool shader.  
 
@@ -319,11 +322,11 @@ Be very careful with the exposure, contrast, and highlights sliders. If you noti
 
 **SDR EOTF Emulation:** Recommend setting this to `UI/Menu only`.  The `On` setting will probably be too dark for most people when using the PsychoV-11 tone mapper.
 
-**Hue Correction:** None
+**Hue Correction:** None.
 
 **Exposure:** Recommend leaving at 1.00, or very minor adjustments.  Can easily mess up the look of your game if changed too much.
 
-**Highlights:** 50 for PsychoV-11 / 55 for PsychoV-17 but set as desired.  **Can easily exceed peak brightness if increased too much.**  If you can't see highlight details anymore then this may be too high.
+**Highlights:** 50 for PsychoV-11 & PsychoV-17 but set as desired.  **Can easily exceed peak brightness if increased too much.**  If you can't see highlight details anymore then this may be too high.
 
 **Shadows:** 50, but set as desired.  If you can't see details in the shadows then this may be too high.  If you want darker interiors / nights, recommend using the Nova City 2 mod instead.
 
