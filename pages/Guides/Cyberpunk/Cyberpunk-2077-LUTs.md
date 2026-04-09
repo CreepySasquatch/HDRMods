@@ -25,8 +25,9 @@ sidebar: false
   
   Some LUTs such as Nova LUT 3 have HDR and SDR versions.  Make sure you're grabbing the HDR versions!!!" %}
 
-**My *personally* recommended LUT to use with RenoDX: PREEM LUT 3 or the Vanilla (default) LUT at 50% strength.**
+**My *personally* recommended LUT to use with RenoDX: the Vanilla (default) LUT at 50% strength (or don't pick any LUT).**  I used to recommend Preem LUT 3, which still isn't bad, but with the introduction of the PsychoV tone mapper this is no longer needed in my opinion.
 - Please do not take this LUT recommendation as gospel.  It's mentioned solely because everyone asks, "Which LUT should I use?"  If you want a proper answer, then read the LUT Switcher 2 guide in the next section.
+- For virtual photography LUTs can still be super useful.  So even if you don't use one for gameplay, feel free to experiment when taking screenshots!
 
 **What about Nova LUT 3?**
 - This is the other LUT that is often recommended, for both HDR and SDR.
