@@ -10,7 +10,9 @@ sidebar: false
 
 <b>I will not be covering every single mod you should use, as the list would be over 100 items long.  If you want a verbose list of mods for core visuals please check out the 3077 Modlist Guide.</b>
 
-<b>3077 Modlist Guide:</b><a href='https://www.nexusmods.com/games/cyberpunk2077/collections/lv4wpp'>. The modlist itself is no longer being developed, but the install guide is still a good list to reference for all the visual mods you need.  The modlist also contains mods that change the gameplay so just be aware of this if you decide to install the full modlist." %}
+<b>3077 Modlist Guide: </b><a href='https://www.nexusmods.com/games/cyberpunk2077/collections/lv4wpp'>https://www.nexusmods.com/games/cyberpunk2077/collections/lv4wpp</a>. 
+
+The modlist itself is no longer being developed, but the install guide is still a good list to reference for all the visual mods you need.  The modlist also contains mods that change the gameplay so just be aware of this if you decide to install the full modlist." %}
 
 **MY OTHER CYBERPUNK 2077 GUIDES**
 - [**Cyberpunk 2077 Guide Index**](Cyberpunk-2077-Index)
