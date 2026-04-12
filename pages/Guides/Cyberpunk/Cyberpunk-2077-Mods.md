@@ -6,13 +6,15 @@ description: My Favorite Cyberpunk Mods
 sidebar: false
 ---
 
-{% include callout.html type="mote" content="This guide isn't specific to RenoDX or HDR.  People have asked for some recommended mods, especially to help enhance the overall look of the game and to make their screenshots look better.
+{% include callout.html type="note" content="This guide isn't specific to RenoDX or HDR.  People have asked for some recommended mods, especially to help enhance the overall look of the game and to make their screenshots look better.
 
 <b>I will not be covering every single mod you should use, as the list would be over 100 items long.  If you want a verbose list of mods for core visuals please check out the 3077 Modlist Guide.</b>
 
 <b>3077 Modlist Guide: </b><a href='https://www.nexusmods.com/games/cyberpunk2077/collections/lv4wpp'>https://www.nexusmods.com/games/cyberpunk2077/collections/lv4wpp</a>. 
 
 The modlist itself is no longer being developed, but the install guide is still a good list to reference for all the visual mods you need.  The modlist also contains mods that change the gameplay so just be aware of this if you decide to install the full modlist." %}
+
+{% include callout.html type="important" content="Please support the creators of any recommended mods.  Piracy of paid mods, camera tools, and shaders is frowned upon." %}
 
 **MY OTHER CYBERPUNK 2077 GUIDES**
 - [**Cyberpunk 2077 Guide Index**](Cyberpunk-2077-Index)
@@ -22,6 +24,8 @@ The modlist itself is no longer being developed, but the install guide is still 
 ## Virtual Photography
 
 - **Otis Camera Tools** (paid tools from Otis' Patreon): <https://www.patreon.com/cw/Otis_Inf>. Recommended for any virtual photography hobbiest. Otis makes the best photomode tools for a variety of games, including the popular UUU which can be used in most UE4 and UE5 games. This is much more flexible than the in-game photomode, allowing infinite camera distance, disable the HUD, hotsampling, pausing NPC movement, along with many other features.  Also allows you to use ray reconstruction which the in-game photomode disables.  Recommend using with AMM for posing characters, despawning background NPCs, and spawning props.
+
+- **Hot-Sampled Photomode Renders (IGPT)**: <https://www.nexusmods.com/cyberpunk2077/mods/26318>.  **SDR Only!**  Allows you to do hotsampling within Photomode without needing to use something like Otis tools.
 
 - **AMM**: <https://www.nexusmods.com/cyberpunk2077/mods/790>.  Useful for posing characters, removing background NPCs, spawning props, teleporting to hard to reach areas, etc. *Make sure to grab pose packs that are compatible with AMM.*
     - **AMM Expressions Overhaul**: <https://www.nexusmods.com/cyberpunk2077/mods/20108>.  Adds over 200 facial animations to AMM. If you're going to use AMM to do character poses, you'll want to download this as well.
