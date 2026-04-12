@@ -16,6 +16,10 @@ sidebar: false
   - To take a screenshot of the ReShade interface, click on the ReShade settings tab.  About halfway down you'll see an option called `Save separate image with the overlay visible`
   - ReShade's `save before and after images` screenshot feature will not work when using one of the inverse tonemapping shaders because it will disable the inverse tonemapper as well which will produce a washed-out image in the before shot. 
 
+<details><summary>ReShade Settings Overview</summary>
+<img src='./images/ReShade-Settings.png' alt='ReShade Settings Breakdown' style='max-width:100%;'>
+</details>
+
 - **HDR Frame:** <https://apps.microsoft.com/detail/9P4NGN61CR4T?hl=en-us&gl=US&ocid=pdpshare>
   - Able to take multiple screenshot types simultaneously, supporting HDRPNG and JXR for HDR images, and normal PNGs for SDR.
   - Supports keyboard and controller keybinds
