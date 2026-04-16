@@ -4,7 +4,7 @@ type:
 summary:
 description: How to Setup RenoDX in Cyberpunk 2077
 ---
-{% include callout.html type="important" content="  <b>Update April 6th, 2026:</b> A new version of RenoDX has released in the RenoDX Discord server featuring the PsychoV-17 tone mapper.  You will need to adjust your RenoDX color grading settings for this update.</b>
+{% include callout.html type="important" content="  <b>Update April 6th, 2026:</b> A new version of RenoDX has released in the RenoDX Discord server featuring the PsychoV-17 tone mapper.  You will need to adjust your RenoDX color grading settings for this update.
 
 Guide has been updated for PsychoV-17 but screenshots still show the PsychoV-11 version." %}
 
@@ -274,7 +274,7 @@ More information about the preset, including preview screenshots, can be found h
 
 While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  However, the actual paper white setting, in terms of what you're probably used to with HDR settings (aka the average brightness), is called  `Game Brightness` in the RenoDX addon.
 
-- **Set Tone-Mapping Midpoint to 1.** Tone-Mapping Midpoint is critical for the overall brightness of the game.  If the game is too bright then doublecheck this setting.
+- **Set Tone-Mapping Midpoint to 1.** Tone-Mapping Midpoint is critical for the overall brightness of the game.  If the game is too bright then doublecheck this setting.  This is a poor attempt at an exposure slider, and shouldn't be adjusted.  Use RenoDX's exposure slider for better results.
 
 - **Make sure HDR10 PQ saturation is 0!!!** This will cause issues with Frame Generation if changed.  Just use the Saturation slider within RenoDX instead.
 
@@ -346,7 +346,7 @@ Be very careful with the exposure, contrast, and highlights sliders. If you noti
 
 **LUT Strength:** 50-60.  This will depend on the LUT, but this seems to work in most cases.  Most LUTs are way too intense at 100.
 
-**Film Grain Type:** Perceptual
+**Film Grain Type:** Perceptual.  You must have film grain enabled within the game settings for this to work.
 
 **Film Grain Strength:** I personally have set to around 20, but set as desired.
 
@@ -484,6 +484,10 @@ Settings listed only for reference, please adjust to your liking.
 
 ### How do I adjust the UI brightness?
 **You can change the UI brightness by adjusting the `paper white` value in the game's HDR settings.**  This value has no other effect when RenoDX is installed.
+
+### HUD / UI Looks Weird
+- This usually appears as boxes or borders around parts of the HUD.
+- The vanilla film grain is broken and can cause this issue.  Make sure film grain type within RenoDX is set to `Perceptual`.
 
 ## How to Provide More Info for Troubleshooting
 
