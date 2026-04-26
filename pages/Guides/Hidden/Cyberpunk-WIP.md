@@ -260,27 +260,32 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 
 **Game Brightness:** The paper white value, also known as average brightnes.  You typically want to set this between 100-300 nits.
 
-**SDR EOTF Emulation:** also known as gamma correction.  `UI/Menu Only` is recommended for most use cases, as having it set to `On` can be too dark in some situations. If you're going to change this I recommend picking a dark room in the middle of the night so you can use that as a reference point.
+**SDR EOTF Emulation: also known as gamma correction.**  `UI/Menu Only` is recommended for most use cases, as having it set to `On` can be too dark in some situations. 
+- If you're going to change this I recommend picking a dark room in the middle of the night so you can use that as a reference point.
 
 **Hue Correction:** None.
 
 **Exposure:** One of the major settings that affects the overall brightness / darkness of the game.
 
-**Highlights:** Adjusts the intensity of the brightest elements on the screen.  **Can easily exceed peak brightness if increased too much.**  If you can't see highlight details anymore then this may be too high.
+**Highlights:** Adjusts the intensity of the brightest elements on the screen.  
+- **Can easily exceed peak brightness if increased too much.**  If you can't see highlight details anymore then this may be too high.
 
-**Shadows:** Adjusts the intensity of the darkest elements in the game. If you can't see details in the shadows then this may be too high.  If you want darker interiors / nights, recommend using the Nova City 2 mod instead.
+**Shadows:** Adjusts the intensity of the darkest elements in the game. If you can't see details in the shadows then this may be too high.  
+- If you want darker interiors / nights, recommend using the Nova City 2 mod instead.
 
-**Contrast:**  Controls the visual difference between the brightest and darkest tones in the game. **This setting is particularly sensitive in this game and can easily make you exceed your peak nits if pushed to an extreme setting.** 
+**Contrast:**  Controls the visual difference between the brightest and darkest tones in the game. 
+- **This setting is particularly sensitive in this game and can easily make you exceed your peak nits if pushed to an extreme setting.** 
 
 **Saturation:** Adjusts the color intensity of the game.  Reduce to 0 to make the game appear to be in black and white.
 
-**Cone Response:** *Only available when using PsychoV-17.*  Controls both Saturation and Contrast.  **This should be the first slider you adjust with PsychoV-17**.  
+**Cone Response: Set to 70 to simulate the look of Vanilla HDR (aka the intended appearance), per ShortFuse.**  *Only available when using PsychoV-17.* Controls both Saturation and Contrast. 
+- **This should be the first slider you adjust with PsychoV-17**.  
 
 **Highlight Saturation:** Controls the intensity of the highlight colors.
 
 **Blowout:** Set to 0 with PsychoV.
 
-**Flare:** Grayed out when using PsychoV.
+**Flare:** *Grayed out when using PsychoV.*
 
 **White Point:** Adjusts the color temperature.
 
@@ -305,7 +310,7 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 
 **LUT Scaling:** Looks at the texture and scales the color based on the amount of dynamic range the LUT isn’t using. You might not notice a difference when adjusting this setting depending on the situtaion, because LUT scaling only does things if the LUT has compressed black/white levels. 
 
-**LUT Order:** Only need to change this if using a LUT mod / LUT Switcher pack that doesn't look right. Can adjust as needed.  But otherwise leave this on Vanilla.
+**LUT Order:** Only need to change this if using a LUT mod / LUT Switcher pack that doesn't look right. Can adjust as needed. But otherwise leave this on Vanilla.
 
 **DEBUG GRAPH: SET TO OFF!!!** 
 - *Found at the very bottom of RenoDX under Debug.*  
