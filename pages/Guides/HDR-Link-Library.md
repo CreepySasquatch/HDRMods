@@ -10,7 +10,7 @@ sidebar: false
 
 **RenoDX:** *<https://github.com/clshortfuse/renodx/wiki/Mods>*
 
-**Luma:** *<https://github.com/Filoppi/Luma-Framework/wiki/Mods-List>*
+**Luma:** *<https://github.com/Filoppi/Luma-Framework/wiki>*
 
 {% include callout.html type="tip" content="There may be additional mods that can only be found in the HDR Den and RenoDX servers that aren't listed on the wiki pages.  These are typically ones that are still in development but if you are playing a game on release day, then it might be worth a look."%}
 
