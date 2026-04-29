@@ -50,8 +50,6 @@ sidebar: false
   - Can capture HDR screenshots in the JXR file format and record HDR
   video.  
   - Recommended method for capturing accurate HDR video.
-  - OBS HDR setup guide:
-    <https://www.reddit.com/r/IntelligentGaming2020/comments/x4s8h4/how_to_capture_record_hdr_high_dynamic_range/>
 
 ## Avoid These Methods
 
