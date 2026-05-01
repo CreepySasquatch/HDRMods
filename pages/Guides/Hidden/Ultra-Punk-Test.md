@@ -1,5 +1,5 @@
 ---
-title: [Ultra Punk Installation and Testing Guide]
+title: [Ultrapunk Installation and Testing Guide]
 type: 
 summary:
 description: Testing Guide
@@ -7,11 +7,11 @@ description: Testing Guide
 
 {% include callout.html type="note" content="Guide is a work in progress.  As this is meant for people interested in TESTING a new Cyberpunk modlist, some basic knowledge of Cyberpunk and how to use MO2 is to be expected. Portions of the guide will be incomplete or fully missing.
 
-A more complete guide will be made available for the full release of Ultra Punk." %}
+A more complete guide will be made available for the full release of Ultrapunk." %}
 
-## WHAT IS ULTRA PUNK?
+## WHAT IS Ultrapunk?
 
-**Ultra Punk is the spiritual successor to the popular 3077 and 2099 modlists created by UltraMatt.  With UltraMatt moving on from Cyberpunk modding and no longer supporting either modlist, a successor was needed and thus Ultra Punk was born.**
+**Ultrapunk is the spiritual successor to the popular 3077 and 2099 modlists created by UltraMatt.  With UltraMatt moving on from Cyberpunk modding and no longer supporting either modlist, a successor was needed and thus Ultrapunk was born.**
 
 ## TESTING DISCLAIMERS
 
@@ -21,11 +21,11 @@ A more complete guide will be made available for the full release of Ultra Punk.
 
 **TESTERS are expected to provide regular feedback, report bugs (as well as notes and possibly screenshots on how to reproduce them), and provide any other requested information such as VRAM usage, system configuration (graphics card, CPU, available VRAM and RAM, etc).**
 
-**During the testing phase, the Wabbajack file will be updated regularly and testers are expected to install the updated wabbajack file.  When this occurs any other mods you may have downloaded that are not part of Ultra Punk will be deleted!  This is an unfortunate side effect of how Wabbajack modlists work.**  
+**During the testing phase, the Wabbajack file will be updated regularly and testers are expected to install the updated wabbajack file.  When this occurs any other mods you may have downloaded that are not part of Ultrapunk will be deleted!  This is an unfortunate side effect of how Wabbajack modlists work.**  
 - There are a couple MO2 plugins that claim to provide a solution to this, such as [Mod Keeper](https://www.nexusmods.com/site/mods/1768).  We do not provide support for these plugins and do not endorse their use.  They may or may not work as claimed.
-- If you decide to use other mods while testing Ultra Punk and run into issues, then you will need to troubleshoot those yourself.  It is up to the discretion of the Ultra Punk team if a bug report is deamed to be valid if non Ultra Punk mods are used while testing.
+- If you decide to use other mods while testing Ultrapunk and run into issues, then you will need to troubleshoot those yourself.  It is up to the discretion of the Ultrapunk team if a bug report is deemed to be valid if non Ultrapunk mods are used while testing.
 
-{% include callout.html type="important" content="<b>Any tester purposely hiding the fact they're using other mods while making a bug report may be removed from the Ultra Punk testing program!</b>" %}
+{% include callout.html type="important" content="<b>Any tester purposely hiding the fact they're using other mods while making a bug report may be removed from the Ultrapunk testing program!</b>" %}
 
 ## INSTALLATION INSTRUCTIONS
 
@@ -36,11 +36,11 @@ A more complete guide will be made available for the full release of Ultra Punk.
 
 1. Install the [Wabbajack Installer](https://www.wabbajack.org/).
 
-1. Grab the most recent Ultra Punk Wabbajack file from the pinned post in the `ultrapunk-testing` channel within the Ultra Plus Discord server.
+1. Grab the most recent Ultrapunk Wabbajack file from the pinned post in the `ultrapunk-testing` channel within the Ultra Plus Discord server.
 
-1. Double click the Ultra Punk Wabbajack file, this should automatically open up the Wabbajack Installer. Alternatively click `Browse Lists`, then at the top right corner click `Install from disk` and pick the Ultra Punk Wabbajack file. 
+1. Double click the Ultrapunk Wabbajack file, this should automatically open up the Wabbajack Installer. Alternatively click `Browse Lists`, then at the top right corner click `Install from disk` and pick the Ultrapunk Wabbajack file. 
 
-1. For the Installation Location make sure you pick a CLEAN EMPTY folder, preferably outside of any protected Windows folders such as Program Files.  For this example I made a folder called `Ultra Punk` on my gaming SSD. 
+1. For the Installation Location make sure you pick a CLEAN EMPTY folder, preferably outside of any protected Windows folders such as Program Files.  For this example I made a folder called `Ultrapunk` on my gaming SSD. 
 - The Downloads Location should autofill to the *Installation Location*\downloads
 
 1. Click `Install` on the bottom right of the Wabbajack Installer.
