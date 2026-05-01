@@ -19,7 +19,7 @@ A more complete guide will be made available for the full release of Ultra Punk.
 
 **TESTERS SHOULD HAVE AT LEAST 10GB OF VRAM.  Anything lower is not being supported at this time.**
 
-**TESTERS are expected to provide regular feedback, report bugs (as well as notes and possibly screenshots on how to reproduce them), and provide any other requested infromation such as VRAM usage, system configuration (graphics card, CPU, available VRAM and RAM, etc).**
+**TESTERS are expected to provide regular feedback, report bugs (as well as notes and possibly screenshots on how to reproduce them), and provide any other requested information such as VRAM usage, system configuration (graphics card, CPU, available VRAM and RAM, etc).**
 
 **During the testing phase, the Wabbajack file will be updated regularly and testers are expected to install the updated wabbajack file.  When this occurs any other mods you may have downloaded that are not part of Ultra Punk will be deleted!  This is an unfortunate side effect of how Wabbajack modlists work.**  
 - There are a couple MO2 plugins that claim to provide a solution to this, such as [Mod Keeper](https://www.nexusmods.com/site/mods/1768).  We do not provide support for these plugins and do not endorse their use.  They may or may not work as claimed.
@@ -59,6 +59,7 @@ A more complete guide will be made available for the full release of Ultra Punk.
 - `4. Project Ultrapunk - Psycho Quality (20GB+ vram)`
 
 1. Pick the profile that matches your VRAM number or *lower*.  If you're in-between two VRAM amounts do not go higher, go with the lower number.
+- This determines which mods are enabled.  This is mainly to determine which texture mods get loaded. 
 
 1. Click on the big RUN button to start the game. 
 
