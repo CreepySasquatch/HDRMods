@@ -11,3 +11,5 @@ sidebar: false
 [**ReShade Manual Install Template**](ReShade-Install-Template)
 
 [**ReShade Preset Guide**](ReShade-Preset-Guide)
+
+[**Recommended ReShade Shaders**](Recommended-ReShade-Shaders)

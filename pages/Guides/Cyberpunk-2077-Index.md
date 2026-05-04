@@ -6,8 +6,10 @@ description: Guides specifically designed for Cyberpunk 2077
 sidebar: false
 ---
 
-[**RenoDX Install and Troubleshooting Guide**](Cyberpunk)
+[**RENODX INSTALLATION GUIDE**](Cyberpunk)
 
-[**Recommended LUTs for RenoDX**](Cyberpunk-2077-LUTs)
+[**CREEPY ULTRA HDR PRESET GUIDE**](Cyberpunk-Creepy-Preset)
 
-[**Other Recommended Mods**](Cyberpunk-2077-Mods)
+[**RECOMMENDED LUTS FOR RENODX**](Cyberpunk-2077-LUTs)
+
+[**RECOMMENDED CYBERPUNK MODS**](Cyberpunk-2077-Mods)

@@ -5,6 +5,8 @@ summary:
 description: How to Setup RenoDX in Cyberpunk 2077
 ---
 
+## [IF YOU WERE DIRECTED TO USE THIS WIP GUIDE, THE MAIN CYBERPUNK GUIDE HAS NOW BEEN UPDATED!!!](Cyberpunk)
+
 {% include callout.html type="tip" content="<b>Make sure your display actually supports HDR before installing RenoDX. Your monitor should be rated for HDR400 or higher, meaning it should have at least 400 nits peak brightness.</b>  
 
 <b>This is not to be confused with TB400 or higher.</b>  
@@ -242,7 +244,7 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 - If you don't have a Home key please refer to this guide that goes over how to change it to a different key: <https://www.youtube.com/watch?v=xoCdpOIRKus>
 
 ### PART 2: RENODX SETTINGS
-- *Click on the RenoDX tab along the top of the ReShade UI.*
+- Click on the `RenoDX` tab along the top of the ReShade UI.
 - **Setting recommendations listed here assume the PsychoV tone mapper is selected.**
 - PsychoV-17 is the latest version of the PsychoV tone mapper as if this guide update.  Any mention of PsychoV implies PsychoV-17 as well.
 
@@ -254,7 +256,13 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 
 <b>You should not need the Black Floor Fix shader with RenoDX!  If you feel like you need to use it then there is probably something wrong with your HDR settings.</b>" %}
 
-**Tone Mapper:** Highly recommend using `PsychoV` over the other options.  This has better color accuracy and neon lights will look much better compared to the other tone mapper versions.  The other tone mapper options are not supported in this guide.
+**Tone Mapper: `PsychoV-17`.**  This has better color accuracy and neon lights will look much better compared to the other tone mapper versions. The other tone mapper options are not supported in this guide.
+- **If you do not see PsychoV-17 as an option:** - Still accurate as of May 3rd, 2026.
+    - **RenoDRT:** older tone mapper.  This will appear as the furthest right option if you download it from GitHub or Nexus Mods, either are going to be older than the Discord pinned versions.  Do not recommend using as any of the PsychoV LUTs will look much better.
+    - **PsychoV-11:** older version that was pinned in the RenoDX server's Cyberpunk thread.  Looks nice but the blue and purples will look better with PsychoV-17.  Lacks the `Cone Response` adjustment.
+    - **PsychoV-XX:** If the XX number is higher than 17 that means a newer version of RenoDX has come out after this guide was last edited. 
+    - **Aces:** AVOID
+    - **Vanilla:** AVOID 
 
 **Peak Brightness:**  Set the Peak Brightness to match the results from the Windows HDR Calibration test you did earlier.  
 
@@ -319,17 +327,15 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 **If you do not see a Debug Graph slider, you did not *correctly* install a version hosted in the Discord server!**
 
 <details><summary>Debug Graph On</summary>
-<i>Screenshot was taken using older version of RenoDX</i>
-<a href="https://slow.pics/xY8QcYui/"><img src="https://i.slow.pics/xY8QcYui.png" style="width:100%;height:100%;"/></a>
+<img src='./images/Cyberpunk/RenoDX-PsychoV17-DebugOn.png' alt='RenoDX Debug Graph On' style='max-width:100%;'>
 </details>
 
 <details><summary>Debug Graph Off</summary>
-<i>Screenshot was taken using older version of RenoDX</i>
-<a href="https://slow.pics/R1nHEgpd/"><img src="https://i.slow.pics/R1nHEgpd.png" style="width:100%;height:100%;"/></a>
+<img src='./images/Cyberpunk/RenoDX-PsychoV17-DebugOff.png' alt='RenoDX Debug Graph Off' style='max-width:100%;'>
 </details>
 
 <details><summary><b>Click to see RenoDX settings</b></summary>
-<a href="https://slow.pics/5A2qVoFc/"><img src="https://i.slow.pics/5A2qVoFc.png" style="width:100%;height:100%;"/></a>
+<img src='./images/Cyberpunk/RenoDX-PsychoV17-Settings.png' alt='RenoDX PsychoV-17 Settings' style='max-width:75%;'>
 </details>
 
 **RenoDX Installation Completed!**  

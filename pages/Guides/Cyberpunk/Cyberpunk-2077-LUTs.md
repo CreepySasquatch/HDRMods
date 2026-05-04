@@ -5,6 +5,10 @@ summary:
 description: How to find the perfect LUT to use with RenoDX in Cyberpunk 2077
 sidebar: false
 ---
+[**MY OTHER CYBERPUNK 2077 GUIDES**](Cyberpunk-2077-Index)
+- [**RENODX INSTALLATION GUIDE**](Cyberpunk) - Doesn't include preset installation or personal setting recommendations.
+- [**CREEPY ULTRA HDR PRESET GUIDE**](Cyberpunk-Creepy-Preset) - RenoDX installation guide that also includes instructions on how to install my preset [**Creepy Ultra HDR**](https://www.nexusmods.com/cyberpunk2077/mods/28191)
+- [**RECOMMENDED CYBERPUNK MODS**](Cyberpunk-2077-Mods)
 
 ## LUTs: Everything you need to know
 
@@ -109,7 +113,3 @@ sidebar: false
     <a href="https://slow.pics/W0NnAtTJ/"><img src="https://i.slow.pics/W0NnAtTJ.png" style="width:100%;height:100%;"/></a>
     </details>
 
-## My other Cyberpunk 2077 Guides
-- [**Cyberpunk 2077 Guide Index**](Cyberpunk-2077-Index)
-- [**RenoDX Install and Troubleshooting Guide**](Cyberpunk)
-- [**Recommended Cyberpunk Mods**](Cyberpunk-2077-Mods)

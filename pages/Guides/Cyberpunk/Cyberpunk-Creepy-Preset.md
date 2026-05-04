@@ -44,11 +44,11 @@ TB stands for True Black.  True Black rated monitors will have a separate True B
 </details>
 
 [**MY OTHER CYBERPUNK 2077 GUIDES**](Cyberpunk-2077-Index)
-- [**CREEPY ULTRA HDR PRESET GUIDE**](Cyberpunk-Creepy-Preset) - RenoDX installation guide that also includes instructions on how to install my preset [**Creepy Ultra HDR**](https://www.nexusmods.com/cyberpunk2077/mods/28191)
+- [**RENODX INSTALLATION GUIDE**](Cyberpunk) - Doesn't include preset installation or personal setting recommendations.
 - [**HOW TO FIND THE PERFECT LUT TO USE WITH RENODX**](Cyberpunk-2077-LUTs)
 - [**RECOMMENDED CYBERPUNK MODS**](Cyberpunk-2077-Mods)
 
-[**A TROUBLESHOOTING SECTION IS PROVIDED AT THE END OF THE GUIDE**](Cyberpunk#troubleshooting-renodx-issues)
+[**A TROUBLESHOOTING SECTION IS PROVIDED AT THE END OF THE GUIDE**](Cyberpunk-Creepy-Preset#troubleshooting-renodx-issues)
 - This lists commonly asked questions and issues with possible solutions.
 - A list of crash log locations is also provided.
 
@@ -60,88 +60,92 @@ Full instructions can be found here: [**Windows HDR Calibration**](Windows-HDR-C
 
 ### PART 1: INSTALLING RESHADE AND RENODX
 
+- Note about mod managers: While you technically can install ReShade by placing the files within Mod Organizer or Vortex, this isn't something I'm going to cover.  However the preset(s) are offered as a mod manager compatible download as of version 2.
+- This guide also does not cover using Special K with ReShade, Display Commander, or using Optiscaler.
+
 **0)** Install Cyberpunk 2077.  Make sure you're using the latest version of the game, **2.31**.
 
-**1)** Download the **LATEST** version of ReShade **WITH FULL ADD-ON SUPPORT** from <https://reshade.me/#download>
+**1)** Download Creepy's HDR Gameplay V2 preset from Nexus Mods: <https://www.nexusmods.com/cyberpunk2077/mods/28191>.
+- If you download via a mod manager this will automatically get placed in the `\bin\x64` folder while in-game. If you manually download the preset I also recommend placing the preset file(s) in this location to make them easier to find.
+- Older versions of the preset are not supported.  
+
+**2)** Download the **LATEST** version of ReShade **WITH FULL ADD-ON SUPPORT** from <https://reshade.me/#download>
 - When running the ReShade installer, make sure to not run it directly from the Windows Downloads folder or the Cyberpunk 2077 install folder, because both options can cause issues.  At the very least make a new folder in Downloads or the Desktop and place the ReShade installer there.
 
 <details><summary>The latest ReShade version as of writing this guide is <b>6.7.3</b></summary>
 <a href="https://slow.pics/KbN1KUCW/"><img src="https://i.slow.pics/KbN1KUCW.jpg" style="width:100%;height:100%;"/></a>
 </details>
 
-**2)** Install ReShade to Cyberpunk2077.exe that is located in `\bin\x64 folder` (which the installer should default to once you pick Cyberpunk 2077). Click `Next`
-    
-- Note about mod managers: I do not recommend installing ReShade as a mod within Vortex or MO2 (Mod Organizer 2) unless you know what you're doing. 
-- This guide also does not cover using Special K with ReShade, Display Commander, or using Optiscaler.
+**3)** Install ReShade to Cyberpunk2077.exe that is located in `\bin\x64 folder` (which the installer should default to once you pick Cyberpunk 2077). Click `Next`.
 
 <details><summary>ReShade: Select Game or Application</summary>
 <a href="https://slow.pics/uhUhohcS/"><img src="https://i.slow.pics/uhUhohcS.jpg" style="width:75%;height:75%;"/></a>
 </details>
 
-**3)** For the rendering API pick `DirectX 10/11/12`, as the game is DirectX 12. Click `Next`
+**4)** For the rendering API pick `DirectX 10/11/12`, as the game is DirectX 12. Click `Next`.
 <details><summary>ReShade: Choose the Rendering API</summary>
 <a href="https://slow.pics/m1tqUrg4/"><img src="https://i.slow.pics/m1tqUrg4.jpg" style="width:75%;height:75%;"/></a>
 </details>
 
 
-**4) Choose from the following options:**
+**5) Select `Update ReShade and effects` if updating ReShade.**  
+- If installing ReShade for the first time you'll already be at the effect (shader) selection screen.
 
-<details><summary><b>Click here if you have no interest in shaders or presets (Default method)</b></summary>
+**6) Click the `Browse...` button toward the bottom and pick the `Creepy HDR Gameplay V2` preset you downloaded earlier.**  Click `Next`.
+- This will automatically pick: Deband, Zenteon's Local Contrast, Zenteon's Sharpen, Pumbo's AdvancedAutoHDR, and Lilium's HDR Analysis shaders.
+- I do not recommending clicking `Check All` button and picking all of the shaders. This will just lead to longer compile times when you start the game. 
+- You'll still need to download a few shaders from GitHub that aren't listed within the ReShade Installer.
 
-<b>If updating ReShade:</b>
-<ol>
-<li>Select <b>Update ReShade only</b></li>
+**7) Click `Skip` on the add-on selection screen.**
+- You do not want to pick any addons for normal gameplay use.  Unneeded addons will just cause issues or may even prevent the game from starting.
 
-<li>Click <b>Next</b></li>
+**8) Click `Finish`.**
+- **Do not start the game until the remaining shaders are downloaded and placed within the reshade-shaders folder!** Failing to adhere to this warning will result in missing shaders, and the preset won't look as intended.
 
-<li>Click <b>Finish</b></li>
+**9) Download Remaining Shaders from GitHub:**
+- On each GitHub page click the gree `Code` button, then click Download ZIP.
+<img src='https://i.slow.pics/UlxAbvmJ.png' alt='GitHub Download Code Button' style='max-width:100%;'>
+- **Azen PreCorrect:** <https://github.com/Zenteon/Azen/tree/main>. You need both the shaders *and* textures folders, downloading the Zip file as mentioned above will grab both automatically.
+- **ShortFuse's Film Grain:** <https://github.com/clshortfuse/reshade-shaders/tree/main>. 
 
-</ol>
+**10) Extract the contents of the ZIP folders to the reshade-shaders folder located in the /bin/x64 folder within the Cyberpunk 2077 installation.**
 
-<b>If new ReShade installation:</b>
-<ol>
-<li>Click <b>Skip</b> on the effect selection screen.</li>
-
-<li>Click <b>Skip</b> again on the add-on selection screen.</li>
-
-<li>Click <b>Finish</b></li>
-</ol>
-</details>
-
-<details><summary><b>Click here if you also want to install shaders such as Lilium's RCAS (Not Required to use RenoDX)</b></summary>
+<!--
+<details><summary><b>Click here if installing Creepy's Ultra HDR ReShade preset</b></summary>
+<ul>
+<li>You'll need the Ultra HDR VP.ini preset file from the <a href='https://www.nexusmods.com/cyberpunk2077/mods/28191'><b>Creepy Ultra HDR</b></a> mod page. These will be easier to find in-game if placed in the /bin/x64 folder of the Cyberpunk 2077 installation.</li>  
+<li>This will automatically select any shaders that can be grabbed from the installer that can then be used in both presets.</li>
+<li>You'll still need a few more shaders from GitHub, but this will save you the bulk of the work.</li>  
+</ul>
 <ol>
     <li>Select <b>Update ReShade and effects</b> if updating ReShade.</li>
     <i>If installing ReShade for the first time you'll already be at the effect (shader) selection screen.</i>
-    <li>Change the effect sorting from <b>Default</b> to <b>A to Z</b> to make it easier to find the various shader packs (also known as "repositories" because of how they're stored on GitHub).
-    <img src='https://i.slow.pics/ATvCVf33.jpg' alt='Change shader sorting from Default to A to Z' style='max-width:100%;'></li>
-    <li>For Lilium's shaders, scroll down unti you see <b>ReShade_HDR_shaders by Lilium</b>.</li>
-    <li>Check the box <b>ReShade_HDR_shaders by Lilium</b> to download all of Lilium's shaders (recommended).
-     <img src='https://i.slow.pics/xwMDil4f.jpg' alt='Pick shaders' style='max-width:75%;'></li>
-
+    <li>Click the <b>Browse...</b> button toward the bottom and pick the <b>Ultra HDR VP</b> preset file.</li>
 <ul> 
-    <li><b>I DO NOT recommend clicking the <i>Check All</i> button and picking all of the shaders.  This will just lead to longer compile times when you start the game. Most shaders won't work with HDR so there's not much point to picking all of them anyways.</b></li>
+    <li>This will automatically pick: Soop's HDR Converters, Zenteon's Local Contrast, Lilium's HDR Brightness Adjustment, Lilium's RCAS, and Marty's Meteor Film Grain shaders.  This will also pick the entire Standard Shaders repository that includes shaders such as Deband (which is optional for the preset).</li>
+    <li>You may not see the HDR Brightness Adjustment shader listed within Lilium's ReShade HDR Shaders. This is normal so don't worry.  The checkbox is missing for that shader, but it will still download it for you.</li>
+    <img src='https://i.slow.pics/nqRq8STi.png' alt='Download Shaders' style='max-width:100%;'>
+    <li>You're welcome to pick any other shaders you want.  A recommended option would be to grab the rest of Lilium's shaders because they're always handy to have, especially the HDR Analysis Tool.</li>
+    <li><b>I DO NOT recommend clicking the <i>Check All</i> button and picking all of the shaders.  This will just lead to longer compile times when you start the game. Most shaders won't work without Soop's HDR Converters so keep that in mind.</b></li>
     <li><b><a href="https://www.hdrmods.com/HDR-Link-Library#hdr-compatible-shaders">List of HDR Compatible Shaders</a></b></li>
-    <li>The repository <b>Standard effects</b> is always downloaded when clicking <i>Next</i> instead of <i>Skip</i>, even if you don't pick any other shader packs to install.  This includes important shaders such as <i>Deband</i> (used to fix banding issues, especially in the sky) and <i>Display Depth</i> (used to help setup the depth buffer for shaders that require it such as Deband).  It also includes the helper shaders <i>ReShade.fxh</i> and <i>ReShadeUI.fxh</i> which most other shaders make use of.</li>
 </ul>
     <li>Click <b>Next</b></li>
     <li>Click <b>Skip</b> on the add-on selection screen.</li>
     <li>Click <b>Finish</b></li>
+    <li><b>Do not start the game until the remaining shaders are downloaded and placed within the reshade-shaders folder!</b> Failing to adhere to this warning will result in both presets missing shaders, and the presets won't look as intended.</li>
+    <li><b>Download the remaining shaders from GitHub:</b></li> 
+    <ul>
+    <li>On each GitHub page click the gree <b>Code</b> button, then click Download ZIP.</li>
+    <img src='https://i.slow.pics/UlxAbvmJ.png' alt='GitHub Download Code Button' style='max-width:100%;'>
+    <li><b>Azen PreCorrect: </b><a href="https://github.com/Zenteon/Azen/tree/main">https://github.com/Zenteon/Azen/tree/main.</a><br><i>You need the shaders AND textures folders.</i></li>
+    <li><b>ShortFuse's Film Grain:</b> <a href="https://github.com/clshortfuse/reshade-shaders/tree/main">https://github.com/clshortfuse/reshade-shaders/tree/main.</a></li>
+    </ul>
+    <li>Extract the contents of the ZIP folders to the reshade-shaders folder located in the /bin/x64 folder within the Cyberpunk 2077 installation.</li>
 </ol>
 </details>
-
-<!--
-**5)** Welcome to the add-on selection screen.  **DO NOT PICK ANY ADDONS!!!** Click `Next`, then Click `Finish`. 
-- Addons are not similar to shaders at all.  Unlike shaders which are post processing only (aka they basically act like a photoshop filter), addons can operate at the game engine level and can easily cause issues if you don't know what you're doing.
-
-- **Some addons are not compatible with each other!  So do not download them randomly!**  
-
-- **Rule of thumb, if you don't know what it is then don't touch it.  If you do touch it after reading this step, and shit breaks, then uninstall ReShade and start the ReShade installation process over again.  Seriously, you've been warned!!!**
-<details><summary>DO NOT PICK ANY ADDONS!!!</summary>
-<a href="https://slow.pics/f2EQMwqO/"><img src="https://i.slow.pics/f2EQMwqO.jpg" style="width:100%;height:100%;"/></a>
-</details>   
 -->
 
-**5)** Grab the RenoDX addon from RenoDX Discord server. Look in the pinned comments of the Cyberpunk 2077 channel.
+**11)** Grab the RenoDX addon from RenoDX Discord server. Look in the pinned comments of the Cyberpunk 2077 channel.
 - You can also find the MapLUTBegone mod pinned here as well.  This helps fix an issue with the world map that is an unfortunate side effect of using RenoDX. Click [**here**](Cyberpunk#map-is-hard-to-read) for more info.
 
 <details><summary>Click for RenoDX server info and screenshots of the Cyberpunk 2077 addon location.</summary>
@@ -160,11 +164,11 @@ Full instructions can be found here: [**Windows HDR Calibration**](Windows-HDR-C
 <a href="https://slow.pics/54pUS32A/"><img src="https://i.slow.pics/54pUS32A.jpg" style="width:95%;height:95%;"/></a>
 </details>    
 
-**6)** Place the RenoDX addon `renodx-cp2077.addon64` in the `\bin\x64` folder where Cyberpunk 2077 is installed.  If you previously installed the WIP version of RenoDX, `renodx-cp2077-wip.addon64`, then delete it.
+**12)** Place the RenoDX addon `renodx-cp2077.addon64` in the `\bin\x64` folder where Cyberpunk 2077 is installed.  If you previously installed the WIP version of RenoDX, `renodx-cp2077-wip.addon64`, then delete it.
 <a href="https://slow.pics/rW4SsThY/"><img src="https://i.slow.pics/rW4SsThY.png" style="width:100%;height:100%;"/></a>
 
 <!--
-### PART Steps 7-10: Configuring the in-game settings and installing RenoDX.
+### PART Steps 12-16: Installing RenoDX, Configuring In-game Settings, and Configuring the ReShade preset
 -->
 
 **IF YOU HAVEN'T DONE THE WINDOWS HDR CALIBRATION, PLEASE DO SO NOW BEFORE CONTINUING WITH THE GUIDE!**
@@ -194,6 +198,7 @@ Full instructions can be found here: [**Windows HDR Calibration**](Windows-HDR-C
 </ul>
 </ol>" %} 
 
+<!--
 {% include callout.html type="tip" content="
 <b>HDR10 PQ vs HDR10 scRGB</b>
 <p><b>HDR10 PQ is more compatible with ReShade shaders and it supports Frame Generation.</b></p>
@@ -202,18 +207,20 @@ Full instructions can be found here: [**Windows HDR Calibration**](Windows-HDR-C
 
 <a href='https://discourse.differentk.fyi/t/topic-free-mega-thread-v-1-11-2020/79/3746?u=kaldaien'><b>Click here to read Kaldaien's post, if you want the technical details into the differences between HDR10 PQ and HDR10 scRGB.</b></a>
 " %}
+-->
 
-**7)** Start the game. Open the Settings menu.
+**13)** Start the game. Open the Settings menu.
 
-**8)** Go to Video > HDR settings. **Make sure Cyberpunk's HDR is turned ON.  HDR10 PQ and HDR10 scRGB will both work with RenoDX.**
+**14)** Go to Video > HDR settings. **Make sure Cyberpunk's HDR is turned ON and set to HDR10 PQ mode.**  The HDR10 scRGB mode will not work with this preset. 
+- If you have an `HDR10+ Gaming` setting, make sure it is disabled because it can cause crushed black levels. You'll see this underneath the HDR Mode selection.  This will only appear if your computer detects that you are using an HDR10+ compatible display.
 
-- **Maximum Brightness: Leave at the default value.** This setting is ignored when using RenoDX. This gets replaced with the `Peak Brightness` setting in the RenoDX addon.
+- **Maximum Brightness: Leave at the default value.** This setting is ignored when using RenoDX. This gets replaced with the `Peak Brightness` setting in the RenoDX addon.  But you can set it to your peak brightness if it makes you feel more comfortable.
 
 - **Paper White: (UI Brightness) 200 or change as desired.**  This setting has no other effect when RenoDX is installed. 
 
 While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  However, the actual paper white setting, in terms of what you're probably used to with HDR settings (aka the average brightness), is called  `Game Brightness` in the RenoDX addon.
 
-- **Set Tone-Mapping Midpoint to 1.** Tone-Mapping Midpoint is critical for the overall brightness of the game.  If the game is too bright then doublecheck this setting.  This is a poor attempt at an exposure slider, and shouldn't be adjusted.  Use RenoDX's exposure slider for better results.
+- **Set Tone-Mapping Midpoint to 1.** Tone-Mapping Midpoint is critical for the overall brightness of the game.  If the game is too bright then doublecheck this setting.  This is a poor attempt at an exposure slider, and shouldn't be adjusted when using RenoDX.  Use RenoDX's exposure slider for better results.
 
 - **Make sure HDR10 PQ saturation is 0!!!** This will cause issues with Frame Generation if changed.  Just use the Saturation slider within RenoDX instead.
 
@@ -228,23 +235,18 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 <a href="https://slow.pics/zFyyInhD/"><img src="https://i.slow.pics/zFyyInhD.png" style="width:100%;height:100%;"/></a>
 </details>
 
-**9)** Within Cyberpunk's Graphics settings, make sure Color Precision is set to High or it will result in a washed out / gray image.
+**15)** Within Cyberpunk's Graphics settings, make sure Color Precision is set to High or it will result in a washed out / gray image.
 
 <details><summary>Color precision setting</summary>
 <a href="https://slow.pics/Uinn4FKy/"><img src="https://i.slow.pics/Uinn4FKy.png" style="width:100%;height:100%;"/></a>
 </details>
 
-**10)** Still within Cyberpunk's Graphics settings, highly recommend you leave film grain enabled.  The film grain options within RenoDX relies on this to be enabled to work.  If you don't want to use film grain, you can always set film grain intensity to 0 within RenoDX.
-- Film grain really helps with banding issues in Cyberpunk (and any game in-general).
-
-**11)** Open the ReShade interface, default button is the Home key.  
+**16)** Open the ReShade interface, default button is the Home key.  
 
 - If you don't have a Home key please refer to this guide that goes over how to change it to a different key: <https://www.youtube.com/watch?v=xoCdpOIRKus>
 
 ### PART 2: RENODX SETTINGS
 - Click on the `RenoDX` tab along the top of the ReShade UI.
-- **Setting recommendations listed here assume the PsychoV tone mapper is selected.**
-- PsychoV-17 is the latest version of the PsychoV tone mapper as if this guide update.  Any mention of PsychoV implies PsychoV-17 as well.
 
 {% include callout.html type="tip" content="Recommend adjusting color grading sliders when using Lilium's HDR Analyis tool shader.
 
@@ -253,6 +255,10 @@ It's normal for the peak brightness to slightly exceed what you set it too and g
 Be very careful with the exposure, contrast, highlights, and cone response sliders. If you notice that your peak brightness is really high, check these first.
 
 <b>You should not need the Black Floor Fix shader with RenoDX!  If you feel like you need to use it then there is probably something wrong with your HDR settings.</b>" %}
+
+{% include callout.html type="tip" content="If a value isn't listed, then that means the preset was made with the default value in mind, but you can adjust each to your liking.  If you're using a LUT that looks a lot different from the vanilla / default LUT, then further tweaking may need to be done." %}
+
+#### Tone Mapping
 
 **Tone Mapper: `PsychoV-17`.**  This has better color accuracy and neon lights will look much better compared to the other tone mapper versions. The other tone mapper options are not supported in this guide.
 - **If you do not see PsychoV-17 as an option:** - Still accurate as of May 3rd, 2026.
@@ -264,38 +270,47 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 
 **Peak Brightness:**  Set the Peak Brightness to match the results from the Windows HDR Calibration test you did earlier.  
 
-**Game Brightness:** The paper white value, also known as average brightnes.  You typically want to set this between 100-300 nits.
+**Game Brightness:** The paper white value, also known as average brightnes.  You typically want to set this between `100-300` nits.
+- Setting this too low will make the game appear to be too dark and vice versa.  
 
-**SDR EOTF Emulation: also known as gamma correction.**  `UI/Menu Only` is recommended for most use cases, as having it set to `On` can be too dark in some situations. 
-- If you're going to change this I recommend picking a dark room in the middle of the night so you can use that as a reference point.
+**SDR EOTF Emulation:** also known as gamma correction.  `UI/Menu Only` is recommended for most use cases, as having it set to `On` can be too dark in some situations. If you're going to change this I recommend picking a dark room in the middle of the night so you can use that as a reference point.
 
 **Hue Correction:** None.
 
+#### Color Grading
+
 **Exposure:** One of the major settings that affects the overall brightness / darkness of the game.
 
-**Highlights:** Adjusts the intensity of the brightest elements on the screen.  
-- **Can easily exceed peak brightness if increased too much.**  If you can't see highlight details anymore then this may be too high.
+**Highlights:** Adjusts the intensity of the brightest elements on the screen.  **Can easily exceed peak brightness if increased too much.**  If you can't see highlight details anymore then this may be too high.
 
-**Shadows:** Adjusts the intensity of the darkest elements in the game. If you can't see details in the shadows then this may be too high.  
-- If you want darker interiors / nights, recommend using the Nova City 2 mod instead.
+**Shadows:** Adjusts the intensity of the darkest elements in the game. If you can't see details in the shadows then this may be too high.  If you want darker interiors / nights, recommend using the Nova City 2 mod instead.
 
 **Contrast:**  Controls the visual difference between the brightest and darkest tones in the game. 
 - **This setting is particularly sensitive in this game and can easily make you exceed your peak nits if pushed to an extreme setting.** 
 
 **Saturation:** Adjusts the color intensity of the game.  Reduce to 0 to make the game appear to be in black and white.
 
-**Cone Response: Set to 70 to simulate the look of Vanilla HDR (aka the intended appearance), per ShortFuse.**  *Only available when using PsychoV-17.* Controls both Saturation and Contrast. 
-- **This should be the first slider you adjust with PsychoV-17**.  
+**Cone Response: `70`.** This is equivalent to how the Cyberpunk developers intended the game to look.
+- Only available when using PsychoV-17.  
+- Controls both Saturation and Contrast.  
+- **This should be the first color grading slider you should adjust when trying to fine-tune the look when using PsychoV-17.**  
 
 **Highlight Saturation:** Controls the intensity of the highlight colors.
 
-**Blowout:** Set to 0 with PsychoV.
+**Blowout: `Set to 0.`**
 
-**Flare:** *Grayed out when using PsychoV.*
+**Flare:** Grayed out when using PsychoV.
 
 **White Point:** Adjusts the color temperature.
 
-**LUT Strength:** 50-60 for most LUTs, including the default / Vanilla LUTs.  100 is going to be too intense most of the time.
+**LUT Strength: `50-60 for most LUTs` including the default / Vanilla LUTs.**  100 is going to be too intense most of the time.
+- Recommended LUTs when using the preset are the vanilla / default LUT (doesn't require any download) or [**Real Colorr IV**](https://www.nexusmods.com/cyberpunk2077/mods/16156) *LUT switcher pack*.
+- I no longer recommend Preem LUT 3 as its too bright even at 50 strength.
+<!--
+[**Nova LUT 4 HDR**](https://www.nexusmods.com/cyberpunk2077/mods/16310) *under optional files*.  
+- The Nova LUT 4 HDR pack will come with 8 different color temperatures.  I personally stick with 6500K but you can pick whichever one you prefer. 
+-->
+#### Effects
 
 **Dynamic Exposure:** Leave at 0.  If this setting does anything that means the tone-mapping midpoint wasn't set to 1.0 within the game's HDR settings.
 
@@ -306,17 +321,16 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 **Film Grain Type:** Perceptual. This Film grain does not affect black levels, which is a major benefit of using it.  You must have film grain enabled within the game settings for this to work.  
 - The game's vanilla film grain is broken currently so there is zero reason to use that setting.  The vanilla option can also cause artifacts to appear in parts of the HUD.
 
-**Film Grain Strength:** This is one of the most important settings when it comes to fixing banding issues.
+**Film Grain Strength: `set to 0 when using my preset`.**  
+- You'll use a film grain shader instead, which is included in my preset, because we want film grain to be the last thing that gets applied.  If we used the RenoDX film grain then it would get applied before the preset and mess up the look of the other shaders.
 
-- If you're seeing lots of banding, increase the film grain intensity.
+#### Processing
 
-- This is the same filmgrain from ShortFuse's ReShade shader repository: <https://github.com/clshortfuse/reshade-shaders/tree/main/Shaders>
+**LUT Scaling:** Looks at the texture and scales the color based on the amount of dynamic range the LUT isn’t using. You might not notice a difference when adjusting this setting depending on the situtaion, because LUT scaling only does things if the LUT has compressed black/white levels. *I personally don't touch this setting and never felt the need to adjust it regardless of which LUT I'm using.*
 
-- If using other ReShade shaders such as Lilium's RCAS (which is commonly recommended), then I would set the filmgrain within RenoDX to 0 and then use ShortFuse's filmgrain shader and place it at the very end (you never want to sharpen filmgrain, and RCAS is a sharpening shader).
+**LUT Order:** Only need to change this if using a LUT mod / LUT Switcher pack that doesn't look right. Can adjust as needed.  But otherwise leave this on Vanilla.
 
-**LUT Scaling:** Looks at the texture and scales the color based on the amount of dynamic range the LUT isn’t using. You might not notice a difference when adjusting this setting depending on the situtaion, because LUT scaling only does things if the LUT has compressed black/white levels. 
-
-**LUT Order:** Only need to change this if using a LUT mod / LUT Switcher pack that doesn't look right. Can adjust as needed. But otherwise leave this on Vanilla.
+#### Debug
 
 **DEBUG GRAPH: SET TO OFF!!!** 
 - *Found at the very bottom of RenoDX under Debug.*  
@@ -336,8 +350,63 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 <img src='./images/Cyberpunk/RenoDX-PsychoV17-Settings.png' alt='RenoDX PsychoV-17 Settings' style='max-width:75%;'>
 </details>
 
-**RenoDX Installation Completed!**  
+## PART 3: CONFIGURING THE RESHADE PRESET
 
+**1)** Click the `Settings` tab within the ReShade UI.
+- Under the Overlay & Styling section, I recommend enabling `Group effect files with tabs instead of a tree`.  When enable it will place each active shader, *that has available settings to configure*, into it's own separate tab under the Home screen.  If left disabled, all shaders will be listed one after the other.
+- Do not check the box next to `Load only enabled effects`.  This will remove any shaders toggled off that are a part of this preset and you will also lose the configured settings for them.
+<details><summary>Click to see a breakdown of all the important ReShade settings</summary>
+<img src='./images/ReShade-Settings-Preset.png' alt='ReShade Settings Breakdown' style='max-width:100%;'>
+</details>
+
+**2)** Click the `Add-ons` tab within the ReShade UI
+- Make sure you see `Generic Depth` listed.  Click the dropdown arrow next to it.
+- Where it says `Aspect ratio heuristic`, click the dropdown arrow.
+- Change this to `Multiples of resolution`.  If this isn't selected then depth buffer shaders such as Deband won't work correctly.
+<img src='./images/Cyberpunk/Generic-Depth-Settings.png' alt='Generic Depth Settings' style='max-width:75%;'>
+
+**3)** Click the `Home` tab within the ReShade UI.
+- Make sure you have the Creepy HDR Gameplay V2 preset loaded.  This should be picked by default if you picked it in the ReShade Installer.
+
+**4)** Within the settings for the AdvancedAutoHDR shader you need to change the following to match your setup:
+- Under Advanced Calibration > `Input HDR white level (paper white)`: Preset will have this set to **203** by default. Change this to match the Game Brightness within RenoDX.
+- Under HDR tonemapping > `HDR display peak brightness (max nits)`: Preset will have this set at **800** by default.  Change this to match the Peak Brightness within RenoDX.
+- Optional: under fine tuning > `Highlight saturation`: I have this set at **0.900** to make the highlights look better, but you adjust this to your preference.  
+<img src='./images/Cyberpunk/AdvancedAutoHDR.png' alt='AdvancedAutoHDR Shader' style='max-width:75%;'>
+
+
+**5)** Breakdown of included shaders and how to tweak them further.
+- **Deband:** Disabled by default. Toggle this on if using Ray Reconstruction Preset E or else you'll see a grid pattern in the sky.  Preset D probably won't need this shader, but it'll come at the cost of worse motion clarity which will be more noticeable when using frame generation.  
+    - I don't recommend touching the settings in this shader.
+- **Zenteon: Local Contrast:** Provides a small amount of local contrast based sharpening to enhance texture detail.  The default values of this are subtle as a small increase in intensity can have a large impact when used with HDR.
+    - Detail Precision: **0.300**.  Range is 0.00 to 1.00. Lower = larger areas, higher = finer details.  
+    - Texture Detail: **0.050.** Range is -1.00 to 1.00.  Negative values will lower the sharpen affect while decreasing contrast.  Increasing this will intensify the sharpening effect while also increasing the contrast.  Be very careful adjusting this, as it can have a large impact on how intense the highlights are.
+    - Highlight / Shadow Detail: DO NOT TOUCH THIS. This does not work well with HDR.
+- **Azen: PreCorrect:** This is the primary shader used within this preset. It's designed to remove color grading from the game. This is going to be the primary shader you tweak, especially when doing virtual photography.
+    - Color Normalization: **0.200**. Range is 0.00 to 1.00. Adjusts the color grading portion of the shader. Default value should work fine, but you may need to adjust it depending on the LUT you're using or if the skin color doesn't look right.
+    - Contrast Normalization: **0.200**. Range is -1.00 to 1.00. This is basically the Texture Detail setting from the Local Contrast shader without the additional sharpening effect (the range is even the same).  This is probably the most important setting to tweak in this entire preset. This set to higher values, combined with RenoDX's Cone Response set to 70, can provide a very nice impactful look for screenshots. 
+    - Temperature: **6500**.  This is your white balance adjustment.  You can mess with it if you want, however it should be noted that it was not designed with HDR in mind, so the value set here won't be accurate.  For more accurate color temperature adjustments, I recommend using ShortFuse's Color Temperature shader. This is found in the same GitHub repository as the film grain shader you downloaded for this preset.
+    - The Contrast, Saturation, and Exposure settings are all better off being adjusted within RenoDX. Leave these at their default values.
+- **Zenteon: Sharpen:** Does what it says, sharpens edges. I personally do not use this shader much, but a lot of people wanted sharpening to be added to version 1 of the preset so here we are.  I had people test this vs Lilium's RCAS and this was the more popular option.
+    - Sharpening Intensity: **0.100**.  Range: 0.00 to 2.00.  This setting is the main reason why the AdvancedAutoHDR shader was added, because as the sharpening effect increases, so does the highlight brightness (and thus increasing the possibility of highlight blowout which is when the highlight coloration doesn't look right).  
+    - Dehaloing Intensity: **LEAVE AT 1.00**.  I tested this setting at lower values and the sharpening doesn't work properly in HDR without this set to 1.00.  
+- **ShortFuseFilmGrain:** This is the same perceptual film grain present within RenoDX, so you want to make sure RenoDX's film grain is set to 0.  Film grain is crucial to hiding / fixing banding issues, so having even a little bit can make a difference.  
+    - Strength: **20**.  Adjusts the film grain intensity. The default value is pretty low so you can increase it as desired.  Just be aware that this is an animated filmgrain so higher values make this more obvious.
+    - Diffuse White Nits: **203**.  This should roughly match the Game Brightness value within RenoDX or you can just leave it at the default setting.
+- **AdvancedAutoHDR:** Please do not disable this shader.  This is needed to compensate for the fact that I'm no longer using Soop's HDR Converters in the preset (which were removed because of how much banding they were causing).  Otherwise the peak brightness will jump and highlights will look wrong.  
+    - As mentioned in the previous step, you need to adjust the `Input HDR white level (paper white)` and `HDR display peak brightness (max nits)` to match what was entered into RenoDX.
+    - Highlights shoulder start alpha: I do not recommend changing this from the preset default of **1.00**.  Highlights will look much less impactful at lower settings.
+    - Highlight saturation: As mentioned in the previous step, I have this at **0.900** to make the highlights look better, but you can adjust this to your preference.
+    - HDR Saturation: Can be used instead of the Saturation slider within RenoDX.
+    - Shadow: Can be used instead of the Shadows slider within RenoDX.
+    - **Do not adjust any other setting or uncheck / check any other boxes within this shader or else you *WILL* screw up the preset.**
+- **Lilium's HDR Analysis:** Toggled off by default.  This shader is not used for gameplay.  I have included it because every single person who is into HDR needs to get comfortable using it.  You do not need to adjust any setting within this shader for it to work.
+    - The main number number you'll want to look at is the max nits.  Do not be alarmed if this is slightly over your peak brightness.  It is normal for this to be within 10-50 nits of what you set in RenoDX and the AdvancedAutoHDR shader.  
+    - You can also use the cursor nits, to get an accurate reading of what the mouse cursor is currently on. 
+    - Feel free to move the shader around the shader order to see how each shader affects the maximum number of nits currently on screen.  Lilium's HDR Analysis can only see the combined effects of any shaders placed *above* it.  Anything placed after it will not show up in the listed stats.
+    - COMMON MISCONCEPTION: THE MINIMUM NITS DOES NOT NEED TO BE ZERO!!!  You will almost never see a pure 0.00 listed as the minimum unless you're in a perfectly pitch black area.  Do not obsess over this value.
+
+**CONFIGURATION OF RENODX AND THE RESHADE PRESET IS COMPLETE!!!**
 
 ## Troubleshooting RenoDX Issues
 

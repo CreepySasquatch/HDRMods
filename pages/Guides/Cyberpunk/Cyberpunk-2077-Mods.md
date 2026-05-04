@@ -16,10 +16,10 @@ The modlist itself is no longer being developed, but the install guide is still 
 
 {% include callout.html type="important" content="Please support the creators of any recommended mods.  Piracy of paid mods, camera tools, and shaders is frowned upon." %}
 
-**MY OTHER CYBERPUNK 2077 GUIDES**
-- [**Cyberpunk 2077 Guide Index**](Cyberpunk-2077-Index)
-- [**How to find the perfect LUT to use with RenoDX**](Cyberpunk-2077-LUTs)
-- [**RenoDX Install and Troubleshooting Guide**](Cyberpunk)
+[**MY OTHER CYBERPUNK 2077 GUIDES**](Cyberpunk-2077-Index)
+- [**RENODX INSTALLATION GUIDE**](Cyberpunk) - Doesn't include preset installation or personal setting recommendations.
+- [**CREEPY ULTRA HDR PRESET GUIDE**](Cyberpunk-Creepy-Preset) - RenoDX installation guide that also includes instructions on how to install my preset [**Creepy Ultra HDR**](https://www.nexusmods.com/cyberpunk2077/mods/28191)
+- [**HOW TO FIND THE PERFECT LUT TO USE WITH RENODX**](Cyberpunk-2077-LUTs)
 
 ## Virtual Photography
 
