@@ -1,8 +1,8 @@
 ---
-title: [Cyberpunk 2077]
+title: [Cyberpunk 2077 - Creepy Ultra HDR Preset]
 type: 
 summary:
-description: How to Setup RenoDX in Cyberpunk 2077
+description: How to Setup RenoDX and Creepy's Cyberpunk Preset in Cyberpunk 2077
 ---
 
 {% include callout.html type="tip" content="<b>Make sure your display actually supports HDR before installing RenoDX. Your monitor should be rated for HDR400 or higher, meaning it should have at least 400 nits peak brightness.</b>  
