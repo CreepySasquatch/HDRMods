@@ -2,8 +2,12 @@
 title: [Cyberpunk 2077 - Creepy Ultra HDR Preset]
 type: 
 summary:
-description: How to Setup RenoDX and Creepy's Cyberpunk Preset in Cyberpunk 2077
+description: How to Setup RenoDX and Install Creepy's Ultra HDR Preset
 ---
+
+{% include callout.html type="tip" content="If you are upgrading from Version 1 of Creepy's ReShade preset, then you just need to rerun the ReShade Installer, pick Update ReShade and Effects, pick the new preset, and it will grab the new shaders you need.  It still uses the same GitHub shaders you downloaded before.
+
+You also want to make sure that your RenoDX version is up-to-date. As of May 7th you still need to grab it from the RenoDX Discord server, check for the pinned post from April 5th, 2026." %}
 
 {% include callout.html type="tip" content="<b>Make sure your display actually supports HDR before installing RenoDX. Your monitor should be rated for HDR400 or higher, meaning it should have at least 400 nits peak brightness.</b>  
 
@@ -15,7 +19,7 @@ TB stands for True Black.  True Black rated monitors will have a separate True B
 
 <b>Run the Windows HDR Calibration app to figure out your display's clipping point.  In theory this should be the same as the peak brightness of your display, but it's sometimes lower.  The clipping point will act as our peak brightness within RenoDX.</b>" %}
 
-{% include callout.html type="important" content="<b>Grab the most recent PINNED version of the RenoDX mod from the RenoDX server. Look for the pinned post in the Cyberpunk channel.  The GitHub and Nexus versions are both outdated; disregard the snapshot date on the GitHub page, it's not accurate.</b> <i>This is still accurate as of April 2026.</i>  
+{% include callout.html type="important" content="<b>Grab the most recent PINNED version of the RenoDX mod from the RenoDX server. Look for the pinned post in the Cyberpunk channel.  The GitHub and Nexus versions are both outdated; disregard the snapshot date on the GitHub page, it's not accurate.</b> <i>This is still accurate as of May 7th 2026.</i>  
 
 <b>RenoDX server invite:</b> <https://discord.gg/jz6ujVpgFB>
 
@@ -245,6 +249,7 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 
 - If you don't have a Home key please refer to this guide that goes over how to change it to a different key: <https://www.youtube.com/watch?v=xoCdpOIRKus>
 
+
 ### PART 2: RENODX SETTINGS
 - Click on the `RenoDX` tab along the top of the ReShade UI.
 
@@ -362,8 +367,14 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 **2)** Click the `Add-ons` tab within the ReShade UI
 - Make sure you see `Generic Depth` listed.  Click the dropdown arrow next to it.
 - Where it says `Aspect ratio heuristic`, click the dropdown arrow.
-- Change this to `Multiples of resolution`.  If this isn't selected then depth buffer shaders such as Deband won't work correctly.
+- Change this to `Multiples of resolution`.  If this isn't selected then the Deband shader, which relies on the depth buffer, won't work correctly. 
 <img src='./images/Cyberpunk/Generic-Depth-Settings.png' alt='Generic Depth Settings' style='max-width:75%;'>
+
+{% include callout.html type="tip" content="You do not need to disable the <b>Effect Runtime Sync</b> addon.
+
+The RenoDX Discord will often recommend disabling both the <b>Generic Depth</b> and <b>Effect Runtime Sync</b> addons for performance reasons because people who just use RenoDX and no other shaders do not need these.  While its true that some games such as Borderlands 4 can gain a few FPS from doing this, Cyberpunk 2077 is not one of those games.  
+
+When I tested this with my setup, Intel i7-12700K CPU and RTX 3090 GPU, I saw no measurable increase with either addon disabled.  As mentioned above you'll need the <b>Generic Depth</b> addon to properly use the Deband shader anyways.  You can disable the <b>Effect Runtime Sync</b> addon if you want, but its definitely not necessary." %}
 
 **3)** Click the `Home` tab within the ReShade UI.
 - Make sure you have the Creepy HDR Gameplay V2 preset loaded.  This should be picked by default if you picked it in the ReShade Installer.
