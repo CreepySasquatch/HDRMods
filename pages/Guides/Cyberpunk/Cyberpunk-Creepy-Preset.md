@@ -325,6 +325,7 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 </details>
 
 ## PART 3: CONFIGURING THE RESHADE PRESET
+> Some screenshots may still show `Creepy HDR Gameplay V2` instead of `Creepy HDR Gameplay V2-1`
 
 **1)** Click the `Settings` tab within the ReShade UI.
 - Under the Overlay & Styling section, I recommend enabling `Group effect files with tabs instead of a tree`.  When enable it will place each active shader, *that has available settings to configure*, into it's own separate tab under the Home screen.  If left disabled, all shaders will be listed one after the other.
@@ -346,7 +347,7 @@ The RenoDX Discord will often recommend disabling both the <b>Generic Depth</b> 
 When I tested this with my setup, Intel i7-12700K CPU and RTX 3090 GPU, I saw no measurable increase with either addon disabled.  As mentioned above you'll need the <b>Generic Depth</b> addon to properly use the Deband shader anyways.  You can disable the <b>Effect Runtime Sync</b> addon if you want, but its definitely not necessary." %}
 
 **3)** Click the `Home` tab within the ReShade UI.
-- Make sure you have the Creepy HDR Gameplay V2 preset loaded.  This should be picked by default if you picked it in the ReShade Installer.
+- Make sure you have the Creepy HDR Gameplay V2-1 preset loaded.  This should be picked by default if you picked it in the ReShade Installer.
 
 **4)** Within the settings for the AdvancedAutoHDR shader you need to change the following to match your setup:
 - Under Advanced Calibration > `Input HDR white level (paper white)`: Preset will have this set to **203** by default. Change this to match the Game Brightness within RenoDX.
@@ -363,7 +364,7 @@ When I tested this with my setup, Intel i7-12700K CPU and RTX 3090 GPU, I saw no
     - Texture Detail: **0.050.** Range is -1.00 to 1.00.  Negative values will lower the sharpen affect while decreasing contrast.  Increasing this will intensify the sharpening effect while also increasing the contrast.  Be very careful adjusting this, as it can have a large impact on how intense the highlights are.
     - Highlight / Shadow Detail: DO NOT TOUCH THIS. This does not work well with HDR.
 - **Azen: PreCorrect:** This is the primary shader used within this preset. It's designed to remove color grading from the game. This is going to be the primary shader you tweak, especially when doing virtual photography.
-    - Color Normalization: **0.200 (set to 0.00 if using Nova LUT 4 HDR)**. Range is 0.00 to 1.00. Adjusts the color grading portion of the shader. Default value should work fine, but you may need to adjust it depending on the LUT you're using or if the skin color doesn't look right.
+    - Color Normalization: **0.00**. Range is 0.00 to 1.00. Adjusts the color grading portion of the shader. Default value should work fine, but you may need to adjust it depending on the LUT you're using or if the skin color doesn't look right.
     - Contrast Normalization: **0.200**. Range is -1.00 to 1.00. This is basically the Texture Detail setting from the Local Contrast shader without the additional sharpening effect (the range is even the same).  This is probably the most important setting to tweak in this entire preset. This set to higher values, combined with RenoDX's Cone Response set to 70, can provide a very nice impactful look for screenshots. 
     - Temperature: **6500**.  This is your white balance adjustment.  You can mess with it if you want, however it should be noted that it was not designed with HDR in mind, so the value set here won't be accurate.  For more accurate color temperature adjustments, I recommend using ShortFuse's Color Temperature shader. This is found in the same GitHub repository as the film grain shader you downloaded for this preset.
     - The Contrast, Saturation, and Exposure settings are all better off being adjusted within RenoDX. Leave these at their default values.
