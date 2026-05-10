@@ -5,6 +5,9 @@ summary:
 description: How to find the perfect LUT to use with RenoDX in Cyberpunk 2077
 sidebar: false
 ---
+{% include callout.html type="important" content="With the release of Nova LUT 4 this guide needs to be updated.  I personally tested Nova LUT 4's HDR LUT and can confirm it works great with RenoDX at 100 strength.  This can be found on the LUT Switcher page under optional downloads or the main Nova LUT page on Nexus Mods." %}
+
+
 [**MY OTHER CYBERPUNK 2077 GUIDES**](Cyberpunk-2077-Index)
 - [**RENODX INSTALLATION GUIDE**](Cyberpunk) - Doesn't include preset installation or personal setting recommendations.
 - [**CREEPY ULTRA HDR PRESET GUIDE**](Cyberpunk-Creepy-Preset) - RenoDX installation guide that also includes instructions on how to install my preset [**Creepy Ultra HDR**](https://www.nexusmods.com/cyberpunk2077/mods/28191)
