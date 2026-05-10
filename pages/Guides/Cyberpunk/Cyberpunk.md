@@ -5,6 +5,12 @@ summary:
 description: How to Setup RenoDX in Cyberpunk 2077
 ---
 
+{% include callout.html type="important" content="If you are using DLSS Ray Reconstruction (aka Nvidia users) then I highly recommend using Preset D.  This will have much less banding issues, especially in the sky, compared to the newer Preset E.  Preset D is what the game uses by default. You can set this via the Nvidia App DLSS Override feature (Graphics > Program Settings > Cyberpunk 2077 > Driver Settings) or a third party program such as DLSS Swapper.
+
+Ray Reconstruction is highly recommended to be used in Cyberpunk when path tracing is enabled, otherwise you'll notice quite a bit of specular artifacts known as noise. AMD / Intel users can make use of the NRD mode found within the Ultra Plus mod as another denoiser option.
+
+Ray Reconstruction gets disabled when using the game's photomode.  This is a bug in the vanilla game and is not mod related.  If you like to use the game's photomode, then set the DLSS SR preset to M for better quality." %}
+
 {% include callout.html type="tip" content="<b>Make sure your display actually supports HDR before installing RenoDX. Your monitor should be rated for HDR400 or higher, meaning it should have at least 400 nits peak brightness.</b>  
 
 <b>This is not to be confused with TB400 or higher.</b>  
@@ -365,8 +371,7 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 </details>
 
 ### Banding / Grid Pattern in the Sky
-- Switch to Ray Reconstruction preset D, which seems to be a little bit better for HDR.  Easiest way is to use DLSS Swapper: <https://github.com/beeradmoore/dlss-swapper/releases>
-- Preset E is typically recommended over D because it has less issues with boiling and has less artifacts overall.  So don't switch to D unless you're having the banding / grid pattern issue.
+- Make sure you're using Ray Reconstruction preset D.  Easiest way is to use the Nvidia App or a third party program such as DLSS Swapper: <https://github.com/beeradmoore/dlss-swapper/releases>
 - When using Ray Reconstruction it overrides the SR model completely, meaning presets K, L, M, etc. won't get applied when using RR.
 
 **Ray Reconstruction Preset D vs E:**

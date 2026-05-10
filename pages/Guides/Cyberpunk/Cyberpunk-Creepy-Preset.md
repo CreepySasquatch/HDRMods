@@ -5,6 +5,12 @@ summary:
 description: How to Setup RenoDX and Install Creepy's Ultra HDR Preset
 ---
 
+{% include callout.html type="important" content="If you are using DLSS Ray Reconstruction (aka Nvidia users) then I highly recommend using Preset D.  This will have much less banding issues, especially in the sky, compared to the newer Preset E.  Preset D is what the game uses by default. You can set this via the Nvidia App DLSS Override feature (Graphics > Program Settings > Cyberpunk 2077 > Driver Settings) or a third party program such as DLSS Swapper.
+
+Ray Reconstruction is highly recommended to be used in Cyberpunk when path tracing is enabled, otherwise you'll notice quite a bit of specular artifacts known as noise. AMD / Intel users can make use of the NRD mode found within the Ultra Plus mod as another denoiser option.
+
+Ray Reconstruction gets disabled when using the game's photomode.  This is a bug in the vanilla game and is not mod related.  If you like to use the game's photomode, then set the DLSS SR preset to M for better quality." %}
+
 {% include callout.html type="tip" content="If you are upgrading from Version 1.0 or 2.0 of Creepy's ReShade preset, then you just need to rerun the ReShade Installer, pick Update ReShade and Effects, pick the new preset, and it will grab the new shaders you need.  It still uses the same GitHub shaders you downloaded before.
 
 You also want to make sure that your RenoDX version is up-to-date. As of May 7th you still need to grab it from the RenoDX Discord server, check for the pinned post from April 5th, 2026." %}
@@ -273,16 +279,13 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 
 **White Point:** Adjusts the color temperature.
 
-**LUT Strength: `50-60 for most LUTs` including the default / Vanilla LUTs.**  100 only if using Nova LUT 4 HDR.
-- Recommended LUT when using this preset is Nova LUT 4 HDR at 100 strength.  I prefer the 6500K variant, but pick whatever color temperature looks best to you.  I personally tested this LUT for CyanideX, so I can confirm that it is the best LUT there is.  This combined with RenoDX is the ultimate combo.  Set the color normalization within Azen PreCorrect to 0.00 when using this LUT.
+**LUT Strength: `50-60 for most LUTs` including the default / Vanilla LUTs.**  100 only if using Nova LUT 4.
+- [**Nova LUT 4**](https://www.nexusmods.com/cyberpunk2077/mods/11622) at 100 strength. I personally tested this LUT for CyanideX, so I can confirm that it is the best LUT there is currently for RenoDX.  The base LUT is equivalent to 5600K color temperature. The main file replaces the base game LUT so do not pick any LUTs within LUT Switcher when using it.  When the LUT Switcher pack gets added you'll be able to pick from 8 different color temperatures.
 - You can technically use the default / vanilla LUT if you don't want to use a LUT mod.
 - [RealcolorrIV](https://www.nexusmods.com/cyberpunk2077/mods/16156) can work at 50 strength and if you lower the saturation a bit, but it's really meant to be used without RenoDX (which I obviously don't recommend).
 - I no longer recommend Preem LUT 3 as its too bright even at 50 strength.
 
-<!--
-[**Nova LUT 4 HDR**](https://www.nexusmods.com/cyberpunk2077/mods/16310) *under optional files*.  
-- The Nova LUT 4 HDR pack will come with 8 different color temperatures.  I personally stick with 6500K but you can pick whichever one you prefer. 
--->
+
 
 #### Effects
 
@@ -364,16 +367,13 @@ When I tested this with my setup, Intel i7-12700K CPU and RTX 3090 GPU, I saw no
     - Texture Detail: **0.050.** Range is -1.00 to 1.00.  Negative values will lower the sharpen affect while decreasing contrast.  Increasing this will intensify the sharpening effect while also increasing the contrast.  Be very careful adjusting this, as it can have a large impact on how intense the highlights are.
     - Highlight / Shadow Detail: DO NOT TOUCH THIS. This does not work well with HDR.
 - **Azen: PreCorrect:** This is the primary shader used within this preset. It's designed to remove color grading from the game. This is going to be the primary shader you tweak, especially when doing virtual photography.
-    - Color Normalization: **0.00**. Range is 0.00 to 1.00. Adjusts the color grading portion of the shader. Default value should work fine, but you may need to adjust it depending on the LUT you're using or if the skin color doesn't look right.
+    - Color Normalization: **0.00**. Range is 0.00 to 1.00. Adjusts the color grading portion of the shader. By default this won't be applied, but you can adjust it to you're liking depending on the LUT you're using.
     - Contrast Normalization: **0.200**. Range is -1.00 to 1.00. This is basically the Texture Detail setting from the Local Contrast shader without the additional sharpening effect (the range is even the same).  This is probably the most important setting to tweak in this entire preset. This set to higher values, combined with RenoDX's Cone Response set to 70, can provide a very nice impactful look for screenshots. 
     - Temperature: **6500**.  This is your white balance adjustment.  You can mess with it if you want, however it should be noted that it was not designed with HDR in mind, so the value set here won't be accurate.  For more accurate color temperature adjustments, I recommend using ShortFuse's Color Temperature shader. This is found in the same GitHub repository as the film grain shader you downloaded for this preset.
     - The Contrast, Saturation, and Exposure settings are all better off being adjusted within RenoDX. Leave these at their default values.
-- **Zenteon: Sharpen:** Does what it says, sharpens edges. I personally do not use this shader much, but a lot of people wanted sharpening to be added to version 1 of the preset so here we are.  I had people test this vs Lilium's RCAS and this was the more popular option.
+- **Zenteon: Sharpen:** *Removed as of Version 2.1 but still available in the optional toggleable version.* Does what it says, sharpens edges. I personally do not use this shader much, but a lot of people wanted sharpening to be added to version 1 of the preset so here we are.  I had people test this vs Lilium's RCAS and this was the more popular option.
     - Sharpening Intensity: **0.100**.  Range: 0.00 to 2.00.  This setting is the main reason why the AdvancedAutoHDR shader was added, because as the sharpening effect increases, so does the highlight brightness (and thus increasing the possibility of highlight blowout which is when the highlight coloration doesn't look right).  
     - Dehaloing Intensity: **LEAVE AT 1.00**.  I tested this setting at lower values and the sharpening doesn't work properly in HDR without this set to 1.00.  
-- **ShortFuseFilmGrain:** This is the same perceptual film grain present within RenoDX, so you want to make sure RenoDX's film grain is set to 0.  Film grain is crucial to hiding / fixing banding issues, so having even a little bit can make a difference.  
-    - Strength: **20**.  Adjusts the film grain intensity. The default value is pretty low so you can increase it as desired.  Just be aware that this is an animated filmgrain so higher values make this more obvious.
-    - Diffuse White Nits: **203**.  This should roughly match the Game Brightness value within RenoDX or you can just leave it at the default setting.
 - **AdvancedAutoHDR:** Please do not disable this shader.  This is needed to compensate for the fact that I'm no longer using Soop's HDR Converters in the preset (which were removed because of how much banding they were causing).  Otherwise the peak brightness will jump and highlights will look wrong.  
     - As mentioned in the previous step, you need to adjust the `Input HDR white level (paper white)` and `HDR display peak brightness (max nits)` to match what was entered into RenoDX.
     - Highlights shoulder start alpha: I do not recommend changing this from the preset default of **1.00**.  Highlights will look much less impactful at lower settings.
@@ -381,7 +381,13 @@ When I tested this with my setup, Intel i7-12700K CPU and RTX 3090 GPU, I saw no
     - HDR Saturation: Can be used instead of the Saturation slider within RenoDX.
     - Shadow: Can be used instead of the Shadows slider within RenoDX.
     - **Do not adjust any other setting or uncheck / check any other boxes within this shader or else you *WILL* screw up the preset.**
-- **Lilium's HDR Analysis:** Toggled off by default.  This shader is not used for gameplay.  I have included it because every single person who is into HDR needs to get comfortable using it.  You do not need to adjust any setting within this shader for it to work.
+- **Lilium's HDR Robust Contrast Adaptive Sharpening (RCAS):** *Replaced Zenteon's Sharpening as of Version 2.1.* 
+    - RCAS Mode: **Luminance**.  Adjusts the sharpening mode.  Luminance is the newest mode and the most subtle of the sharpening modes. The other modes can look nice, but the effect will be much more intense on any edges and UI elements.
+    - Sharpness Amount: **1.000**.  Range 0.000 to 1.000.  On Luminance mode this can be set to 1.000 without having it look too sharp.  With the other modes you'll probably want to turn this down to like 0.500 or below.
+- **ShortFuseFilmGrain:** This is the same perceptual film grain present within RenoDX, so you want to make sure RenoDX's film grain is set to 0.  Film grain is crucial to hiding / fixing banding issues, so having even a little bit can make a difference.  
+    - Strength: **20**.  Adjusts the film grain intensity. The default value is pretty low so you can increase it as desired.  Just be aware that this is an animated filmgrain so higher values make this more obvious.
+    - Diffuse White Nits: **203**.  This should roughly match the Game Brightness value within RenoDX or you can just leave it at the default setting.
+- **Lilium's HDR Analysis:** Disabled by default.  This shader is not used for gameplay.  I have included it because every single person who is into HDR needs to get comfortable using it.  You do not need to adjust any setting within this shader for it to work.
     - The main number number you'll want to look at is the max nits.  Do not be alarmed if this is slightly over your peak brightness.  It is normal for this to be within 10-50 nits of what you set in RenoDX and the AdvancedAutoHDR shader.  
     - You can also use the cursor nits, to get an accurate reading of what the mouse cursor is currently on. 
     - Feel free to move the shader around the shader order to see how each shader affects the maximum number of nits currently on screen.  Lilium's HDR Analysis can only see the combined effects of any shaders placed *above* it.  Anything placed after it will not show up in the listed stats.
@@ -415,8 +421,7 @@ When I tested this with my setup, Intel i7-12700K CPU and RTX 3090 GPU, I saw no
 </details>
 
 ### Banding / Grid Pattern in the Sky
-- Switch to Ray Reconstruction preset D, which seems to be a little bit better for HDR.  Easiest way is to use DLSS Swapper: <https://github.com/beeradmoore/dlss-swapper/releases>
-- Preset E is typically recommended over D because it has less issues with boiling and has less artifacts overall.  So don't switch to D unless you're having the banding / grid pattern issue.
+- Make sure you're using Ray Reconstruction preset D.  Easiest way is to use the Nvidia App or a third party program such as DLSS Swapper: <https://github.com/beeradmoore/dlss-swapper/releases>
 - When using Ray Reconstruction it overrides the SR model completely, meaning presets K, L, M, etc. won't get applied when using RR.
 
 **Ray Reconstruction Preset D vs E:**
