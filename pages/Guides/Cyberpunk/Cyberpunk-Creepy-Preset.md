@@ -5,7 +5,7 @@ summary:
 description: How to Setup RenoDX and Install Creepy's Ultra HDR Preset
 ---
 
-{% include callout.html type="tip" content="If you are upgrading from Version 1 of Creepy's ReShade preset, then you just need to rerun the ReShade Installer, pick Update ReShade and Effects, pick the new preset, and it will grab the new shaders you need.  It still uses the same GitHub shaders you downloaded before.
+{% include callout.html type="tip" content="If you are upgrading from Version 1.0 or 2.0 of Creepy's ReShade preset, then you just need to rerun the ReShade Installer, pick Update ReShade and Effects, pick the new preset, and it will grab the new shaders you need.  It still uses the same GitHub shaders you downloaded before.
 
 You also want to make sure that your RenoDX version is up-to-date. As of May 7th you still need to grab it from the RenoDX Discord server, check for the pinned post from April 5th, 2026." %}
 
@@ -69,7 +69,7 @@ Full instructions can be found here: [**Windows HDR Calibration**](Windows-HDR-C
 
 **0)** Install Cyberpunk 2077.  Make sure you're using the latest version of the game, **2.31**.
 
-**1)** Download Creepy's HDR Gameplay V2 preset from Nexus Mods: <https://www.nexusmods.com/cyberpunk2077/mods/28191>.
+**1)** Download Creepy's HDR Gameplay V2-1 preset from Nexus Mods: <https://www.nexusmods.com/cyberpunk2077/mods/28191>.
 - If you download via a mod manager this will automatically get placed in the `\bin\x64` folder while in-game. If you manually download the preset I also recommend placing the preset file(s) in this location to make them easier to find.
 - Older versions of the preset are not supported.  
 
@@ -95,7 +95,7 @@ Full instructions can be found here: [**Windows HDR Calibration**](Windows-HDR-C
 **5) Select `Update ReShade and effects` if updating ReShade.**  
 - If installing ReShade for the first time you'll already be at the effect (shader) selection screen.
 
-**6) Click the `Browse...` button toward the bottom and pick the `Creepy HDR Gameplay V2` preset you downloaded earlier.**  Click `Next`.
+**6) Click the `Browse...` button toward the bottom and pick the `Creepy HDR Gameplay V2-1` preset you downloaded earlier.**  Click `Next`.
 - This will automatically pick: Deband, Zenteon's Local Contrast, Zenteon's Sharpen, Pumbo's AdvancedAutoHDR, and Lilium's HDR Analysis shaders.
 - I do not recommending clicking `Check All` button and picking all of the shaders. This will just lead to longer compile times when you start the game. 
 - You'll still need to download a few shaders from GitHub that aren't listed within the ReShade Installer.
@@ -113,41 +113,6 @@ Full instructions can be found here: [**Windows HDR Calibration**](Windows-HDR-C
 - **ShortFuse's Film Grain:** <https://github.com/clshortfuse/reshade-shaders/tree/main>. 
 
 **10) Extract the contents of the ZIP folders to the reshade-shaders folder located in the /bin/x64 folder within the Cyberpunk 2077 installation.**
-
-<!--
-<details><summary><b>Click here if installing Creepy's Ultra HDR ReShade preset</b></summary>
-<ul>
-<li>You'll need the Ultra HDR VP.ini preset file from the <a href='https://www.nexusmods.com/cyberpunk2077/mods/28191'><b>Creepy Ultra HDR</b></a> mod page. These will be easier to find in-game if placed in the /bin/x64 folder of the Cyberpunk 2077 installation.</li>  
-<li>This will automatically select any shaders that can be grabbed from the installer that can then be used in both presets.</li>
-<li>You'll still need a few more shaders from GitHub, but this will save you the bulk of the work.</li>  
-</ul>
-<ol>
-    <li>Select <b>Update ReShade and effects</b> if updating ReShade.</li>
-    <i>If installing ReShade for the first time you'll already be at the effect (shader) selection screen.</i>
-    <li>Click the <b>Browse...</b> button toward the bottom and pick the <b>Ultra HDR VP</b> preset file.</li>
-<ul> 
-    <li>This will automatically pick: Soop's HDR Converters, Zenteon's Local Contrast, Lilium's HDR Brightness Adjustment, Lilium's RCAS, and Marty's Meteor Film Grain shaders.  This will also pick the entire Standard Shaders repository that includes shaders such as Deband (which is optional for the preset).</li>
-    <li>You may not see the HDR Brightness Adjustment shader listed within Lilium's ReShade HDR Shaders. This is normal so don't worry.  The checkbox is missing for that shader, but it will still download it for you.</li>
-    <img src='https://i.slow.pics/nqRq8STi.png' alt='Download Shaders' style='max-width:100%;'>
-    <li>You're welcome to pick any other shaders you want.  A recommended option would be to grab the rest of Lilium's shaders because they're always handy to have, especially the HDR Analysis Tool.</li>
-    <li><b>I DO NOT recommend clicking the <i>Check All</i> button and picking all of the shaders.  This will just lead to longer compile times when you start the game. Most shaders won't work without Soop's HDR Converters so keep that in mind.</b></li>
-    <li><b><a href="https://www.hdrmods.com/HDR-Link-Library#hdr-compatible-shaders">List of HDR Compatible Shaders</a></b></li>
-</ul>
-    <li>Click <b>Next</b></li>
-    <li>Click <b>Skip</b> on the add-on selection screen.</li>
-    <li>Click <b>Finish</b></li>
-    <li><b>Do not start the game until the remaining shaders are downloaded and placed within the reshade-shaders folder!</b> Failing to adhere to this warning will result in both presets missing shaders, and the presets won't look as intended.</li>
-    <li><b>Download the remaining shaders from GitHub:</b></li> 
-    <ul>
-    <li>On each GitHub page click the gree <b>Code</b> button, then click Download ZIP.</li>
-    <img src='https://i.slow.pics/UlxAbvmJ.png' alt='GitHub Download Code Button' style='max-width:100%;'>
-    <li><b>Azen PreCorrect: </b><a href="https://github.com/Zenteon/Azen/tree/main">https://github.com/Zenteon/Azen/tree/main.</a><br><i>You need the shaders AND textures folders.</i></li>
-    <li><b>ShortFuse's Film Grain:</b> <a href="https://github.com/clshortfuse/reshade-shaders/tree/main">https://github.com/clshortfuse/reshade-shaders/tree/main.</a></li>
-    </ul>
-    <li>Extract the contents of the ZIP folders to the reshade-shaders folder located in the /bin/x64 folder within the Cyberpunk 2077 installation.</li>
-</ol>
-</details>
--->
 
 **11)** Grab the RenoDX addon from RenoDX Discord server. Look in the pinned comments of the Cyberpunk 2077 channel.
 - You can also find the MapLUTBegone mod pinned here as well.  This helps fix an issue with the world map that is an unfortunate side effect of using RenoDX. Click [**here**](Cyberpunk#map-is-hard-to-read) for more info.
@@ -308,13 +273,17 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 
 **White Point:** Adjusts the color temperature.
 
-**LUT Strength: `50-60 for most LUTs` including the default / Vanilla LUTs.**  100 is going to be too intense most of the time.
-- Recommended LUTs when using the preset are the vanilla / default LUT (doesn't require any download) or [**Real Colorr IV**](https://www.nexusmods.com/cyberpunk2077/mods/16156) *LUT switcher pack*.
+**LUT Strength: `50-60 for most LUTs` including the default / Vanilla LUTs.**  100 only if using Nova LUT 4 HDR.
+- Recommended LUT when using this preset is Nova LUT 4 HDR at 100 strength.  I prefer the 6500K variant, but pick whatever color temperature looks best to you.  I personally tested this LUT for CyanideX, so I can confirm that it is the best LUT there is.  This combined with RenoDX is the ultimate combo.  Set the color normalization within Azen PreCorrect to 0.00 when using this LUT.
+- You can technically use the default / vanilla LUT if you don't want to use a LUT mod.
+- [RealcolorrIV](https://www.nexusmods.com/cyberpunk2077/mods/16156) can work at 50 strength and if you lower the saturation a bit, but it's really meant to be used without RenoDX (which I obviously don't recommend).
 - I no longer recommend Preem LUT 3 as its too bright even at 50 strength.
+
 <!--
 [**Nova LUT 4 HDR**](https://www.nexusmods.com/cyberpunk2077/mods/16310) *under optional files*.  
 - The Nova LUT 4 HDR pack will come with 8 different color temperatures.  I personally stick with 6500K but you can pick whichever one you prefer. 
 -->
+
 #### Effects
 
 **Dynamic Exposure:** Leave at 0.  If this setting does anything that means the tone-mapping midpoint wasn't set to 1.0 within the game's HDR settings.
@@ -394,7 +363,7 @@ When I tested this with my setup, Intel i7-12700K CPU and RTX 3090 GPU, I saw no
     - Texture Detail: **0.050.** Range is -1.00 to 1.00.  Negative values will lower the sharpen affect while decreasing contrast.  Increasing this will intensify the sharpening effect while also increasing the contrast.  Be very careful adjusting this, as it can have a large impact on how intense the highlights are.
     - Highlight / Shadow Detail: DO NOT TOUCH THIS. This does not work well with HDR.
 - **Azen: PreCorrect:** This is the primary shader used within this preset. It's designed to remove color grading from the game. This is going to be the primary shader you tweak, especially when doing virtual photography.
-    - Color Normalization: **0.200**. Range is 0.00 to 1.00. Adjusts the color grading portion of the shader. Default value should work fine, but you may need to adjust it depending on the LUT you're using or if the skin color doesn't look right.
+    - Color Normalization: **0.200 (set to 0.00 if using Nova LUT 4 HDR)**. Range is 0.00 to 1.00. Adjusts the color grading portion of the shader. Default value should work fine, but you may need to adjust it depending on the LUT you're using or if the skin color doesn't look right.
     - Contrast Normalization: **0.200**. Range is -1.00 to 1.00. This is basically the Texture Detail setting from the Local Contrast shader without the additional sharpening effect (the range is even the same).  This is probably the most important setting to tweak in this entire preset. This set to higher values, combined with RenoDX's Cone Response set to 70, can provide a very nice impactful look for screenshots. 
     - Temperature: **6500**.  This is your white balance adjustment.  You can mess with it if you want, however it should be noted that it was not designed with HDR in mind, so the value set here won't be accurate.  For more accurate color temperature adjustments, I recommend using ShortFuse's Color Temperature shader. This is found in the same GitHub repository as the film grain shader you downloaded for this preset.
     - The Contrast, Saturation, and Exposure settings are all better off being adjusted within RenoDX. Leave these at their default values.
