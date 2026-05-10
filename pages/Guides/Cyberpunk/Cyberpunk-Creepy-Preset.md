@@ -280,7 +280,7 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 **White Point:** Adjusts the color temperature.
 
 **LUT Strength: `50-60 for most LUTs` including the default / Vanilla LUTs.**  100 only if using Nova LUT 4.
-- [**Nova LUT 4**](https://www.nexusmods.com/cyberpunk2077/mods/11622) at 100 strength. I personally tested this LUT for CyanideX, so I can confirm that it is the best LUT there is currently for RenoDX.  The base LUT is equivalent to 5600K color temperature. The main file replaces the base game LUT so do not pick any LUTs within LUT Switcher when using it.  When the LUT Switcher pack gets added you'll be able to pick from 8 different color temperatures.
+- [**Nova LUT 4**](https://www.nexusmods.com/cyberpunk2077/mods/11622) at 100 strength. I personally tested this LUT for CyanideX, so I can confirm that it is the best LUT there is currently for RenoDX.  The base LUT is equivalent to 5600K color temperature. The main file replaces the base game LUT so do not pick any LUTs within LUT Switcher when using it. With the LUT Switcher pack you can pick from 8 different color temperatures.
 - You can technically use the default / vanilla LUT if you don't want to use a LUT mod.
 - [RealcolorrIV](https://www.nexusmods.com/cyberpunk2077/mods/16156) can work at 50 strength and if you lower the saturation a bit, but it's really meant to be used without RenoDX (which I obviously don't recommend).
 - I no longer recommend Preem LUT 3 as its too bright even at 50 strength.
