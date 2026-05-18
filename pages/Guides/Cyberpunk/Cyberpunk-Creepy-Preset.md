@@ -29,7 +29,7 @@ TB stands for True Black.  True Black rated monitors will have a separate True B
 
 <b>RenoDX server invite:</b> <https://discord.gg/jz6ujVpgFB>
 
-<b>Direct link to the RenoDX Cyberpunk 2077 thread:</b> <https://discord.com/channels/1408098019194310818/1410855640112566375/threads/1434377434022809610/1434377434022809610>
+<b>Direct link to the RenoDX Cyberpunk 2077 thread:</b> <https://discord.com/channels/1408098019194310818/1434377434022809610/1490559043343876196>
 
 <b>How to manually find the Cyberpunk channel:</b> 
 <img src='https://i.slow.pics/TfUSXS2q.png' alt='Cyberpunk channel location' style='max-width:100%;'>" %}
