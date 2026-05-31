@@ -5,6 +5,8 @@ summary:
 description: How to Setup RenoDX and Install Creepy's Ultra HDR Preset
 ---
 
+{% include callout.html type="important" content="AS OF MAY 30TH, 2026, I AM NO LONGER SUPPORTING THE CREEPY ULTRA HDR PRESET.  The preset itself should still work fine; however, consider the RenoDX portion of the guide to be accurate as of May 30th, 2026." %}
+
 {% include callout.html type="important" content="If you are using DLSS Ray Reconstruction (aka Nvidia users) then I highly recommend using Preset D.  This will have much less banding issues, especially in the sky, compared to the newer Preset E.  Preset D is what the game uses by default. You can set this via the Nvidia App DLSS Override feature (Graphics > Program Settings > Cyberpunk 2077 > Driver Settings) or a third party program such as DLSS Swapper.
 
 Ray Reconstruction is highly recommended to be used in Cyberpunk when path tracing is enabled, otherwise you'll notice quite a bit of specular artifacts known as noise. AMD / Intel users can make use of the NRD mode found within the Ultra Plus mod as another denoiser option.
