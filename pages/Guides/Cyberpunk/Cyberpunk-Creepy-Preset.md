@@ -4,6 +4,10 @@ type:
 summary:
 description: How to Setup RenoDX and Install Creepy's Ultra HDR Preset
 ---
+{% include callout.html type="important" content="<b>As of June 10th, 2026 a new version of RenoDX has released in the RenoDX server's Cyberpunk 2077 channel. Anything below this is considered to be outdated, but may still be of use.  Please use your own discretion when adjusting settings and picking which mods to use alongside RenoDX.</b>
+
+<b>There is no ETA for when this guide will be updated.</b>" %}
+
 
 {% include callout.html type="important" content="AS OF MAY 30TH, 2026, I AM NO LONGER SUPPORTING THE CREEPY ULTRA HDR PRESET.  The preset itself should still work fine; however, consider the RenoDX portion of the guide to be accurate as of May 30th, 2026." %}
 
