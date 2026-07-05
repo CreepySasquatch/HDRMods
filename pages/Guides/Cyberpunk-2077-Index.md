@@ -8,8 +8,6 @@ sidebar: false
 
 [**RENODX INSTALLATION GUIDE**](Cyberpunk)
 
-[**CREEPY ULTRA HDR PRESET GUIDE**](Cyberpunk-Creepy-Preset)
+[**CREEPY ULTRA HDR PRESET GUIDE**](Cyberpunk-Creepy-Preset) *Outdated and no longer supported.*
 
-[**RECOMMENDED LUTS FOR RENODX**](Cyberpunk-2077-LUTs)
-
-[**RECOMMENDED CYBERPUNK MODS**](Cyberpunk-2077-Mods)
+[**RECOMMENDED CYBERPUNK MODS**](Cyberpunk-2077-Mods) *Outdated*

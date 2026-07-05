@@ -24,7 +24,7 @@ sidebar: false
 
 [**Windows HDR Calibration**](Windows-HDR-Calibration)
 
-[**CYBERPUNK 2077 GUIDES**](Cyberpunk-2077-Index)
+[**Cyberpunk RenoDX Guide**](Cyberpunk)
 
 [**RESHADE SPECIFIC GUIDES**](ReShade-Guides-Index)
 

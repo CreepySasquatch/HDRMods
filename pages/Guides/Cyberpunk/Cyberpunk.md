@@ -4,12 +4,17 @@ type:
 summary:
 description: How to Setup RenoDX in Cyberpunk 2077
 ---
+{% include callout.html type="note" content="<b>CHANGES MADE WITH THE JUNE 10TH VERSION OF RENODX:</b>
+<li>No longer need a map fix such as HUD Painter or MapLUTBegone.</li>
+<li>PsychoV Mid Gray and PsychoV Slope sliders added. May need to set Mid Gray to SDR if the default HDR option is too dark.</li>
+<li>Cone Response should now be set to 50 instead of 70 if you want to simulate the vanilla HDR look.</li>
+<li>Hue Correction no longer has any effect with PsychoV and is grayed out.</li>"%}
 
-{% include callout.html type="important" content="<b>As of June 10th, 2026 a new version of RenoDX has released in the RenoDX server's Cyberpunk 2077 channel. Anything below this is considered to be outdated, but may still be of use.  Please use your own discretion when adjusting settings and picking which mods to use alongside RenoDX.</b>
+{% include callout.html type="warning" content="<b>DISCLAIMER:</b> The contents of this guide do not reflect the views or opinions of ShortFuse, the creator of the Cyberpunk 2077 RenoDX mod and the RenoDX framework as a whole.  Any troubleshooting tips and recommended settings are based on my own personal experience from helping others with the game.
 
-<b>There is no ETA for when this guide will be updated.</b>" %}
+RenoDX was not made with any other mod in mind.  This includes Ultra+ or popular LUTs such as Nova LUT 4." %}
 
-{% include callout.html type="important" content="If you are using DLSS Ray Reconstruction (aka Nvidia users) then I highly recommend using Preset D.  This will have much less banding issues, especially in the sky, compared to the newer Preset E.  Preset D is what the game uses by default. You can set this via the Nvidia App DLSS Override feature (Graphics > Program Settings > Cyberpunk 2077 > Driver Settings) or a third party program such as DLSS Swapper.
+{% include callout.html type="important" content="<b>DLSS Preset Tips:</b> If you are using DLSS Ray Reconstruction (aka Nvidia users) then I highly recommend using Preset D.  This will have much less banding issues, especially in the sky, compared to the newer Preset E.  Preset D is what the game uses by default. You can set this via the Nvidia App DLSS Override feature (Graphics > Program Settings > Cyberpunk 2077 > Driver Settings) or a third party program such as DLSS Swapper.
 
 Ray Reconstruction is highly recommended to be used in Cyberpunk when path tracing is enabled, otherwise you'll notice quite a bit of specular artifacts known as noise. AMD / Intel users can make use of the NRD mode found within the Ultra Plus mod as another denoiser option.
 
@@ -25,7 +30,7 @@ TB stands for True Black.  True Black rated monitors will have a separate True B
 
 <b>Run the Windows HDR Calibration app to figure out your display's clipping point.  In theory this should be the same as the peak brightness of your display, but it's sometimes lower.  The clipping point will act as our peak brightness within RenoDX.</b>" %}
 
-{% include callout.html type="important" content="<b>Grab the most recent PINNED version of the RenoDX mod from the RenoDX server. Look for the pinned post in the Cyberpunk channel.  The GitHub and Nexus versions are both outdated; disregard the snapshot date on the GitHub page, it's not accurate.</b> <i>This is still accurate as of April 2026.</i>  
+{% include callout.html type="important" content="<b>Grab the most recent PINNED version of the RenoDX mod from the RenoDX server. Look for the pinned post in the Cyberpunk channel.  The GitHub and Nexus versions are both outdated; disregard the snapshot date on the GitHub page, it's not accurate.</b> <i>This is still accurate as of July 2026.</i>  
 
 <b>RenoDX server invite:</b> <https://discord.gg/jz6ujVpgFB>
 
@@ -53,10 +58,14 @@ TB stands for True Black.  True Black rated monitors will have a separate True B
 </ol>
 </details>
 
+<!--
+
 [**MY OTHER CYBERPUNK 2077 GUIDES**](Cyberpunk-2077-Index)
 - [**CREEPY ULTRA HDR PRESET GUIDE**](Cyberpunk-Creepy-Preset) - RenoDX installation guide that also includes instructions on how to install my preset [**Creepy Ultra HDR**](https://www.nexusmods.com/cyberpunk2077/mods/28191)
 - [**HOW TO FIND THE PERFECT LUT TO USE WITH RENODX**](Cyberpunk-2077-LUTs)
 - [**RECOMMENDED CYBERPUNK MODS**](Cyberpunk-2077-Mods)
+
+-->
 
 [**A TROUBLESHOOTING SECTION IS PROVIDED AT THE END OF THE GUIDE**](Cyberpunk#troubleshooting-renodx-issues)
 - This lists commonly asked questions and issues with possible solutions.
@@ -93,6 +102,35 @@ Full instructions can be found here: [**Windows HDR Calibration**](Windows-HDR-C
 <a href="https://slow.pics/m1tqUrg4/"><img src="https://i.slow.pics/m1tqUrg4.jpg" style="width:75%;height:75%;"/></a>
 </details>
 
+**4)** The rest of the ReShade Installation will look slightly different if you already installed ReShade:
+
+<b>If updating ReShade:</b>
+<ol>
+<li>Select <b>Update ReShade only</b></li>
+
+<li>Click <b>Next</b></li>
+
+<li>Click <b>Finish</b></li>
+
+</ol>
+
+
+<b>If new ReShade installation:</b>
+<ol>
+<li>Click <b>Skip</b> on the effect selection screen.</li>
+
+<li>Click <b>Skip</b> again on the add-on selection screen.</li>
+
+<li>Click <b>Finish</b></li>
+</ol>
+
+{% include callout.html type="important" content="<b>RenoDX does not require any other ReShade shaders or addons to function, as such these are not covered in the guide.</b>  
+
+Click this link for a list of HDR compatible ReShade shaders: <https://www.hdrmods.com/HDR-Link-Library#hdr-compatible-shaders>
+
+Picking unneeded addons can cause performance issues or even crashes.  Addons are for specific use cases such as VR and virtual photography." %}
+
+<!--
 
 **4) Choose from the following options:**
 
@@ -107,6 +145,7 @@ Full instructions can be found here: [**Windows HDR Calibration**](Windows-HDR-C
 <li>Click <b>Finish</b></li>
 
 </ol>
+
 
 <b>If new ReShade installation:</b>
 <ol>
@@ -139,20 +178,9 @@ Full instructions can be found here: [**Windows HDR Calibration**](Windows-HDR-C
 </ol>
 </details>
 
-<!--
-**5)** Welcome to the add-on selection screen.  **DO NOT PICK ANY ADDONS!!!** Click `Next`, then Click `Finish`. 
-- Addons are not similar to shaders at all.  Unlike shaders which are post processing only (aka they basically act like a photoshop filter), addons can operate at the game engine level and can easily cause issues if you don't know what you're doing.
-
-- **Some addons are not compatible with each other!  So do not download them randomly!**  
-
-- **Rule of thumb, if you don't know what it is then don't touch it.  If you do touch it after reading this step, and shit breaks, then uninstall ReShade and start the ReShade installation process over again.  Seriously, you've been warned!!!**
-<details><summary>DO NOT PICK ANY ADDONS!!!</summary>
-<a href="https://slow.pics/f2EQMwqO/"><img src="https://i.slow.pics/f2EQMwqO.jpg" style="width:100%;height:100%;"/></a>
-</details>   
 -->
 
 **5)** Grab the RenoDX addon from RenoDX Discord server. Look in the pinned comments of the Cyberpunk 2077 channel.
-- You can also find the MapLUTBegone mod pinned here as well.  This helps fix an issue with the world map that is an unfortunate side effect of using RenoDX. Click [**here**](Cyberpunk#map-is-hard-to-read) for more info.
 
 <details><summary>Click for RenoDX server info and screenshots of the Cyberpunk 2077 addon location.</summary>
 <ol>
@@ -167,17 +195,17 @@ Full instructions can be found here: [**Windows HDR Calibration**](Windows-HDR-C
 <b>Cyberpunk 2077 thread location in the RenoDX server:</b>
 <a href="https://slow.pics/TfUSXS2q/"><img src="https://i.slow.pics/TfUSXS2q.png" style="width:100%;height:100%;"/></a>
 <b>Cyberpunk 2077 addon pinned in the Cyberpunk 2077 thread:</b>
-<a href="https://slow.pics/54pUS32A/"><img src="https://i.slow.pics/54pUS32A.jpg" style="width:95%;height:95%;"/></a>
+<img src='./images/Cyberpunk/RenoDX-Download.jpg' alt='RenoDX Discord Pinned Download' style='max-width:70%;'>
 </details>    
 
-**6)** Place the RenoDX addon `renodx-cp2077.addon64` in the `\bin\x64` folder where Cyberpunk 2077 is installed.  If you previously installed the WIP version of RenoDX, `renodx-cp2077-wip.addon64`, then delete it.
+**6)** Place the RenoDX addon `renodx-cp2077.addon64` in the `\bin\x64` folder where Cyberpunk 2077 is installed.
 <a href="https://slow.pics/rW4SsThY/"><img src="https://i.slow.pics/rW4SsThY.png" style="width:100%;height:100%;"/></a>
 
 <!--
 ### PART Steps 7-10: Configuring the in-game settings and installing RenoDX.
 -->
 
-**IF YOU HAVEN'T DONE THE WINDOWS HDR CALIBRATION, PLEASE DO SO NOW BEFORE CONTINUING WITH THE GUIDE!**
+**IF YOU DON'T KNOW THE PEAK BRIGHTNESS OF YOUR DISPLAY PLEASE PERFORM A WINDOWS HDR CALIBRATION BEFORE CONTINUING!**
 - Full instructions can be found here: [**Windows HDR Calibration**](Windows-HDR-Calibration).
 
 {% include callout.html type="tip" content="<b>Clipping Point vs Peak Brightness</b>
@@ -210,7 +238,7 @@ Full instructions can be found here: [**Windows HDR Calibration**](Windows-HDR-C
 <p><b>HDR10 SCRGB has slightly better visual quality but does not support DLSS Frame Generation. FSR FG still works but is inferior to DLSS FG.</b></p>
 <p><b>Both HDR types are compatible with RenoDX.</b></p>
 
-<a href='https://discourse.differentk.fyi/t/topic-free-mega-thread-v-1-11-2020/79/3746?u=kaldaien'><b>Click here to read Kaldaien's post, if you want the technical details into the differences between HDR10 PQ and HDR10 scRGB.</b></a>
+<a href='https://discourse.differentk.fyi/t/topic-free-mega-thread-v-1-11-2020/79/3746?u=kaldaien'><b>Click here to read Kaldaien's post if you want the technical details into the differences between HDR10 PQ and HDR10 scRGB.</b></a>
 " %}
 
 **7)** Start the game. Open the Settings menu.
@@ -227,11 +255,7 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 
 - **Make sure HDR10 PQ saturation is 0!!!** This will cause issues with Frame Generation if changed.  Just use the Saturation slider within RenoDX instead.
 
-{% include callout.html type="important" content="<b>HDR10 PQ Saturation absolutely, 100% without a doubt, needs to be 0!</b>  
-
-<b>DO NOT CHANGE THIS SETTING!!!</b> 
-
-<i>Non zero values will cause issues with frame generation when moving.  If you want to increase the game saturation, use the saturation slider within RenoDX.</i>" %}
+[**Click HERE to see why**](https://www.hdrmods.com/Cyberpunk#frame-generation-artifacts-when-moving)
 
 <details><summary>HDR settings</summary>
 <i>Ignore the Maximum Brightness setting.</i>
@@ -254,19 +278,10 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 ### PART 2: RENODX SETTINGS
 - Click on the `RenoDX` tab along the top of the ReShade UI.
 - **Setting recommendations listed here assume the PsychoV tone mapper is selected.**
-- PsychoV-17 is the latest version of the PsychoV tone mapper as if this guide update.  Any mention of PsychoV implies PsychoV-17 as well.
-
-{% include callout.html type="tip" content="Recommend adjusting color grading sliders when using Lilium's HDR Analyis tool shader.
-
-It's normal for the peak brightness to slightly exceed what you set it too and going over by like 50 nits isn't usually a big deal, especially if using film grain.
-
-Be very careful with the exposure, contrast, highlights, and cone response sliders. If you notice that your peak brightness is really high, check these first.
-
-<b>You should not need the Black Floor Fix shader with RenoDX!  If you feel like you need to use it then there is probably something wrong with your HDR settings.</b>" %}
 
 **Tone Mapper: `PsychoV-17`.**  This has better color accuracy and neon lights will look much better compared to the other tone mapper versions. The other tone mapper options are not supported in this guide.
 - **If you do not see PsychoV-17 as an option:** - Still accurate as of May 3rd, 2026.
-    - **RenoDRT:** older tone mapper.  This will appear as the furthest right option if you download it from GitHub or Nexus Mods, either are going to be older than the Discord pinned versions.  Do not recommend using as any of the PsychoV LUTs will look much better.
+    - **RenoDRT:** older tone mapper.  This will appear as the furthest right option if you download it from GitHub or Nexus Mods, either are going to be older than the Discord pinned versions.  Do not recommend using as any of the PsychoV versions will look much better.
     - **PsychoV-11:** older version that was pinned in the RenoDX server's Cyberpunk thread.  Looks nice but the blue and purples will look better with PsychoV-17.  Lacks the `Cone Response` adjustment.
     - **PsychoV-XX:** If the XX number is higher than 17 that means a newer version of RenoDX has come out after this guide was last edited. 
     - **Aces:** AVOID
@@ -274,12 +289,20 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 
 **Peak Brightness:**  Set the Peak Brightness to match the results from the Windows HDR Calibration test you did earlier.  
 
-**Game Brightness:** The paper white value, also known as average brightnes.  You typically want to set this between 100-300 nits.
+**Game Brightness:** The paper white value, also known as average brightnes.  You typically want to set this between 100-300 nits.  Think of this as a volume knob for brightness.  You probably heard of 203 nits being the magic value that everyone should use, but in reality this varies based on personal preference, type of display used, and how much ambient lighting there is.
 
 **SDR EOTF Emulation: also known as gamma correction.**  `UI/Menu Only` is recommended for most use cases, as having it set to `On` can be too dark in some situations. 
 - If you're going to change this I recommend picking a dark room in the middle of the night so you can use that as a reference point.
 
-**Hue Correction:** None.
+**Hue Correction:** This setting is grayed out when using the latest version of PsychoV-17.  Thus the setting has no effect.
+
+**Hue Processor:** This setting is grayed out when using the latest version of PsychoV-17.  Thus the setting has no effect.
+
+**Per Channel:** This setting is grayed out when using the latest version of PsychoV-17.  Thus the setting has no effect.
+
+**PsychoV Mid Gray:** **`SDR`** will look better in most cases, especially if using other LUTs such as Nova LUT 4, or weather mods such as Nova City 2.  **`HDR`** is probably better for people who are not using any other mods besides RenoDX and want a more vanilla type experience.
+
+**PsychoV Slope: `HDR`** 
 
 **Exposure:** One of the major settings that affects the overall brightness / darkness of the game.
 
@@ -294,7 +317,7 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 
 **Saturation:** Adjusts the color intensity of the game.  Reduce to 0 to make the game appear to be in black and white.
 
-**Cone Response: Set to 70 to simulate the look of Vanilla HDR (aka the intended appearance), per ShortFuse.**  *Only available when using PsychoV-17.* Controls both Saturation and Contrast. 
+**Cone Response: Set to `50` to simulate the look of Vanilla HDR (aka the intended appearance), per ShortFuse.**  *Only available when using PsychoV-17.* Controls both Saturation and Contrast. 
 - **This should be the first slider you adjust with PsychoV-17**.  
 
 **Highlight Saturation:** Controls the intensity of the highlight colors.
@@ -306,6 +329,8 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 **White Point:** Adjusts the color temperature.
 
 **LUT Strength:** 50-60 for most LUTs, including the default / Vanilla LUTs.  100 is going to be too intense most of the time.
+- I personally use [Nova LUT 4](https://www.nexusmods.com/cyberpunk2077/mods/11622) at 100% strength, but feel free to adjust as desired even if using this LUT.  The default Nova LUT 4 is equivalent to 5600K, but I prefer using the LUT Switcher color temp pack so I can change the color temperature in-game at the LUT level without needing to use any other shaders. 
+- *Reminder: RenoDX was not designed with any LUT mod in mind.*
 
 **Dynamic Exposure:** Leave at 0.  If this setting does anything that means the tone-mapping midpoint wasn't set to 1.0 within the game's HDR settings.
 
@@ -334,6 +359,8 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 
 **If you do not see a Debug Graph slider, you did not *correctly* install a version hosted in the Discord server!**
 
+<!--
+
 <details><summary>Debug Graph On</summary>
 <img src='./images/Cyberpunk/RenoDX-PsychoV17-DebugOn.png' alt='RenoDX Debug Graph On' style='max-width:100%;'>
 </details>
@@ -346,7 +373,9 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 <img src='./images/Cyberpunk/RenoDX-PsychoV17-Settings.png' alt='RenoDX PsychoV-17 Settings' style='max-width:75%;'>
 </details>
 
-**RenoDX Installation Completed!**  
+-->
+
+**RENODX INSTALLATION COMPLETED!**  
 
 
 ## Troubleshooting RenoDX Issues
@@ -371,6 +400,7 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 - This is the debug graph from the WIP RenoDX. Look at the very bottom of the RenoDX settings, under Debug turn off Debug Graph
 
 <details><summary>Debug Graph Off</summary>
+<i>Screenshot taken from an older version of RenoDX</i>
 <a href="https://slow.pics/R1nHEgpd/"><img src="https://i.slow.pics/R1nHEgpd.png" style="width:100%;height:100%;"/></a>
 </details>
 
@@ -395,6 +425,7 @@ Be very careful with the exposure, contrast, highlights, and cone response slide
 <video src="https://raw.githubusercontent.com/CreepySasquatch/HDRMods/main/images/Cyberpunk/Cyberpunk-Frame-Generation-Bug.mp4" controls width="100%"></video>
 *Credit to **Invictus** for figuring out this issue and supplying the video showing the fix!*
 
+<!--
 ### Map is hard to read
 <details><summary>RenoDX Map Bug</summary>
 <a href="https://slow.pics/FScCfiyT/"><img src="https://i.slow.pics/FScCfiyT.png" style="width:100%;height:100%;"/></a>
@@ -411,7 +442,7 @@ Settings listed only for reference, please adjust to your liking.
 <a href="https://slow.pics/l8t0m7js/"><img src="https://i.slow.pics/l8t0m7js.png" style="width:100%;height:100%;"/></a>
 </details>
 - Some people also find that the Realistic Map Mod looks better.  Pick the 8K version or higher, as the lower resolution versions have issues: <https://www.nexusmods.com/cyberpunk2077/mods/17811>
-
+-->
 
 ### How do I adjust the UI brightness?
 **You can change the UI brightness by adjusting the `paper white` value in the game's HDR settings.**  This value has no other effect when RenoDX is installed.
