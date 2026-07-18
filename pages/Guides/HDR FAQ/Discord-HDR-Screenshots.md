@@ -26,7 +26,7 @@ sidebar: false
 
 - Completely exit out of Discord. When you open Discord back up all HDR images should load.
 
-**Better Discord users:** It's possible that the Better Discord plugin called `Uncompressed Images` does the same thing as the Vencord plugin; however, no one was able to test this before I updated the guide.
+**Better Discord users:** The Better Discord version is called `Uncompressed Images` but it basically does the same thing as the Vencord plugin.
 
 
 <!--
