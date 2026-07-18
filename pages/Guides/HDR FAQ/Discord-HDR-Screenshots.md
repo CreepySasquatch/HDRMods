@@ -7,7 +7,9 @@ sidebar: false
 ---
   {% include callout.html type="tip" content="For more information on how to take HDR screenshots, take a look at our HDR screenshot guide: <https://www.hdrmods.com/HDR-Screenshot-Guide>." %}
 
-  {% include callout.html type="important" content="A recent Discord update broke being able to view HDR screenshots on the desktop version of Discord.  There is a workaround but it technically requires you to download a 3rd party addon called Vencord (similar to Better Discord) that adds some new features to Discord. <b>However addons like this technically break the Discord terms of service so use at your own risk.</b>" %}
+  {% include callout.html type="important" content="A recent Discord update broke being able to view HDR screenshots on the desktop version of Discord.  There is a workaround but it technically requires you to download a 3rd party addon called Vencord (similar to Better Discord) that adds some new features to Discord. 
+  
+  <b>DISCLAIMER: DISCORD MODIFICATIONS SUCH AS VENCORD AND BETTER DISCORD TECHNICALLY BREAK THE DISCORD TERMS OF SERVICE SO USE AT YOUR OWN RISK.</b>" %}
 
 ## How to view HDR screenshots in Discord 
 *Applies to both SDR and HDR displays.*
