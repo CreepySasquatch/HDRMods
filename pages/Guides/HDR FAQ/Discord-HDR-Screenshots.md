@@ -7,9 +7,27 @@ sidebar: false
 ---
   {% include callout.html type="tip" content="For more information on how to take HDR screenshots, take a look at our HDR screenshot guide: <https://www.hdrmods.com/HDR-Screenshot-Guide>." %}
 
+  {% include callout.html type="important" content="A recent Discord update broke being able to view HDR screenshots on the desktop version of Discord.  There is a workaround but it technically requires you to download a 3rd party addon called Vencord (similar to Better Discord) that adds some new features to Discord. <b>However addons like this technically break the Discord terms of service so use at your own risk.</b>" %}
+
 ## How to view HDR screenshots in Discord 
 *Applies to both SDR and HDR displays.*
 
+**1)** Install the Vencord client modification for Discord which can be downloaded from <https://vencord.dev/>.
+
+- After you install Vencord, open up the Discord and go to the Discord User Settings.
+- Scroll down to the new section called `Vencord Settings` then click on `Plugins`.
+- Search for the plugin called `FixImagesQuality` then click the toggle to enable it.  
+<img src='./images/HDR-Discord-Fix-Plugin.png' alt='Vencord Plugin' style='max-width:70%;'>
+
+- Click on the gear / cog wheel within `FixImagesQuality` and make sure `Original Images In Chat` is enabled.
+<img src='./images/HDR-Discord-Fix-Plugin-Settings.png' alt='Vencord Plugin Settings' style='max-width:70%;'>
+
+- Completely exit out of Discord. When you open Discord back up all HDR images should load.
+
+**Better Discord users:** It's possible that the Better Discord plugin called `Uncompressed Images` does the same thing as the Vencord plugin; however, no one was able to test this before I updated the guide.
+
+
+<!--
 **1)** If on the Desktop version of Discord, make sure hardware acceleration is enabled. 
 
   * This setting can be found by going to User Settings > Advanced > Hardware Acceleration 
@@ -18,7 +36,7 @@ sidebar: false
  <a href="https://slow.pics/Rw2jqnX8/"><img src="https://i.slow.pics/Rw2jqnX8.jpg" style="width:100%;height:100%;"/></a>
  <br>
  <br>
-
+-->
 **2)** Alternatively, you can fully open the image in a Chromium based web browser. FireFox does not currently support HDR images on Windows (however it is planned on being added in the future).  
   
   * **HDR Users:** recommended to set SDR content brightness slider (Windows settings > System > Display > HDR) to 31 which is equivalent to 204 nits paperwhite.  Otherwise HDR images viewed within Chromium browsers won't look correct.  
