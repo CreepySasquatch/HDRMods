@@ -6,19 +6,21 @@ description:
 sidebar: false
 ---
   {% include callout.html type="tip" content="For more information on how to take HDR screenshots, take a look at our HDR screenshot guide: <https://www.hdrmods.com/HDR-Screenshot-Guide>." %}
-<!--
+
   {% include callout.html type="important" content="A recent Discord update broke being able to view HDR screenshots on the desktop version of Discord.  There is a workaround but it technically requires you to download a 3rd party addon called Vencord (similar to Better Discord) that adds some new features to Discord. 
   
   <b>DISCLAIMER: DISCORD MODIFICATIONS SUCH AS VENCORD AND BETTER DISCORD TECHNICALLY BREAK THE DISCORD TERMS OF SERVICE SO USE AT YOUR OWN RISK.</b>" %}
--->
+
 ## How to View HDR Screenshots in Discord 
 *Applies to both SDR and HDR displays.*
 
 ### DESKTOP 
-**Should just work without any third party plugins are setting changes.**
-- Alternatively, you can fully open the image in a Chromium based web browser. FireFox does not currently support HDR images on Windows (however it is planned on being added in the future). 
 
 <!--
+**Should just work without any third party plugins are setting changes.**
+- Alternatively, you can fully open the image in a Chromium based web browser. FireFox does not currently support HDR images on Windows (however it is planned on being added in the future). 
+-->
+
 **1)** Install the Vencord client modification for Discord which can be downloaded from <https://vencord.dev/>.
 
 - After you install Vencord, open up the Discord and go to the Discord User Settings.
@@ -32,7 +34,6 @@ sidebar: false
 - Completely exit out of Discord. When you open Discord back up all HDR images should load.
 
 **Better Discord users:** The Better Discord version is called `Uncompressed Images` but it basically does the same thing as the Vencord plugin.
--->
 
 <!--
 **1)** If on the Desktop version of Discord, make sure hardware acceleration is enabled. 
