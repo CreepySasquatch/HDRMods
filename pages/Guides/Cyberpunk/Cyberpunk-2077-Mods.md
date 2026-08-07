@@ -19,8 +19,8 @@ sidebar: false
 - [**HOW TO FIND THE PERFECT LUT TO USE WITH RENODX**](Cyberpunk-2077-LUTs)
 -->
 
-[RETURN TO THE MAIN VIRTUAL PHOTOGRAPHY GUIDE](Cyberpunk-Virtual-Photography)
-[RENODX INSTALLATION GUIDE](Cyberpunk)
+- [**RETURN TO THE MAIN VIRTUAL PHOTOGRAPHY GUIDE**](Cyberpunk-Virtual-Photography)
+- [**RENODX INSTALLATION GUIDE**](Cyberpunk)
 
 ## Virtual Photography
 
