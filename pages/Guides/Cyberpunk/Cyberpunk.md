@@ -4,6 +4,15 @@ type:
 summary:
 description: How to Setup RenoDX in Cyberpunk 2077
 ---
+{% include callout.html type="note" content="<b>This guide has not been updated for the July 10th version of RenoDX that added PsychoV-22.</b>
+
+For some reason the July 10th and June 10th versions of RenoDX do not work well for me.  There's a weird dimming / exposure issue I can't figure out the cause of.  A few other people have reported this as well but we can't consistently duplicate it. A lot of people use RenoDX without issue though.  I don't feel like troubleshooting this issue any further because the older PsychoV-17 version still looks great to me.
+
+My personal recommendation, if you are using RenoDX without any other mods, then the latest version is probably fine.  However if you're using mods that further change the visuals such as Ultra Plus, Nova City 2, LUT Switcher, etc. then maybe consider rolling back to the version released on April 5th 2026 that added PsychoV-17.  Direct link to the post in Discord: <https://discord.com/channels/1408098019194310818/1434377434022809610/1490559043343876196>
+
+If ShortFuse updates RenoDX again for Cyberpunk then I'll consider updating the guide assuming RenoDX is working for me, otherwise this guide will remain as is.  It can still be useful for setting up ReShade and the various graphics settings, but the newer additions to RenoDX are not mentioned."%}
+
+
 {% include callout.html type="note" content="<b>CHANGES MADE WITH THE JUNE 10TH VERSION OF RENODX:</b>
 <li>No longer need a map fix such as HUD Painter or MapLUTBegone.</li>
 <li>PsychoV Mid Gray and PsychoV Slope sliders added. May need to set Mid Gray to SDR if the default HDR option is too dark.</li>
