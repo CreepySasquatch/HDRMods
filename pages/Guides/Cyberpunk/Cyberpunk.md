@@ -4,30 +4,22 @@ type:
 summary:
 description: How to Setup RenoDX in Cyberpunk 2077
 ---
-{% include callout.html type="important" content="<b>This guide has not been updated for the July 10th version of RenoDX that added PsychoV-22.</b>
 
-For some reason the July 10th and June 10th versions of RenoDX do not work well for me.  There's a weird dimming / exposure issue I can't figure out the cause of, and a few other people have reported this as well but we can't consistently duplicate it.  A lot of people use the newest RenoDX without issue though so its hard to say whether this will happen for someone's specific use case. Either way, I don't feel like troubleshooting this issue any further because the older PsychoV-17 version still looks great to me and it suits my needs.
+[**TROUBLESHOOTING SECTION MOVED TO SEPARATE PAGE**](Cyberpunk-FAQ)
+- This lists commonly asked questions and issues with possible solutions.
+- A list of crash log locations is also provided.
 
-My personal recommendation, if you are using RenoDX without any other mods, then the latest version is probably fine.  However if you're using mods that further change the visuals such as Ultra Plus, Nova City 2, LUT Switcher, etc. then maybe consider rolling back to the version released on April 5th 2026 that added PsychoV-17.  Direct link to the post in Discord: <https://discord.com/channels/1408098019194310818/1434377434022809610/1490559043343876196>
+**DLSS 5 SUPPORT IS NOT PROVIDED!!!  While you are free to use it, I personally feel like there is little need for it when path tracing is already available.  You're better off instaling the Ultrapunk modlist instead which includes all the important visual fixes for the game.**
 
-If ShortFuse updates RenoDX again for Cyberpunk then I'll consider updating the guide assuming RenoDX is working for me, otherwise this guide will remain as is.  It can still be useful for setting up ReShade and the various graphics settings, but the newer additions to RenoDX are not mentioned."%}
+{% include callout.html type="important" content="<b>This guide only supports the version of RenoDX released on April 5th 2026, which introduced PsychoV-17. Direct link to the post in Discord: <https://discord.com/channels/1408098019194310818/1434377434022809610/1490559043343876196></b>
+
+<i>Here's why I won't be supporting newer versions:</i>
+
+For some reason the July 10th and June 10th versions of RenoDX do not work well for me.  There's a weird dimming / exposure issue I can't figure out the cause of, and I can confirm it happens in a vanilla game with no other mods active.  Seems like not everyone has this issue, but enough have reported having the same issues that I'm assuming other people just don't notice it, or they just ignore the problems when they happen. "%}
 
 
-{% include callout.html type="note" content="<b>CHANGES MADE WITH THE JUNE 10TH VERSION OF RENODX:</b>
-<li>No longer need a map fix such as HUD Painter or MapLUTBegone.</li>
-<li>PsychoV Mid Gray and PsychoV Slope sliders added. May need to set Mid Gray to SDR if the default HDR option is too dark.</li>
-<li>Cone Response should now be set to 50 instead of 70 if you want to simulate the vanilla HDR look.</li>
-<li>Hue Correction no longer has any effect with PsychoV and is grayed out.</li>"%}
+{% include callout.html type="warning" content="<b>DISCLAIMER:</b> The contents of this guide do not reflect the views or opinions of ShortFuse, the creator of the Cyberpunk 2077 RenoDX mod and the RenoDX framework as a whole.  Any troubleshooting tips and recommended settings are based on my own personal experience from helping others with the game." %}
 
-{% include callout.html type="warning" content="<b>DISCLAIMER:</b> The contents of this guide do not reflect the views or opinions of ShortFuse, the creator of the Cyberpunk 2077 RenoDX mod and the RenoDX framework as a whole.  Any troubleshooting tips and recommended settings are based on my own personal experience from helping others with the game.
-
-RenoDX was not made with any other mod in mind.  This includes Ultra+ or popular LUTs such as Nova LUT 4." %}
-
-{% include callout.html type="important" content="<b>DLSS Preset Tips:</b> If you are using DLSS Ray Reconstruction (aka Nvidia users) then I highly recommend using Preset D.  This will have much less banding issues, especially in the sky, compared to the newer Preset E.  Preset D is what the game uses by default. You can set this via the Nvidia App DLSS Override feature (Graphics > Program Settings > Cyberpunk 2077 > Driver Settings) or a third party program such as DLSS Swapper.
-
-Ray Reconstruction is highly recommended to be used in Cyberpunk when path tracing is enabled, otherwise you'll notice quite a bit of specular artifacts known as noise. AMD / Intel users can make use of the NRD mode found within the Ultra Plus mod as another denoiser option.
-
-Ray Reconstruction gets disabled when using the game's photomode.  This is a bug in the vanilla game and is not mod related.  If you like to use the game's photomode, then set the DLSS SR preset to M for better quality." %}
 
 {% include callout.html type="tip" content="<b>Make sure your display actually supports HDR before installing RenoDX. Your monitor should be rated for HDR400 or higher, meaning it should have at least 400 nits peak brightness.</b>  
 
@@ -76,11 +68,6 @@ TB stands for True Black.  True Black rated monitors will have a separate True B
 
 -->
 
-[**A TROUBLESHOOTING SECTION IS PROVIDED AT THE END OF THE GUIDE**](Cyberpunk#troubleshooting-renodx-issues)
-- This lists commonly asked questions and issues with possible solutions.
-- A list of crash log locations is also provided.
-
-
 ## How to Fix Cyberpunk's HDR using RenoDX
 
 If you haven't done the Windows HDR Calibration, please do so now before continuing with the guide.
@@ -93,7 +80,7 @@ Full instructions can be found here: [**Windows HDR Calibration**](Windows-HDR-C
 **1)** Download the **LATEST** version of ReShade **WITH FULL ADD-ON SUPPORT** from <https://reshade.me/#download>
 - When running the ReShade installer, make sure to not run it directly from the Windows Downloads folder or the Cyberpunk 2077 install folder, because both options can cause issues.  At the very least make a new folder in Downloads or the Desktop and place the ReShade installer there.
 
-<details><summary>The latest ReShade version as of writing this guide is <b>6.7.3</b></summary>
+<details><summary>The latest ReShade version as of writing this guide is <b>6.8.0</b></summary>
 <a href="https://slow.pics/KbN1KUCW/"><img src="https://i.slow.pics/KbN1KUCW.jpg" style="width:100%;height:100%;"/></a>
 </details>
 
@@ -139,55 +126,6 @@ Click this link for a list of HDR compatible ReShade shaders: <https://www.hdrmo
 
 Picking unneeded addons can cause performance issues or even crashes.  Addons are for specific use cases such as VR and virtual photography." %}
 
-<!--
-
-**4) Choose from the following options:**
-
-<details><summary><b>Click here if you have no interest in shaders or presets (Default method)</b></summary>
-
-<b>If updating ReShade:</b>
-<ol>
-<li>Select <b>Update ReShade only</b></li>
-
-<li>Click <b>Next</b></li>
-
-<li>Click <b>Finish</b></li>
-
-</ol>
-
-
-<b>If new ReShade installation:</b>
-<ol>
-<li>Click <b>Skip</b> on the effect selection screen.</li>
-
-<li>Click <b>Skip</b> again on the add-on selection screen.</li>
-
-<li>Click <b>Finish</b></li>
-</ol>
-</details>
-
-<details><summary><b>Click here if you also want to install shaders such as Lilium's RCAS (Not Required to use RenoDX)</b></summary>
-<ol>
-    <li>Select <b>Update ReShade and effects</b> if updating ReShade.</li>
-    <i>If installing ReShade for the first time you'll already be at the effect (shader) selection screen.</i>
-    <li>Change the effect sorting from <b>Default</b> to <b>A to Z</b> to make it easier to find the various shader packs (also known as "repositories" because of how they're stored on GitHub).
-    <img src='https://i.slow.pics/ATvCVf33.jpg' alt='Change shader sorting from Default to A to Z' style='max-width:100%;'></li>
-    <li>For Lilium's shaders, scroll down unti you see <b>ReShade_HDR_shaders by Lilium</b>.</li>
-    <li>Check the box <b>ReShade_HDR_shaders by Lilium</b> to download all of Lilium's shaders (recommended).
-     <img src='https://i.slow.pics/xwMDil4f.jpg' alt='Pick shaders' style='max-width:75%;'></li>
-
-<ul> 
-    <li><b>I DO NOT recommend clicking the <i>Check All</i> button and picking all of the shaders.  This will just lead to longer compile times when you start the game. Most shaders won't work with HDR so there's not much point to picking all of them anyways.</b></li>
-    <li><b><a href="https://www.hdrmods.com/HDR-Link-Library#hdr-compatible-shaders">List of HDR Compatible Shaders</a></b></li>
-    <li>The repository <b>Standard effects</b> is always downloaded when clicking <i>Next</i> instead of <i>Skip</i>, even if you don't pick any other shader packs to install.  This includes important shaders such as <i>Deband</i> (used to fix banding issues, especially in the sky) and <i>Display Depth</i> (used to help setup the depth buffer for shaders that require it such as Deband).  It also includes the helper shaders <i>ReShade.fxh</i> and <i>ReShadeUI.fxh</i> which most other shaders make use of.</li>
-</ul>
-    <li>Click <b>Next</b></li>
-    <li>Click <b>Skip</b> on the add-on selection screen.</li>
-    <li>Click <b>Finish</b></li>
-</ol>
-</details>
-
--->
 
 **5)** Grab the RenoDX addon from RenoDX Discord server. Look in the pinned comments of the Cyberpunk 2077 channel.
 
@@ -210,9 +148,6 @@ Picking unneeded addons can cause performance issues or even crashes.  Addons ar
 **6)** Place the RenoDX addon `renodx-cp2077.addon64` in the `\bin\x64` folder where Cyberpunk 2077 is installed.
 <a href="https://slow.pics/rW4SsThY/"><img src="https://i.slow.pics/rW4SsThY.png" style="width:100%;height:100%;"/></a>
 
-<!--
-### PART Steps 7-10: Configuring the in-game settings and installing RenoDX.
--->
 
 **IF YOU DON'T KNOW THE PEAK BRIGHTNESS OF YOUR DISPLAY PLEASE PERFORM A WINDOWS HDR CALIBRATION BEFORE CONTINUING!**
 - Full instructions can be found here: [**Windows HDR Calibration**](Windows-HDR-Calibration).
@@ -254,7 +189,9 @@ Picking unneeded addons can cause performance issues or even crashes.  Addons ar
 
 **8)** Go to Video > HDR settings. **Make sure Cyberpunk's HDR is turned ON.  HDR10 PQ and HDR10 scRGB will both work with RenoDX.**
 
-- **Maximum Brightness: Leave at the default value.** This setting is ignored when using RenoDX. This gets replaced with the `Peak Brightness` setting in the RenoDX addon.
+**9)** Press the `Z` button on your keyboard or press the `Right Analog Stick` on your controller to access the HDR Settings.
+
+- **Maximum Brightness: Set to the peak brightness of your display.** You'll also want to enter the same value in the `Peak Brightness` setting within the RenoDX addon.
 
 - **Paper White: (UI Brightness) 200 or change as desired.**  This setting has no other effect when RenoDX is installed. 
 
@@ -267,7 +204,6 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 [**Click HERE to see why**](https://www.hdrmods.com/Cyberpunk#frame-generation-artifacts-when-moving)
 
 <details><summary>HDR settings</summary>
-<i>Ignore the Maximum Brightness setting.</i>
 <a href="https://slow.pics/zFyyInhD/"><img src="https://i.slow.pics/zFyyInhD.png" style="width:100%;height:100%;"/></a>
 </details>
 
@@ -296,7 +232,7 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
     - **Aces:** AVOID
     - **Vanilla:** AVOID 
 
-**Peak Brightness:**  Set the Peak Brightness to match the results from the Windows HDR Calibration test you did earlier.  
+**Peak Brightness:**  Set the Peak Brightness to match the results from the Windows HDR Calibration test you did earlier.  This should match the value entered for the `Maximum Brightness` slider in the game's HDR settings.
 
 **Game Brightness:** The paper white value, also known as average brightnes.  You typically want to set this between 100-300 nits.  Think of this as a volume knob for brightness.  You probably heard of 203 nits being the magic value that everyone should use, but in reality this varies based on personal preference, type of display used, and how much ambient lighting there is.
 
@@ -309,11 +245,7 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 
 **Per Channel:** This setting is grayed out when using the latest version of PsychoV-17.  Thus the setting has no effect.
 
-**PsychoV Mid Gray:** **`SDR`** will look better in most cases, especially if using other LUTs such as Nova LUT 4, or weather mods such as Nova City 2.  **`HDR`** is probably better for people who are not using any other mods besides RenoDX and want a more vanilla type experience.
-
-**PsychoV Slope: `HDR`** 
-
-**Exposure:** One of the major settings that affects the overall brightness / darkness of the game.
+**Exposure:** One of the major settings that affects the overall brightness / darkness of the game. 
 
 **Highlights:** Adjusts the intensity of the brightest elements on the screen.  
 - **Can easily exceed peak brightness if increased too much.**  If you can't see highlight details anymore then this may be too high.
@@ -386,151 +318,9 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 
 **RENODX INSTALLATION COMPLETED!**  
 
-
-## Troubleshooting RenoDX Issues
-
-### Washed out / gray image
-- Make sure RTXHDR is turned off globally (or at least for Cyberpunk 2077)
-- Verify HDR is turn on in Windows and in Cyberpunk 2077.
-- Make sure Color Precision is set to High within the graphics settings. RenoDX will not work with this set to medium.
-- Make sure you're using the latest add-on version of ReShade.
-
-### Crushed Black Levels / Shadows Appear Darker Than They Should
-- Disable HDR10+ Gaming within the in-game video settings.  This will only appear if your computer detects that you are using an HDR10+ capable display.
-<details><summary>HDR10+ Setting Location</summary>
-<a href="https://slow.pics/eE2HLqSI/"><img src="https://i.slow.pics/eE2HLqSI.png" style="width:100%;height:100%;"/></a>
-</details>
-- Is the Tone-Mapping Midpoint, within the in-game HDR settings, set at something lower than 1.0?
-- Some LUTs can cause this issue, especially if the RenoDX settings are not configured to compensate for it.  See if the problem goes away by selecting the vanilla LUT with RenoDX at the default settings (but leave Peak Brightness the same). 
-- Disable any ReShade shaders if you're using them, especially if in HDR10 scRGB mode.
-- Are you using Nova City 2?  This can cause the game to appear darker in some areas, especially in interior spaces and at night.  This is expected behavior of the mod as it recommends using flashlight and night vision mods with it.
-
-### Colored Square Behind Minimap / Upper Right Corner
-- This is the debug graph from the WIP RenoDX. Look at the very bottom of the RenoDX settings, under Debug turn off Debug Graph
-
-<details><summary>Debug Graph Off</summary>
-<i>Screenshot taken from an older version of RenoDX</i>
-<a href="https://slow.pics/R1nHEgpd/"><img src="https://i.slow.pics/R1nHEgpd.png" style="width:100%;height:100%;"/></a>
-</details>
-
-### Banding / Grid Pattern in the Sky
-- Make sure you're using Ray Reconstruction preset D.  Easiest way is to use the Nvidia App or a third party program such as DLSS Swapper: <https://github.com/beeradmoore/dlss-swapper/releases>
-- When using Ray Reconstruction it overrides the SR model completely, meaning presets K, L, M, etc. won't get applied when using RR.
-
-**Ray Reconstruction Preset D vs E:**
-{% include comparison-slider.html before="images/Cyberpunk/RayReconstruction/PresetD.png" after="images/Cyberpunk/RayReconstruction/PresetE.png" before_label="Preset D" after_label="Preset E" %}
-- Credit to **squarto** and **Gn3xus** for figuring this out and taking these comparison images.
-
-### Frame Generation artifacts when moving
-*Especially in light sources*
-
-<details><summary>Make sure HDR10 PQ Saturation is set to 0 in the base game / vanilla HDR settings.</summary>
-<a href="https://slow.pics/zFyyInhD/"><img src="https://i.slow.pics/zFyyInhD.png" style="width:100%;height:100%;"/></a>
-</details>
-
-
-**Before and After Changing HDR10 PQ Saturation:**
-
-<video src="https://raw.githubusercontent.com/CreepySasquatch/HDRMods/main/images/Cyberpunk/Cyberpunk-Frame-Generation-Bug.mp4" controls width="100%"></video>
-*Credit to **Invictus** for figuring out this issue and supplying the video showing the fix!*
-
-<!--
-### Map is hard to read
-<details><summary>RenoDX Map Bug</summary>
-<a href="https://slow.pics/FScCfiyT/"><img src="https://i.slow.pics/FScCfiyT.png" style="width:100%;height:100%;"/></a>
-</details>
-
-**Known issue with this version of RenoDX (and the WIP version before it).  This bug affects the vanilla map and every map mod.**
-- Cyanide has kindly made a MapLUTBegone mod that will help fix the issue.  It's pinned in the Cyberpunk channel of the RenoDX server.  Direct link to post: <https://discord.com/channels/1408098019194310818/1434377434022809610/1492718360163647642>.  
-- HUD Painter can change the contrast, saturation, and colors of the World Map: <https://www.nexusmods.com/cyberpunk2077/mods/14935>
-    - Color options do not work on the realistic map mod
-    - HUD Painter does require most of the core mods such as redscript and codeware, but if you have a full modlist then you'll probably have these anyways. Make sure to install the mod settings optional mod so you can see the World Map options.
-    - Can be used in combination with the MapLUTBegone fix or on its own.
-<details><summary>MOD Settings HUD Painter</summary>
-Settings listed only for reference, please adjust to your liking.
-<a href="https://slow.pics/l8t0m7js/"><img src="https://i.slow.pics/l8t0m7js.png" style="width:100%;height:100%;"/></a>
-</details>
-- Some people also find that the Realistic Map Mod looks better.  Pick the 8K version or higher, as the lower resolution versions have issues: <https://www.nexusmods.com/cyberpunk2077/mods/17811>
--->
-
-### How do I adjust the UI brightness?
-**You can change the UI brightness by adjusting the `paper white` value in the game's HDR settings.**  This value has no other effect when RenoDX is installed.
-
-### HUD / UI Looks Weird
-- This usually appears as boxes or borders around parts of the HUD.
-- The vanilla film grain is broken and can cause this issue.  Make sure film grain type within RenoDX is set to `Perceptual`.
-
-## How to Provide More Info for Troubleshooting
-
-**1) Make sure view file name extensions is enabled within Windows File Viewer.**  This will allow you to see the commonly used file types such as .ini, .txt, .log, and .exe.  
-
-  <details>
-  <summary>How to view file name extensions in Windows 11:</summary>
-	<ol>
-	<ul>
-    <li>1) Open File Explorer.</li>
-
-      <li>2) Along the top bar of File Explorer, left click View.</li>
-
-    <li>3) Hover over Show, then make sure File name extensions is checked.</li>
-	</ul>
-	</ol>
-	</details> 
-
-**2) Take screenshots of the issue with ReShade!** This will take HDR PNGs that can be uploaded to Discord. You're also using ReShade to inject RenoDX anyways so there's little to no reason to use another option.
-- The only other accurate alternative is SKIV.
-- Special K can technically work as well, but like I said in the beginning of this guide, this option isn't supported due to issues Special K can have with RenoDX.  If you need to use Special K, just use the Display Commander addon instead.  It has most of the same features as Special K but is more compatible with RenoDX because it loads as a ReShade addon.
-- Nvidia overlay isn't always accurate, and it takes JXR screenshots which need to be converted to HDR PNG with another program such as SKIV.
-- Windows Gamebar can suffer from accuracy issues as well.
-- The Windows snipping tool, and similar apps such as ShareX, are not capable of taking HDR screenshots at all.  The most they can do is tonemap an HDR image to SDR, which is equally as useless for troubleshooting.  
-- **Please do not take pictures of your monitor/TV with your phone unless we're troubleshooting an issue with the display itself. This prevents us from separating the issues that are present in the game, and which are just artifacts from the phone's camera sensor.**
-
-**3) Common troubleshooting questions:**
-- What version of ReShade are you using?
-<details><summary>Can be found at the very top of the ReShade About tab:</summary>
-<a href="https://slow.pics/3Zj4JfF9/"><img src="https://i.slow.pics/3Zj4JfF9.jpg" style="width:100%;height:100%;"/></a>
-</details>
-
-- Are you using any other ReShade shaders? (checkmarks enabled in the ReShade Home tab)?
-- Is HDR turned on within Windows and in Cyberpunk 2077?
-- What RenoDX settings are you using? (just take a screenshot to show this)
-
-**4) Log file locations:**
-*Unless otherwise noted, all file paths are assumed to start within the Cyberpunk 2077 game folder*
-- ReShade.log - `\bin\x64` 
-    - By far the most important log for RenoDX issues
-
-====OTHER MOD LOGS====
-
-{% include callout.html type="note" content="If you're using MO2, you will find most of these logs within the overwrite folder." %}
-
-- Cyberpunk 2077 Crash Dump - `%LocalAppData%\REDEngine\ReportQueue` for the main game crash log
-- Cyber Engine Tweaks - `\bin\x64\plugins\cyber_engine_tweaks`
-- Redscript - `\r6\logs`
-- Red4Ext - `\red4ext\logs` and `\red4ext\plugins` for specific mod logs
-- Ultra Plus - `\bin\x64\plugins\cyber_engine_tweaks\mods\UltraPlus`
-
-{% include callout.html type="tip" content="Highly recommend that you use RenoDX alongside the Ultra Plus mod!  Provides some performance tweaks and also adds new visual modes for both lower end and higher end hardware configurations. 
-
-Link to Ultra Plus mod page: <https://www.nexusmods.com/cyberpunk2077/mods/10490>" %}
+[**TROUBLESHOOTING SECTION MOVED TO SEPARATE PAGE**](Cyberpunk-FAQ)
+- This lists commonly asked questions and issues with possible solutions.
+- A list of crash log locations is also provided.
 
 
 
-<!--
-- Alternatively, click `Uninstall ReShade and Effects`, click `Next` then `Finish`.  Then reinstall ReShade from Step 2 onwards. *This is the recommended option if you picked a ton of addons the first time you installed ReShade, as having a ton of extra addons you don't need will just cause issues.*  If you're unsure what you picked last time, then just uninstall and reinstall ReShade. 
-- To uninstall ReShade pick `Uninstall ReShade and effects` seen in the `Select the operation to perform` screen, then run the ReShade installer again, following the same steps seen in **Step 2** of this guide onwards.  It'll save you a headache later on and it only takes an extra few seconds to do.
-- Uninstalling ReShade via the installer removes everything ReShade added except for any ReShade presets, those will remain. 
-- You can also manually uninstall ReShade by deleting the following files from the /bin/x64 folder.  
-    - **If you don't see the file extensions such as `.ini` or `.dll` then you need to enable file extensions within Windows file viewer.  Here's a guide on how to do that: <https://guides.martysmods.com/additionalguides/fileextensions>**
-    - `dxgi.dll` - Other mods may also use dxgi.dll and as such you may have renamed this to something different, such as d3d12.dll.  Either hover your mouse over the .dll file or right click on it and click on the details tab.  You should see `crosire's ReShade post-processing injector`
-    - `ReShade.ini` - You may also see `ReShade2.ini`, `ReShade3.ini` and so on.  Delete those as well.  This is where any changes made in the Settings tab are saved. RenoDX preset settings are saved here.
-    - `reshade-shaders` folder
-    - `ReShade.log`
-    - `ReShadePreset.ini` - this is the default preset that any Home tab shader configurations are saved to.  ReShade presets can be renamed to anything you want, so long as the file type is `.ini`.
--->
-
-<!--
-<details><summary>ReShade: Update / Uninstall Options:</summary>
-<a href="https://slow.pics/dMPn4wT9/"><img src="https://i.slow.pics/dMPn4wT9.jpg" style="width:75%;height:75%;"/></a>
-</details>
--->
