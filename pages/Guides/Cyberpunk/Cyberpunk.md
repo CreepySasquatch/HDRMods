@@ -11,11 +11,7 @@ description: How to Setup RenoDX in Cyberpunk 2077
 
 **DLSS 5 SUPPORT IS NOT PROVIDED!!!  While you are free to use it, I personally feel like there is little need for it when path tracing is already available.  You're better off instaling the Ultrapunk modlist instead which includes all the important visual fixes for the game.**
 
-{% include callout.html type="important" content="<b>This guide only supports the version of RenoDX released on April 5th 2026, which introduced PsychoV-17. Direct link to the post in Discord: <https://discord.com/channels/1408098019194310818/1434377434022809610/1490559043343876196></b>
-
-<i>Here's why I won't be supporting newer versions:</i>
-
-For some reason the July 10th and June 10th versions of RenoDX do not work well for me.  There's a weird dimming / exposure issue I can't figure out the cause of, and I can confirm it happens in a vanilla game with no other mods active.  Seems like not everyone has this issue, but enough have reported having the same issues that I'm assuming other people just don't notice it, or they just ignore the problems when they happen. "%}
+{% include callout.html type="important" content="<b>Updating guide for version released on September 16th, 2026.</b>  No ETA as to when it'll be finished."%}
 
 
 {% include callout.html type="warning" content="<b>DISCLAIMER:</b> The contents of this guide do not reflect the views or opinions of ShortFuse, the creator of the Cyberpunk 2077 RenoDX mod and the RenoDX framework as a whole.  Any troubleshooting tips and recommended settings are based on my own personal experience from helping others with the game." %}
