@@ -216,7 +216,7 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 - If using an otherwise vanilla setup, then most of the default values should work fine. 
 - If you using mods like Nova City 2 along with path tracing, then the game might appear to be a bit darker, especially in the interiors.  Thus the RenoDX settings may need to be adjusted to compensate for this.
 
-#### Output
+#### OUTPUT
 
 **Peak Brightness:**  Set the Peak Brightness to match the results from the Windows HDR Calibration test you did earlier.  This should match the value entered for the `Maximum Brightness` slider in the game's HDR settings.
 
@@ -225,7 +225,7 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 **SDR EOTF Emulation: also known as gamma correction.**  `UI/Menu Only` is recommended for most use cases, as having it set to `On` can be too dark in some situations. 
 - If you're going to change this I recommend picking a dark room in the middle of the night so you can use that as a reference point.
 
-#### Grading
+#### GRADING
 
 **Tone Mapper: `PsychoV-30` (*though PsychoV-17 and PsychoV-22 will also work fine*).**  The latest version of RenoDX has three versions of PsychoV that have minor differences but overall look pretty much the same.  Skin tones (oranges / reds) will look slightly different between each version and the highlights will be a bit more impactful with PsychoV 22/30. However, any one of these will be far superior to the other available options. 
 - **RenoDRT:** older tone mapper that was present in the original version of RenoDX.  Do not recommend using as any of the PsychoV versions will look much better.  This will appear as the furthest right option if you download it from the Nexus Mods site.
@@ -260,7 +260,7 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 
 **Scene Grading Strength: `PLACEHOLDER`.** 
 
-#### Effects
+#### EFFECTS
 
 **Dynamic Exposure: `Leave at 0`.**  If this setting does anything that means the tone-mapping midpoint wasn't set to 1.0 within the game's HDR settings.
 
@@ -279,7 +279,7 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 
 - If using other ReShade shaders such as Lilium's RCAS (which is commonly recommended), then I would set the filmgrain within RenoDX to 0 and then use ShortFuse's filmgrain shader and place it at the very end (you never want to sharpen filmgrain, and RCAS is a sharpening shader).
 
-#### Processing
+#### PROCESSING
 
 **LUT Correction: `PLACEHOLDER`.**
 
@@ -295,17 +295,17 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 
 **Internal Sampling Decoding: `PLACEHOLDER`.**
 
-#### Debug
+#### DEBUG
 
 **DEBUG GRAPH: SET TO OFF!!!** 
 - *Found at the very bottom of RenoDX under Debug.*  
 - Otherwise you'll see a colored square on the upper right corner behind the minimap.
 
-#### Options
+#### OPTIONS
 
 **Reset All:** Resets all RenoDX values to their defaults.
 
-**SDR Look:** 'PLACEHOLDER'
+**SDR Look:** `PLACEHOLDER`
 
 
 <!--
