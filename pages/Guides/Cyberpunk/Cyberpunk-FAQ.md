@@ -7,13 +7,32 @@ description: Troubleshooting RenoDX in Cyberpunk 2077
 
 [**BACK TO MAIN RENODX GUIDE**](Cyberpunk)
 
-## Washed out / gray image
+## Compatibility FAQ
+> RenoDX was not made with any other mods in mind so any compatiblity notes are based on reports made by other RenoDX users.
+
+- **Is RenoDX compatible with [Ultra Plus](https://www.nexusmods.com/cyberpunk2077/mods/10490)?** YES
+- **Is RenoDX compatible with the [Ultrapunk modlist](https://www.nexusmods.com/games/cyberpunk2077/collections/eem6yz)?**  YES
+- **Is RenoDX compatible with the [Cyberpunk Render Tweaks](https://www.nexusmods.com/cyberpunk2077/mods/33943) mod?**  GitHub version isn't compatible but the version pinned within the Cyberpunk thread in the RenoDX Discord server is compatible.  Look for the version labeled as `with cbv`.
+- **Is RenoDX compatible with [Nova City 2](https://www.nexusmods.com/cyberpunk2077/mods/12490)?** Yes, but it can make the game a bit darker especially in the interiors.  Recommend combining with the [Nova Optics](https://www.nexusmods.com/cyberpunk2077/mods/29190) mod and utilize its shadow boost feature. Also keep in mind that Nova City 2 was meant to be used alongside a [flashlight](https://www.nexusmods.com/cyberpunk2077/mods/2913) and/or [night vision](https://www.nexusmods.com/cyberpunk2077/mods/8326) mod.
+- **Is RenoDX compatible with [ENV Tuner](https://www.nexusmods.com/cyberpunk2077/mods/23079)?  Mostly, though a lot of the HDR specific sliders won't work.
+- **Is RenoDX compatible with other LUTs?** If the LUT was made for HDR you can probably get it to work; however, you will need to adjust the various RenoDX settings until you're happy with the final look.  Recommend using mods compatible with [LUT Switcher](https://www.nexusmods.com/cyberpunk2077/mods/16310), so you can switch which LUT you're using without having to restart the game.
+- **Can RenoDX be used with the [Hot-Sampled Photomode Renders (IGPT)](https://www.nexusmods.com/cyberpunk2077/mods/26318) mod?** If using just RenoDX then it should work.  However, normal ReShade shaders will not show up in the final render, including Otis' IGCS DoF.
+- **Can RenoDX be used with other ReShade shaders and addons?**  This will vary but if the game is in HDR10 PQ mode then most ReShade shaders should work, at least partially, but you'll need to take precautions to control how bright the highlights get.
+  - Use the HDR Analysis shader and place it after each ReShade effect to see how each one affects the peak and average brightness.  
+  - Can also place a tonemapper shader at the very end of your preset to bring the highlights under control, though you'll get better results by fine tuning each shader to avoid going too high in the first place.
+  - While I haven't tested every addon, I have used quite a few of them with RenoDX without issue.  
+- **What about other mods that weren't mentioned?**  Feel free to ask in the RenoDX Cyberpunk thread, but typically most mods will be fine. Some mods might require you to adjust RenoDX a bit, like the LUT mods mentioned earlier, but overall you should be fine.
+
+
+## Common Issues
+
+### Washed out / gray image
 - Make sure RTXHDR is turned off globally (or at least for Cyberpunk 2077)
 - Verify HDR is turn on in Windows and in Cyberpunk 2077.
 - Make sure Color Precision is set to High within the graphics settings. RenoDX will not work with this set to medium.
 - Make sure you're using the latest add-on version of ReShade.
 
-## Crushed Black Levels / Shadows Appear Darker Than They Should
+### Crushed Black Levels / Shadows Appear Darker Than They Should
 - Disable HDR10+ Gaming within the in-game video settings.  This will only appear if your computer detects that you are using an HDR10+ capable display.
 <details><summary>HDR10+ Setting Location</summary>
 <a href="https://slow.pics/eE2HLqSI/"><img src="https://i.slow.pics/eE2HLqSI.png" style="width:100%;height:100%;"/></a>
@@ -23,7 +42,7 @@ description: Troubleshooting RenoDX in Cyberpunk 2077
 - Disable any ReShade shaders if you're using them, especially if in HDR10 scRGB mode.
 - Are you using Nova City 2?  This can cause the game to appear darker in some areas, especially in interior spaces and at night.  This is expected behavior of the mod as it recommends using flashlight and night vision mods with it.
 
-## Colored Square Behind Minimap / Upper Right Corner
+### Colored Square Behind Minimap / Upper Right Corner
 - This is the debug graph from the WIP RenoDX. Look at the very bottom of the RenoDX settings, under Debug turn off Debug Graph
 
 <details><summary>Debug Graph Off</summary>
@@ -41,7 +60,7 @@ description: Troubleshooting RenoDX in Cyberpunk 2077
 - Credit to **squarto** and **Gn3xus** for figuring this out and taking these comparison images.
 -->
 
-## Frame Generation artifacts when moving
+### Frame Generation artifacts when moving
 *Especially in light sources*
 
 <details><summary>Make sure HDR10 PQ Saturation is set to 0 in the base game / vanilla HDR settings.</summary>
@@ -73,14 +92,14 @@ Settings listed only for reference, please adjust to your liking.
 - Some people also find that the Realistic Map Mod looks better.  Pick the 8K version or higher, as the lower resolution versions have issues: <https://www.nexusmods.com/cyberpunk2077/mods/17811>
 -->
 
-## How do I adjust the UI brightness?
+### How do I adjust the UI brightness?
 **You can change the UI brightness by adjusting the `paper white` value in the game's HDR settings.**  This value has no other effect when RenoDX is installed.
 
-## HUD / UI Looks Weird
+### HUD / UI Looks Weird
 - This usually appears as boxes or borders around parts of the HUD.
 - The vanilla film grain is broken and can cause this issue.  Make sure film grain type within RenoDX is set to `Perceptual`.
 
-## How to Provide More Info for Troubleshooting
+### How to Provide More Info for Troubleshooting
 
 **1) Make sure view file name extensions is enabled within Windows File Viewer.**  This will allow you to see the commonly used file types such as .ini, .txt, .log, and .exe.  
 

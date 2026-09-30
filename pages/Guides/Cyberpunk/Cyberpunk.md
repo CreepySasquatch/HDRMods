@@ -27,14 +27,6 @@ TB stands for True Black.  True Black rated monitors will have a separate True B
 
 <b>Run the Windows HDR Calibration app to figure out your display's clipping point.  In theory this should be the same as the peak brightness of your display, but it's sometimes lower.  The clipping point will act as our peak brightness within RenoDX.</b>" %}
 
-{% include callout.html type="important" content="<b>Grab the most recent PINNED version of the RenoDX mod from the RenoDX server. Look for the pinned post in the Cyberpunk channel.  The GitHub and Nexus versions are both outdated; disregard the snapshot date on the GitHub page, it's not accurate.</b> <i>This is still accurate as of July 2026.</i>  
-
-<b>RenoDX server invite:</b> <https://discord.gg/jz6ujVpgFB>
-
-<b>Direct link to the RenoDX Cyberpunk 2077 thread:</b> <https://discord.com/channels/1408098019194310818/1434377434022809610/1490559043343876196>
-
-<b>How to manually find the Cyberpunk channel:</b> 
-<img src='https://i.slow.pics/TfUSXS2q.png' alt='Cyberpunk channel location' style='max-width:100%;'>" %}
 
 ## What is Wrong with Cyberpunk's HDR?
 <details><summary><b>This is the answer provided directly from ShortFuse, the creator of RenoDX:</b></summary>
@@ -123,21 +115,21 @@ Click this link for a list of HDR compatible ReShade shaders: <https://www.hdrmo
 Picking unneeded addons can cause performance issues or even crashes.  Addons are for specific use cases such as VR and virtual photography." %}
 
 
-**5)** Grab the RenoDX addon from RenoDX Discord server. Look in the pinned comments of the Cyberpunk 2077 channel.
+**5)** Grab the RenoDX addon from the RenoDX GitHub. [**Direct Download Link**](https://clshortfuse.github.io/renodx/renodx-cp2077.addon64)
+- Please note that this version will not work with the [Cyberpunk Render Tweaks](https://www.nexusmods.com/cyberpunk2077/mods/33943) mod. If using this mod you will need to grab the version pinned within the Cyberpunk thread of the RenoDX Discord server.
+- The version of RenoDX hosted on Nexus Mods is outdated and doesn't work properly with the latest game version (2.31). 
 
 <details><summary>Click for RenoDX server info and screenshots of the Cyberpunk 2077 addon location.</summary>
 <ol>
 <ul>
-    <li>The GitHub and Nexus Mods versions of Cyberpunk's RenoDX are outdated as mentioned in the bubble at the top of this guide.  The version pinned in the comments has the new fancy PsychoV tone mapper, which makes colors look a lot more accurate and neon lights should look a lot better.</li>
-
     <li>RenoDX server invite: <a href="https://discord.gg/jz6ujVpgFB">https://discord.gg/jz6ujVpgFB</a></li>
 
-    <li>Direct link to the RenoDX Cyberpunk 2077 thread: <a href="https://discord.com/channels/1408098019194310818/1410855640112566375/threads/1434377434022809610/1434377434022809610">Cyberpunk 2077 Thread</a></li>
+    <li>Direct link to the latest version of RenoDX within the Cyberpunk 2077 Discord thread: <a href="https://discord.com/channels/1408098019194310818/1434377434022809610/1549851775253610617">Cyberpunk 2077 RenoDX file</a></li>
 </ul>
 </ol>
 <b>Cyberpunk 2077 thread location in the RenoDX server:</b>
 <a href="https://slow.pics/TfUSXS2q/"><img src="https://i.slow.pics/TfUSXS2q.png" style="width:100%;height:100%;"/></a>
-<b>Cyberpunk 2077 addon pinned in the Cyberpunk 2077 thread:</b>
+<b>Cyberpunk 2077 addon pinned in the Cyberpunk 2077 thread (will be labeled <i>with cbv</i>):</b>
 <img src='./images/Cyberpunk/RenoDX-Download.jpg' alt='RenoDX Discord Pinned Download' style='max-width:70%;'>
 </details>    
 
@@ -181,6 +173,8 @@ Picking unneeded addons can cause performance issues or even crashes.  Addons ar
 <a href='https://discourse.differentk.fyi/t/topic-free-mega-thread-v-1-11-2020/79/3746?u=kaldaien'><b>Click here to read Kaldaien's post if you want the technical details into the differences between HDR10 PQ and HDR10 scRGB.</b></a>
 " %}
 
+### Part 2: In-Game Settings
+
 **7)** Start the game. Open the Settings menu.
 
 **8)** Go to Video > HDR settings. **Make sure Cyberpunk's HDR is turned ON.  HDR10 PQ and HDR10 scRGB will both work with RenoDX.**
@@ -216,69 +210,68 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 
 - If you don't have a Home key please refer to this guide that goes over how to change it to a different key: <https://www.youtube.com/watch?v=xoCdpOIRKus>
 
-### PART 2: RENODX SETTINGS
+### PART 3: RENODX SETTINGS
 - Click on the `RenoDX` tab along the top of the ReShade UI.
-- **Setting recommendations listed here assume the PsychoV tone mapper is selected.**
+- **Setting recommendations listed here assume that a PsychoV tone mapper is selected.**
+- If using an otherwise vanilla setup, then most of the default values should work fine. 
+- If you using mods like Nova City 2 along with path tracing, then the game might appear to be a bit darker, especially in the interiors.  Thus the RenoDX settings may need to be adjusted to compensate for this.
 
-**Tone Mapper: `PsychoV-17`.**  This has better color accuracy and neon lights will look much better compared to the other tone mapper versions. The other tone mapper options are not supported in this guide.
-- **If you do not see PsychoV-17 as an option:** - Still accurate as of May 3rd, 2026.
-    - **RenoDRT:** older tone mapper.  This will appear as the furthest right option if you download it from GitHub or Nexus Mods, either are going to be older than the Discord pinned versions.  Do not recommend using as any of the PsychoV versions will look much better.
-    - **PsychoV-11:** older version that was pinned in the RenoDX server's Cyberpunk thread.  Looks nice but the blue and purples will look better with PsychoV-17.  Lacks the `Cone Response` adjustment.
-    - **PsychoV-XX:** If the XX number is higher than 17 that means a newer version of RenoDX has come out after this guide was last edited. 
-    - **Aces:** AVOID
-    - **Vanilla:** AVOID 
+> Output
 
 **Peak Brightness:**  Set the Peak Brightness to match the results from the Windows HDR Calibration test you did earlier.  This should match the value entered for the `Maximum Brightness` slider in the game's HDR settings.
 
-**Game Brightness:** The paper white value, also known as average brightnes.  You typically want to set this between 100-300 nits.  Think of this as a volume knob for brightness.  You probably heard of 203 nits being the magic value that everyone should use, but in reality this varies based on personal preference, type of display used, and how much ambient lighting there is.
+**Game Brightness:** The paper white value, also known as average brightnes.  You typically want to set this between 100-300 nits.  Think of this as a volume knob for brightness.  You probably heard of 203 nits being the magic value that everyone should use, but in reality this varies based on personal preference, type of display used, and how bright the room is where your display is located.
 
 **SDR EOTF Emulation: also known as gamma correction.**  `UI/Menu Only` is recommended for most use cases, as having it set to `On` can be too dark in some situations. 
 - If you're going to change this I recommend picking a dark room in the middle of the night so you can use that as a reference point.
 
-**Hue Correction:** This setting is grayed out when using the latest version of PsychoV-17.  Thus the setting has no effect.
+> Grading
 
-**Hue Processor:** This setting is grayed out when using the latest version of PsychoV-17.  Thus the setting has no effect.
+**Tone Mapper: `PsychoV-30` (*though PsychoV-17 and PsychoV-22 will also work fine*).**  The latest version of RenoDX has three versions of PsychoV that have minor differences but overall look pretty much the same.  Skin tones (oranges / reds) will look slightly different between each version and the highlights will be a bit more impactful with PsychoV 22/30. However, any one of these will be far superior to the other available options. 
+- **RenoDRT:** older tone mapper that was present in the original version of RenoDX.  Do not recommend using as any of the PsychoV versions will look much better.  This will appear as the furthest right option if you download it from the Nexus Mods site.
+- **Aces:** AVOID
+- **Vanilla:** AVOID 
 
-**Per Channel:** This setting is grayed out when using the latest version of PsychoV-17.  Thus the setting has no effect.
+**Exposure: `1.00`.**  One of the major settings that affects the overall brightness / darkness of the game. 
+- If you're using Nova City 2 with path tracing you might want to increase to around `1.20` if the game is too dark.
 
-**Exposure:** One of the major settings that affects the overall brightness / darkness of the game. 
-
-**Highlights:** Adjusts the intensity of the brightest elements on the screen.  
+**Highlights: `50`.** Adjusts the intensity of the brightest elements on the screen.  
 - **Can easily exceed peak brightness if increased too much.**  If you can't see highlight details anymore then this may be too high.
 
-**Shadows:** Adjusts the intensity of the darkest elements in the game. If you can't see details in the shadows then this may be too high.  
-- If you want darker interiors / nights, recommend using the Nova City 2 mod instead.
+**Shadows: `50`.** Adjusts the intensity of the darkest elements in the game. If you can't see details in the shadows then this may be too high.  
 
-**Contrast:**  Controls the visual difference between the brightest and darkest tones in the game. 
+**Contrast: `50`.**  Controls the visual difference between the brightest and darkest tones in the game. 
 - **This setting is particularly sensitive in this game and can easily make you exceed your peak nits if pushed to an extreme setting.** 
 
-**Saturation:** Adjusts the color intensity of the game.  Reduce to 0 to make the game appear to be in black and white.
+**Saturation: `50`.** Adjusts the color intensity of the game.  Reduce to 0 to make the game appear to be in black and white.
 
-**Cone Response: Set to `50` to simulate the look of Vanilla HDR (aka the intended appearance), per ShortFuse.**  *Only available when using PsychoV-17.* Controls both Saturation and Contrast. 
-- **This should be the first slider you adjust with PsychoV-17**.  
+**Cone Response: `50`.** Adjusts the sensitivity of the PsychoV tonemappers.  Affects both saturation and contrast.  
 
-**Highlight Saturation:** Controls the intensity of the highlight colors.
+**Exposure Match: `PLACEHOLDER`.**
 
-**Blowout:** Set to 0 with PsychoV.
+**Vanilla HDR Slope: `PLACEHOLDER`.**
 
-**Flare:** *Grayed out when using PsychoV.*
+**White Point: `vanilla`, but adjust to personal preference.** Adjusts the color temperature. `D60` is the same as 6000K which is a bit warmer, `D65` is the same as 6500K which is a bit cooler.    
 
-**White Point:** Adjusts the color temperature.
-
-**LUT Strength:** 50-60 for most LUTs, including the default / Vanilla LUTs.  100 is going to be too intense most of the time.
-- I personally use [Nova LUT 4](https://www.nexusmods.com/cyberpunk2077/mods/11622) at 100% strength, but feel free to adjust as desired even if using this LUT.  The default Nova LUT 4 is equivalent to 5600K, but I prefer using the LUT Switcher color temp pack so I can change the color temperature in-game at the LUT level without needing to use any other shaders. 
+**LUT Strength:** `50-60` for most LUTs, including the default / Vanilla LUTs.  100 is going to be too intense most of the time.
+- I personally use [Nova LUT 4](https://www.nexusmods.com/cyberpunk2077/mods/11622) at `100`, but a lot of people seem to like it better at `50-60` so feel free to adjust as desired even if using this LUT.  The default Nova LUT 4 is equivalent to 5600K, but I prefer using the LUT Switcher color temp pack so I can change the color temperature of the LUT as needed for my screenshots.
+- Color temperature of a LUT is just in reference to itself. So picking a 5600K temperature LUT doesn't mean the overall color temperature is going to be 5600K.
 - *Reminder: RenoDX was not designed with any LUT mod in mind.*
 
-**Dynamic Exposure:** Leave at 0.  If this setting does anything that means the tone-mapping midpoint wasn't set to 1.0 within the game's HDR settings.
+**Scene Grading Strenth: `50`.**  *To be honest I've never seen this slider do much when I've tried adjusting it in this game.*
 
-**Bloom:** Lighting effect that scatters light and creates a soft glow around highlights. If your game is too bright this is one of the settings you should check.
+>Effects
 
-**Vignette:** Darkens the edges of the screen.
+**Dynamic Exposure: `Leave at 0`.**  If this setting does anything that means the tone-mapping midpoint wasn't set to 1.0 within the game's HDR settings.
 
-**Film Grain Type:** Perceptual. This Film grain does not affect black levels, which is a major benefit of using it.  You must have film grain enabled within the game settings for this to work.  
-- The game's vanilla film grain is broken currently so there is zero reason to use that setting.  The vanilla option can also cause artifacts to appear in parts of the HUD.
+**Bloom: `25` is a good starting point, but adjust to personal preference.** Lighting effect that scatters light, controls how bright the sun is, and creates a soft glow around highlights. If your game is too bright this is one of the settings you should check.
 
-**Film Grain Strength:** This is one of the most important settings when it comes to fixing banding issues.
+**Vignette: set to `0`.** Darkens the edges of the screen.  People will often report the game as being too dark but its just the vignette being applied.
+
+**Film Grain Type: `Perceptual`.** This Film grain does not affect black levels, which is a major benefit of using it.  You must have film grain enabled within the game settings for this to work.  
+- The game's vanilla film grain is broken unless you fix it with this mod, https://www.nexusmods.com/cyberpunk2077/mods/32899.  Without the mod fix the vanilla option can cause artifacts to appear in parts of the HUD.
+
+**Film Grain Strength: `20` but set as desired** This is one of the most important settings when it comes to fixing banding issues.
 
 - If you're seeing lots of banding, increase the film grain intensity.
 
@@ -286,15 +279,34 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 
 - If using other ReShade shaders such as Lilium's RCAS (which is commonly recommended), then I would set the filmgrain within RenoDX to 0 and then use ShortFuse's filmgrain shader and place it at the very end (you never want to sharpen filmgrain, and RCAS is a sharpening shader).
 
-**LUT Scaling:** Looks at the texture and scales the color based on the amount of dynamic range the LUT isn’t using. You might not notice a difference when adjusting this setting depending on the situtaion, because LUT scaling only does things if the LUT has compressed black/white levels. 
+> Processing
 
-**LUT Order:** Only need to change this if using a LUT mod / LUT Switcher pack that doesn't look right. Can adjust as needed. But otherwise leave this on Vanilla.
+**LUT Correction: `PLACEHOLDER`.**
+
+**LUT Correction Method: `PLACEHOLDER`.**
+
+**LUT Black Floor: `PLACEHOLDER`.**
+
+**LUT Ceiling: `PLACEHOLER`.**
+
+**LUT Order: `vanilla`.** Only need to change this if using a LUT mod / LUT Switcher pack that doesn't look right. Can adjust as needed. 
+
+**Internal Sampling Encoding: `PLACEHOLDER`.**
+
+**Internal Sampling Decoding: `PLACEHOLDER`.**
+
+> Debug
 
 **DEBUG GRAPH: SET TO OFF!!!** 
 - *Found at the very bottom of RenoDX under Debug.*  
 - Otherwise you'll see a colored square on the upper right corner behind the minimap.
 
-**If you do not see a Debug Graph slider, you did not *correctly* install a version hosted in the Discord server!**
+> Options
+
+**Reset All:** resets all RenoDX values to their defaults
+
+**SDR Look**
+
 
 <!--
 
