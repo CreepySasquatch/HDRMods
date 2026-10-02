@@ -228,9 +228,17 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 #### GRADING
 
 **Tone Mapper: `PsychoV-30` (*though PsychoV-17 and PsychoV-22 will also work fine*).**  The latest version of RenoDX has three versions of PsychoV that have minor differences but overall look pretty much the same.  Skin tones (oranges / reds) will look slightly different between each version and the highlights will be a bit more impactful with PsychoV 22/30. However, any one of these will be far superior to the other available options. 
-- **RenoDRT:** older tone mapper that was present in the original version of RenoDX.  Do not recommend using as any of the PsychoV versions will look much better.  This will appear as the furthest right option if you download it from the Nexus Mods site.
+- **RenoDRT:** older tone mapper that was present in the original version of RenoDX.  Do not recommend using as any of the PsychoV tone mappers will look much better.  This will appear as the furthest right option if you download it from the Nexus Mods site.
 - **Aces:** AVOID
-- **Vanilla:** AVOID 
+- **Vanilla:** AVOID
+
+<a href="./images/Cyberpunk/Tonemapper comparison.png"><img src="./images/Cyberpunk/Tonemapper comparison.png" style="width:100%;height:100%;"/></a>
+
+<!--
+<details><summary><b>PsychoV Tonemapper Comparison</b></summary>
+<a href="./images/Cyberpunk/Tonemapper comparison.png"><img src="./images/Cyberpunk/Tonemapper comparison.png" style="width:100%;height:100%;"/></a>
+</details>
+-->
 
 **Exposure: `1.00`.**  One of the major settings that affects the overall brightness / darkness of the game. 
 - If you're using Nova City 2 with path tracing you might want to increase to around `1.20` if the game is too dark.
