@@ -23,6 +23,9 @@ description: Troubleshooting RenoDX in Cyberpunk 2077
   - While I haven't tested every addon, I have used quite a few of them with RenoDX without issue.  
 - **What about other mods that weren't mentioned?**  Feel free to ask in the RenoDX Cyberpunk thread, but typically most mods will be fine. Some mods might require you to adjust RenoDX a bit, like the LUT mods mentioned earlier, but overall you should be fine.
 
+{% include callout.html type="tip" content="I put together a list of all the visual mods I use in a Google Docs Spreadsheet.  Feel free to reference it for your own personal modlist <https://docs.google.com/spreadsheets/d/1sZvrLpExYyMVYRhZVOhqi9WXGCkcHxebqLG6kya1Fgs/edit?usp=sharing>.  
+
+You're welcome to ask me questions about the mods I use but don't expect me to support every issue that come from using any mods in that list.  Just because it works for me doesn't mean you'll get the same results.  I'm just providing the list because so many people have asked for it." %}
 
 ## Common Issues
 
