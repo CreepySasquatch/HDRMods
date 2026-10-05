@@ -13,6 +13,12 @@ description: How to Setup RenoDX in Cyberpunk 2077
 
 {% include callout.html type="important" content="<b>Updating guide for version released on September 16th, 2026.</b>  No ETA as to when it'll be finished."%}
 
+{% include callout.html type="important" content="Only the latest game version (2.31) is officially supported.  We also do not support pirated versions of the game.  If you did pirate the game but decided to purchase an official version later on, then make sure to delete all pirated files.  You'll also want to start with a completely empty install folder."%}
+
+{% include callout.html type="important" content="The RenoDX version hosted on Nexus Mods is outdated.  Please use the one hosted on GitHub <https://clshortfuse.github.io/renodx/renodx-cp2077.addon64>; however, if using the Cyberpunk Render Tweaks mod you will need to grab the version of RenoDX hosted in the RenoDX Discord within the Cyberpunk 2077 mod thread (check the pinned comments).  RenoDX server invite: <https://discord.gg/jz6ujVpgFB>
+
+Step 5 of this install guide goes over this in more detail."%}
+
 
 {% include callout.html type="warning" content="<b>DISCLAIMER:</b> The contents of this guide do not reflect the views or opinions of ShortFuse, the creator of the Cyberpunk 2077 RenoDX mod and the RenoDX framework as a whole.  Any troubleshooting tips and recommended settings are based on my own personal experience from helping others with the game." %}
 
@@ -117,7 +123,7 @@ Picking unneeded addons can cause performance issues or even crashes.  Addons ar
 
 **5)** Grab the RenoDX addon from the RenoDX GitHub. [**Direct Download Link**](https://clshortfuse.github.io/renodx/renodx-cp2077.addon64)
 - Please note that this version will not work with the [Cyberpunk Render Tweaks](https://www.nexusmods.com/cyberpunk2077/mods/33943) mod. If using this mod you will need to grab the version pinned within the Cyberpunk thread of the RenoDX Discord server.
-- The version of RenoDX hosted on Nexus Mods is outdated and doesn't work properly with the latest game version (2.31). 
+- **The version of RenoDX hosted on Nexus Mods is outdated and doesn't work properly with the latest game version 2.31.**
 
 <details><summary>Click for RenoDX server info and screenshots of the Cyberpunk 2077 addon location.</summary>
 <ol>
