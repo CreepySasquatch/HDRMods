@@ -15,7 +15,9 @@ description: How to Setup RenoDX in Cyberpunk 2077
 
 {% include callout.html type="important" content="Only the latest game version (2.31) is officially supported.  We also do not support pirated versions of the game.  If you did pirate the game but decided to purchase an official version later on, then make sure to delete all pirated files.  You'll also want to start with a completely empty install folder."%}
 
-{% include callout.html type="important" content="The RenoDX version hosted on Nexus Mods is outdated.  Please use the one hosted on GitHub <https://clshortfuse.github.io/renodx/renodx-cp2077.addon64>; however, if using the Cyberpunk Render Tweaks mod you will need to grab the version of RenoDX hosted in the RenoDX Discord within the Cyberpunk 2077 mod thread (check the pinned comments).  RenoDX server invite: <https://discord.gg/jz6ujVpgFB>
+{% include callout.html type="important" content="The RenoDX version hosted on Nexus Mods is outdated.  Please use the one hosted on GitHub <https://clshortfuse.github.io/renodx/renodx-cp2077.addon64>; however, if using the Cyberpunk Render Tweaks mod you will need to grab the version of RenoDX hosted in the RenoDX Discord within the Cyberpunk 2077 mod thread (check the pinned comments).  
+
+RenoDX server invite: <https://discord.gg/jz6ujVpgFB>.
 
 Step 5 of this install guide goes over this in more detail."%}
 
