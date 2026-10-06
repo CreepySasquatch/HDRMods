@@ -279,8 +279,6 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 
 **White Point: `vanilla`, but adjust to personal preference.** Adjusts the color temperature. `D60` is the same as 6000K which is a bit warmer, `D65` is the same as 6500K which is a bit cooler.
 
-{% include comparison-slider.html before="/images/cyberpunk/renodx sliders/D60.png" after="https://i.slow.pics/IrlxmxiP.png" before_label="D60" after_label="D65" %}
-
 **LUT Strength:** `50-60` for most LUTs, including the default / Vanilla LUTs.  100 is going to be too intense most of the time.
 - I personally use [Nova LUT 4](https://www.nexusmods.com/cyberpunk2077/mods/11622) at `100`, but a lot of people seem to like it better at `50-60` so feel free to adjust as desired even if using this LUT.  The default Nova LUT 4 is equivalent to 5600K, but I prefer using the LUT Switcher color temp pack so I can change the color temperature of the LUT as needed for my screenshots.
 - Color temperature of a LUT is just in reference to itself. So picking a 5600K temperature LUT doesn't mean the overall color temperature is going to be 5600K.
