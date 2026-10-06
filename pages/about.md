@@ -7,12 +7,6 @@ affiliations:
 sidebar: false
 toc: true
 ---
-<!--
-## Image Comparison Slider Demo
-
-{% include comparison-slider.html before="/images/test-images/1.png" after="/images/test-images/2.png" before_label="Before" after_label="After" %}
-
--->
 
 ## Website Purpose
 
