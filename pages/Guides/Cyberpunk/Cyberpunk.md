@@ -251,27 +251,27 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 **Exposure: `1.00`.**  One of the major settings that affects the overall brightness / darkness of the game. 
 - If you're using Nova City 2 with path tracing you might want to increase to around `1.20` if the game is too dark.
 
-{% include comparison-slider.html before="/images/cyberpunk/renodx sliders/exposure 50.png" after="/images/cyberpunk/renodx sliders/exposure 150.png" before_label="Exposure 0.50" after_label="Exposure 1.50" %}
+{% include comparison-slider.html before="https://i.slow.pics/2lbTgk93.png" after="https://i.slow.pics/HRLb0oHy.png" before_label="Exposure 0.50" after_label="Exposure 1.50" %}
 
 **Highlights: `50`.** Adjusts the intensity of the brightest elements on the screen.  
 - **Can easily exceed peak brightness if increased too much.**  If you can't see highlight details anymore then this may be too high.
 
-{% include comparison-slider.html before="/images/cyberpunk/renodx sliders/highlights 25.png" after="/images/cyberpunk/renodx sliders/highlights 75.png" before_label="Highlights 25" after_label="Highlights 75" %}
+{% include comparison-slider.html before="https://i.slow.pics/HPgwcu9b.png" after="https://i.slow.pics/K2l1mf9l.png" before_label="Highlights 25" after_label="Highlights 75" %}
 
 **Shadows: `50`.** Adjusts the intensity of the darkest elements in the game. If you can't see details in the shadows then this may be too high.
 
 **Contrast: `50`.**  Controls the visual difference between the brightest and darkest tones in the game. 
 - **This setting is particularly sensitive in this game and can easily make you exceed your peak nits if pushed to an extreme setting.**
 
-{% include comparison-slider.html before="/images/cyberpunk/renodx sliders/contrast 40.png" after="/images/cyberpunk/renodx sliders/contrast 60.png" before_label="Contrast 40" after_label="Contrast 60" %}
+{% include comparison-slider.html before="https://i.slow.pics/0NUpXzTM.png" after="https://i.slow.pics/DToovHcT.png" before_label="Contrast 40" after_label="Contrast 60" %}
 
 **Saturation: `50`.** Adjusts the color intensity of the game.  Reduce to 0 to make the game appear to be in black and white.
 
-{% include comparison-slider.html before="/images/cyberpunk/renodx sliders/saturation 25.png" after="/images/cyberpunk/renodx sliders/saturation 75.png" before_label="Saturation 25" after_label="Saturation 75" %}
+{% include comparison-slider.html before="https://i.slow.pics/NddFfEPf.png" after="https://i.slow.pics/mveIog7r.png" before_label="Saturation 25" after_label="Saturation 75" %}
 
 **Cone Response: `50`.** Adjusts the sensitivity of the PsychoV tonemappers.  Affects both saturation and contrast. 
 
-{% include comparison-slider.html before="/images/cyberpunk/renodx sliders/cone response 40.png" after="/images/cyberpunk/renodx sliders/cone response 60.png" before_label="Cone Response 40" after_label="Cone Response 60" %}
+{% include comparison-slider.html before="https://i.slow.pics/vqKTRmyB.png" after="https://i.slow.pics/sgk8lWmo.png" before_label="Cone Response 40" after_label="Cone Response 60" %}
 
 **Exposure Match: `PLACEHOLDER`.**
 
@@ -279,7 +279,7 @@ While some RenoDX mods have a dedicated UI slider, the Cyberpunk one does not.  
 
 **White Point: `vanilla`, but adjust to personal preference.** Adjusts the color temperature. `D60` is the same as 6000K which is a bit warmer, `D65` is the same as 6500K which is a bit cooler.
 
-{% include comparison-slider.html before="/images/cyberpunk/renodx sliders/D60.png" after="/images/cyberpunk/renodx sliders/D65.png" before_label="D60" after_label="D65" %}
+{% include comparison-slider.html before="/images/cyberpunk/renodx sliders/D60.png" after="https://i.slow.pics/IrlxmxiP.png" before_label="D60" after_label="D65" %}
 
 **LUT Strength:** `50-60` for most LUTs, including the default / Vanilla LUTs.  100 is going to be too intense most of the time.
 - I personally use [Nova LUT 4](https://www.nexusmods.com/cyberpunk2077/mods/11622) at `100`, but a lot of people seem to like it better at `50-60` so feel free to adjust as desired even if using this LUT.  The default Nova LUT 4 is equivalent to 5600K, but I prefer using the LUT Switcher color temp pack so I can change the color temperature of the LUT as needed for my screenshots.
