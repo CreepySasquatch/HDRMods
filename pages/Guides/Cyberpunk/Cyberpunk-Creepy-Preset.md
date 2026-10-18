@@ -4,11 +4,10 @@ type:
 summary:
 description: How to Setup RenoDX and Install Creepy's Ultra HDR Preset
 ---
-{% include callout.html type="important" content="<b>As of June 10th, 2026 a new version of RenoDX has released in the RenoDX server's Cyberpunk 2077 channel. Anything below this is considered to be outdated, but may still be of use.  Please use your own discretion when adjusting settings and picking which mods to use alongside RenoDX.</b>
+THIS GUIDE IS OUTDATED, AND SO IS THE PRESET.  Please use my updated [guide](Cyberpunk) on how to install RenoDX.  
+- I'll leave this guide here in case people want to reference settings but its for archive purposes only. Most of the settings listed will be outdated, including some of the ReShade ones.
 
-<b>There is no ETA for when this guide will be updated.</b>
-
-<b>AS OF MAY 30TH, 2026, I AM NO LONGER SUPPORTING THE CREEPY ULTRA HDR PRESET, DUE TO ME STARTING A NEW JOB.  I HAVE NO IDEA HOW THE PRESET LOOKS WITH THE LATEST RENODX. IT MAY WORK, IT MAY NOT.  PLEASE DO NOT PING ME OVER THIS.  NO SUPPORT MEANS NO SUPPORT.</b>" %}
+{% include callout.html type="important" content="<b>AS OF MAY 30TH, 2026, I AM NO LONGER SUPPORTING THE CREEPY ULTRA HDR PRESET, DUE TO ME STARTING A NEW JOB.  I HAVE NO IDEA HOW THE PRESET LOOKS WITH THE LATEST RENODX. IT MAY WORK, IT MAY NOT.  PLEASE DO NOT PING ME OVER THIS.  NO SUPPORT MEANS NO SUPPORT.</b>" %}
 
 {% include callout.html type="important" content="If you are using DLSS Ray Reconstruction (aka Nvidia users) then I highly recommend using Preset D.  This will have much less banding issues, especially in the sky, compared to the newer Preset E.  Preset D is what the game uses by default. You can set this via the Nvidia App DLSS Override feature (Graphics > Program Settings > Cyberpunk 2077 > Driver Settings) or a third party program such as DLSS Swapper.
 
