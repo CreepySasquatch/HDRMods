@@ -6,6 +6,8 @@ description: How to use ReShade shaders with HDR
 sidebar: false
 ---
 
+{% include callout.html type="note" content="<b>GUIDE CURRENTLY BEING UPDATED.  PLEASE CHECK BACK SOON.</b>" %}
+
 ## SDR to HDR Conversions
 - Requires the AutoHDR addon, Lilium's DXVK, or Special K (set tonemap mode within SK to Raw Framebuffer)
 - Requires either Pumbo's AdvancedAutoHDR shader OR Lilium's Inverse Tone Mapper shader
