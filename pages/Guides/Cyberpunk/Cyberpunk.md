@@ -7,7 +7,7 @@ description: How to Setup RenoDX in Cyberpunk 2077
 
 **AS OF GAME VERSION 2.5 I WILL NO LONGER BE SUPPORTING RENODX FOR CYBERPUNK 2077.**
 
-It feels likea a good natural stopping point for me.  This started as something to keep me busy while I was unemployed, but with me working again it's been hard keeping the guide current while also doing my virtual photography and personal modding projects for Cyberpunk.  I've also neglected the rest of my guide site, most of which needs an overhaul, and I would like to refocus any remaining time on that.
+It feels like a good natural stopping point for me.  This started as something to keep me busy while I was unemployed, but with me working again it's been hard keeping the guide current while also doing my virtual photography and personal modding projects for Cyberpunk.  I've also neglected the rest of my guide site, most of which needs an overhaul, and I would like to refocus any remaining time on that.
 
 If someone wants to take over the reigns on keeping this guide updated (just the Cyberpunk portions), feel free to reach out.  Otherwise it's been a good run.
 
