@@ -11,7 +11,7 @@ description: How to Setup RenoDX in Cyberpunk 2077
 
 **DLSS 5 SUPPORT IS NOT PROVIDED!!!  While you are free to use it, I personally feel like there is little need for it when path tracing is already available.  You're better off instaling the Ultrapunk modlist instead which includes all the important visual fixes for the game.**
 
-{% include callout.html type="important" content="<b>GUIDE NOT UPDATED FOR GAME VERSION 2.5!</b>  RenoDX is currently in the process of being updated.  Check RenoDX Discord for most up-to-date information.  
+{% include callout.html type="important" content="<b>GUIDE NOT UPDATED FOR GAME VERSION 2.5!</b>  RenoDX has been updated and is available on the RenoDX Discord.  GitHub has not been updated yet.  Check RenoDX Discord for most up-to-date information.  Will update guide when I can.  
 
 Most game mods will be broken until the core mods get updated so if you're not using an otherwise vanilla setup it's recommended to stay on game version 2.31a until everything gets updated.  This typically takes a few days for the core mods but mods that rely on them, if they need to be updated, could take a few weeks for the mod authors to get everything done.  Some mod authors may also no longer be actively modding the game so some mods may be restricted to game version 2.31a.
 
