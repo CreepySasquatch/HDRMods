@@ -5,13 +5,23 @@ summary:
 description: How to Setup RenoDX in Cyberpunk 2077
 ---
 
+**AS OF GAME VERSION 2.5 I WILL NO LONGER BE SUPPORTING RENODX FOR CYBERPUNK 2077.**
+
+It feels like a good natural stopping point for me.  This started as something to keep me busy while I was unemployed, but with me working again it's been hard keeping the guide current while also doing my virtual photography and personal modding projects for Cyberpunk.  I've also neglected the rest of my guide site, most of which needs an overhaul, and I would like to refocus any remaining time on that.
+
+If someone wants to take over the reigns on keeping this guide updated (just the Cyberpunk portions), feel free to reach out.  Otherwise it's been a good run.
+
+- **Sincerely, CreepySasquatch / CreepyStoner.**
+
+> Please do not host my guide elsewhere without my express permission.  Thank you!
+
 [**TROUBLESHOOTING SECTION MOVED TO SEPARATE PAGE**](Cyberpunk-FAQ)
 - This lists commonly asked questions and issues with possible solutions.
 - A list of crash log locations is also provided.
 
 **DLSS 5 SUPPORT IS NOT PROVIDED!!!  While you are free to use it, I personally feel like there is little need for it when path tracing is already available.  You're better off instaling the Ultrapunk modlist instead which includes all the important visual fixes for the game.**
 
-{% include callout.html type="important" content="<b>GUIDE NOT UPDATED FOR GAME VERSION 2.5!</b>  RenoDX has been updated and is available on the RenoDX Discord.  GitHub has not been updated yet.  Check RenoDX Discord for most up-to-date information.  Will update guide when I can.  
+{% include callout.html type="important" content="<b>GUIDE NOT UPDATED FOR GAME VERSION 2.5!</b>  RenoDX has been updated and is available on the RenoDX Discord.
 
 Most game mods will be broken until the core mods get updated so if you're not using an otherwise vanilla setup it's recommended to stay on game version 2.31a until everything gets updated.  This typically takes a few days for the core mods but mods that rely on them, if they need to be updated, could take a few weeks for the mod authors to get everything done.  Some mod authors may also no longer be actively modding the game so some mods may be restricted to game version 2.31a.
 
