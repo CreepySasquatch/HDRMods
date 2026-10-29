@@ -19,6 +19,8 @@ sidebar: false
 - [**HOW TO FIND THE PERFECT LUT TO USE WITH RENODX**](Cyberpunk-2077-LUTs)
 -->
 
+**THIS LIST WAS MADE WITH GAME VERSION 2.31.  STATUS AND FEATURES OF MODS WITH 2.5 MAY VARY.**
+
 - [**RETURN TO THE MAIN VIRTUAL PHOTOGRAPHY GUIDE**](Cyberpunk-Virtual-Photography)
 - [**RENODX INSTALLATION GUIDE**](Cyberpunk)
 
@@ -39,6 +41,7 @@ sidebar: false
     - [AMM Expressions Overhaul](https://www.nexusmods.com/cyberpunk2077/mods/20108):  Adds over 200 facial animations to AMM. If you're going to use AMM to do character poses, you'll want to download this as well.
 
 - [Appearance Creator Mod (ACM)](https://www.nexusmods.com/cyberpunk2077/mods/10795): Handy for adding new outfits to NPCs. You can often find ACM codes within the description of clothing mods, otherwise you'll need to use something like [Wolvenkit](https://www.nexusmods.com/cyberpunk2077/mods/2201) to find the clothing mesh paths and appearance names for each clothing piece.
+    - As of ACM version 2.0 can now turn your V into an NPV, an NPC with your character's exact likeness that can be shared with others or you can make multiple characters to use yourself.  These can then be used with AMM or Photomode-EX. 
     - Wolvenkit isn't going to be covered in this guide, but there are plenty of tutorials out there like: [how to add modded clothing or hair to NPCs](https://wiki.redmodding.org/cyberpunk-2077-modding/modding-guides/npcs/appearances-change-the-looks), or [making your own tattoos](https://wiki.redmodding.org/cyberpunk-2077-modding/modding-guides/npcs/custom-tattoos-and-scars/how-to-create-an-overlay-tattoo#id-1-create-a-wolvenkit-project).
 
 - [Photomode to AMM Pose Converter (Easy AMM Poses)](https://www.nexusmods.com/cyberpunk2077/mods/13904): Use with [Wolvenkit](https://www.nexusmods.com/cyberpunk2077/mods/2201).  You'll also want to read the guide on [how to add poses to AMM](https://wiki.redmodding.org/cyberpunk-2077-modding/modding-guides/animations/animations/amm-collab-anims-poses#easy-amm-poses).
