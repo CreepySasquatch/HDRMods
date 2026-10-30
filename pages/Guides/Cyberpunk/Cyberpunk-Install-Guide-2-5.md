@@ -142,172 +142,103 @@ Picking unneeded addons can cause performance issues or even crashes.  Addons ar
   overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:0px;font-family:Arial, sans-serif;font-size:14px;
   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-6a0s{border-color:inherit;border-width:1px;text-align:left;vertical-align:top}
 .tg .tg-0lax{text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
 </style>
 <table class="tg"><thead>
   <tr>
-    <th class="tg-6a0s">Brightness	Nits</th>
-    <th class="tg-6a0s">Output</th>
-    <th class="tg-6a0s"></th>
-    <th class="tg-6a0s"></th>
-    <th class="tg-6a0s"></th>
+    <th class="tg-0lax">Brightness</th>
+    <th class="tg-0lax">Nits Output</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-6a0s">0.0</td>
-    <td class="tg-6a0s">25</td>
-    <td class="tg-6a0s"></td>
-    <td class="tg-6a0s"></td>
-    <td class="tg-6a0s"></td>
+    <td class="tg-0lax">0.0</td>
+    <td class="tg-0lax">25</td>
   </tr>
   <tr>
-    <td class="tg-6a0s">0.1</td>
-    <td class="tg-6a0s">35</td>
-    <td class="tg-6a0s"></td>
-    <td class="tg-6a0s"></td>
-    <td class="tg-6a0s"></td>
+    <td class="tg-0lax">0.1</td>
+    <td class="tg-0lax">35</td>
   </tr>
   <tr>
-    <td class="tg-6a0s">0.2</td>
-    <td class="tg-6a0s">50</td>
-    <td class="tg-6a0s"></td>
-    <td class="tg-6a0s"></td>
-    <td class="tg-6a0s"></td>
+    <td class="tg-0lax">0.2</td>
+    <td class="tg-0lax">50</td>
   </tr>
   <tr>
-    <td class="tg-0lax">0.3</td>
-    <td class="tg-0lax">75</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky">0.3</td>
+    <td class="tg-0pky">75</td>
   </tr>
   <tr>
-    <td class="tg-0lax">0.4</td>
-    <td class="tg-0lax">100</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky">0.4</td>
+    <td class="tg-0pky">100</td>
   </tr>
   <tr>
-    <td class="tg-0lax">0.5</td>
-    <td class="tg-0lax">130</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky">0.5</td>
+    <td class="tg-0pky">130</td>
   </tr>
   <tr>
-    <td class="tg-0lax">0.6</td>
-    <td class="tg-0lax">170</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky">0.6</td>
+    <td class="tg-0pky">170</td>
   </tr>
   <tr>
-    <td class="tg-0lax">0.7</td>
-    <td class="tg-0lax">225</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky">0.7</td>
+    <td class="tg-0pky">225</td>
   </tr>
   <tr>
-    <td class="tg-0lax">0.75 (default)</td>
-    <td class="tg-0lax">250</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky">0.75 (default)</td>
+    <td class="tg-0pky">250</td>
   </tr>
   <tr>
-    <td class="tg-0lax">0.8</td>
-    <td class="tg-0lax">280</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky">0.8</td>
+    <td class="tg-0pky">280</td>
   </tr>
   <tr>
-    <td class="tg-0lax">0.9</td>
-    <td class="tg-0lax">335</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky">0.9</td>
+    <td class="tg-0pky">335</td>
   </tr>
   <tr>
-    <td class="tg-0lax">1.0</td>
-    <td class="tg-0lax">400</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky">1.0</td>
+    <td class="tg-0pky">400</td>
   </tr>
   <tr>
-    <td class="tg-0lax">1.1</td>
-    <td class="tg-0lax">470</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky">1.1</td>
+    <td class="tg-0pky">470</td>
   </tr>
   <tr>
-    <td class="tg-0lax">1.2</td>
-    <td class="tg-0lax">540</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky">1.2</td>
+    <td class="tg-0pky">540</td>
   </tr>
   <tr>
-    <td class="tg-0lax">1.3</td>
-    <td class="tg-0lax">615</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky">1.3</td>
+    <td class="tg-0pky">615</td>
   </tr>
   <tr>
-    <td class="tg-0lax">1.4</td>
-    <td class="tg-0lax">700</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky">1.4</td>
+    <td class="tg-0pky">700</td>
   </tr>
   <tr>
-    <td class="tg-0lax">1.5</td>
-    <td class="tg-0lax">800</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky">1.5</td>
+    <td class="tg-0pky">800</td>
   </tr>
   <tr>
-    <td class="tg-0lax">1.6</td>
-    <td class="tg-0lax">920</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky">1.6</td>
+    <td class="tg-0pky">920</td>
   </tr>
   <tr>
-    <td class="tg-0lax">1.7</td>
-    <td class="tg-0lax">1070</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky">1.7</td>
+    <td class="tg-0pky">1070</td>
   </tr>
   <tr>
-    <td class="tg-0lax">1.8</td>
-    <td class="tg-0lax">1230</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky">1.8</td>
+    <td class="tg-0pky">1230</td>
   </tr>
   <tr>
-    <td class="tg-0lax">1.9</td>
-    <td class="tg-0lax">1400</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky">1.9</td>
+    <td class="tg-0pky">1400</td>
   </tr>
   <tr>
-    <td class="tg-0lax">2.0</td>
-    <td class="tg-0lax">1600</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax"></td>
+    <td class="tg-0pky">2.0</td>
+    <td class="tg-0pky">1600</td>
   </tr>
 </tbody></table>
 </details>
@@ -328,7 +259,7 @@ Picking unneeded addons can cause performance issues or even crashes.  Addons ar
 ## PART 3: RENODX SETTINGS
 WIP - WILL ADD LATER
 
-<!-->
+<!--
 ## Compatibility FAQ
 > RenoDX was not made with any other mods in mind so any compatiblity notes are based on reports made by other RenoDX users.
 
