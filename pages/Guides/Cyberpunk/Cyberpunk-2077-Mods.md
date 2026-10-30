@@ -21,8 +21,10 @@ sidebar: false
 
 **THIS LIST WAS MADE WITH GAME VERSION 2.31.  STATUS AND FEATURES OF MODS WITH 2.5 MAY VARY.**
 
+<!--
 - [**RETURN TO THE MAIN VIRTUAL PHOTOGRAPHY GUIDE**](Cyberpunk-Virtual-Photography)
 - [**RENODX INSTALLATION GUIDE**](Cyberpunk)
+-->
 
 ## Virtual Photography
 
@@ -46,11 +48,11 @@ sidebar: false
 
 - [Photomode to AMM Pose Converter (Easy AMM Poses)](https://www.nexusmods.com/cyberpunk2077/mods/13904): Use with [Wolvenkit](https://www.nexusmods.com/cyberpunk2077/mods/2201).  You'll also want to read the guide on [how to add poses to AMM](https://wiki.redmodding.org/cyberpunk-2077-modding/modding-guides/animations/animations/amm-collab-anims-poses#easy-amm-poses).
 
-[Wardrobe Items Adder](https://www.nexusmods.com/cyberpunk2077/mods/5742): Automatically adds all in-game and modded clothing to the wardrobe, without needing to acquire them via CET code or Virtual Atelier store.
+- [Wardrobe Items Adder](https://www.nexusmods.com/cyberpunk2077/mods/5742): Automatically adds all in-game and modded clothing to the wardrobe, without needing to acquire them via CET code or Virtual Atelier store.
 
-[Autodrive Cinematic Camera Extended](https://www.nexusmods.com/cyberpunk2077/mods/24637): Essential if you want to take shots of cars while they're moving. 
+- [Autodrive Cinematic Camera Extended](https://www.nexusmods.com/cyberpunk2077/mods/24637): Essential if you want to take shots of cars while they're moving. 
 
-[Enhanced Vehicle System](https://www.nexusmods.com/cyberpunk2077/mods/11765): Provides full control over vehicle systems: headlights, power state, engine, interior lights, crystal dome, doors, windows, hood, trunk and spoiler. It also preserves these elements state when the player gets out of the vehicle.  Handy for when you want to leave the lights on or doors open when taking screenshots.
+- [Enhanced Vehicle System](https://www.nexusmods.com/cyberpunk2077/mods/11765): Provides full control over vehicle systems: headlights, power state, engine, interior lights, crystal dome, doors, windows, hood, trunk and spoiler. It also preserves these elements state when the player gets out of the vehicle.  Handy for when you want to leave the lights on or doors open when taking screenshots.
 
 ### Pose Mods
 
@@ -80,6 +82,8 @@ sidebar: false
 
 - [ENV Tuner](https://www.nexusmods.com/cyberpunk2077/mods/23079): The full version is handy for fine tuning how the environment / weather looks. Note that some of the HDR specific features do not work with RenoDX.
 
+- [Nova Optics](https://www.nexusmods.com/cyberpunk2077/mods/29190): Basically the light version of ENV Tuner.  Much less features but still has the essentials.
+
 <!--
 - [Ultra Plus](https://www.nexusmods.com/cyberpunk2077/mods/10490):  Recommended for fine tuning the game's ray tracing and path tracing options. Also has a built-in VRAM and FPS usage meter which can come in handy when trying to determine how much overhead you have for hotsampling or cranking up the graphics settings.  You can view the full list of features here: <https://theultraplace.com/games/cyberpunk2077/>
 -->
@@ -87,21 +91,25 @@ sidebar: false
 - [LUT Switcher 3](https://www.nexusmods.com/cyberpunk2077/mods/16310):  People love a good LUT mod.  This is the easiest way to apply them.  Can switch between LUTs without having to restart the game.  Requires LUT packs designed for LUT Switcher.
     - [Nova LUT 4](https://www.nexusmods.com/cyberpunk2077/mods/11622): Grab the LUT Switcher Color Temp pack under optional files (don't use the main download with LUT switcher).  I use this LUT in pretty much all my shots, and I personally tested the HDR version for CyanideX.  
 
-- [RenoDX](Cyberpunk): **For HDR Users Only**. The Nexus version is outdated, so the link takes you to the installation guide I wrote that goes over how to download it from Discord and configure it.  I personally use the [version from April](https://discord.com/channels/1408098019194310818/1434377434022809610/1490559043343876196) that first introduced PsychoV-17 because the most recent version causes weird dimming issues that not everyone can reproduce. 
+
+## Body Mods
+
+**Body mods can be broken down into two main frameworks:**
+- **VTK**
+    - [Female Bodies- VTK Vanilla](https://www.nexusmods.com/cyberpunk2077/mods/7054)
+    - [Male Bodies - Gymfiend](https://www.nexusmods.com/cyberpunk2077/mods/6423)
+- [KSUV](https://www.nexusmods.com/cyberpunk2077/mods/3783): supports both male and female body types
 
 
-## Skin / Body Mods
-
-- The important thing with body mods of all sorts is that they can be broken down into two main frameworks:
-    - [VTK](https://www.nexusmods.com/cyberpunk2077/mods/7054): supports female bodies
-        - [Gymfiend](https://www.nexusmods.com/cyberpunk2077/mods/6423): the male body version of VTK
-    - [KSUV](https://www.nexusmods.com/cyberpunk2077/mods/3783): supports both male and female body types
 - VTK and KSUV are NOT compatible with each other; however, both only affect V unless you download an NPC mod designed around one of the frameworks.  
     - VTK Textures for [Judy](https://www.nexusmods.com/cyberpunk2077/mods/18006) / [Panam](https://www.nexusmods.com/cyberpunk2077/mods/21802) are compatible with either VTK or KSUV.  They are just the textures ported from the main VTK mod but they're still using the vanilla bodies for both NPCs. Good example of *why you should always read the description and not rely on the mod name.*
+
+
+## Skin Textures
+
 - **To be continued...** (body types, clothing, etc)
-
-
+<!--
 [RETURN TO THE MAIN VIRTUAL PHOTOGRAPHY GUIDE](Cyberpunk-Virtual-Photography)
-
+-->
 
 
